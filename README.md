@@ -26,8 +26,9 @@
  
 ## ❔️ Fun Fact
 
-**This library 100%** use on every my create project (**App, Server, Bot, Userbot**)
-**This library 100%** support all models from [whisper.cpp](https://github.com/ggerganov/whisper.cpp) (depending on your device specs, if high then it can be up to turbo, but if low, just choose tiny/small)
+- **This library 100%** use on every my create project (**App, Server, Bot, Userbot**)
+
+- **This library 100%** support all models from [llama.cpp](https://github.com/ggerganov/llama.cpp) (depending on your device specs, if high then it can be up to turbo, but if low, just choose tiny/small)
  
 ## 📈️ Proggres
  
@@ -36,7 +37,7 @@
 
 ## Resources
 
-1. [MODEL](https://huggingface.co/ggerganov/whisper.cpp/tree/main)
+1. [MODEL](https://huggingface.co/ggml-org/Meta-Llama-3.1-8B-Instruct-Q4_0-GGUF)
 
 ### 📥️ Install Library
 
@@ -97,10 +98,8 @@ void main(List<String> args) async {
 ```
 
 ## Reference
-
-1. [Azkadev-Whisper](https://github.com/azkadev/whisper)
-  Original Idea and concept library + Developer Maintance this library
-2. [Ggerganov-whisper.cpp](https://github.com/ggerganov/whisper.cpp)
+ 
+1. [Ggerganov-llama.cpp](https://github.com/ggerganov/llama.cpp)
   ffi bridge main script so that this program can run
 
 
