@@ -1,0 +1,52 @@
+name: 'llama_library_flutter'
+description: "LLaMA Is Library for Inference of Meta's LLaMA model (and others)"
+version: '0.0.0'
+funding:
+  - 'https://github.com/sponsors/azkadev'
+  - 'https://github.com/sponsors/generalfoss'
+  - 'https://github.com/sponsors/general-developer'
+homepage: 'https://www.youtube.com/@general_dev'
+repository: 'https://github.com/General-Developer/llama_library'
+issue_tracker: 'https://t.me/DEVELOPER_GLOBAL_PUBLIC'
+documentation: 'https://www.youtube.com/@general_dev'
+false_secrets:
+  - 'android/jniLibs'
+  - 'linux/'
+  - 'windows/'
+  - 'macos/'
+  - 'ios/'
+platforms:
+  android: null
+  ios: null
+  linux: null
+  macos: null
+  web: null
+  windows: null
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+  flutter: '>=3.3.0'
+dependencies:
+  flutter:
+    sdk: 'flutter'
+dev_dependencies:
+  flutter_test:
+    sdk: 'flutter'
+  flutter_lints: '^5.0.0'
+flutter:
+  plugin:
+    platforms:
+      android:
+        ffiPlugin: true
+      ios:
+        ffiPlugin: true
+      linux:
+        ffiPlugin: true
+      macos:
+        ffiPlugin: true
+      windows:
+        ffiPlugin: true
+dependency_overrides:
+  pointycastle: '3.8.0'
+  mime: '^2.0.0'
+project:
+  type: ''

@@ -1,0 +1,29 @@
+name: 'llama_library_dart'
+description: "LLaMA Is Library for Inference of Meta's LLaMA model (and others)"
+version: '0.0.0'
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+dependencies: {}
+dev_dependencies:
+  lints: '^5.0.0'
+  test: 'any'
+project:
+  type: ''
+dependency_overrides:
+  pointycastle: '3.8.0'
+  mime: '^2.0.0'
+funding:
+  - 'https://github.com/sponsors/azkadev'
+  - 'https://github.com/sponsors/generalfoss'
+  - 'https://github.com/sponsors/general-developer'
+homepage: 'https://www.youtube.com/@general_dev'
+repository: 'https://github.com/General-Developer/llama_library'
+issue_tracker: 'https://t.me/DEVELOPER_GLOBAL_PUBLIC'
+documentation: 'https://www.youtube.com/@general_dev'
+platforms:
+  android: null
+  ios: null
+  linux: null
+  macos: null
+  web: null
+  windows: null
