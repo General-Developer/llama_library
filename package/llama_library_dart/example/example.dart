@@ -34,7 +34,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 
 import 'dart:io';
-import 'package:llama_library/llama_library.dart';
+import 'package:llama_library_dart/llama_library_dart.dart';
 import 'package:llama_library/raw/lcpp.dart';
 
 void main(List<String> args) async {

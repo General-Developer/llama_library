@@ -1,0 +1,4 @@
+
+dependency_overrides:
+  llama_library:
+    path: ../llama_library

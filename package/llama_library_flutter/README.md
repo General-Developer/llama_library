@@ -1,6 +1,6 @@
 # Llama Library
  
-**Llama Library** Is library for transcribe sound to wav
+**Llama Library** Is library for inference any model ai LLAMA / LLM On Edge without api or internet quota, but need resources depends model you want run
 
 [![](https://raw.githubusercontent.com/General-Developer/llama_library/refs/heads/main/assets/demo_background.png)](https://youtu.be/drlqUwJEOg4)
 
@@ -26,8 +26,9 @@
  
 ## ❔️ Fun Fact
 
-**This library 100%** use on every my create project (**App, Server, Bot, Userbot**)
-**This library 100%** support all models from [whisper.cpp](https://github.com/ggerganov/whisper.cpp) (depending on your device specs, if high then it can be up to turbo, but if low, just choose tiny/small)
+- **This library 100%** use on every my create project (**App, Server, Bot, Userbot**)
+
+- **This library 100%** support all models from [llama.cpp](https://github.com/ggerganov/llama.cpp) (depending on your device specs, if high then it can be up to turbo, but if low, just choose tiny/small)
  
 ## 📈️ Proggres
  
@@ -36,7 +37,7 @@
 
 ## Resources
 
-1. [MODEL](https://huggingface.co/ggerganov/whisper.cpp/tree/main)
+1. [MODEL](https://huggingface.co/ggml-org/Meta-Llama-3.1-8B-Instruct-Q4_0-GGUF)
 
 ### 📥️ Install Library
 
@@ -49,7 +50,7 @@ dart pub add llama_library_dart
 2. **Flutter**
 
 ```bash
-flutter pub add llama_library_flutter
+flutter pub add llama_library_flutter ggml_library_flutter
 ```
 
 ## 🚀️ Quick Start
@@ -59,48 +60,47 @@ Example Quickstart script minimal for insight you or make you use this library b
 ```dart
 
 import 'dart:io';
-import 'package:general_lib/general_lib.dart';
-import 'package:llama_library_dart/llama_library_dart.dart';
+import 'package:llama_library/llama_library.dart';
+import 'package:llama_library/raw/lcpp.dart';
 
 void main(List<String> args) async {
   print("start");
 
-  /// make sure you have downloaded model
-  final String whisperModelPath =
-      "../../../../../big-data/ai/whisper-ggml/ggml-small.bin";
+  File modelFile = File("../../../../../big-data/llama/Meta-Llama-3.1-8B-Instruct.Q8_0.gguf");
+
   final LlamaLibrary llamaLibrary = LlamaLibrary(
-    libraryWhisperPath: "../llama_library_flutter/linux/libwhisper.so",
+    sharedLibraryPath: "../llama_library_flutter/linux/libllama.so",
   );
   await llamaLibrary.ensureInitialized();
-  final isLoadedModel = llamaLibrary.loadWhisperModel(
-    whisperModelPath: whisperModelPath,
-  );
-  if (isLoadedModel == false) {
-    print("cant loaded");
-    exit(1);
+  llamaLibrary.loadModel(modelPath: modelFile.path);
+
+  /// call this if you want use llama if in main page / or not in page llama
+  /// dont call if on low end specs device
+  /// if device can't handle
+  /// this program will auto exit because llama need reseources depends model
+  /// and fast with modern cpu
+  await llamaLibrary.initialized();
+
+  await for (final result in llamaLibrary.prompt(messages: [
+    ChatMessage(
+      role: "user",
+      content: "What is Linux?",
+    )
+  ])) {
+    print(result);
   }
-  final File fileWav = File(
-    "../../native_lib/lib/whisper.cpp/samples/jfk.wav",
-  );
-  await Future.delayed(Duration(seconds: 2));
-  DateTime dateTime = DateTime.now();
-  final result = await llamaLibrary.transcribeToJson(
-    fileWav: fileWav,
-    useCountProccecors: 1,
-    useCountThread: (Platform.numberOfProcessors / 2).toInt(),
-  );
-  print("seconds: ${DateTime.now().difference(dateTime)}");
-  result.printPretty();
+
+  await llamaLibrary.dispose();
+  llamaLibrary.stop();
+  llamaLibrary.close();
   exit(0);
 }
 
 ```
 
 ## Reference
-
-1. [Azkadev-Whisper](https://github.com/azkadev/whisper)
-  Original Idea and concept library + Developer Maintance this library
-2. [Ggerganov-whisper.cpp](https://github.com/ggerganov/whisper.cpp)
+ 
+1. [Ggerganov-llama.cpp](https://github.com/ggerganov/llama.cpp)
   ffi bridge main script so that this program can run
 
 

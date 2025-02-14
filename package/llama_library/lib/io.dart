@@ -34,85 +34,66 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'dart:async';
 import 'dart:ffi';
-import 'dart:io';
-import 'dart:isolate';
-import 'dart:typed_data';
 
 import 'package:ffi/ffi.dart';
-import 'package:general_ml/utils/utils.dart';
+import 'package:general_lib/event_emitter/event_emitter.dart';
+import 'package:llama_library/raw/lcpp.dart';
 
 import 'base.dart';
 import 'ffi/bindings.dart';
 
-/// Check Out: https://www.youtube.com/@GENERAL_DEV
+///
 class LlamaLibrary extends LlamaLibraryBase {
-  bool _isInIsolate = false;
+  // ignore: prefer_final_fields
+  bool _isInIsolate = true;
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
+  ///
   LlamaLibrary({
-    String? libraryWhisperPath,
+    String? sharedLibraryPath,
   }) : super(
-          libraryWhisperPath: libraryWhisperPath ??
-              LlamaLibraryBase.getLibraryWhisperPathDefault(),
+          sharedLibraryPath: sharedLibraryPath ?? LlamaLibraryBase.getLibraryWhisperPathDefault(),
         );
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  static late final LlamaLibrarySharedBindingsByGeneralDeveloper
-      _llamaLibrarySharedBindingsByGeneralDeveloper;
+  ///
+  static late final LlamaLibrarySharedBindingsByGeneralDeveloper _llamaLibrary;
+  // ignore: prefer_final_fields
+  static Pointer<llama_model> _modelContext = nullptr;
+  // ignore: prefer_final_fields
+  static Pointer<llama_context> _llamaContext = nullptr;
+  // ignore: prefer_final_fields
+  static Pointer<llama_sampler> _llamaSampler = nullptr;
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  static Pointer<whisper_context>? _whisperModelContext;
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   static bool _isEnsureInitialized = false;
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  static String _openVinoEncoderDevice = "CPU";
+  static String _modelPath = "";
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  static String _whisperModelPath = "";
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  static bool _isUseGpu = false;
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  static int _gpuDevice = 0;
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
   Future<void> ensureInitialized() async {
     if (_isEnsureInitialized) {
       return;
     }
+
     try {
-      _llamaLibrarySharedBindingsByGeneralDeveloper =
-          LlamaLibrarySharedBindingsByGeneralDeveloper(
+      _llamaLibrary = LlamaLibrarySharedBindingsByGeneralDeveloper(
         DynamicLibrary.open(
-          libraryWhisperPath,
+          sharedLibraryPath,
         ),
       );
       _isDeviceSupport = true;
     } catch (e) {
-      print(e);
       _isCrash = true;
     }
 
     _isEnsureInitialized = true;
   }
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   bool _isCrash = false;
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   bool _isDeviceSupport = false;
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
   bool isCrash() {
     return _isCrash;
   }
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
   bool isDeviceSupport() {
     if (_isCrash) {
@@ -121,251 +102,229 @@ class LlamaLibrary extends LlamaLibraryBase {
     return _isDeviceSupport;
   }
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
-  bool loadWhisperModel({
-    String openVinoEncoderDevice = "CPU",
-    required String whisperModelPath,
-    bool isUseGpu = false,
-    int gpuDevice = 0,
+  bool loadModel({
+    required String modelPath,
   }) {
+    if(_isInIsolate){
+      
+    }
     {
-      LlamaLibrary._openVinoEncoderDevice = openVinoEncoderDevice;
-      LlamaLibrary._whisperModelPath = whisperModelPath;
-      LlamaLibrary._isUseGpu = isUseGpu;
-      LlamaLibrary._gpuDevice = gpuDevice;
+      LlamaLibrary._modelPath = modelPath;
     }
     if (_isInIsolate == false) {
       return true;
     }
+
     if (isDeviceSupport() == false || isCrash()) {
       return false;
     }
-    final whisperModelPathNative =
-        LlamaLibrary._whisperModelPath.toNativeUtf8().cast<Char>();
+    _llamaLibrary.ggml_backend_load_all();
+    _llamaLibrary.llama_backend_init();
+
     {
-      final whisperModelContext = LlamaLibrary._whisperModelContext;
-      if (whisperModelContext != null) {
+      final modelContext = LlamaLibrary._modelContext;
+      if (modelContext != nullptr) {
         /// release memory
-        _llamaLibrarySharedBindingsByGeneralDeveloper
-            .whisper_free(whisperModelContext);
+        _llamaLibrary.llama_free_model(modelContext);
       }
     }
+    final modelParams = ModelParams(path: LlamaLibrary._modelPath);
+    final nativeModelParams = modelParams.toNative(
+      generalAiLLamaLibrary: LlamaLibrary._llamaLibrary,
+    );
+    final nativeModelPath = modelParams.path.toNativeUtf8().cast<Char>();
 
-    final cparams = _llamaLibrarySharedBindingsByGeneralDeveloper
-        .whisper_context_default_params();
-    cparams.use_gpu = LlamaLibrary._isUseGpu;
-    cparams.gpu_device = LlamaLibrary._gpuDevice;
+    final modelContext = _llamaLibrary.llama_load_model_from_file(nativeModelPath, nativeModelParams);
+    LlamaLibrary._modelContext = modelContext;
 
-    final whisperModelContext =
-        _llamaLibrarySharedBindingsByGeneralDeveloper
-            .whisper_init_from_file_with_params(
-                whisperModelPathNative, cparams);
-    LlamaLibrary._whisperModelContext = whisperModelContext;
-    if (whisperModelContext.address == 0) {
-      _llamaLibrarySharedBindingsByGeneralDeveloper
-          .whisper_free(whisperModelContext);
+    if (modelContext.address == 0) {
+      _llamaLibrary.llama_free_model(modelContext);
       return false;
     }
-    final openVinoEncoderDeviceNative =
-        LlamaLibrary._openVinoEncoderDevice.toNativeUtf8().cast<Char>();
-    _llamaLibrarySharedBindingsByGeneralDeveloper
-        .whisper_ctx_init_openvino_encoder(
-            whisperModelContext, nullptr, openVinoEncoderDeviceNative, nullptr);
+
+    /// init context
+    {
+      final contextParams = const ContextParams(
+        nCtx: 2048,
+        nBatch: 2048,
+        // nCtx: 64,
+        // nBatch: 64,
+
+        nThreads: 4,
+      );
+
+      final nativeContextParams = contextParams.toNative(
+        generalAiLLamaLibrary: LlamaLibrary._llamaLibrary,
+      );
+      {
+        final llamaContext = LlamaLibrary._llamaContext;
+        if (llamaContext != nullptr) {
+          /// release memory
+          _llamaLibrary.llama_free(llamaContext);
+        }
+      }
+      final llamaContext = _llamaLibrary.llama_init_from_model(modelContext, nativeContextParams);
+      LlamaLibrary._llamaContext = llamaContext;
+    }
+
+    {
+      final samplingParams = const SamplingParams(
+        greedy: true,
+      );
+
+      {
+        final llamaSampler = LlamaLibrary._llamaSampler;
+        if (llamaSampler != nullptr) {
+          _llamaLibrary.llama_sampler_free(llamaSampler);
+        }
+      }
+
+      final vocab = _llamaLibrary.llama_model_get_vocab(modelContext);
+      final llamaSampler = samplingParams.toNative(
+        vocab: vocab,
+        generalAiLLamaLibrary: LlamaLibrary._llamaLibrary,
+      );
+      LlamaLibrary._llamaSampler = llamaSampler;
+    }
+
     return true;
   }
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
-  Future<Map> transcribeToJson({
-    required dynamic fileWav,
-    bool isTranslate = false,
-    String language = "auto",
-    int useCountThread = 0,
-    int useCountProccecors = 0,
-  }) async {
-    if (isDeviceSupport() == false || isCrash()) {
-      return {"@type": "error", "message": "not_support"};
-    }
-    if (_isInIsolate == false) {
-      // ignore: non_constant_identifier_names
-      final dynamic file_wav = () {
-        if (fileWav is File) {
-          return fileWav.path;
-        } else if (fileWav is String) {
-          return fileWav;
-        } else if (fileWav is List<int>) {
-          return Uint8List.fromList(fileWav);
-        } else if (fileWav is Uint8List) {
-          return fileWav;
-        }
-        return "";
-      }();
-      final libraryWhisperPath = this.libraryWhisperPath;
-      final String openVinoEncoderDevice =
-          LlamaLibrary._openVinoEncoderDevice;
-      final String whisperModelPath = LlamaLibrary._whisperModelPath;
-      final bool isUseGpu = LlamaLibrary._isUseGpu;
-      final int gpuDevice = LlamaLibrary._gpuDevice;
-      return await Isolate.run(() async {
-        final LlamaLibrary generalAiSpeechToText = LlamaLibrary(
-          libraryWhisperPath: libraryWhisperPath,
-        );
-        generalAiSpeechToText._isInIsolate = true;
-        await generalAiSpeechToText.ensureInitialized();
-        generalAiSpeechToText.loadWhisperModel(
-          openVinoEncoderDevice: openVinoEncoderDevice,
-          whisperModelPath: whisperModelPath,
-          isUseGpu: isUseGpu,
-          gpuDevice: gpuDevice,
-        );
-        final result = generalAiSpeechToText.transcribeToJson(
-          fileWav: file_wav,
-          isTranslate: isTranslate,
-          language: language,
-          useCountProccecors: useCountProccecors,
-          useCountThread: useCountThread,
-          // keep ignre
-          // isInIsolate: false,
-        );
-        generalAiSpeechToText.close();
-        return result;
-      });
-    }
-    final whisperModelContext = LlamaLibrary._whisperModelContext;
-    if (whisperModelContext == null) {
-      return {
-        "@type": "error",
-      };
-    }
-    final List<double> filePcm32 =
-        GeneralMlUtils.wavToNumpyArraywavToNumpy(fileWav);
-    if (filePcm32.isEmpty) {
-      return {
-        "@type": "error",
-      };
-    }
-    final pointerFilePcm32 = GeneralMlUtils.listToPointerFloat(filePcm32);
-    if (_llamaLibrarySharedBindingsByGeneralDeveloper
-            .whisper_is_multilingual(whisperModelContext) ==
-        0) {
-      language = "en";
-      isTranslate = false;
-    }
-    int nThreads = () {
-      if (useCountThread < 1) {
-        return 4;
-      }
-      return useCountThread;
-    }();
-    int nProccecors = () {
-      if (useCountProccecors < 1) {
-        return (Platform.numberOfProcessors / 4).toInt();
-      }
-      return useCountProccecors;
-    }();
-    int maxContext = -1;
-    final wparams = _llamaLibrarySharedBindingsByGeneralDeveloper
-        .whisper_full_default_params(
-            whisper_sampling_strategy.WHISPER_SAMPLING_GREEDY);
-    final languageNative = language.toNativeUtf8().cast<Char>();
-    wparams.print_realtime = false;
-    wparams.print_progress = false;
-    wparams.print_timestamps = false;
-    wparams.print_special = false;
-    wparams.debug_mode = false;
-    wparams.translate = isTranslate;
-    wparams.language = languageNative;
-    wparams.detect_language = false;
-    wparams.n_threads = nThreads;
-    wparams.debug_mode = false;
-    wparams.n_max_text_ctx =
-        (maxContext >= 0) ? maxContext : wparams.n_max_text_ctx;
-    wparams.offset_ms = 0;
-    wparams.duration_ms = 0;
-    wparams.thold_pt = 0.01;
-    wparams.max_len = 60;
-    wparams.split_on_word = false;
-    wparams.audio_ctx = 0;
-    wparams.tdrz_enable = false; // [TDRZ]
-    final promptNative = "".toNativeUtf8().cast<Char>();
-    wparams.initial_prompt = promptNative;
-    wparams.greedy.best_of = 2;
-    wparams.beam_search.beam_size = -1;
-    wparams.temperature = 0.00;
-    wparams.no_speech_thold = 0.6;
-    wparams.temperature_inc = 0.20;
-    wparams.entropy_thold = 2.40;
-    wparams.logprob_thold = -1.00;
-    wparams.no_timestamps = false;
-    wparams.token_timestamps = true;
-    wparams.suppress_nst = true;
-    final int resultInference = () {
-      if (nProccecors > 1) {
-        return LlamaLibrary
-            ._llamaLibrarySharedBindingsByGeneralDeveloper
-            .whisper_full_parallel(whisperModelContext, wparams,
-                pointerFilePcm32, filePcm32.length, nProccecors);
-      }
-      return LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .whisper_full(
-        whisperModelContext,
-        wparams,
-        pointerFilePcm32,
-        filePcm32.length,
-      );
-    }();
-    filePcm32.clear();
-    if (resultInference != 0) {
-      return {
-        "@type": "error",
-      };
-    }
-    final int nSegments = LlamaLibrary
-        ._llamaLibrarySharedBindingsByGeneralDeveloper
-        .whisper_full_n_segments(whisperModelContext);
-    String result = "";
-    for (int i = 0; i < nSegments; ++i) {
-      final text = LlamaLibrary
-          ._llamaLibrarySharedBindingsByGeneralDeveloper
-          .whisper_full_get_segment_text(whisperModelContext, i);
-      result += text.cast<Utf8>().toDartString();
-    }
-
-    final Map resultJson = {
-      "@type": "whisperTranscribe",
-      "task": wparams.translate ? "Translate" : "Transcribe",
-      "language": LlamaLibrary
-          ._llamaLibrarySharedBindingsByGeneralDeveloper
-          .whisper_lang_str_full(LlamaLibrary
-              ._llamaLibrarySharedBindingsByGeneralDeveloper
-              .whisper_full_lang_id(whisperModelContext))
-          .cast<Utf8>()
-          .toDartString(),
-      "duration": (filePcm32.length / WHISPER_SAMPLE_RATE).toStringAsFixed(0),
-      "text": result.trim(),
-    };
-
-    return resultJson;
+  Future<void> initialized() async {
+    // Isolate isolate = await Isolate.spawn(entryPoint, message);
   }
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
-  void close() {
+  FutureOr<void> close() async {
     if (_isInIsolate == false) {
       return;
     }
 
-    final whisperModelContext = LlamaLibrary._whisperModelContext;
-    if (whisperModelContext != null) {
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .whisper_free(whisperModelContext);
+    if (_modelContext != nullptr) {
+      _llamaLibrary.llama_free_model(_modelContext);
     }
+    if (_llamaSampler != nullptr) {
+      _llamaLibrary.llama_sampler_free(_llamaSampler);
+    }
+    if (_llamaContext != nullptr) {
+      _llamaLibrary.llama_free(_llamaContext);
+    }
+    return;
   }
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
-  FutureOr<void> dispose() {
-    close();
+  void stop() {
+   }
+
+  @override
+  void emit({required String eventType, required data}) {
+   }
+
+  @override
+  EventEmitterListener on({required String eventType, required FutureOr Function(dynamic data) onUpdate}) {
+     throw UnimplementedError();
   }
+
+  Completer _completer = Completer();
+
+  int _contextLength = 0;
+  @override
+  Stream<String> prompt({required List<ChatMessage> messages}) async* {
+    final messagesCopy = messages.copy();
+
+    _completer = Completer();
+
+    final nCtx = _llamaLibrary.llama_n_ctx(LlamaLibrary._llamaContext);
+
+    Pointer<Char> formatted = calloc<Char>(nCtx);
+
+    final template = _llamaLibrary.llama_model_chat_template(LlamaLibrary._modelContext, nullptr);
+
+    Pointer<llama_chat_message> messagesPtr = messagesCopy.toNative();
+
+    int newContextLength = _llamaLibrary.llama_chat_apply_template(template, messagesPtr, messagesCopy.length, true, formatted, nCtx);
+
+    if (newContextLength > nCtx) {
+      // calloc.free(formatted);
+      formatted = calloc<Char>(newContextLength);
+      newContextLength = _llamaLibrary.llama_chat_apply_template(template, messagesPtr, messagesCopy.length, true, formatted, newContextLength);
+    }
+
+    // messagesPtr.free(messagesCopy.length);
+
+    if (newContextLength < 0) {
+      throw Exception('Failed to apply template');
+    }
+
+    final prompt = formatted.cast<Utf8>().toDartString().substring(_contextLength);
+    // calloc.free(formatted);
+
+    final vocab = _llamaLibrary.llama_model_get_vocab(LlamaLibrary._modelContext);
+    final isFirst = _llamaLibrary.llama_get_kv_cache_used_cells(LlamaLibrary._llamaContext) == 0;
+
+    final promptPtr = prompt.toNativeUtf8().cast<Char>();
+
+    final nPromptTokens = -_llamaLibrary.llama_tokenize(vocab, promptPtr, prompt.length, nullptr, 0, isFirst, true);
+    Pointer<llama_token> promptTokens = calloc<llama_token>(nPromptTokens);
+
+    if (_llamaLibrary.llama_tokenize(vocab, promptPtr, prompt.length, promptTokens, nPromptTokens, isFirst, true) < 0) {
+      throw Exception('Failed to tokenize');
+    }
+
+    // calloc.free(promptPtr);
+
+    llama_batch batch = _llamaLibrary.llama_batch_get_one(promptTokens, nPromptTokens);
+    Pointer<llama_token> newTokenId = calloc<llama_token>(1);
+
+    String response = '';
+
+    while (!_completer.isCompleted) {
+      final nCtx = _llamaLibrary.llama_n_ctx(LlamaLibrary._llamaContext);
+      final nCtxUsed = _llamaLibrary.llama_get_kv_cache_used_cells(LlamaLibrary._llamaContext);
+
+      if (nCtxUsed + batch.n_tokens > nCtx) {
+        throw Exception('Context size exceeded');
+      }
+
+      if (_llamaLibrary.llama_decode(LlamaLibrary._llamaContext, batch) != 0) {
+        throw Exception('Failed to decode');
+      }
+
+      newTokenId.value = _llamaLibrary.llama_sampler_sample(LlamaLibrary._llamaSampler, LlamaLibrary._llamaContext, -1);
+
+      // is it an end of generation?
+      if (_llamaLibrary.llama_vocab_is_eog(vocab, newTokenId.value)) {
+        break;
+      }
+
+      final buffer = calloc<Char>(256);
+      final n = _llamaLibrary.llama_token_to_piece(vocab, newTokenId.value, buffer, 256, 0, true);
+      if (n < 0) {
+        throw Exception('Failed to convert token to piece');
+      }
+
+      final piece = buffer.cast<Utf8>().toDartString();
+      // calloc.free(buffer);
+      response += piece;
+      yield piece;
+
+      batch = _llamaLibrary.llama_batch_get_one(newTokenId, 1);
+    }
+
+    messagesCopy.add(ChatMessage(role: 'assistant', content: response));
+
+    messagesPtr = messagesCopy.toNative();
+
+    _contextLength = _llamaLibrary.llama_chat_apply_template(template, messagesPtr, messagesCopy.length, false, nullptr, 0);
+
+    // messagesPtr.free(messagesCopy.length);
+
+    // calloc.free(promptTokens);
+    // _llamaLibrary.llama_batch_free(batch);
+  }
+
+  @override
+  FutureOr<void> dispose() async {}
 }

@@ -34,44 +34,19 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'dart:async';
 
+import 'package:general_lib/event_emitter/event_emitter.dart';
+
 import 'base.dart';
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 class LlamaLibrary extends LlamaLibraryBase {
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  LlamaLibrary({
-    super.libraryWhisperPath,
-  });
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  @override
-  bool loadWhisperModel(
-      {String openVinoEncoderDevice = "CPU",
-      required String whisperModelPath,
-      bool isUseGpu = false,
-      int gpuDevice = 0}) {
-    // TODO: implement loadWhisperModel
-    throw UnimplementedError();
-  }
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  @override
-  Future<Map> transcribeToJson({
-    required fileWav,
-    bool isTranslate = false,
-    String language = "auto",
-    int useCountThread = 0,
-    int useCountProccecors = 0,
-  }) {
-    // TODO: implement transcribeToJson
-    throw UnimplementedError();
-  }
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  LlamaLibrary({super.sharedLibraryPath});
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
   void close() {
-    // TODO: implement close
-  }
+   }
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
   final bool _isCrash = false;
@@ -100,9 +75,34 @@ class LlamaLibrary extends LlamaLibraryBase {
     return;
   }
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
-  FutureOr<void> ensureInitialized() async {
-    return;
+  void emit({required String eventType, required data}) {}
+
+  @override
+  Future<void> ensureInitialized() {
+    throw UnimplementedError();
   }
+
+  @override
+  Future<void> initialized() {
+    throw UnimplementedError();
+  }
+
+  @override
+  bool loadModel({required String modelPath}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  EventEmitterListener on({required String eventType, required FutureOr Function(dynamic data) onUpdate}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Stream<String> prompt({required List<dynamic> messages}) {
+    throw UnimplementedError();
+  }
+
+  @override
+  void stop() {}
 }

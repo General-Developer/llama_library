@@ -35,40 +35,62 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'dart:async';
 
 import 'package:general_lib/dynamic_library/core.dart';
+import 'package:general_lib/general_lib.dart' show EventEmitterListener;
+import 'package:llama_library/raw/lcpp.dart' show ChatMessage;
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class LlamaLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
+abstract class LlamaLibraryBaseCore extends GeneralLibraryDynamicLibraryBase { 
+
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  bool loadWhisperModel({
-    String openVinoEncoderDevice = "CPU",
-    required String whisperModelPath,
-    bool isUseGpu = false,
-    int gpuDevice = 0,
+
+  Future<void> initialized();
+
+
+
+  /// Check Out: https://www.youtube.com/@GENERAL_DEV
+
+  bool loadModel({
+    required String modelPath,
+  });
+  
+
+  /// Check Out: https://www.youtube.com/@GENERAL_DEV
+
+  void stop();
+
+  /// Check Out: https://www.youtube.com/@GENERAL_DEV
+
+  Stream<String> prompt({
+    required List<ChatMessage> messages,
   });
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  Future<Map> transcribeToJson({
-    required final dynamic fileWav,
-    final bool isTranslate = false,
-    final String language = "auto",
-    final int useCountThread = 0,
-    final int useCountProccecors = 0,
+
+  void emit({
+    required String eventType,
+    required dynamic data,
+  });
+
+  /// Check Out: https://www.youtube.com/@GENERAL_DEV
+
+  EventEmitterListener on({
+    required String eventType,
+    required FutureOr<dynamic> Function(dynamic data) onUpdate,
   });
 }
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 abstract class LlamaLibraryBase implements LlamaLibraryBaseCore {
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  final String libraryWhisperPath;
+  ///
+  final String sharedLibraryPath;
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
+  ///
   LlamaLibraryBase({
-    String? libraryWhisperPath,
-  }) : libraryWhisperPath =
-            libraryWhisperPath ?? getLibraryWhisperPathDefault();
+    String? sharedLibraryPath,
+  }) : sharedLibraryPath = sharedLibraryPath ?? getLibraryWhisperPathDefault();
 
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
+  ///
   static String getLibraryWhisperPathDefault() {
-    return "libwhisper.so";
+    return "libllama.so";
   }
 }
