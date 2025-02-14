@@ -8,7 +8,8 @@ class TopPArguments {
 
   const TopPArguments({required this.p, required this.minKeep});
 
-  factory TopPArguments.fromMap(Map<String, dynamic> map) => TopPArguments(p: map['p'], minKeep: map['minKeep']);
+  factory TopPArguments.fromMap(Map<String, dynamic> map) =>
+      TopPArguments(p: map['p'], minKeep: map['minKeep']);
 
   Map<String, dynamic> toMap() => {'p': p, 'minKeep': minKeep};
 }
@@ -19,7 +20,8 @@ class MinPArguments {
 
   const MinPArguments({required this.p, required this.minKeep});
 
-  factory MinPArguments.fromMap(Map<String, dynamic> map) => MinPArguments(p: map['p'], minKeep: map['minKeep']);
+  factory MinPArguments.fromMap(Map<String, dynamic> map) =>
+      MinPArguments(p: map['p'], minKeep: map['minKeep']);
 
   Map<String, dynamic> toMap() => {'p': p, 'minKeep': minKeep};
 }
@@ -36,7 +38,8 @@ class TypicalPArguments {
 
   factory TypicalPArguments.fromMap({
     required Map<String, dynamic> map,
-    required final LlamaLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary,
+    required final LlamaLibrarySharedBindingsByGeneralDeveloper
+        generalAiLLamaLibrary,
   }) =>
       TypicalPArguments(
         p: map['p'],
@@ -47,7 +50,8 @@ class TypicalPArguments {
   Map<String, dynamic> toMap() => {'p': p, 'minKeep': minKeep};
 
   void add(ffi.Pointer<llama_sampler> sampler) {
-    generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_typical(p, minKeep));
+    generalAiLLamaLibrary.llama_sampler_chain_add(
+        sampler, generalAiLLamaLibrary.llama_sampler_init_typical(p, minKeep));
   }
 }
 
@@ -56,11 +60,17 @@ class TemperatureArguments {
   final double? delta;
   final double? exponent;
 
-  const TemperatureArguments({required this.temperature, this.delta, this.exponent});
+  const TemperatureArguments(
+      {required this.temperature, this.delta, this.exponent});
 
-  factory TemperatureArguments.fromMap(Map<String, dynamic> map) => TemperatureArguments(temperature: map['temperature'], delta: map['delta'], exponent: map['exponent']);
+  factory TemperatureArguments.fromMap(Map<String, dynamic> map) =>
+      TemperatureArguments(
+          temperature: map['temperature'],
+          delta: map['delta'],
+          exponent: map['exponent']);
 
-  Map<String, dynamic> toMap() => {'temperature': temperature, 'delta': delta, 'exponent': exponent};
+  Map<String, dynamic> toMap() =>
+      {'temperature': temperature, 'delta': delta, 'exponent': exponent};
 }
 
 class XtcArguments {
@@ -69,11 +79,17 @@ class XtcArguments {
   final int minKeep;
   final int seed;
 
-  const XtcArguments({required this.p, required this.t, required this.minKeep, required this.seed});
+  const XtcArguments(
+      {required this.p,
+      required this.t,
+      required this.minKeep,
+      required this.seed});
 
-  factory XtcArguments.fromMap(Map<String, dynamic> map) => XtcArguments(p: map['p'], t: map['t'], minKeep: map['minKeep'], seed: map['seed']);
+  factory XtcArguments.fromMap(Map<String, dynamic> map) => XtcArguments(
+      p: map['p'], t: map['t'], minKeep: map['minKeep'], seed: map['seed']);
 
-  Map<String, dynamic> toMap() => {'p': p, 't': t, 'minKeep': minKeep, 'seed': seed};
+  Map<String, dynamic> toMap() =>
+      {'p': p, 't': t, 'minKeep': minKeep, 'seed': seed};
 }
 
 class MirostatArguments {
@@ -83,11 +99,23 @@ class MirostatArguments {
   final double eta;
   final int m;
 
-  const MirostatArguments({required this.nVocab, required this.seed, required this.tau, required this.eta, required this.m});
+  const MirostatArguments(
+      {required this.nVocab,
+      required this.seed,
+      required this.tau,
+      required this.eta,
+      required this.m});
 
-  factory MirostatArguments.fromMap(Map<String, dynamic> map) => MirostatArguments(nVocab: map['nVocab'], seed: map['seed'], tau: map['tau'], eta: map['eta'], m: map['m']);
+  factory MirostatArguments.fromMap(Map<String, dynamic> map) =>
+      MirostatArguments(
+          nVocab: map['nVocab'],
+          seed: map['seed'],
+          tau: map['tau'],
+          eta: map['eta'],
+          m: map['m']);
 
-  Map<String, dynamic> toMap() => {'nVocab': nVocab, 'seed': seed, 'tau': tau, 'eta': eta, 'm': m};
+  Map<String, dynamic> toMap() =>
+      {'nVocab': nVocab, 'seed': seed, 'tau': tau, 'eta': eta, 'm': m};
 }
 
 class MirostatV2Arguments {
@@ -95,9 +123,11 @@ class MirostatV2Arguments {
   final double tau;
   final double eta;
 
-  const MirostatV2Arguments({required this.seed, required this.tau, required this.eta});
+  const MirostatV2Arguments(
+      {required this.seed, required this.tau, required this.eta});
 
-  factory MirostatV2Arguments.fromMap(Map<String, dynamic> map) => MirostatV2Arguments(seed: map['seed'], tau: map['tau'], eta: map['eta']);
+  factory MirostatV2Arguments.fromMap(Map<String, dynamic> map) =>
+      MirostatV2Arguments(seed: map['seed'], tau: map['tau'], eta: map['eta']);
 
   Map<String, dynamic> toMap() => {'seed': seed, 'tau': tau, 'eta': eta};
 }
@@ -108,7 +138,8 @@ class GrammarArguments {
 
   const GrammarArguments({required this.str, required this.root});
 
-  factory GrammarArguments.fromMap(Map<String, dynamic> map) => GrammarArguments(str: map['str'], root: map['root']);
+  factory GrammarArguments.fromMap(Map<String, dynamic> map) =>
+      GrammarArguments(str: map['str'], root: map['root']);
 
   Map<String, dynamic> toMap() => {'str': str, 'root': root};
 }
@@ -119,11 +150,25 @@ class PenaltiesArguments {
   final double frequency;
   final double present;
 
-  const PenaltiesArguments({required this.lastN, required this.repeat, required this.frequency, required this.present});
+  const PenaltiesArguments(
+      {required this.lastN,
+      required this.repeat,
+      required this.frequency,
+      required this.present});
 
-  factory PenaltiesArguments.fromMap(Map<String, dynamic> map) => PenaltiesArguments(lastN: map['lastN'], repeat: map['repeat'], frequency: map['frequency'], present: map['present']);
+  factory PenaltiesArguments.fromMap(Map<String, dynamic> map) =>
+      PenaltiesArguments(
+          lastN: map['lastN'],
+          repeat: map['repeat'],
+          frequency: map['frequency'],
+          present: map['present']);
 
-  Map<String, dynamic> toMap() => {'lastN': lastN, 'repeat': repeat, 'frequency': frequency, 'present': present};
+  Map<String, dynamic> toMap() => {
+        'lastN': lastN,
+        'repeat': repeat,
+        'frequency': frequency,
+        'present': present
+      };
 }
 
 class DrySamplerArguments {
@@ -134,11 +179,31 @@ class DrySamplerArguments {
   final int penaltyLastN;
   final List<String> sequenceBreakers;
 
-  const DrySamplerArguments({required this.nCtxTrain, required this.multiplier, required this.dryBase, required this.allowedLength, required this.penaltyLastN, required this.sequenceBreakers});
+  const DrySamplerArguments(
+      {required this.nCtxTrain,
+      required this.multiplier,
+      required this.dryBase,
+      required this.allowedLength,
+      required this.penaltyLastN,
+      required this.sequenceBreakers});
 
-  factory DrySamplerArguments.fromMap(Map<String, dynamic> map) => DrySamplerArguments(nCtxTrain: map['nCtxTrain'], multiplier: map['multiplier'], dryBase: map['dryBase'], allowedLength: map['allowedLength'], penaltyLastN: map['penaltyLastN'], sequenceBreakers: List<String>.from(map['sequenceBreakers']));
+  factory DrySamplerArguments.fromMap(Map<String, dynamic> map) =>
+      DrySamplerArguments(
+          nCtxTrain: map['nCtxTrain'],
+          multiplier: map['multiplier'],
+          dryBase: map['dryBase'],
+          allowedLength: map['allowedLength'],
+          penaltyLastN: map['penaltyLastN'],
+          sequenceBreakers: List<String>.from(map['sequenceBreakers']));
 
-  Map<String, dynamic> toMap() => {'nCtxTrain': nCtxTrain, 'multiplier': multiplier, 'dryBase': dryBase, 'allowedLength': allowedLength, 'penaltyLastN': penaltyLastN, 'sequenceBreakers': sequenceBreakers};
+  Map<String, dynamic> toMap() => {
+        'nCtxTrain': nCtxTrain,
+        'multiplier': multiplier,
+        'dryBase': dryBase,
+        'allowedLength': allowedLength,
+        'penaltyLastN': penaltyLastN,
+        'sequenceBreakers': sequenceBreakers
+      };
 }
 
 class SamplingParams {
@@ -185,97 +250,181 @@ class SamplingParams {
         topK: map['topK'],
         topP: map['topP'] != null ? TopPArguments.fromMap(map['topP']) : null,
         minP: map['minP'] != null ? MinPArguments.fromMap(map['minP']) : null,
-        typicalP: map['typicalP'] != null ? TypicalPArguments.fromMap(map: map['typicalP'], generalAiLLamaLibrary: generalAiLLamaLibrary) : null,
-        temperature: map['temperature'] != null ? TemperatureArguments.fromMap(map['temperature']) : null,
+        typicalP: map['typicalP'] != null
+            ? TypicalPArguments.fromMap(
+                map: map['typicalP'],
+                generalAiLLamaLibrary: generalAiLLamaLibrary)
+            : null,
+        temperature: map['temperature'] != null
+            ? TemperatureArguments.fromMap(map['temperature'])
+            : null,
         xtc: map['xtc'] != null ? XtcArguments.fromMap(map['xtc']) : null,
-        mirostat: map['mirostat'] != null ? MirostatArguments.fromMap(map['mirostat']) : null,
-        mirostatV2: map['mirostatV2'] != null ? MirostatV2Arguments.fromMap(map['mirostatV2']) : null,
-        grammar: map['grammar'] != null ? GrammarArguments.fromMap(map['grammar']) : null,
-        penalties: map['penalties'] != null ? PenaltiesArguments.fromMap(map['penalties']) : null,
-        drySampler: map['drySampler'] != null ? DrySamplerArguments.fromMap(map['drySampler']) : null,
+        mirostat: map['mirostat'] != null
+            ? MirostatArguments.fromMap(map['mirostat'])
+            : null,
+        mirostatV2: map['mirostatV2'] != null
+            ? MirostatV2Arguments.fromMap(map['mirostatV2'])
+            : null,
+        grammar: map['grammar'] != null
+            ? GrammarArguments.fromMap(map['grammar'])
+            : null,
+        penalties: map['penalties'] != null
+            ? PenaltiesArguments.fromMap(map['penalties'])
+            : null,
+        drySampler: map['drySampler'] != null
+            ? DrySamplerArguments.fromMap(map['drySampler'])
+            : null,
       );
 
   factory SamplingParams.fromJson({
     required String source,
     required LlamaLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary,
   }) =>
-      SamplingParams.fromMap(map: jsonDecode(source), generalAiLLamaLibrary: generalAiLLamaLibrary);
+      SamplingParams.fromMap(
+          map: jsonDecode(source),
+          generalAiLLamaLibrary: generalAiLLamaLibrary);
 
   ffi.Pointer<llama_sampler> toNative({
     required ffi.Pointer<llama_vocab> vocab,
     required LlamaLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary,
   }) {
-    final sampler = generalAiLLamaLibrary.llama_sampler_chain_init(generalAiLLamaLibrary.llama_sampler_chain_default_params());
+    final sampler = generalAiLLamaLibrary.llama_sampler_chain_init(
+        generalAiLLamaLibrary.llama_sampler_chain_default_params());
 
     if (greedy) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_greedy());
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler, generalAiLLamaLibrary.llama_sampler_init_greedy());
     }
 
     if (infill) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_infill(vocab));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler, generalAiLLamaLibrary.llama_sampler_init_infill(vocab));
     }
 
     if (seed != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_dist(seed!));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler, generalAiLLamaLibrary.llama_sampler_init_dist(seed!));
     }
 
     if (topK != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_top_k(topK!));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler, generalAiLLamaLibrary.llama_sampler_init_top_k(topK!));
     }
 
     if (topP != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_top_p(topP!.p, topP!.minKeep));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler,
+          generalAiLLamaLibrary.llama_sampler_init_top_p(
+              topP!.p, topP!.minKeep));
     }
 
     if (minP != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_min_p(minP!.p, minP!.minKeep));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler,
+          generalAiLLamaLibrary.llama_sampler_init_min_p(
+              minP!.p, minP!.minKeep));
     }
 
     if (typicalP != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_typical(typicalP!.p, typicalP!.minKeep));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler,
+          generalAiLLamaLibrary.llama_sampler_init_typical(
+              typicalP!.p, typicalP!.minKeep));
     }
 
     if (temperature != null) {
       if (temperature!.delta == null || temperature!.exponent == null) {
-        generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_temp(temperature!.temperature));
+        generalAiLLamaLibrary.llama_sampler_chain_add(
+            sampler,
+            generalAiLLamaLibrary
+                .llama_sampler_init_temp(temperature!.temperature));
       } else {
-        generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_temp_ext(temperature!.temperature, temperature!.delta!, temperature!.exponent!));
+        generalAiLLamaLibrary.llama_sampler_chain_add(
+            sampler,
+            generalAiLLamaLibrary.llama_sampler_init_temp_ext(
+                temperature!.temperature,
+                temperature!.delta!,
+                temperature!.exponent!));
       }
     }
 
     if (xtc != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_xtc(xtc!.p, xtc!.t, xtc!.minKeep, xtc!.seed));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler,
+          generalAiLLamaLibrary.llama_sampler_init_xtc(
+              xtc!.p, xtc!.t, xtc!.minKeep, xtc!.seed));
     }
 
     if (mirostat != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_mirostat(mirostat!.nVocab, mirostat!.seed, mirostat!.tau, mirostat!.eta, mirostat!.m));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler,
+          generalAiLLamaLibrary.llama_sampler_init_mirostat(mirostat!.nVocab,
+              mirostat!.seed, mirostat!.tau, mirostat!.eta, mirostat!.m));
     }
 
     if (mirostatV2 != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_mirostat_v2(mirostatV2!.seed, mirostatV2!.tau, mirostatV2!.eta));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler,
+          generalAiLLamaLibrary.llama_sampler_init_mirostat_v2(
+              mirostatV2!.seed, mirostatV2!.tau, mirostatV2!.eta));
     }
 
     if (grammar != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_grammar(vocab, grammar!.str.toNativeUtf8().cast<ffi.Char>(), grammar!.root.toNativeUtf8().cast<ffi.Char>()));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler,
+          generalAiLLamaLibrary.llama_sampler_init_grammar(
+              vocab,
+              grammar!.str.toNativeUtf8().cast<ffi.Char>(),
+              grammar!.root.toNativeUtf8().cast<ffi.Char>()));
     }
 
     if (penalties != null) {
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_penalties(penalties!.lastN, penalties!.repeat, penalties!.frequency, penalties!.present));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler,
+          generalAiLLamaLibrary.llama_sampler_init_penalties(penalties!.lastN,
+              penalties!.repeat, penalties!.frequency, penalties!.present));
     }
 
     if (drySampler != null) {
-      final sequenceBreakers = calloc<ffi.Pointer<ffi.Char>>(drySampler!.sequenceBreakers.length);
+      final sequenceBreakers =
+          calloc<ffi.Pointer<ffi.Char>>(drySampler!.sequenceBreakers.length);
       for (var i = 0; i < drySampler!.sequenceBreakers.length; i++) {
-        sequenceBreakers[i] = drySampler!.sequenceBreakers[i].toNativeUtf8().cast<ffi.Char>();
+        sequenceBreakers[i] =
+            drySampler!.sequenceBreakers[i].toNativeUtf8().cast<ffi.Char>();
       }
 
-      generalAiLLamaLibrary.llama_sampler_chain_add(sampler, generalAiLLamaLibrary.llama_sampler_init_dry(vocab, drySampler!.nCtxTrain, drySampler!.multiplier, drySampler!.dryBase, drySampler!.allowedLength, drySampler!.penaltyLastN, sequenceBreakers, drySampler!.sequenceBreakers.length));
+      generalAiLLamaLibrary.llama_sampler_chain_add(
+          sampler,
+          generalAiLLamaLibrary.llama_sampler_init_dry(
+              vocab,
+              drySampler!.nCtxTrain,
+              drySampler!.multiplier,
+              drySampler!.dryBase,
+              drySampler!.allowedLength,
+              drySampler!.penaltyLastN,
+              sequenceBreakers,
+              drySampler!.sequenceBreakers.length));
     }
 
     return sampler;
   }
 
-  Map<String, dynamic> toMap() => {'greedy': greedy, 'infill': infill, 'seed': seed, 'topK': topK, 'topP': topP?.toMap(), 'minP': minP?.toMap(), 'typicalP': typicalP?.toMap(), 'temperature': temperature?.toMap(), 'xtc': xtc?.toMap(), 'mirostat': mirostat?.toMap(), 'mirostatV2': mirostatV2?.toMap(), 'grammar': grammar?.toMap(), 'penalties': penalties?.toMap(), 'drySampler': drySampler?.toMap()};
+  Map<String, dynamic> toMap() => {
+        'greedy': greedy,
+        'infill': infill,
+        'seed': seed,
+        'topK': topK,
+        'topP': topP?.toMap(),
+        'minP': minP?.toMap(),
+        'typicalP': typicalP?.toMap(),
+        'temperature': temperature?.toMap(),
+        'xtc': xtc?.toMap(),
+        'mirostat': mirostat?.toMap(),
+        'mirostatV2': mirostatV2?.toMap(),
+        'grammar': grammar?.toMap(),
+        'penalties': penalties?.toMap(),
+        'drySampler': drySampler?.toMap()
+      };
 
   String toJson() => jsonEncode(toMap());
 }

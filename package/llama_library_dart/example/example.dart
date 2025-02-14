@@ -40,7 +40,8 @@ import 'package:llama_library/raw/lcpp.dart';
 void main(List<String> args) async {
   print("start");
 
-  File modelFile = File("../../../../../big-data/llama/Meta-Llama-3.1-8B-Instruct.Q8_0.gguf");
+  File modelFile = File(
+      "../../../../../big-data/llama/Meta-Llama-3.1-8B-Instruct.Q8_0.gguf");
 
   final LlamaLibrary llamaLibrary = LlamaLibrary(
     sharedLibraryPath: "../llama_library_flutter/linux/libllama.so",

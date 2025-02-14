@@ -40,13 +40,12 @@ import 'base.dart';
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 class LlamaLibrary extends LlamaLibraryBase {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   LlamaLibrary({super.sharedLibraryPath});
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
   @override
-  void close() {
-   }
+  void close() {}
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
   final bool _isCrash = false;
@@ -94,7 +93,9 @@ class LlamaLibrary extends LlamaLibraryBase {
   }
 
   @override
-  EventEmitterListener on({required String eventType, required FutureOr Function(dynamic data) onUpdate}) {
+  EventEmitterListener on(
+      {required String eventType,
+      required FutureOr Function(dynamic data) onUpdate}) {
     throw UnimplementedError();
   }
 

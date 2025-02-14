@@ -7,29 +7,38 @@ import 'dart:ffi' as ffi;
 /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
 class LlamaLibrarySharedBindingsByGeneralDeveloper {
   /// Holds the symbol lookup function.
-  final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) _lookup;
+  final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
+      _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
-  LlamaLibrarySharedBindingsByGeneralDeveloper(ffi.DynamicLibrary dynamicLibrary) : _lookup = dynamicLibrary.lookup;
+  LlamaLibrarySharedBindingsByGeneralDeveloper(
+      ffi.DynamicLibrary dynamicLibrary)
+      : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
-  LlamaLibrarySharedBindingsByGeneralDeveloper.fromLookup(ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) lookup) : _lookup = lookup;
+  LlamaLibrarySharedBindingsByGeneralDeveloper.fromLookup(
+      ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
+          lookup)
+      : _lookup = lookup;
 
-  late final ffi.Pointer<ffi.Pointer<FILE>> _stdin = _lookup<ffi.Pointer<FILE>>('stdin');
+  late final ffi.Pointer<ffi.Pointer<FILE>> _stdin =
+      _lookup<ffi.Pointer<FILE>>('stdin');
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> get stdin => _stdin.value;
 
   set stdin(ffi.Pointer<FILE> value) => _stdin.value = value;
 
-  late final ffi.Pointer<ffi.Pointer<FILE>> _stdout = _lookup<ffi.Pointer<FILE>>('stdout');
+  late final ffi.Pointer<ffi.Pointer<FILE>> _stdout =
+      _lookup<ffi.Pointer<FILE>>('stdout');
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> get stdout => _stdout.value;
 
   set stdout(ffi.Pointer<FILE> value) => _stdout.value = value;
 
-  late final ffi.Pointer<ffi.Pointer<FILE>> _stderr = _lookup<ffi.Pointer<FILE>>('stderr');
+  late final ffi.Pointer<ffi.Pointer<FILE>> _stderr =
+      _lookup<ffi.Pointer<FILE>>('stderr');
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> get stderr => _stderr.value;
@@ -45,8 +54,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _removePtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>('remove');
-  late final _remove = _removePtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+  late final _removePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
+          'remove');
+  late final _remove =
+      _removePtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int rename(
@@ -59,8 +71,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _renamePtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('rename');
-  late final _rename = _renamePtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _renamePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('rename');
+  late final _rename = _renamePtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int renameat(
@@ -77,8 +93,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _renameatPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>, ffi.Int, ffi.Pointer<ffi.Char>)>>('renameat');
-  late final _renameat = _renameatPtr.asFunction<int Function(int, ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
+  late final _renameatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>, ffi.Int,
+              ffi.Pointer<ffi.Char>)>>('renameat');
+  late final _renameat = _renameatPtr.asFunction<
+      int Function(int, ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fclose(
@@ -89,7 +109,9 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fclosePtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('fclose');
+  late final _fclosePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'fclose');
   late final _fclose = _fclosePtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -97,7 +119,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     return _tmpfile();
   }
 
-  late final _tmpfilePtr = _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function()>>('tmpfile');
+  late final _tmpfilePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function()>>('tmpfile');
   late final _tmpfile = _tmpfilePtr.asFunction<ffi.Pointer<FILE> Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -109,8 +132,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _tmpnamPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('tmpnam');
-  late final _tmpnam = _tmpnamPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
+  late final _tmpnamPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('tmpnam');
+  late final _tmpnam = _tmpnamPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> tmpnam_r(
@@ -121,8 +147,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _tmpnam_rPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('tmpnam_r');
-  late final _tmpnam_r = _tmpnam_rPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
+  late final _tmpnam_rPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('tmpnam_r');
+  late final _tmpnam_r = _tmpnam_rPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> tempnam(
@@ -135,8 +164,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _tempnamPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('tempnam');
-  late final _tempnam = _tempnamPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _tempnamPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('tempnam');
+  late final _tempnam = _tempnamPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fflush(
@@ -147,7 +181,9 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fflushPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('fflush');
+  late final _fflushPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'fflush');
   late final _fflush = _fflushPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -159,8 +195,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fflush_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('fflush_unlocked');
-  late final _fflush_unlocked = _fflush_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
+  late final _fflush_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'fflush_unlocked');
+  late final _fflush_unlocked =
+      _fflush_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> fopen(
@@ -173,8 +212,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fopenPtr = _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('fopen');
-  late final _fopen = _fopenPtr.asFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _fopenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<FILE> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('fopen');
+  late final _fopen = _fopenPtr.asFunction<
+      ffi.Pointer<FILE> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> freopen(
@@ -189,8 +233,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _freopenPtr = _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>>('freopen');
-  late final _freopen = _freopenPtr.asFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>();
+  late final _freopenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>>('freopen');
+  late final _freopen = _freopenPtr.asFunction<
+      ffi.Pointer<FILE> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> fdopen(
@@ -203,8 +252,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fdopenPtr = _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function(ffi.Int, ffi.Pointer<ffi.Char>)>>('fdopen');
-  late final _fdopen = _fdopenPtr.asFunction<ffi.Pointer<FILE> Function(int, ffi.Pointer<ffi.Char>)>();
+  late final _fdopenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<FILE> Function(
+              ffi.Int, ffi.Pointer<ffi.Char>)>>('fdopen');
+  late final _fdopen = _fdopenPtr
+      .asFunction<ffi.Pointer<FILE> Function(int, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> fopencookie(
@@ -219,8 +272,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fopencookiePtr = _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>, cookie_io_functions_t)>>('fopencookie');
-  late final _fopencookie = _fopencookiePtr.asFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>, cookie_io_functions_t)>();
+  late final _fopencookiePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Char>, cookie_io_functions_t)>>('fopencookie');
+  late final _fopencookie = _fopencookiePtr.asFunction<
+      ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
+          cookie_io_functions_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> fmemopen(
@@ -235,8 +293,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fmemopenPtr = _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Pointer<ffi.Char>)>>('fmemopen');
-  late final _fmemopen = _fmemopenPtr.asFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Char>)>();
+  late final _fmemopenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Void>, ffi.Size,
+              ffi.Pointer<ffi.Char>)>>('fmemopen');
+  late final _fmemopen = _fmemopenPtr.asFunction<
+      ffi.Pointer<FILE> Function(
+          ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> open_memstream(
@@ -249,8 +312,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _open_memstreamPtr = _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>)>>('open_memstream');
-  late final _open_memstream = _open_memstreamPtr.asFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>)>();
+  late final _open_memstreamPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Pointer<ffi.Size>)>>('open_memstream');
+  late final _open_memstream = _open_memstreamPtr.asFunction<
+      ffi.Pointer<FILE> Function(
+          ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void setbuf(
@@ -263,8 +331,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _setbufPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>>('setbuf');
-  late final _setbuf = _setbufPtr.asFunction<void Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>();
+  late final _setbufPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>>('setbuf');
+  late final _setbuf = _setbufPtr
+      .asFunction<void Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int setvbuf(
@@ -281,8 +353,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _setvbufPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, ffi.Int, ffi.Size)>>('setvbuf');
-  late final _setvbuf = _setvbufPtr.asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, int, int)>();
+  late final _setvbufPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, ffi.Int,
+              ffi.Size)>>('setvbuf');
+  late final _setvbuf = _setvbufPtr.asFunction<
+      int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void setbuffer(
@@ -297,8 +373,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _setbufferPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, ffi.Size)>>('setbuffer');
-  late final _setbuffer = _setbufferPtr.asFunction<void Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, int)>();
+  late final _setbufferPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>,
+              ffi.Size)>>('setbuffer');
+  late final _setbuffer = _setbufferPtr.asFunction<
+      void Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void setlinebuf(
@@ -309,8 +389,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _setlinebufPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>('setlinebuf');
-  late final _setlinebuf = _setlinebufPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
+  late final _setlinebufPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>(
+          'setlinebuf');
+  late final _setlinebuf =
+      _setlinebufPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fprintf(
@@ -323,8 +406,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>>('fprintf');
-  late final _fprintf = _fprintfPtr.asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>();
+  late final _fprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>>('fprintf');
+  late final _fprintf = _fprintfPtr
+      .asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int printf(
@@ -335,8 +422,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _printfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>('printf');
-  late final _printf = _printfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+  late final _printfPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
+          'printf');
+  late final _printf =
+      _printfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int sprintf(
@@ -349,8 +439,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _sprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('sprintf');
-  late final _sprintf = _sprintfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _sprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('sprintf');
+  late final _sprintf = _sprintfPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int vfprintf(
@@ -365,8 +459,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _vfprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vfprintf');
-  late final _vfprintf = _vfprintfPtr.asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+  late final _vfprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<__va_list_tag>)>>('vfprintf');
+  late final _vfprintf = _vfprintfPtr.asFunction<
+      int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<__va_list_tag>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int vprintf(
@@ -379,8 +478,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _vprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vprintf');
-  late final _vprintf = _vprintfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+  late final _vprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vprintf');
+  late final _vprintf = _vprintfPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int vsprintf(
@@ -395,8 +498,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _vsprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vsprintf');
-  late final _vsprintf = _vsprintfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+  late final _vsprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<__va_list_tag>)>>('vsprintf');
+  late final _vsprintf = _vsprintfPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<__va_list_tag>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int snprintf(
@@ -411,8 +519,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _snprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Size, ffi.Pointer<ffi.Char>)>>('snprintf');
-  late final _snprintf = _snprintfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
+  late final _snprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Size,
+              ffi.Pointer<ffi.Char>)>>('snprintf');
+  late final _snprintf = _snprintfPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int vsnprintf(
@@ -429,8 +541,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _vsnprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Size, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vsnprintf');
-  late final _vsnprintf = _vsnprintfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+  late final _vsnprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Size,
+              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vsnprintf');
+  late final _vsnprintf = _vsnprintfPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<__va_list_tag>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int vasprintf(
@@ -445,8 +562,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _vasprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vasprintf');
-  late final _vasprintf = _vasprintfPtr.asFunction<int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+  late final _vasprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vasprintf');
+  late final _vasprintf = _vasprintfPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<__va_list_tag>)>();
 
   int __asprintf(
     ffi.Pointer<ffi.Pointer<ffi.Char>> __ptr,
@@ -458,8 +580,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final ___asprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>>('__asprintf');
-  late final ___asprintf = ___asprintfPtr.asFunction<int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>();
+  late final ___asprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Pointer<ffi.Char>)>>('__asprintf');
+  late final ___asprintf = ___asprintfPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int asprintf(
@@ -472,8 +599,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _asprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>>('asprintf');
-  late final _asprintf = _asprintfPtr.asFunction<int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>();
+  late final _asprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Pointer<ffi.Char>)>>('asprintf');
+  late final _asprintf = _asprintfPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int vdprintf(
@@ -488,8 +620,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _vdprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vdprintf');
-  late final _vdprintf = _vdprintfPtr.asFunction<int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+  late final _vdprintfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<__va_list_tag>)>>('vdprintf');
+  late final _vdprintf = _vdprintfPtr.asFunction<
+      int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int dprintf(
@@ -502,8 +638,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _dprintfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>)>>('dprintf');
-  late final _dprintf = _dprintfPtr.asFunction<int Function(int, ffi.Pointer<ffi.Char>)>();
+  late final _dprintfPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<ffi.Char>)>>(
+      'dprintf');
+  late final _dprintf =
+      _dprintfPtr.asFunction<int Function(int, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fscanf(
@@ -516,8 +655,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fscanfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>>('fscanf');
-  late final _fscanf = _fscanfPtr.asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>();
+  late final _fscanfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>>('fscanf');
+  late final _fscanf = _fscanfPtr
+      .asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int scanf(
@@ -528,8 +671,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _scanfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>('scanf');
-  late final _scanf = _scanfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+  late final _scanfPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
+          'scanf');
+  late final _scanf =
+      _scanfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int sscanf(
@@ -542,8 +688,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _sscanfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('sscanf');
-  late final _sscanf = _sscanfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _sscanfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('sscanf');
+  late final _sscanf = _sscanfPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int vfscanf(
@@ -558,8 +708,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _vfscanfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vfscanf');
-  late final _vfscanf = _vfscanfPtr.asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+  late final _vfscanfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<__va_list_tag>)>>('vfscanf');
+  late final _vfscanf = _vfscanfPtr.asFunction<
+      int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<__va_list_tag>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int vscanf(
@@ -572,8 +727,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _vscanfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vscanf');
-  late final _vscanf = _vscanfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+  late final _vscanfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vscanf');
+  late final _vscanf = _vscanfPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int vsscanf(
@@ -588,8 +747,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _vsscanfPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('vsscanf');
-  late final _vsscanf = _vsscanfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+  late final _vsscanfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<__va_list_tag>)>>('vsscanf');
+  late final _vsscanf = _vsscanfPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<__va_list_tag>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fgetc(
@@ -600,7 +764,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fgetcPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('fgetc');
+  late final _fgetcPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('fgetc');
   late final _fgetc = _fgetcPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -612,7 +777,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _getcPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('getc');
+  late final _getcPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('getc');
   late final _getc = _getcPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -620,7 +786,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     return _getchar();
   }
 
-  late final _getcharPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('getchar');
+  late final _getcharPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('getchar');
   late final _getchar = _getcharPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -632,16 +799,21 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _getc_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('getc_unlocked');
-  late final _getc_unlocked = _getc_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
+  late final _getc_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'getc_unlocked');
+  late final _getc_unlocked =
+      _getc_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int getchar_unlocked() {
     return _getchar_unlocked();
   }
 
-  late final _getchar_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('getchar_unlocked');
-  late final _getchar_unlocked = _getchar_unlockedPtr.asFunction<int Function()>();
+  late final _getchar_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('getchar_unlocked');
+  late final _getchar_unlocked =
+      _getchar_unlockedPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fgetc_unlocked(
@@ -652,8 +824,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fgetc_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('fgetc_unlocked');
-  late final _fgetc_unlocked = _fgetc_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
+  late final _fgetc_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'fgetc_unlocked');
+  late final _fgetc_unlocked =
+      _fgetc_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fputc(
@@ -666,8 +841,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fputcPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>('fputc');
-  late final _fputc = _fputcPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
+  late final _fputcPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>(
+          'fputc');
+  late final _fputc =
+      _fputcPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int putc(
@@ -680,8 +858,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _putcPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>('putc');
-  late final _putc = _putcPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
+  late final _putcPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>(
+          'putc');
+  late final _putc =
+      _putcPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int putchar(
@@ -692,7 +873,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _putcharPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('putchar');
+  late final _putcharPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('putchar');
   late final _putchar = _putcharPtr.asFunction<int Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -706,8 +888,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fputc_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>('fputc_unlocked');
-  late final _fputc_unlocked = _fputc_unlockedPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
+  late final _fputc_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>(
+          'fputc_unlocked');
+  late final _fputc_unlocked =
+      _fputc_unlockedPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int putc_unlocked(
@@ -720,8 +905,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _putc_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>('putc_unlocked');
-  late final _putc_unlocked = _putc_unlockedPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
+  late final _putc_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>(
+          'putc_unlocked');
+  late final _putc_unlocked =
+      _putc_unlockedPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int putchar_unlocked(
@@ -732,8 +920,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _putchar_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('putchar_unlocked');
-  late final _putchar_unlocked = _putchar_unlockedPtr.asFunction<int Function(int)>();
+  late final _putchar_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>(
+          'putchar_unlocked');
+  late final _putchar_unlocked =
+      _putchar_unlockedPtr.asFunction<int Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int getw(
@@ -744,7 +935,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _getwPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('getw');
+  late final _getwPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('getw');
   late final _getw = _getwPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -758,8 +950,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _putwPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>('putw');
-  late final _putw = _putwPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
+  late final _putwPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>(
+          'putw');
+  late final _putw =
+      _putwPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> fgets(
@@ -774,8 +969,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fgetsPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, ffi.Int, ffi.Pointer<FILE>)>>('fgets');
-  late final _fgets = _fgetsPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<FILE>)>();
+  late final _fgetsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Pointer<FILE>)>>('fgets');
+  late final _fgets = _fgetsPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          ffi.Pointer<ffi.Char>, int, ffi.Pointer<FILE>)>();
 
   int __getdelim(
     ffi.Pointer<ffi.Pointer<ffi.Char>> __lineptr,
@@ -791,8 +991,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final ___getdelimPtr = _lookup<ffi.NativeFunction<__ssize_t Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>, ffi.Int, ffi.Pointer<FILE>)>>('__getdelim');
-  late final ___getdelim = ___getdelimPtr.asFunction<int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>, int, ffi.Pointer<FILE>)>();
+  late final ___getdelimPtr = _lookup<
+      ffi.NativeFunction<
+          __ssize_t Function(
+              ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Pointer<ffi.Size>,
+              ffi.Int,
+              ffi.Pointer<FILE>)>>('__getdelim');
+  late final ___getdelim = ___getdelimPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>,
+          int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int getdelim(
@@ -809,8 +1017,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _getdelimPtr = _lookup<ffi.NativeFunction<__ssize_t Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>, ffi.Int, ffi.Pointer<FILE>)>>('getdelim');
-  late final _getdelim = _getdelimPtr.asFunction<int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>, int, ffi.Pointer<FILE>)>();
+  late final _getdelimPtr = _lookup<
+      ffi.NativeFunction<
+          __ssize_t Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Pointer<ffi.Size>, ffi.Int, ffi.Pointer<FILE>)>>('getdelim');
+  late final _getdelim = _getdelimPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>,
+          int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int getline(
@@ -825,8 +1038,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _getlinePtr = _lookup<ffi.NativeFunction<__ssize_t Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>, ffi.Pointer<FILE>)>>('getline');
-  late final _getline = _getlinePtr.asFunction<int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>, ffi.Pointer<FILE>)>();
+  late final _getlinePtr = _lookup<
+      ffi.NativeFunction<
+          __ssize_t Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Pointer<ffi.Size>, ffi.Pointer<FILE>)>>('getline');
+  late final _getline = _getlinePtr.asFunction<
+      int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>,
+          ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fputs(
@@ -839,8 +1057,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fputsPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>>('fputs');
-  late final _fputs = _fputsPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>();
+  late final _fputsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>>('fputs');
+  late final _fputs = _fputsPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int puts(
@@ -851,7 +1072,9 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _putsPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>('puts');
+  late final _putsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>)>>(
+          'puts');
   late final _puts = _putsPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -865,8 +1088,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ungetcPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>('ungetc');
-  late final _ungetc = _ungetcPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
+  late final _ungetcPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int, ffi.Pointer<FILE>)>>(
+          'ungetc');
+  late final _ungetc =
+      _ungetcPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fread(
@@ -883,8 +1109,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _freadPtr = _lookup<ffi.NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size, ffi.Pointer<FILE>)>>('fread');
-  late final _fread = _freadPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
+  late final _freadPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.UnsignedLong Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size,
+              ffi.Pointer<FILE>)>>('fread');
+  late final _fread = _freadPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fwrite(
@@ -901,8 +1131,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fwritePtr = _lookup<ffi.NativeFunction<ffi.UnsignedLong Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size, ffi.Pointer<FILE>)>>('fwrite');
-  late final _fwrite = _fwritePtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
+  late final _fwritePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.UnsignedLong Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size,
+              ffi.Pointer<FILE>)>>('fwrite');
+  late final _fwrite = _fwritePtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fread_unlocked(
@@ -919,8 +1153,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fread_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size, ffi.Pointer<FILE>)>>('fread_unlocked');
-  late final _fread_unlocked = _fread_unlockedPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
+  late final _fread_unlockedPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size,
+              ffi.Pointer<FILE>)>>('fread_unlocked');
+  late final _fread_unlocked = _fread_unlockedPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fwrite_unlocked(
@@ -937,8 +1175,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fwrite_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size, ffi.Pointer<FILE>)>>('fwrite_unlocked');
-  late final _fwrite_unlocked = _fwrite_unlockedPtr.asFunction<int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
+  late final _fwrite_unlockedPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size,
+              ffi.Pointer<FILE>)>>('fwrite_unlocked');
+  late final _fwrite_unlocked = _fwrite_unlockedPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fseek(
@@ -953,8 +1195,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fseekPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Long, ffi.Int)>>('fseek');
-  late final _fseek = _fseekPtr.asFunction<int Function(ffi.Pointer<FILE>, int, int)>();
+  late final _fseekPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<FILE>, ffi.Long, ffi.Int)>>('fseek');
+  late final _fseek =
+      _fseekPtr.asFunction<int Function(ffi.Pointer<FILE>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ftell(
@@ -965,7 +1210,9 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ftellPtr = _lookup<ffi.NativeFunction<ffi.Long Function(ffi.Pointer<FILE>)>>('ftell');
+  late final _ftellPtr =
+      _lookup<ffi.NativeFunction<ffi.Long Function(ffi.Pointer<FILE>)>>(
+          'ftell');
   late final _ftell = _ftellPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -977,8 +1224,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _rewindPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>('rewind');
-  late final _rewind = _rewindPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
+  late final _rewindPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>(
+          'rewind');
+  late final _rewind =
+      _rewindPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fseeko(
@@ -993,8 +1243,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fseekoPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, __off_t, ffi.Int)>>('fseeko');
-  late final _fseeko = _fseekoPtr.asFunction<int Function(ffi.Pointer<FILE>, int, int)>();
+  late final _fseekoPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<FILE>, __off_t, ffi.Int)>>('fseeko');
+  late final _fseeko =
+      _fseekoPtr.asFunction<int Function(ffi.Pointer<FILE>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ftello(
@@ -1005,7 +1258,9 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ftelloPtr = _lookup<ffi.NativeFunction<__off_t Function(ffi.Pointer<FILE>)>>('ftello');
+  late final _ftelloPtr =
+      _lookup<ffi.NativeFunction<__off_t Function(ffi.Pointer<FILE>)>>(
+          'ftello');
   late final _ftello = _ftelloPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -1019,8 +1274,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fgetposPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>>('fgetpos');
-  late final _fgetpos = _fgetposPtr.asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>();
+  late final _fgetposPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>>('fgetpos');
+  late final _fgetpos = _fgetposPtr
+      .asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fsetpos(
@@ -1033,8 +1291,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fsetposPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>>('fsetpos');
-  late final _fsetpos = _fsetposPtr.asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>();
+  late final _fsetposPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>>('fsetpos');
+  late final _fsetpos = _fsetposPtr
+      .asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void clearerr(
@@ -1045,8 +1306,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _clearerrPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>('clearerr');
-  late final _clearerr = _clearerrPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
+  late final _clearerrPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>(
+          'clearerr');
+  late final _clearerr =
+      _clearerrPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int feof(
@@ -1057,7 +1321,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _feofPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('feof');
+  late final _feofPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('feof');
   late final _feof = _feofPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -1069,7 +1334,9 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ferrorPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('ferror');
+  late final _ferrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'ferror');
   late final _ferror = _ferrorPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -1081,8 +1348,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _clearerr_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>('clearerr_unlocked');
-  late final _clearerr_unlocked = _clearerr_unlockedPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
+  late final _clearerr_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>(
+          'clearerr_unlocked');
+  late final _clearerr_unlocked =
+      _clearerr_unlockedPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int feof_unlocked(
@@ -1093,8 +1363,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _feof_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('feof_unlocked');
-  late final _feof_unlocked = _feof_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
+  late final _feof_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'feof_unlocked');
+  late final _feof_unlocked =
+      _feof_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ferror_unlocked(
@@ -1105,8 +1378,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ferror_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('ferror_unlocked');
-  late final _ferror_unlocked = _ferror_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
+  late final _ferror_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'ferror_unlocked');
+  late final _ferror_unlocked =
+      _ferror_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void perror(
@@ -1117,8 +1393,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _perrorPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Char>)>>('perror');
-  late final _perror = _perrorPtr.asFunction<void Function(ffi.Pointer<ffi.Char>)>();
+  late final _perrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Char>)>>(
+          'perror');
+  late final _perror =
+      _perrorPtr.asFunction<void Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int fileno(
@@ -1129,7 +1408,9 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _filenoPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('fileno');
+  late final _filenoPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'fileno');
   late final _fileno = _filenoPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -1141,8 +1422,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _fileno_unlockedPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('fileno_unlocked');
-  late final _fileno_unlocked = _fileno_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
+  late final _fileno_unlockedPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'fileno_unlocked');
+  late final _fileno_unlocked =
+      _fileno_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int pclose(
@@ -1153,7 +1437,9 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _pclosePtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('pclose');
+  late final _pclosePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'pclose');
   late final _pclose = _pclosePtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -1167,8 +1453,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _popenPtr = _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('popen');
-  late final _popen = _popenPtr.asFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _popenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<FILE> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('popen');
+  late final _popen = _popenPtr.asFunction<
+      ffi.Pointer<FILE> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ctermid(
@@ -1179,8 +1470,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ctermidPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('ctermid');
-  late final _ctermid = _ctermidPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
+  late final _ctermidPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>>('ctermid');
+  late final _ctermid = _ctermidPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void flockfile(
@@ -1191,8 +1485,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _flockfilePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>('flockfile');
-  late final _flockfile = _flockfilePtr.asFunction<void Function(ffi.Pointer<FILE>)>();
+  late final _flockfilePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>(
+          'flockfile');
+  late final _flockfile =
+      _flockfilePtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ftrylockfile(
@@ -1203,8 +1500,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ftrylockfilePtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('ftrylockfile');
-  late final _ftrylockfile = _ftrylockfilePtr.asFunction<int Function(ffi.Pointer<FILE>)>();
+  late final _ftrylockfilePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          'ftrylockfile');
+  late final _ftrylockfile =
+      _ftrylockfilePtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void funlockfile(
@@ -1215,8 +1515,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _funlockfilePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>('funlockfile');
-  late final _funlockfile = _funlockfilePtr.asFunction<void Function(ffi.Pointer<FILE>)>();
+  late final _funlockfilePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<FILE>)>>(
+          'funlockfile');
+  late final _funlockfile =
+      _funlockfilePtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
   int __uflow(
     ffi.Pointer<FILE> arg0,
@@ -1226,8 +1529,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final ___uflowPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('__uflow');
-  late final ___uflow = ___uflowPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
+  late final ___uflowPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>(
+          '__uflow');
+  late final ___uflow =
+      ___uflowPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
   int __overflow(
     ffi.Pointer<FILE> arg0,
@@ -1239,8 +1545,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final ___overflowPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Int)>>('__overflow');
-  late final ___overflow = ___overflowPtr.asFunction<int Function(ffi.Pointer<FILE>, int)>();
+  late final ___overflowPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>, ffi.Int)>>(
+          '__overflow');
+  late final ___overflow =
+      ___overflowPtr.asFunction<int Function(ffi.Pointer<FILE>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_abort(
@@ -1255,8 +1564,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_abortPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Int, ffi.Pointer<ffi.Char>)>>('ggml_abort');
-  late final _ggml_abort = _ggml_abortPtr.asFunction<void Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_abortPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Int,
+              ffi.Pointer<ffi.Char>)>>('ggml_abort');
+  late final _ggml_abort = _ggml_abortPtr.asFunction<
+      void Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_status_to_string(
@@ -1267,8 +1580,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_status_to_stringPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>('ggml_status_to_string');
-  late final _ggml_status_to_string = _ggml_status_to_stringPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+  late final _ggml_status_to_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'ggml_status_to_string');
+  late final _ggml_status_to_string = _ggml_status_to_stringPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   double ggml_fp16_to_fp32(
@@ -1279,8 +1595,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_fp16_to_fp32Ptr = _lookup<ffi.NativeFunction<ffi.Float Function(ggml_fp16_t)>>('ggml_fp16_to_fp32');
-  late final _ggml_fp16_to_fp32 = _ggml_fp16_to_fp32Ptr.asFunction<double Function(int)>();
+  late final _ggml_fp16_to_fp32Ptr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ggml_fp16_t)>>(
+          'ggml_fp16_to_fp32');
+  late final _ggml_fp16_to_fp32 =
+      _ggml_fp16_to_fp32Ptr.asFunction<double Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_fp32_to_fp16(
@@ -1291,8 +1610,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_fp32_to_fp16Ptr = _lookup<ffi.NativeFunction<ggml_fp16_t Function(ffi.Float)>>('ggml_fp32_to_fp16');
-  late final _ggml_fp32_to_fp16 = _ggml_fp32_to_fp16Ptr.asFunction<int Function(double)>();
+  late final _ggml_fp32_to_fp16Ptr =
+      _lookup<ffi.NativeFunction<ggml_fp16_t Function(ffi.Float)>>(
+          'ggml_fp32_to_fp16');
+  late final _ggml_fp32_to_fp16 =
+      _ggml_fp32_to_fp16Ptr.asFunction<int Function(double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_fp16_to_fp32_row(
@@ -1307,8 +1629,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_fp16_to_fp32_rowPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_fp16_t>, ffi.Pointer<ffi.Float>, ffi.Int64)>>('ggml_fp16_to_fp32_row');
-  late final _ggml_fp16_to_fp32_row = _ggml_fp16_to_fp32_rowPtr.asFunction<void Function(ffi.Pointer<ggml_fp16_t>, ffi.Pointer<ffi.Float>, int)>();
+  late final _ggml_fp16_to_fp32_rowPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_fp16_t>, ffi.Pointer<ffi.Float>,
+              ffi.Int64)>>('ggml_fp16_to_fp32_row');
+  late final _ggml_fp16_to_fp32_row = _ggml_fp16_to_fp32_rowPtr.asFunction<
+      void Function(ffi.Pointer<ggml_fp16_t>, ffi.Pointer<ffi.Float>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_fp32_to_fp16_row(
@@ -1323,8 +1649,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_fp32_to_fp16_rowPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_fp16_t>, ffi.Int64)>>('ggml_fp32_to_fp16_row');
-  late final _ggml_fp32_to_fp16_row = _ggml_fp32_to_fp16_rowPtr.asFunction<void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_fp16_t>, int)>();
+  late final _ggml_fp32_to_fp16_rowPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_fp16_t>,
+              ffi.Int64)>>('ggml_fp32_to_fp16_row');
+  late final _ggml_fp32_to_fp16_row = _ggml_fp32_to_fp16_rowPtr.asFunction<
+      void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_fp16_t>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_bf16_t ggml_fp32_to_bf16(
@@ -1335,8 +1665,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_fp32_to_bf16Ptr = _lookup<ffi.NativeFunction<ggml_bf16_t Function(ffi.Float)>>('ggml_fp32_to_bf16');
-  late final _ggml_fp32_to_bf16 = _ggml_fp32_to_bf16Ptr.asFunction<ggml_bf16_t Function(double)>();
+  late final _ggml_fp32_to_bf16Ptr =
+      _lookup<ffi.NativeFunction<ggml_bf16_t Function(ffi.Float)>>(
+          'ggml_fp32_to_bf16');
+  late final _ggml_fp32_to_bf16 =
+      _ggml_fp32_to_bf16Ptr.asFunction<ggml_bf16_t Function(double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   double ggml_bf16_to_fp32(
@@ -1347,8 +1680,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_bf16_to_fp32Ptr = _lookup<ffi.NativeFunction<ffi.Float Function(ggml_bf16_t)>>('ggml_bf16_to_fp32');
-  late final _ggml_bf16_to_fp32 = _ggml_bf16_to_fp32Ptr.asFunction<double Function(ggml_bf16_t)>();
+  late final _ggml_bf16_to_fp32Ptr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ggml_bf16_t)>>(
+          'ggml_bf16_to_fp32');
+  late final _ggml_bf16_to_fp32 =
+      _ggml_bf16_to_fp32Ptr.asFunction<double Function(ggml_bf16_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_bf16_to_fp32_row(
@@ -1363,8 +1699,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_bf16_to_fp32_rowPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_bf16_t>, ffi.Pointer<ffi.Float>, ffi.Int64)>>('ggml_bf16_to_fp32_row');
-  late final _ggml_bf16_to_fp32_row = _ggml_bf16_to_fp32_rowPtr.asFunction<void Function(ffi.Pointer<ggml_bf16_t>, ffi.Pointer<ffi.Float>, int)>();
+  late final _ggml_bf16_to_fp32_rowPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_bf16_t>, ffi.Pointer<ffi.Float>,
+              ffi.Int64)>>('ggml_bf16_to_fp32_row');
+  late final _ggml_bf16_to_fp32_row = _ggml_bf16_to_fp32_rowPtr.asFunction<
+      void Function(ffi.Pointer<ggml_bf16_t>, ffi.Pointer<ffi.Float>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_fp32_to_bf16_row_ref(
@@ -1379,8 +1719,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_fp32_to_bf16_row_refPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_bf16_t>, ffi.Int64)>>('ggml_fp32_to_bf16_row_ref');
-  late final _ggml_fp32_to_bf16_row_ref = _ggml_fp32_to_bf16_row_refPtr.asFunction<void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_bf16_t>, int)>();
+  late final _ggml_fp32_to_bf16_row_refPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_bf16_t>,
+              ffi.Int64)>>('ggml_fp32_to_bf16_row_ref');
+  late final _ggml_fp32_to_bf16_row_ref =
+      _ggml_fp32_to_bf16_row_refPtr.asFunction<
+          void Function(
+              ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_bf16_t>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_fp32_to_bf16_row(
@@ -1395,10 +1741,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_fp32_to_bf16_rowPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_bf16_t>, ffi.Int64)>>('ggml_fp32_to_bf16_row');
-  late final _ggml_fp32_to_bf16_row = _ggml_fp32_to_bf16_rowPtr.asFunction<void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_bf16_t>, int)>();
+  late final _ggml_fp32_to_bf16_rowPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_bf16_t>,
+              ffi.Int64)>>('ggml_fp32_to_bf16_row');
+  late final _ggml_fp32_to_bf16_row = _ggml_fp32_to_bf16_rowPtr.asFunction<
+      void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_bf16_t>, int)>();
 
-  late final ffi.Pointer<ffi.Size> _GGML_TENSOR_SIZE = _lookup<ffi.Size>('GGML_TENSOR_SIZE');
+  late final ffi.Pointer<ffi.Size> _GGML_TENSOR_SIZE =
+      _lookup<ffi.Size>('GGML_TENSOR_SIZE');
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int get GGML_TENSOR_SIZE => _GGML_TENSOR_SIZE.value;
@@ -1414,15 +1765,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_guid_matchesPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_guid_t, ggml_guid_t)>>('ggml_guid_matches');
-  late final _ggml_guid_matches = _ggml_guid_matchesPtr.asFunction<bool Function(ggml_guid_t, ggml_guid_t)>();
+  late final _ggml_guid_matchesPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_guid_t, ggml_guid_t)>>(
+          'ggml_guid_matches');
+  late final _ggml_guid_matches = _ggml_guid_matchesPtr
+      .asFunction<bool Function(ggml_guid_t, ggml_guid_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_time_init() {
     return _ggml_time_init();
   }
 
-  late final _ggml_time_initPtr = _lookup<ffi.NativeFunction<ffi.Void Function()>>('ggml_time_init');
+  late final _ggml_time_initPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('ggml_time_init');
   late final _ggml_time_init = _ggml_time_initPtr.asFunction<void Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -1430,7 +1785,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     return _ggml_time_ms();
   }
 
-  late final _ggml_time_msPtr = _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_time_ms');
+  late final _ggml_time_msPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_time_ms');
   late final _ggml_time_ms = _ggml_time_msPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -1438,7 +1794,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     return _ggml_time_us();
   }
 
-  late final _ggml_time_usPtr = _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_time_us');
+  late final _ggml_time_usPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_time_us');
   late final _ggml_time_us = _ggml_time_usPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -1446,7 +1803,8 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     return _ggml_cycles();
   }
 
-  late final _ggml_cyclesPtr = _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_cycles');
+  late final _ggml_cyclesPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_cycles');
   late final _ggml_cycles = _ggml_cyclesPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
@@ -1454,8 +1812,10 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     return _ggml_cycles_per_ms();
   }
 
-  late final _ggml_cycles_per_msPtr = _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_cycles_per_ms');
-  late final _ggml_cycles_per_ms = _ggml_cycles_per_msPtr.asFunction<int Function()>();
+  late final _ggml_cycles_per_msPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_cycles_per_ms');
+  late final _ggml_cycles_per_ms =
+      _ggml_cycles_per_msPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> ggml_fopen(
@@ -1468,8 +1828,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_fopenPtr = _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('ggml_fopen');
-  late final _ggml_fopen = _ggml_fopenPtr.asFunction<ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_fopenPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<FILE> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('ggml_fopen');
+  late final _ggml_fopen = _ggml_fopenPtr.asFunction<
+      ffi.Pointer<FILE> Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_print_object(
@@ -1480,8 +1845,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_print_objectPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_object>)>>('ggml_print_object');
-  late final _ggml_print_object = _ggml_print_objectPtr.asFunction<void Function(ffi.Pointer<ggml_object>)>();
+  late final _ggml_print_objectPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_object>)>>(
+          'ggml_print_object');
+  late final _ggml_print_object = _ggml_print_objectPtr
+      .asFunction<void Function(ffi.Pointer<ggml_object>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_print_objects(
@@ -1492,8 +1860,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_print_objectsPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_context>)>>('ggml_print_objects');
-  late final _ggml_print_objects = _ggml_print_objectsPtr.asFunction<void Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_print_objectsPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_context>)>>(
+          'ggml_print_objects');
+  late final _ggml_print_objects = _ggml_print_objectsPtr
+      .asFunction<void Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_nelements(
@@ -1504,8 +1875,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_nelementsPtr = _lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Pointer<ggml_tensor>)>>('ggml_nelements');
-  late final _ggml_nelements = _ggml_nelementsPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_nelementsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_nelements');
+  late final _ggml_nelements =
+      _ggml_nelementsPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_nrows(
@@ -1516,8 +1890,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_nrowsPtr = _lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Pointer<ggml_tensor>)>>('ggml_nrows');
-  late final _ggml_nrows = _ggml_nrowsPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_nrowsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_nrows');
+  late final _ggml_nrows =
+      _ggml_nrowsPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_nbytes(
@@ -1528,8 +1905,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_nbytesPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_tensor>)>>('ggml_nbytes');
-  late final _ggml_nbytes = _ggml_nbytesPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_nbytesPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_nbytes');
+  late final _ggml_nbytes =
+      _ggml_nbytesPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_nbytes_pad(
@@ -1540,8 +1920,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_nbytes_padPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_tensor>)>>('ggml_nbytes_pad');
-  late final _ggml_nbytes_pad = _ggml_nbytes_padPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_nbytes_padPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_nbytes_pad');
+  late final _ggml_nbytes_pad =
+      _ggml_nbytes_padPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_blck_size(
@@ -1552,8 +1935,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_blck_sizePtr = _lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Int32)>>('ggml_blck_size');
-  late final _ggml_blck_size = _ggml_blck_sizePtr.asFunction<int Function(int)>();
+  late final _ggml_blck_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Int32)>>(
+          'ggml_blck_size');
+  late final _ggml_blck_size =
+      _ggml_blck_sizePtr.asFunction<int Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_type_size(
@@ -1564,8 +1950,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_type_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Int32)>>('ggml_type_size');
-  late final _ggml_type_size = _ggml_type_sizePtr.asFunction<int Function(int)>();
+  late final _ggml_type_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Int32)>>(
+          'ggml_type_size');
+  late final _ggml_type_size =
+      _ggml_type_sizePtr.asFunction<int Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_row_size(
@@ -1578,8 +1967,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_row_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Int32, ffi.Int64)>>('ggml_row_size');
-  late final _ggml_row_size = _ggml_row_sizePtr.asFunction<int Function(int, int)>();
+  late final _ggml_row_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Int32, ffi.Int64)>>(
+          'ggml_row_size');
+  late final _ggml_row_size =
+      _ggml_row_sizePtr.asFunction<int Function(int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   double ggml_type_sizef(
@@ -1590,8 +1982,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_type_sizefPtr = _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Int32)>>('ggml_type_sizef');
-  late final _ggml_type_sizef = _ggml_type_sizefPtr.asFunction<double Function(int)>();
+  late final _ggml_type_sizefPtr =
+      _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Int32)>>(
+          'ggml_type_sizef');
+  late final _ggml_type_sizef =
+      _ggml_type_sizefPtr.asFunction<double Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_type_name(
@@ -1602,8 +1997,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_type_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>('ggml_type_name');
-  late final _ggml_type_name = _ggml_type_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+  late final _ggml_type_namePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'ggml_type_name');
+  late final _ggml_type_name =
+      _ggml_type_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_op_name(
@@ -1614,8 +2012,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_op_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>('ggml_op_name');
-  late final _ggml_op_name = _ggml_op_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+  late final _ggml_op_namePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'ggml_op_name');
+  late final _ggml_op_name =
+      _ggml_op_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_op_symbol(
@@ -1626,8 +2027,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_op_symbolPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>('ggml_op_symbol');
-  late final _ggml_op_symbol = _ggml_op_symbolPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+  late final _ggml_op_symbolPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'ggml_op_symbol');
+  late final _ggml_op_symbol =
+      _ggml_op_symbolPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_unary_op_name(
@@ -1638,8 +2042,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_unary_op_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>('ggml_unary_op_name');
-  late final _ggml_unary_op_name = _ggml_unary_op_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+  late final _ggml_unary_op_namePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'ggml_unary_op_name');
+  late final _ggml_unary_op_name =
+      _ggml_unary_op_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_op_desc(
@@ -1650,8 +2057,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_op_descPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ggml_tensor>)>>('ggml_op_desc');
-  late final _ggml_op_desc = _ggml_op_descPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_op_descPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ggml_tensor>)>>('ggml_op_desc');
+  late final _ggml_op_desc = _ggml_op_descPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_element_size(
@@ -1662,8 +2073,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_element_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_tensor>)>>('ggml_element_size');
-  late final _ggml_element_size = _ggml_element_sizePtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_element_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_element_size');
+  late final _ggml_element_size = _ggml_element_sizePtr
+      .asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_quantized(
@@ -1674,8 +2088,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_quantizedPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32)>>('ggml_is_quantized');
-  late final _ggml_is_quantized = _ggml_is_quantizedPtr.asFunction<bool Function(int)>();
+  late final _ggml_is_quantizedPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32)>>(
+          'ggml_is_quantized');
+  late final _ggml_is_quantized =
+      _ggml_is_quantizedPtr.asFunction<bool Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_ftype_to_ggml_type(
@@ -1686,8 +2103,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_ftype_to_ggml_typePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>('ggml_ftype_to_ggml_type');
-  late final _ggml_ftype_to_ggml_type = _ggml_ftype_to_ggml_typePtr.asFunction<int Function(int)>();
+  late final _ggml_ftype_to_ggml_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
+          'ggml_ftype_to_ggml_type');
+  late final _ggml_ftype_to_ggml_type =
+      _ggml_ftype_to_ggml_typePtr.asFunction<int Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_transposed(
@@ -1698,8 +2118,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_transposedPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_transposed');
-  late final _ggml_is_transposed = _ggml_is_transposedPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_transposedPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_transposed');
+  late final _ggml_is_transposed = _ggml_is_transposedPtr
+      .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_permuted(
@@ -1710,8 +2133,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_permutedPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_permuted');
-  late final _ggml_is_permuted = _ggml_is_permutedPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_permutedPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_permuted');
+  late final _ggml_is_permuted = _ggml_is_permutedPtr
+      .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_empty(
@@ -1722,8 +2148,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_emptyPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_empty');
-  late final _ggml_is_empty = _ggml_is_emptyPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_emptyPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_empty');
+  late final _ggml_is_empty =
+      _ggml_is_emptyPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_scalar(
@@ -1734,8 +2163,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_scalarPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_scalar');
-  late final _ggml_is_scalar = _ggml_is_scalarPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_scalarPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_scalar');
+  late final _ggml_is_scalar =
+      _ggml_is_scalarPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_vector(
@@ -1746,8 +2178,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_vectorPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_vector');
-  late final _ggml_is_vector = _ggml_is_vectorPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_vectorPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_vector');
+  late final _ggml_is_vector =
+      _ggml_is_vectorPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_matrix(
@@ -1758,8 +2193,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_matrixPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_matrix');
-  late final _ggml_is_matrix = _ggml_is_matrixPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_matrixPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_matrix');
+  late final _ggml_is_matrix =
+      _ggml_is_matrixPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_3d(
@@ -1770,8 +2208,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_3dPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_3d');
-  late final _ggml_is_3d = _ggml_is_3dPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_3dPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_3d');
+  late final _ggml_is_3d =
+      _ggml_is_3dPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_n_dims(
@@ -1782,8 +2223,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_n_dimsPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ggml_tensor>)>>('ggml_n_dims');
-  late final _ggml_n_dims = _ggml_n_dimsPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_n_dimsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_n_dims');
+  late final _ggml_n_dims =
+      _ggml_n_dimsPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_contiguous(
@@ -1794,8 +2238,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_contiguousPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_contiguous');
-  late final _ggml_is_contiguous = _ggml_is_contiguousPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_contiguousPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_contiguous');
+  late final _ggml_is_contiguous = _ggml_is_contiguousPtr
+      .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_contiguous_0(
@@ -1806,8 +2253,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_contiguous_0Ptr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_contiguous_0');
-  late final _ggml_is_contiguous_0 = _ggml_is_contiguous_0Ptr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_contiguous_0Ptr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_contiguous_0');
+  late final _ggml_is_contiguous_0 = _ggml_is_contiguous_0Ptr
+      .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_contiguous_1(
@@ -1818,8 +2268,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_contiguous_1Ptr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_contiguous_1');
-  late final _ggml_is_contiguous_1 = _ggml_is_contiguous_1Ptr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_contiguous_1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_contiguous_1');
+  late final _ggml_is_contiguous_1 = _ggml_is_contiguous_1Ptr
+      .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_contiguous_2(
@@ -1830,8 +2283,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_is_contiguous_2Ptr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>('ggml_is_contiguous_2');
-  late final _ggml_is_contiguous_2 = _ggml_is_contiguous_2Ptr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_is_contiguous_2Ptr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_is_contiguous_2');
+  late final _ggml_is_contiguous_2 = _ggml_is_contiguous_2Ptr
+      .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_are_same_shape(
@@ -1844,8 +2300,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_are_same_shapePtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_are_same_shape');
-  late final _ggml_are_same_shape = _ggml_are_same_shapePtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_are_same_shapePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_are_same_shape');
+  late final _ggml_are_same_shape = _ggml_are_same_shapePtr.asFunction<
+      bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_are_same_stride(
@@ -1858,8 +2318,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_are_same_stridePtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_are_same_stride');
-  late final _ggml_are_same_stride = _ggml_are_same_stridePtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_are_same_stridePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_are_same_stride');
+  late final _ggml_are_same_stride = _ggml_are_same_stridePtr.asFunction<
+      bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_can_repeat(
@@ -1872,16 +2336,22 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_can_repeatPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_can_repeat');
-  late final _ggml_can_repeat = _ggml_can_repeatPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_can_repeatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_can_repeat');
+  late final _ggml_can_repeat = _ggml_can_repeatPtr.asFunction<
+      bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_tensor_overhead() {
     return _ggml_tensor_overhead();
   }
 
-  late final _ggml_tensor_overheadPtr = _lookup<ffi.NativeFunction<ffi.Size Function()>>('ggml_tensor_overhead');
-  late final _ggml_tensor_overhead = _ggml_tensor_overheadPtr.asFunction<int Function()>();
+  late final _ggml_tensor_overheadPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function()>>('ggml_tensor_overhead');
+  late final _ggml_tensor_overhead =
+      _ggml_tensor_overheadPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_validate_row_data(
@@ -1896,8 +2366,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_validate_row_dataPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32, ffi.Pointer<ffi.Void>, ffi.Size)>>('ggml_validate_row_data');
-  late final _ggml_validate_row_data = _ggml_validate_row_dataPtr.asFunction<bool Function(int, ffi.Pointer<ffi.Void>, int)>();
+  late final _ggml_validate_row_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Int32, ffi.Pointer<ffi.Void>,
+              ffi.Size)>>('ggml_validate_row_data');
+  late final _ggml_validate_row_data = _ggml_validate_row_dataPtr
+      .asFunction<bool Function(int, ffi.Pointer<ffi.Void>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_context> ggml_init(
@@ -1908,8 +2382,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_initPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_context> Function(ggml_init_params)>>('ggml_init');
-  late final _ggml_init = _ggml_initPtr.asFunction<ffi.Pointer<ggml_context> Function(ggml_init_params)>();
+  late final _ggml_initPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_context> Function(ggml_init_params)>>('ggml_init');
+  late final _ggml_init = _ggml_initPtr
+      .asFunction<ffi.Pointer<ggml_context> Function(ggml_init_params)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_reset(
@@ -1920,8 +2397,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_resetPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_context>)>>('ggml_reset');
-  late final _ggml_reset = _ggml_resetPtr.asFunction<void Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_resetPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_context>)>>(
+          'ggml_reset');
+  late final _ggml_reset =
+      _ggml_resetPtr.asFunction<void Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_free(
@@ -1932,8 +2412,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_context>)>>('ggml_free');
-  late final _ggml_free = _ggml_freePtr.asFunction<void Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_context>)>>(
+          'ggml_free');
+  late final _ggml_free =
+      _ggml_freePtr.asFunction<void Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_used_mem(
@@ -1944,8 +2427,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_used_memPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_context>)>>('ggml_used_mem');
-  late final _ggml_used_mem = _ggml_used_memPtr.asFunction<int Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_used_memPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_context>)>>(
+          'ggml_used_mem');
+  late final _ggml_used_mem =
+      _ggml_used_memPtr.asFunction<int Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_get_no_alloc(
@@ -1956,8 +2442,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_no_allocPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_context>)>>('ggml_get_no_alloc');
-  late final _ggml_get_no_alloc = _ggml_get_no_allocPtr.asFunction<bool Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_get_no_allocPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_context>)>>(
+          'ggml_get_no_alloc');
+  late final _ggml_get_no_alloc = _ggml_get_no_allocPtr
+      .asFunction<bool Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_no_alloc(
@@ -1970,8 +2459,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_no_allocPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_context>, ffi.Bool)>>('ggml_set_no_alloc');
-  late final _ggml_set_no_alloc = _ggml_set_no_allocPtr.asFunction<void Function(ffi.Pointer<ggml_context>, bool)>();
+  late final _ggml_set_no_allocPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ggml_context>, ffi.Bool)>>('ggml_set_no_alloc');
+  late final _ggml_set_no_alloc = _ggml_set_no_allocPtr
+      .asFunction<void Function(ffi.Pointer<ggml_context>, bool)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_get_mem_buffer(
@@ -1982,8 +2475,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_mem_bufferPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_context>)>>('ggml_get_mem_buffer');
-  late final _ggml_get_mem_buffer = _ggml_get_mem_bufferPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_get_mem_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<ggml_context>)>>('ggml_get_mem_buffer');
+  late final _ggml_get_mem_buffer = _ggml_get_mem_bufferPtr
+      .asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_get_mem_size(
@@ -1994,8 +2491,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_mem_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_context>)>>('ggml_get_mem_size');
-  late final _ggml_get_mem_size = _ggml_get_mem_sizePtr.asFunction<int Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_get_mem_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_context>)>>(
+          'ggml_get_mem_size');
+  late final _ggml_get_mem_size = _ggml_get_mem_sizePtr
+      .asFunction<int Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_get_max_tensor_size(
@@ -2006,8 +2506,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_max_tensor_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_context>)>>('ggml_get_max_tensor_size');
-  late final _ggml_get_max_tensor_size = _ggml_get_max_tensor_sizePtr.asFunction<int Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_get_max_tensor_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<ggml_context>)>>(
+          'ggml_get_max_tensor_size');
+  late final _ggml_get_max_tensor_size = _ggml_get_max_tensor_sizePtr
+      .asFunction<int Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor(
@@ -2024,8 +2527,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_tensorPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Int32, ffi.Int, ffi.Pointer<ffi.Int64>)>>('ggml_new_tensor');
-  late final _ggml_new_tensor = _ggml_new_tensorPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, int, int, ffi.Pointer<ffi.Int64>)>();
+  late final _ggml_new_tensorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Int32, ffi.Int, ffi.Pointer<ffi.Int64>)>>('ggml_new_tensor');
+  late final _ggml_new_tensor = _ggml_new_tensorPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, int, int, ffi.Pointer<ffi.Int64>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor_1d(
@@ -2040,8 +2548,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_tensor_1dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Int32, ffi.Int64)>>('ggml_new_tensor_1d');
-  late final _ggml_new_tensor_1d = _ggml_new_tensor_1dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, int, int)>();
+  late final _ggml_new_tensor_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Int32, ffi.Int64)>>('ggml_new_tensor_1d');
+  late final _ggml_new_tensor_1d = _ggml_new_tensor_1dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor_2d(
@@ -2058,8 +2570,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_tensor_2dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Int32, ffi.Int64, ffi.Int64)>>('ggml_new_tensor_2d');
-  late final _ggml_new_tensor_2d = _ggml_new_tensor_2dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, int, int, int)>();
+  late final _ggml_new_tensor_2dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Int32, ffi.Int64, ffi.Int64)>>('ggml_new_tensor_2d');
+  late final _ggml_new_tensor_2d = _ggml_new_tensor_2dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor_3d(
@@ -2078,8 +2595,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_tensor_3dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Int32, ffi.Int64, ffi.Int64, ffi.Int64)>>('ggml_new_tensor_3d');
-  late final _ggml_new_tensor_3d = _ggml_new_tensor_3dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, int, int, int, int)>();
+  late final _ggml_new_tensor_3dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Int32,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64)>>('ggml_new_tensor_3d');
+  late final _ggml_new_tensor_3d = _ggml_new_tensor_3dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor_4d(
@@ -2100,8 +2626,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_tensor_4dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Int32, ffi.Int64, ffi.Int64, ffi.Int64, ffi.Int64)>>('ggml_new_tensor_4d');
-  late final _ggml_new_tensor_4d = _ggml_new_tensor_4dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, int, int, int, int, int)>();
+  late final _ggml_new_tensor_4dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Int32,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64)>>('ggml_new_tensor_4d');
+  late final _ggml_new_tensor_4d = _ggml_new_tensor_4dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, int, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_new_buffer(
@@ -2114,8 +2650,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_bufferPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_context>, ffi.Size)>>('ggml_new_buffer');
-  late final _ggml_new_buffer = _ggml_new_bufferPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_context>, int)>();
+  late final _ggml_new_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<ggml_context>, ffi.Size)>>('ggml_new_buffer');
+  late final _ggml_new_buffer = _ggml_new_bufferPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_context>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_dup_tensor(
@@ -2128,8 +2668,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_dup_tensorPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_dup_tensor');
-  late final _ggml_dup_tensor = _ggml_dup_tensorPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_dup_tensorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_dup_tensor');
+  late final _ggml_dup_tensor = _ggml_dup_tensorPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_tensor(
@@ -2142,8 +2687,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_view_tensorPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_view_tensor');
-  late final _ggml_view_tensor = _ggml_view_tensorPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_view_tensorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_view_tensor');
+  late final _ggml_view_tensor = _ggml_view_tensorPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_first_tensor(
@@ -2154,8 +2704,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_first_tensorPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>)>>('ggml_get_first_tensor');
-  late final _ggml_get_first_tensor = _ggml_get_first_tensorPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_get_first_tensorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>)>>('ggml_get_first_tensor');
+  late final _ggml_get_first_tensor = _ggml_get_first_tensorPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_next_tensor(
@@ -2168,8 +2722,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_next_tensorPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_get_next_tensor');
-  late final _ggml_get_next_tensor = _ggml_get_next_tensorPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_get_next_tensorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_get_next_tensor');
+  late final _ggml_get_next_tensor = _ggml_get_next_tensorPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_tensor(
@@ -2182,8 +2741,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_tensorPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ffi.Char>)>>('ggml_get_tensor');
-  late final _ggml_get_tensor = _ggml_get_tensorPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_get_tensorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ffi.Char>)>>('ggml_get_tensor');
+  late final _ggml_get_tensor = _ggml_get_tensorPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_unravel_index(
@@ -2204,8 +2768,23 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_unravel_indexPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Pointer<ffi.Int64>, ffi.Pointer<ffi.Int64>, ffi.Pointer<ffi.Int64>, ffi.Pointer<ffi.Int64>)>>('ggml_unravel_index');
-  late final _ggml_unravel_index = _ggml_unravel_indexPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, int, ffi.Pointer<ffi.Int64>, ffi.Pointer<ffi.Int64>, ffi.Pointer<ffi.Int64>, ffi.Pointer<ffi.Int64>)>();
+  late final _ggml_unravel_indexPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int64,
+              ffi.Pointer<ffi.Int64>,
+              ffi.Pointer<ffi.Int64>,
+              ffi.Pointer<ffi.Int64>,
+              ffi.Pointer<ffi.Int64>)>>('ggml_unravel_index');
+  late final _ggml_unravel_index = _ggml_unravel_indexPtr.asFunction<
+      void Function(
+          ffi.Pointer<ggml_tensor>,
+          int,
+          ffi.Pointer<ffi.Int64>,
+          ffi.Pointer<ffi.Int64>,
+          ffi.Pointer<ffi.Int64>,
+          ffi.Pointer<ffi.Int64>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_get_unary_op(
@@ -2216,8 +2795,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_unary_opPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ggml_tensor>)>>('ggml_get_unary_op');
-  late final _ggml_get_unary_op = _ggml_get_unary_opPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_get_unary_opPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_get_unary_op');
+  late final _ggml_get_unary_op = _ggml_get_unary_opPtr
+      .asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_get_data(
@@ -2228,8 +2810,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_dataPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_tensor>)>>('ggml_get_data');
-  late final _ggml_get_data = _ggml_get_dataPtr.asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_get_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<ggml_tensor>)>>('ggml_get_data');
+  late final _ggml_get_data = _ggml_get_dataPtr
+      .asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Float> ggml_get_data_f32(
@@ -2240,8 +2826,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_data_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<ggml_tensor>)>>('ggml_get_data_f32');
-  late final _ggml_get_data_f32 = _ggml_get_data_f32Ptr.asFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_get_data_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Float> Function(
+              ffi.Pointer<ggml_tensor>)>>('ggml_get_data_f32');
+  late final _ggml_get_data_f32 = _ggml_get_data_f32Ptr
+      .asFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_get_name(
@@ -2252,8 +2842,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ggml_tensor>)>>('ggml_get_name');
-  late final _ggml_get_name = _ggml_get_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_get_namePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ggml_tensor>)>>('ggml_get_name');
+  late final _ggml_get_name = _ggml_get_namePtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_name(
@@ -2266,8 +2860,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Char>)>>('ggml_set_name');
-  late final _ggml_set_name = _ggml_set_namePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_set_namePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ffi.Char>)>>('ggml_set_name');
+  late final _ggml_set_name = _ggml_set_namePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_format_name(
@@ -2280,8 +2879,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_format_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Char>)>>('ggml_format_name');
-  late final _ggml_format_name = _ggml_format_namePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_format_namePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ffi.Char>)>>('ggml_format_name');
+  late final _ggml_format_name = _ggml_format_namePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_input(
@@ -2292,8 +2896,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_inputPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>)>>('ggml_set_input');
-  late final _ggml_set_input = _ggml_set_inputPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_set_inputPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_set_input');
+  late final _ggml_set_input =
+      _ggml_set_inputPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_output(
@@ -2304,8 +2911,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_outputPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>)>>('ggml_set_output');
-  late final _ggml_set_output = _ggml_set_outputPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_set_outputPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_set_output');
+  late final _ggml_set_output =
+      _ggml_set_outputPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_param(
@@ -2318,8 +2928,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_paramPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_set_param');
-  late final _ggml_set_param = _ggml_set_paramPtr.asFunction<void Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_set_paramPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_set_param');
+  late final _ggml_set_param = _ggml_set_paramPtr.asFunction<
+      void Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_loss(
@@ -2330,8 +2944,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_lossPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>)>>('ggml_set_loss');
-  late final _ggml_set_loss = _ggml_set_lossPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_set_lossPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_set_loss');
+  late final _ggml_set_loss =
+      _ggml_set_lossPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_dup(
@@ -2344,8 +2961,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_dupPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_dup');
-  late final _ggml_dup = _ggml_dupPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_dupPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_dup');
+  late final _ggml_dup = _ggml_dupPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_dup_inplace(
@@ -2358,8 +2980,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_dup_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_dup_inplace');
-  late final _ggml_dup_inplace = _ggml_dup_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_dup_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_dup_inplace');
+  late final _ggml_dup_inplace = _ggml_dup_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add(
@@ -2374,8 +3001,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_addPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_add');
-  late final _ggml_add = _ggml_addPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_addPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_add');
+  late final _ggml_add = _ggml_addPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add_inplace(
@@ -2390,8 +3022,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_add_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_add_inplace');
-  late final _ggml_add_inplace = _ggml_add_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_add_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_add_inplace');
+  late final _ggml_add_inplace = _ggml_add_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add_cast(
@@ -2408,8 +3047,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_add_castPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_add_cast');
-  late final _ggml_add_cast = _ggml_add_castPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_add_castPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int32)>>('ggml_add_cast');
+  late final _ggml_add_cast = _ggml_add_castPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add1(
@@ -2424,8 +3071,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_add1Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_add1');
-  late final _ggml_add1 = _ggml_add1Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_add1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_add1');
+  late final _ggml_add1 = _ggml_add1Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add1_inplace(
@@ -2440,8 +3094,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_add1_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_add1_inplace');
-  late final _ggml_add1_inplace = _ggml_add1_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_add1_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_add1_inplace');
+  late final _ggml_add1_inplace = _ggml_add1_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_acc(
@@ -2464,8 +3125,25 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_accPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Size, ffi.Size, ffi.Size, ffi.Size)>>('ggml_acc');
-  late final _ggml_acc = _ggml_accPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_accPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size)>>('ggml_acc');
+  late final _ggml_acc = _ggml_accPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_acc_inplace(
@@ -2488,8 +3166,25 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_acc_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Size, ffi.Size, ffi.Size, ffi.Size)>>('ggml_acc_inplace');
-  late final _ggml_acc_inplace = _ggml_acc_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_acc_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size)>>('ggml_acc_inplace');
+  late final _ggml_acc_inplace = _ggml_acc_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sub(
@@ -2504,8 +3199,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_subPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_sub');
-  late final _ggml_sub = _ggml_subPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_subPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_sub');
+  late final _ggml_sub = _ggml_subPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sub_inplace(
@@ -2520,8 +3220,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sub_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_sub_inplace');
-  late final _ggml_sub_inplace = _ggml_sub_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sub_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sub_inplace');
+  late final _ggml_sub_inplace = _ggml_sub_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mul(
@@ -2536,8 +3243,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_mulPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_mul');
-  late final _ggml_mul = _ggml_mulPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_mulPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_mul');
+  late final _ggml_mul = _ggml_mulPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mul_inplace(
@@ -2552,8 +3264,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_mul_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_mul_inplace');
-  late final _ggml_mul_inplace = _ggml_mul_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_mul_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_mul_inplace');
+  late final _ggml_mul_inplace = _ggml_mul_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_div(
@@ -2568,8 +3287,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_divPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_div');
-  late final _ggml_div = _ggml_divPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_divPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_div');
+  late final _ggml_div = _ggml_divPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_div_inplace(
@@ -2584,8 +3308,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_div_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_div_inplace');
-  late final _ggml_div_inplace = _ggml_div_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_div_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_div_inplace');
+  late final _ggml_div_inplace = _ggml_div_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sqr(
@@ -2598,8 +3329,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sqrPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sqr');
-  late final _ggml_sqr = _ggml_sqrPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sqrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sqr');
+  late final _ggml_sqr = _ggml_sqrPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sqr_inplace(
@@ -2612,8 +3348,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sqr_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sqr_inplace');
-  late final _ggml_sqr_inplace = _ggml_sqr_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sqr_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sqr_inplace');
+  late final _ggml_sqr_inplace = _ggml_sqr_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sqrt(
@@ -2626,8 +3367,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sqrtPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sqrt');
-  late final _ggml_sqrt = _ggml_sqrtPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sqrtPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sqrt');
+  late final _ggml_sqrt = _ggml_sqrtPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sqrt_inplace(
@@ -2640,8 +3386,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sqrt_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sqrt_inplace');
-  late final _ggml_sqrt_inplace = _ggml_sqrt_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sqrt_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sqrt_inplace');
+  late final _ggml_sqrt_inplace = _ggml_sqrt_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_log(
@@ -2654,8 +3405,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_logPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_log');
-  late final _ggml_log = _ggml_logPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_logPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_log');
+  late final _ggml_log = _ggml_logPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_log_inplace(
@@ -2668,8 +3424,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_log_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_log_inplace');
-  late final _ggml_log_inplace = _ggml_log_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_log_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_log_inplace');
+  late final _ggml_log_inplace = _ggml_log_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sin(
@@ -2682,8 +3443,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sinPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sin');
-  late final _ggml_sin = _ggml_sinPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sinPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sin');
+  late final _ggml_sin = _ggml_sinPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sin_inplace(
@@ -2696,8 +3462,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sin_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sin_inplace');
-  late final _ggml_sin_inplace = _ggml_sin_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sin_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sin_inplace');
+  late final _ggml_sin_inplace = _ggml_sin_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cos(
@@ -2710,8 +3481,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_cosPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_cos');
-  late final _ggml_cos = _ggml_cosPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_cosPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_cos');
+  late final _ggml_cos = _ggml_cosPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cos_inplace(
@@ -2724,8 +3500,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_cos_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_cos_inplace');
-  late final _ggml_cos_inplace = _ggml_cos_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_cos_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_cos_inplace');
+  late final _ggml_cos_inplace = _ggml_cos_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sum(
@@ -2738,8 +3519,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sumPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sum');
-  late final _ggml_sum = _ggml_sumPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sumPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sum');
+  late final _ggml_sum = _ggml_sumPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sum_rows(
@@ -2752,8 +3538,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sum_rowsPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sum_rows');
-  late final _ggml_sum_rows = _ggml_sum_rowsPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sum_rowsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sum_rows');
+  late final _ggml_sum_rows = _ggml_sum_rowsPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mean(
@@ -2766,8 +3557,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_meanPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_mean');
-  late final _ggml_mean = _ggml_meanPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_meanPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_mean');
+  late final _ggml_mean = _ggml_meanPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_argmax(
@@ -2780,8 +3576,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_argmaxPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_argmax');
-  late final _ggml_argmax = _ggml_argmaxPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_argmaxPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_argmax');
+  late final _ggml_argmax = _ggml_argmaxPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_count_equal(
@@ -2796,8 +3597,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_count_equalPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_count_equal');
-  late final _ggml_count_equal = _ggml_count_equalPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_count_equalPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_count_equal');
+  late final _ggml_count_equal = _ggml_count_equalPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_repeat(
@@ -2812,8 +3620,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_repeatPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_repeat');
-  late final _ggml_repeat = _ggml_repeatPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_repeatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_repeat');
+  late final _ggml_repeat = _ggml_repeatPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_repeat_back(
@@ -2828,8 +3643,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_repeat_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_repeat_back');
-  late final _ggml_repeat_back = _ggml_repeat_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_repeat_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_repeat_back');
+  late final _ggml_repeat_back = _ggml_repeat_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_concat(
@@ -2846,8 +3668,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_concatPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_concat');
-  late final _ggml_concat = _ggml_concatPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_concatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int)>>('ggml_concat');
+  late final _ggml_concat = _ggml_concatPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_abs(
@@ -2860,8 +3690,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_absPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_abs');
-  late final _ggml_abs = _ggml_absPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_absPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_abs');
+  late final _ggml_abs = _ggml_absPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_abs_inplace(
@@ -2874,8 +3709,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_abs_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_abs_inplace');
-  late final _ggml_abs_inplace = _ggml_abs_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_abs_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_abs_inplace');
+  late final _ggml_abs_inplace = _ggml_abs_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sgn(
@@ -2888,8 +3728,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sgnPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sgn');
-  late final _ggml_sgn = _ggml_sgnPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sgnPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sgn');
+  late final _ggml_sgn = _ggml_sgnPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sgn_inplace(
@@ -2902,8 +3747,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sgn_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sgn_inplace');
-  late final _ggml_sgn_inplace = _ggml_sgn_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sgn_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sgn_inplace');
+  late final _ggml_sgn_inplace = _ggml_sgn_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_neg(
@@ -2916,8 +3766,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_negPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_neg');
-  late final _ggml_neg = _ggml_negPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_negPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_neg');
+  late final _ggml_neg = _ggml_negPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_neg_inplace(
@@ -2930,8 +3785,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_neg_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_neg_inplace');
-  late final _ggml_neg_inplace = _ggml_neg_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_neg_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_neg_inplace');
+  late final _ggml_neg_inplace = _ggml_neg_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_step(
@@ -2944,8 +3804,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_stepPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_step');
-  late final _ggml_step = _ggml_stepPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_stepPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_step');
+  late final _ggml_step = _ggml_stepPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_step_inplace(
@@ -2958,8 +3823,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_step_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_step_inplace');
-  late final _ggml_step_inplace = _ggml_step_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_step_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_step_inplace');
+  late final _ggml_step_inplace = _ggml_step_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_tanh(
@@ -2972,8 +3842,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_tanhPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_tanh');
-  late final _ggml_tanh = _ggml_tanhPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_tanhPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_tanh');
+  late final _ggml_tanh = _ggml_tanhPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_tanh_inplace(
@@ -2986,8 +3861,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_tanh_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_tanh_inplace');
-  late final _ggml_tanh_inplace = _ggml_tanh_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_tanh_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_tanh_inplace');
+  late final _ggml_tanh_inplace = _ggml_tanh_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_elu(
@@ -3000,8 +3880,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_eluPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_elu');
-  late final _ggml_elu = _ggml_eluPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_eluPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_elu');
+  late final _ggml_elu = _ggml_eluPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_elu_inplace(
@@ -3014,8 +3899,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_elu_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_elu_inplace');
-  late final _ggml_elu_inplace = _ggml_elu_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_elu_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_elu_inplace');
+  late final _ggml_elu_inplace = _ggml_elu_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_relu(
@@ -3028,8 +3918,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_reluPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_relu');
-  late final _ggml_relu = _ggml_reluPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_reluPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_relu');
+  late final _ggml_relu = _ggml_reluPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_leaky_relu(
@@ -3046,8 +3941,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_leaky_reluPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Float, ffi.Bool)>>('ggml_leaky_relu');
-  late final _ggml_leaky_relu = _ggml_leaky_reluPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double, bool)>();
+  late final _ggml_leaky_reluPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Float,
+              ffi.Bool)>>('ggml_leaky_relu');
+  late final _ggml_leaky_relu = _ggml_leaky_reluPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double, bool)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_relu_inplace(
@@ -3060,8 +3963,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_relu_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_relu_inplace');
-  late final _ggml_relu_inplace = _ggml_relu_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_relu_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_relu_inplace');
+  late final _ggml_relu_inplace = _ggml_relu_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sigmoid(
@@ -3074,8 +3982,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sigmoidPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sigmoid');
-  late final _ggml_sigmoid = _ggml_sigmoidPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sigmoidPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sigmoid');
+  late final _ggml_sigmoid = _ggml_sigmoidPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sigmoid_inplace(
@@ -3088,8 +4001,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_sigmoid_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_sigmoid_inplace');
-  late final _ggml_sigmoid_inplace = _ggml_sigmoid_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_sigmoid_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_sigmoid_inplace');
+  late final _ggml_sigmoid_inplace = _ggml_sigmoid_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gelu(
@@ -3102,8 +4020,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_geluPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_gelu');
-  late final _ggml_gelu = _ggml_geluPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_geluPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_gelu');
+  late final _ggml_gelu = _ggml_geluPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gelu_inplace(
@@ -3116,8 +4039,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gelu_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_gelu_inplace');
-  late final _ggml_gelu_inplace = _ggml_gelu_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_gelu_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_gelu_inplace');
+  late final _ggml_gelu_inplace = _ggml_gelu_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gelu_quick(
@@ -3130,8 +4058,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gelu_quickPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_gelu_quick');
-  late final _ggml_gelu_quick = _ggml_gelu_quickPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_gelu_quickPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_gelu_quick');
+  late final _ggml_gelu_quick = _ggml_gelu_quickPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gelu_quick_inplace(
@@ -3144,8 +4077,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gelu_quick_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_gelu_quick_inplace');
-  late final _ggml_gelu_quick_inplace = _ggml_gelu_quick_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_gelu_quick_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_gelu_quick_inplace');
+  late final _ggml_gelu_quick_inplace = _ggml_gelu_quick_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_silu(
@@ -3158,8 +4096,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_siluPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_silu');
-  late final _ggml_silu = _ggml_siluPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_siluPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_silu');
+  late final _ggml_silu = _ggml_siluPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_silu_inplace(
@@ -3172,8 +4115,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_silu_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_silu_inplace');
-  late final _ggml_silu_inplace = _ggml_silu_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_silu_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_silu_inplace');
+  late final _ggml_silu_inplace = _ggml_silu_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_silu_back(
@@ -3188,8 +4136,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_silu_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_silu_back');
-  late final _ggml_silu_back = _ggml_silu_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_silu_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_silu_back');
+  late final _ggml_silu_back = _ggml_silu_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_hardswish(
@@ -3202,8 +4157,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_hardswishPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_hardswish');
-  late final _ggml_hardswish = _ggml_hardswishPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_hardswishPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_hardswish');
+  late final _ggml_hardswish = _ggml_hardswishPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_hardsigmoid(
@@ -3216,8 +4176,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_hardsigmoidPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_hardsigmoid');
-  late final _ggml_hardsigmoid = _ggml_hardsigmoidPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_hardsigmoidPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_hardsigmoid');
+  late final _ggml_hardsigmoid = _ggml_hardsigmoidPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_exp(
@@ -3230,8 +4195,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_expPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_exp');
-  late final _ggml_exp = _ggml_expPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_expPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_exp');
+  late final _ggml_exp = _ggml_expPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_exp_inplace(
@@ -3244,8 +4214,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_exp_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_exp_inplace');
-  late final _ggml_exp_inplace = _ggml_exp_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_exp_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_exp_inplace');
+  late final _ggml_exp_inplace = _ggml_exp_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_norm(
@@ -3260,8 +4235,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_normPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_norm');
-  late final _ggml_norm = _ggml_normPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
+  late final _ggml_normPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_norm');
+  late final _ggml_norm = _ggml_normPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_norm_inplace(
@@ -3276,8 +4256,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_norm_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_norm_inplace');
-  late final _ggml_norm_inplace = _ggml_norm_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
+  late final _ggml_norm_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_norm_inplace');
+  late final _ggml_norm_inplace = _ggml_norm_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rms_norm(
@@ -3292,8 +4277,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rms_normPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_rms_norm');
-  late final _ggml_rms_norm = _ggml_rms_normPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
+  late final _ggml_rms_normPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_rms_norm');
+  late final _ggml_rms_norm = _ggml_rms_normPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rms_norm_inplace(
@@ -3308,8 +4298,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rms_norm_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_rms_norm_inplace');
-  late final _ggml_rms_norm_inplace = _ggml_rms_norm_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
+  late final _ggml_rms_norm_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_rms_norm_inplace');
+  late final _ggml_rms_norm_inplace = _ggml_rms_norm_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_group_norm(
@@ -3326,8 +4321,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_group_normPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Float)>>('ggml_group_norm');
-  late final _ggml_group_norm = _ggml_group_normPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, double)>();
+  late final _ggml_group_normPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Float)>>('ggml_group_norm');
+  late final _ggml_group_norm = _ggml_group_normPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_group_norm_inplace(
@@ -3344,8 +4347,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_group_norm_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Float)>>('ggml_group_norm_inplace');
-  late final _ggml_group_norm_inplace = _ggml_group_norm_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, double)>();
+  late final _ggml_group_norm_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Float)>>('ggml_group_norm_inplace');
+  late final _ggml_group_norm_inplace = _ggml_group_norm_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rms_norm_back(
@@ -3362,8 +4373,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rms_norm_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_rms_norm_back');
-  late final _ggml_rms_norm_back = _ggml_rms_norm_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, double)>();
+  late final _ggml_rms_norm_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Float)>>('ggml_rms_norm_back');
+  late final _ggml_rms_norm_back = _ggml_rms_norm_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mul_mat(
@@ -3378,8 +4397,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_mul_matPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_mul_mat');
-  late final _ggml_mul_mat = _ggml_mul_matPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_mul_matPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_mul_mat');
+  late final _ggml_mul_mat = _ggml_mul_matPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_mul_mat_set_prec(
@@ -3392,8 +4418,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_mul_mat_set_precPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_mul_mat_set_prec');
-  late final _ggml_mul_mat_set_prec = _ggml_mul_mat_set_precPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_mul_mat_set_precPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_mul_mat_set_prec');
+  late final _ggml_mul_mat_set_prec = _ggml_mul_mat_set_precPtr
+      .asFunction<void Function(ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mul_mat_id(
@@ -3410,8 +4440,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_mul_mat_idPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_mul_mat_id');
-  late final _ggml_mul_mat_id = _ggml_mul_mat_idPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_mul_mat_idPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_mul_mat_id');
+  late final _ggml_mul_mat_id = _ggml_mul_mat_idPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_out_prod(
@@ -3426,8 +4467,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_out_prodPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_out_prod');
-  late final _ggml_out_prod = _ggml_out_prodPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_out_prodPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_out_prod');
+  late final _ggml_out_prod = _ggml_out_prodPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_scale(
@@ -3442,8 +4490,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_scalePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_scale');
-  late final _ggml_scale = _ggml_scalePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
+  late final _ggml_scalePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_scale');
+  late final _ggml_scale = _ggml_scalePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_scale_inplace(
@@ -3458,8 +4511,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_scale_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_scale_inplace');
-  late final _ggml_scale_inplace = _ggml_scale_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
+  late final _ggml_scale_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_scale_inplace');
+  late final _ggml_scale_inplace = _ggml_scale_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set(
@@ -3482,8 +4540,25 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_setPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Size, ffi.Size, ffi.Size, ffi.Size)>>('ggml_set');
-  late final _ggml_set = _ggml_setPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_setPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size)>>('ggml_set');
+  late final _ggml_set = _ggml_setPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_inplace(
@@ -3506,8 +4581,25 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Size, ffi.Size, ffi.Size, ffi.Size)>>('ggml_set_inplace');
-  late final _ggml_set_inplace = _ggml_set_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_set_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size)>>('ggml_set_inplace');
+  late final _ggml_set_inplace = _ggml_set_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_1d(
@@ -3524,8 +4616,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_1dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Size)>>('ggml_set_1d');
-  late final _ggml_set_1d = _ggml_set_1dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_set_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Size)>>('ggml_set_1d');
+  late final _ggml_set_1d = _ggml_set_1dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_1d_inplace(
@@ -3542,8 +4642,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_1d_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Size)>>('ggml_set_1d_inplace');
-  late final _ggml_set_1d_inplace = _ggml_set_1d_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_set_1d_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Size)>>('ggml_set_1d_inplace');
+  late final _ggml_set_1d_inplace = _ggml_set_1d_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_2d(
@@ -3562,8 +4670,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_2dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Size, ffi.Size)>>('ggml_set_2d');
-  late final _ggml_set_2d = _ggml_set_2dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_set_2dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Size,
+              ffi.Size)>>('ggml_set_2d');
+  late final _ggml_set_2d = _ggml_set_2dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_2d_inplace(
@@ -3582,8 +4699,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_2d_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Size, ffi.Size)>>('ggml_set_2d_inplace');
-  late final _ggml_set_2d_inplace = _ggml_set_2d_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_set_2d_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Size,
+              ffi.Size)>>('ggml_set_2d_inplace');
+  late final _ggml_set_2d_inplace = _ggml_set_2d_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cpy(
@@ -3598,8 +4724,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_cpyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_cpy');
-  late final _ggml_cpy = _ggml_cpyPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_cpyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_cpy');
+  late final _ggml_cpy = _ggml_cpyPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cast(
@@ -3614,8 +4745,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_castPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_cast');
-  late final _ggml_cast = _ggml_castPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_castPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_cast');
+  late final _ggml_cast = _ggml_castPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont(
@@ -3628,8 +4764,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_contPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_cont');
-  late final _ggml_cont = _ggml_contPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_contPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_cont');
+  late final _ggml_cont = _ggml_contPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont_1d(
@@ -3644,8 +4785,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_cont_1dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64)>>('ggml_cont_1d');
-  late final _ggml_cont_1d = _ggml_cont_1dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_cont_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int64)>>('ggml_cont_1d');
+  late final _ggml_cont_1d = _ggml_cont_1dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont_2d(
@@ -3662,8 +4808,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_cont_2dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64)>>('ggml_cont_2d');
-  late final _ggml_cont_2d = _ggml_cont_2dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_cont_2dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64)>>('ggml_cont_2d');
+  late final _ggml_cont_2d = _ggml_cont_2dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont_3d(
@@ -3682,8 +4833,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_cont_3dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64, ffi.Int64)>>('ggml_cont_3d');
-  late final _ggml_cont_3d = _ggml_cont_3dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int)>();
+  late final _ggml_cont_3dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64)>>('ggml_cont_3d');
+  late final _ggml_cont_3d = _ggml_cont_3dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont_4d(
@@ -3704,8 +4864,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_cont_4dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64, ffi.Int64, ffi.Int64)>>('ggml_cont_4d');
-  late final _ggml_cont_4d = _ggml_cont_4dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_cont_4dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64)>>('ggml_cont_4d');
+  late final _ggml_cont_4d = _ggml_cont_4dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape(
@@ -3720,8 +4890,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_reshapePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_reshape');
-  late final _ggml_reshape = _ggml_reshapePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_reshapePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_reshape');
+  late final _ggml_reshape = _ggml_reshapePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape_1d(
@@ -3736,8 +4913,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_reshape_1dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64)>>('ggml_reshape_1d');
-  late final _ggml_reshape_1d = _ggml_reshape_1dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_reshape_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int64)>>('ggml_reshape_1d');
+  late final _ggml_reshape_1d = _ggml_reshape_1dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape_2d(
@@ -3754,8 +4936,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_reshape_2dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64)>>('ggml_reshape_2d');
-  late final _ggml_reshape_2d = _ggml_reshape_2dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_reshape_2dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int64,
+              ffi.Int64)>>('ggml_reshape_2d');
+  late final _ggml_reshape_2d = _ggml_reshape_2dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape_3d(
@@ -3774,8 +4964,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_reshape_3dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64, ffi.Int64)>>('ggml_reshape_3d');
-  late final _ggml_reshape_3d = _ggml_reshape_3dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int)>();
+  late final _ggml_reshape_3dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64)>>('ggml_reshape_3d');
+  late final _ggml_reshape_3d = _ggml_reshape_3dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape_4d(
@@ -3796,8 +4995,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_reshape_4dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64, ffi.Int64, ffi.Int64)>>('ggml_reshape_4d');
-  late final _ggml_reshape_4d = _ggml_reshape_4dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_reshape_4dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64)>>('ggml_reshape_4d');
+  late final _ggml_reshape_4d = _ggml_reshape_4dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_1d(
@@ -3814,8 +5023,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_view_1dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Size)>>('ggml_view_1d');
-  late final _ggml_view_1d = _ggml_view_1dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_view_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Size)>>('ggml_view_1d');
+  late final _ggml_view_1d = _ggml_view_1dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_2d(
@@ -3836,8 +5050,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_view_2dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64, ffi.Size, ffi.Size)>>('ggml_view_2d');
-  late final _ggml_view_2d = _ggml_view_2dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_view_2dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Size,
+              ffi.Size)>>('ggml_view_2d');
+  late final _ggml_view_2d = _ggml_view_2dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_3d(
@@ -3862,8 +5086,20 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_view_3dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64, ffi.Int64, ffi.Size, ffi.Size, ffi.Size)>>('ggml_view_3d');
-  late final _ggml_view_3d = _ggml_view_3dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int, int, int)>();
+  late final _ggml_view_3dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size)>>('ggml_view_3d');
+  late final _ggml_view_3d = _ggml_view_3dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_4d(
@@ -3892,8 +5128,22 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_view_4dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int64, ffi.Int64, ffi.Int64, ffi.Int64, ffi.Size, ffi.Size, ffi.Size, ffi.Size)>>('ggml_view_4d');
-  late final _ggml_view_4d = _ggml_view_4dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int, int, int, int, int)>();
+  late final _ggml_view_4dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size,
+              ffi.Size)>>('ggml_view_4d');
+  late final _ggml_view_4d = _ggml_view_4dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_permute(
@@ -3914,8 +5164,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_permutePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('ggml_permute');
-  late final _ggml_permute = _ggml_permutePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_permutePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_permute');
+  late final _ggml_permute = _ggml_permutePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_transpose(
@@ -3928,8 +5188,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_transposePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_transpose');
-  late final _ggml_transpose = _ggml_transposePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_transposePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_transpose');
+  late final _ggml_transpose = _ggml_transposePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_rows(
@@ -3944,8 +5209,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_rowsPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_get_rows');
-  late final _ggml_get_rows = _ggml_get_rowsPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_get_rowsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_get_rows');
+  late final _ggml_get_rows = _ggml_get_rowsPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_rows_back(
@@ -3962,8 +5234,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_rows_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_get_rows_back');
-  late final _ggml_get_rows_back = _ggml_get_rows_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_get_rows_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_get_rows_back');
+  late final _ggml_get_rows_back = _ggml_get_rows_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag(
@@ -3976,8 +5259,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_diagPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_diag');
-  late final _ggml_diag = _ggml_diagPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_diagPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_diag');
+  late final _ggml_diag = _ggml_diagPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag_mask_inf(
@@ -3992,8 +5280,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_diag_mask_infPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_diag_mask_inf');
-  late final _ggml_diag_mask_inf = _ggml_diag_mask_infPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_diag_mask_infPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_diag_mask_inf');
+  late final _ggml_diag_mask_inf = _ggml_diag_mask_infPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag_mask_inf_inplace(
@@ -4008,8 +5301,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_diag_mask_inf_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_diag_mask_inf_inplace');
-  late final _ggml_diag_mask_inf_inplace = _ggml_diag_mask_inf_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_diag_mask_inf_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int)>>('ggml_diag_mask_inf_inplace');
+  late final _ggml_diag_mask_inf_inplace =
+      _ggml_diag_mask_inf_inplacePtr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag_mask_zero(
@@ -4024,8 +5325,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_diag_mask_zeroPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_diag_mask_zero');
-  late final _ggml_diag_mask_zero = _ggml_diag_mask_zeroPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_diag_mask_zeroPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_diag_mask_zero');
+  late final _ggml_diag_mask_zero = _ggml_diag_mask_zeroPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag_mask_zero_inplace(
@@ -4040,8 +5346,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_diag_mask_zero_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_diag_mask_zero_inplace');
-  late final _ggml_diag_mask_zero_inplace = _ggml_diag_mask_zero_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_diag_mask_zero_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int)>>('ggml_diag_mask_zero_inplace');
+  late final _ggml_diag_mask_zero_inplace =
+      _ggml_diag_mask_zero_inplacePtr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max(
@@ -4054,8 +5368,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_soft_maxPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_soft_max');
-  late final _ggml_soft_max = _ggml_soft_maxPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_soft_maxPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_soft_max');
+  late final _ggml_soft_max = _ggml_soft_maxPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max_inplace(
@@ -4068,8 +5387,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_soft_max_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>>('ggml_soft_max_inplace');
-  late final _ggml_soft_max_inplace = _ggml_soft_max_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_soft_max_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_soft_max_inplace');
+  late final _ggml_soft_max_inplace = _ggml_soft_max_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max_ext(
@@ -4088,8 +5412,21 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_soft_max_extPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Float, ffi.Float)>>('ggml_soft_max_ext');
-  late final _ggml_soft_max_ext = _ggml_soft_max_extPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, double, double)>();
+  late final _ggml_soft_max_extPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Float,
+              ffi.Float)>>('ggml_soft_max_ext');
+  late final _ggml_soft_max_ext = _ggml_soft_max_extPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max_ext_back(
@@ -4108,8 +5445,21 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_soft_max_ext_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Float, ffi.Float)>>('ggml_soft_max_ext_back');
-  late final _ggml_soft_max_ext_back = _ggml_soft_max_ext_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, double, double)>();
+  late final _ggml_soft_max_ext_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Float,
+              ffi.Float)>>('ggml_soft_max_ext_back');
+  late final _ggml_soft_max_ext_back = _ggml_soft_max_ext_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max_ext_back_inplace(
@@ -4128,8 +5478,22 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_soft_max_ext_back_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Float, ffi.Float)>>('ggml_soft_max_ext_back_inplace');
-  late final _ggml_soft_max_ext_back_inplace = _ggml_soft_max_ext_back_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, double, double)>();
+  late final _ggml_soft_max_ext_back_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Float,
+              ffi.Float)>>('ggml_soft_max_ext_back_inplace');
+  late final _ggml_soft_max_ext_back_inplace =
+      _ggml_soft_max_ext_back_inplacePtr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              double,
+              double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope(
@@ -4148,8 +5512,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_ropePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int)>>('ggml_rope');
-  late final _ggml_rope = _ggml_ropePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_ropePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int)>>('ggml_rope');
+  late final _ggml_rope = _ggml_ropePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_inplace(
@@ -4168,8 +5541,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rope_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int)>>('ggml_rope_inplace');
-  late final _ggml_rope_inplace = _ggml_rope_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_rope_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int)>>('ggml_rope_inplace');
+  late final _ggml_rope_inplace = _ggml_rope_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_ext(
@@ -4204,8 +5586,37 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rope_extPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float)>>('ggml_rope_ext');
-  late final _ggml_rope_ext = _ggml_rope_extPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, double, double, double, double, double, double)>();
+  late final _ggml_rope_extPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float)>>('ggml_rope_ext');
+  late final _ggml_rope_ext = _ggml_rope_extPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          double,
+          double,
+          double,
+          double,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_multi(
@@ -4242,8 +5653,39 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rope_multiPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Pointer<ffi.Int>, ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float)>>('ggml_rope_multi');
-  late final _ggml_rope_multi = _ggml_rope_multiPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, ffi.Pointer<ffi.Int>, int, int, double, double, double, double, double, double)>();
+  late final _ggml_rope_multiPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Pointer<ffi.Int>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float)>>('ggml_rope_multi');
+  late final _ggml_rope_multi = _ggml_rope_multiPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          ffi.Pointer<ffi.Int>,
+          int,
+          int,
+          double,
+          double,
+          double,
+          double,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_ext_inplace(
@@ -4278,8 +5720,37 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rope_ext_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float)>>('ggml_rope_ext_inplace');
-  late final _ggml_rope_ext_inplace = _ggml_rope_ext_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, double, double, double, double, double, double)>();
+  late final _ggml_rope_ext_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float)>>('ggml_rope_ext_inplace');
+  late final _ggml_rope_ext_inplace = _ggml_rope_ext_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          double,
+          double,
+          double,
+          double,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_custom(
@@ -4312,8 +5783,35 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rope_customPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float)>>('ggml_rope_custom');
-  late final _ggml_rope_custom = _ggml_rope_customPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, double, double, double, double, double, double)>();
+  late final _ggml_rope_customPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float)>>('ggml_rope_custom');
+  late final _ggml_rope_custom = _ggml_rope_customPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          double,
+          double,
+          double,
+          double,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_custom_inplace(
@@ -4346,8 +5844,36 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rope_custom_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float)>>('ggml_rope_custom_inplace');
-  late final _ggml_rope_custom_inplace = _ggml_rope_custom_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, double, double, double, double, double, double)>();
+  late final _ggml_rope_custom_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float)>>('ggml_rope_custom_inplace');
+  late final _ggml_rope_custom_inplace =
+      _ggml_rope_custom_inplacePtr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              int,
+              int,
+              int,
+              double,
+              double,
+              double,
+              double,
+              double,
+              double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_rope_yarn_corr_dims(
@@ -4368,8 +5894,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rope_yarn_corr_dimsPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Pointer<ffi.Float>)>>('ggml_rope_yarn_corr_dims');
-  late final _ggml_rope_yarn_corr_dims = _ggml_rope_yarn_corr_dimsPtr.asFunction<void Function(int, int, double, double, double, ffi.Pointer<ffi.Float>)>();
+  late final _ggml_rope_yarn_corr_dimsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float,
+              ffi.Pointer<ffi.Float>)>>('ggml_rope_yarn_corr_dims');
+  late final _ggml_rope_yarn_corr_dims =
+      _ggml_rope_yarn_corr_dimsPtr.asFunction<
+          void Function(
+              int, int, double, double, double, ffi.Pointer<ffi.Float>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_ext_back(
@@ -4404,8 +5936,37 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rope_ext_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float)>>('ggml_rope_ext_back');
-  late final _ggml_rope_ext_back = _ggml_rope_ext_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, double, double, double, double, double, double)>();
+  late final _ggml_rope_ext_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float)>>('ggml_rope_ext_back');
+  late final _ggml_rope_ext_back = _ggml_rope_ext_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          double,
+          double,
+          double,
+          double,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_multi_back(
@@ -4442,8 +6003,39 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rope_multi_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Pointer<ffi.Int>, ffi.Int, ffi.Int, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float, ffi.Float)>>('ggml_rope_multi_back');
-  late final _ggml_rope_multi_back = _ggml_rope_multi_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, ffi.Pointer<ffi.Int>, int, int, double, double, double, double, double, double)>();
+  late final _ggml_rope_multi_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Pointer<ffi.Int>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float)>>('ggml_rope_multi_back');
+  late final _ggml_rope_multi_back = _ggml_rope_multi_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          ffi.Pointer<ffi.Int>,
+          int,
+          int,
+          double,
+          double,
+          double,
+          double,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_clamp(
@@ -4460,8 +6052,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_clampPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Float, ffi.Float)>>('ggml_clamp');
-  late final _ggml_clamp = _ggml_clampPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double, double)>();
+  late final _ggml_clampPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Float, ffi.Float)>>('ggml_clamp');
+  late final _ggml_clamp = _ggml_clampPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, double, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_im2col(
@@ -4492,8 +6089,33 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_im2colPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Bool, ffi.Int32)>>('ggml_im2col');
-  late final _ggml_im2col = _ggml_im2colPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, int, int, int, bool, int)>();
+  late final _ggml_im2colPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Bool,
+              ffi.Int32)>>('ggml_im2col');
+  late final _ggml_im2col = _ggml_im2colPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          int,
+          int,
+          int,
+          bool,
+          int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_im2col_back(
@@ -4524,8 +6146,33 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_im2col_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Int64>, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Bool)>>('ggml_im2col_back');
-  late final _ggml_im2col_back = _ggml_im2col_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Int64>, int, int, int, int, int, int, bool)>();
+  late final _ggml_im2col_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ffi.Int64>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Bool)>>('ggml_im2col_back');
+  late final _ggml_im2col_back = _ggml_im2col_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ffi.Int64>,
+          int,
+          int,
+          int,
+          int,
+          int,
+          int,
+          bool)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_1d(
@@ -4546,8 +6193,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_1dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int)>>('ggml_conv_1d');
-  late final _ggml_conv_1d = _ggml_conv_1dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int)>();
+  late final _ggml_conv_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_conv_1d');
+  late final _ggml_conv_1d = _ggml_conv_1dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_1d_ph(
@@ -4566,8 +6223,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_1d_phPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int)>>('ggml_conv_1d_ph');
-  late final _ggml_conv_1d_ph = _ggml_conv_1d_phPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_conv_1d_phPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int)>>('ggml_conv_1d_ph');
+  late final _ggml_conv_1d_ph = _ggml_conv_1d_phPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_1d_dw(
@@ -4588,8 +6254,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_1d_dwPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int)>>('ggml_conv_1d_dw');
-  late final _ggml_conv_1d_dw = _ggml_conv_1d_dwPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int)>();
+  late final _ggml_conv_1d_dwPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_conv_1d_dw');
+  late final _ggml_conv_1d_dw = _ggml_conv_1d_dwPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_1d_dw_ph(
@@ -4608,8 +6284,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_1d_dw_phPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int)>>('ggml_conv_1d_dw_ph');
-  late final _ggml_conv_1d_dw_ph = _ggml_conv_1d_dw_phPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_conv_1d_dw_phPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int)>>('ggml_conv_1d_dw_ph');
+  late final _ggml_conv_1d_dw_ph = _ggml_conv_1d_dw_phPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_transpose_1d(
@@ -4630,8 +6315,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_transpose_1dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int)>>('ggml_conv_transpose_1d');
-  late final _ggml_conv_transpose_1d = _ggml_conv_transpose_1dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int)>();
+  late final _ggml_conv_transpose_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_conv_transpose_1d');
+  late final _ggml_conv_transpose_1d = _ggml_conv_transpose_1dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_2d(
@@ -4658,8 +6353,29 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_2dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('ggml_conv_2d');
-  late final _ggml_conv_2d = _ggml_conv_2dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, int, int, int)>();
+  late final _ggml_conv_2dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_conv_2d');
+  late final _ggml_conv_2d = _ggml_conv_2dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          int,
+          int,
+          int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_2d_sk_p0(
@@ -4674,8 +6390,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_2d_sk_p0Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_conv_2d_sk_p0');
-  late final _ggml_conv_2d_sk_p0 = _ggml_conv_2d_sk_p0Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_conv_2d_sk_p0Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_conv_2d_sk_p0');
+  late final _ggml_conv_2d_sk_p0 = _ggml_conv_2d_sk_p0Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_2d_s1_ph(
@@ -4690,8 +6413,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_2d_s1_phPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_conv_2d_s1_ph');
-  late final _ggml_conv_2d_s1_ph = _ggml_conv_2d_s1_phPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_conv_2d_s1_phPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_conv_2d_s1_ph');
+  late final _ggml_conv_2d_s1_ph = _ggml_conv_2d_s1_phPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_2d_dw(
@@ -4718,8 +6448,29 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_2d_dwPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('ggml_conv_2d_dw');
-  late final _ggml_conv_2d_dw = _ggml_conv_2d_dwPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, int, int, int)>();
+  late final _ggml_conv_2d_dwPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_conv_2d_dw');
+  late final _ggml_conv_2d_dw = _ggml_conv_2d_dwPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          int,
+          int,
+          int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_transpose_2d_p0(
@@ -4736,8 +6487,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_conv_transpose_2d_p0Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_conv_transpose_2d_p0');
-  late final _ggml_conv_transpose_2d_p0 = _ggml_conv_transpose_2d_p0Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_conv_transpose_2d_p0Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int)>>('ggml_conv_transpose_2d_p0');
+  late final _ggml_conv_transpose_2d_p0 =
+      _ggml_conv_transpose_2d_p0Ptr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pool_1d(
@@ -4758,8 +6518,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_pool_1dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int32, ffi.Int, ffi.Int, ffi.Int)>>('ggml_pool_1d');
-  late final _ggml_pool_1d = _ggml_pool_1dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_pool_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int32,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_pool_1d');
+  late final _ggml_pool_1d = _ggml_pool_1dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pool_2d(
@@ -4786,8 +6556,21 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_pool_2dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int32, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Float, ffi.Float)>>('ggml_pool_2d');
-  late final _ggml_pool_2d = _ggml_pool_2dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int, int, double, double)>();
+  late final _ggml_pool_2dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int32,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float,
+              ffi.Float)>>('ggml_pool_2d');
+  late final _ggml_pool_2d = _ggml_pool_2dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int, int, double, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pool_2d_back(
@@ -4816,8 +6599,31 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_pool_2d_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Int32, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Float, ffi.Float)>>('ggml_pool_2d_back');
-  late final _ggml_pool_2d_back = _ggml_pool_2d_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int, int, int, double, double)>();
+  late final _ggml_pool_2d_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int32,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float,
+              ffi.Float)>>('ggml_pool_2d_back');
+  late final _ggml_pool_2d_back = _ggml_pool_2d_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          int,
+          int,
+          int,
+          int,
+          int,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_upscale(
@@ -4832,8 +6638,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_upscalePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_upscale');
-  late final _ggml_upscale = _ggml_upscalePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_upscalePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_upscale');
+  late final _ggml_upscale = _ggml_upscalePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_upscale_ext(
@@ -4854,8 +6665,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_upscale_extPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('ggml_upscale_ext');
-  late final _ggml_upscale_ext = _ggml_upscale_extPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_upscale_extPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_upscale_ext');
+  late final _ggml_upscale_ext = _ggml_upscale_extPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pad(
@@ -4876,8 +6697,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_padPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('ggml_pad');
-  late final _ggml_pad = _ggml_padPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_padPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_pad');
+  late final _ggml_pad = _ggml_padPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pad_reflect_1d(
@@ -4894,8 +6725,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_pad_reflect_1dPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int)>>('ggml_pad_reflect_1d');
-  late final _ggml_pad_reflect_1d = _ggml_pad_reflect_1dPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_pad_reflect_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int)>>('ggml_pad_reflect_1d');
+  late final _ggml_pad_reflect_1d = _ggml_pad_reflect_1dPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_timestep_embedding(
@@ -4912,8 +6751,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_timestep_embeddingPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int)>>('ggml_timestep_embedding');
-  late final _ggml_timestep_embedding = _ggml_timestep_embeddingPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_timestep_embeddingPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int)>>('ggml_timestep_embedding');
+  late final _ggml_timestep_embedding = _ggml_timestep_embeddingPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_argsort(
@@ -4928,8 +6775,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_argsortPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_argsort');
-  late final _ggml_argsort = _ggml_argsortPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_argsortPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_argsort');
+  late final _ggml_argsort = _ggml_argsortPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_arange(
@@ -4946,8 +6798,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_arangePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Float, ffi.Float, ffi.Float)>>('ggml_arange');
-  late final _ggml_arange = _ggml_arangePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, double, double, double)>();
+  late final _ggml_arangePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Float, ffi.Float, ffi.Float)>>('ggml_arange');
+  late final _ggml_arange = _ggml_arangePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, double, double, double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_top_k(
@@ -4962,8 +6819,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_top_kPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_top_k');
-  late final _ggml_top_k = _ggml_top_kPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_top_kPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_top_k');
+  late final _ggml_top_k = _ggml_top_kPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_flash_attn_ext(
@@ -4988,8 +6850,27 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_flash_attn_extPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Float, ffi.Float, ffi.Float)>>('ggml_flash_attn_ext');
-  late final _ggml_flash_attn_ext = _ggml_flash_attn_extPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, double, double, double)>();
+  late final _ggml_flash_attn_extPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Float,
+              ffi.Float,
+              ffi.Float)>>('ggml_flash_attn_ext');
+  late final _ggml_flash_attn_ext = _ggml_flash_attn_extPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          double,
+          double,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_flash_attn_ext_set_prec(
@@ -5002,8 +6883,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_flash_attn_ext_set_precPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_flash_attn_ext_set_prec');
-  late final _ggml_flash_attn_ext_set_prec = _ggml_flash_attn_ext_set_precPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_flash_attn_ext_set_precPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tensor>,
+              ffi.Int32)>>('ggml_flash_attn_ext_set_prec');
+  late final _ggml_flash_attn_ext_set_prec = _ggml_flash_attn_ext_set_precPtr
+      .asFunction<void Function(ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_flash_attn_ext_get_prec(
@@ -5014,8 +6899,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_flash_attn_ext_get_precPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ggml_tensor>)>>('ggml_flash_attn_ext_get_prec');
-  late final _ggml_flash_attn_ext_get_prec = _ggml_flash_attn_ext_get_precPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_flash_attn_ext_get_precPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_flash_attn_ext_get_prec');
+  late final _ggml_flash_attn_ext_get_prec = _ggml_flash_attn_ext_get_precPtr
+      .asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_flash_attn_back(
@@ -5036,8 +6924,23 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_flash_attn_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Bool)>>('ggml_flash_attn_back');
-  late final _ggml_flash_attn_back = _ggml_flash_attn_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, bool)>();
+  late final _ggml_flash_attn_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Bool)>>('ggml_flash_attn_back');
+  late final _ggml_flash_attn_back = _ggml_flash_attn_backPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          bool)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_ssm_conv(
@@ -5052,8 +6955,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_ssm_convPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_ssm_conv');
-  late final _ggml_ssm_conv = _ggml_ssm_convPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_ssm_convPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_ssm_conv');
+  late final _ggml_ssm_conv = _ggml_ssm_convPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_ssm_scan(
@@ -5076,8 +6986,25 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_ssm_scanPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_ssm_scan');
-  late final _ggml_ssm_scan = _ggml_ssm_scanPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_ssm_scanPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_ssm_scan');
+  late final _ggml_ssm_scan = _ggml_ssm_scanPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_win_part(
@@ -5092,8 +7019,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_win_partPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_win_part');
-  late final _ggml_win_part = _ggml_win_partPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_win_partPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_win_part');
+  late final _ggml_win_part = _ggml_win_partPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_win_unpart(
@@ -5112,8 +7044,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_win_unpartPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int)>>('ggml_win_unpart');
-  late final _ggml_win_unpart = _ggml_win_unpartPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int, int)>();
+  late final _ggml_win_unpartPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Int)>>('ggml_win_unpart');
+  late final _ggml_win_unpart = _ggml_win_unpartPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_unary(
@@ -5128,8 +7069,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_unaryPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_unary');
-  late final _ggml_unary = _ggml_unaryPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_unaryPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_unary');
+  late final _ggml_unary = _ggml_unaryPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_unary_inplace(
@@ -5144,8 +7090,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_unary_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_unary_inplace');
-  late final _ggml_unary_inplace = _ggml_unary_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_unary_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_unary_inplace');
+  late final _ggml_unary_inplace = _ggml_unary_inplacePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_rel_pos(
@@ -5162,8 +7113,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_rel_posPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int)>>('ggml_get_rel_pos');
-  late final _ggml_get_rel_pos = _ggml_get_rel_posPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_get_rel_posPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int)>>('ggml_get_rel_pos');
+  late final _ggml_get_rel_pos = _ggml_get_rel_posPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add_rel_pos(
@@ -5180,8 +7136,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_add_rel_posPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_add_rel_pos');
-  late final _ggml_add_rel_pos = _ggml_add_rel_posPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_add_rel_posPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_add_rel_pos');
+  late final _ggml_add_rel_pos = _ggml_add_rel_posPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add_rel_pos_inplace(
@@ -5198,8 +7165,20 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_add_rel_pos_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_add_rel_pos_inplace');
-  late final _ggml_add_rel_pos_inplace = _ggml_add_rel_pos_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_add_rel_pos_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_add_rel_pos_inplace');
+  late final _ggml_add_rel_pos_inplace =
+      _ggml_add_rel_pos_inplacePtr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rwkv_wkv6(
@@ -5222,8 +7201,25 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_rwkv_wkv6Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_rwkv_wkv6');
-  late final _ggml_rwkv_wkv6 = _ggml_rwkv_wkv6Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_rwkv_wkv6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_rwkv_wkv6');
+  late final _ggml_rwkv_wkv6 = _ggml_rwkv_wkv6Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gated_linear_attn(
@@ -5246,8 +7242,25 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gated_linear_attnPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_gated_linear_attn');
-  late final _ggml_gated_linear_attn = _ggml_gated_linear_attnPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, double)>();
+  late final _ggml_gated_linear_attnPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Float)>>('ggml_gated_linear_attn');
+  late final _ggml_gated_linear_attn = _ggml_gated_linear_attnPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          double)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_unary_f32(
@@ -5262,8 +7275,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_unary_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_unary_op_f32_t)>>('ggml_map_unary_f32');
-  late final _ggml_map_unary_f32 = _ggml_map_unary_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_unary_op_f32_t)>();
+  late final _ggml_map_unary_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_unary_op_f32_t)>>('ggml_map_unary_f32');
+  late final _ggml_map_unary_f32 = _ggml_map_unary_f32Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ggml_unary_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_unary_inplace_f32(
@@ -5278,8 +7298,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_unary_inplace_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_unary_op_f32_t)>>('ggml_map_unary_inplace_f32');
-  late final _ggml_map_unary_inplace_f32 = _ggml_map_unary_inplace_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_unary_op_f32_t)>();
+  late final _ggml_map_unary_inplace_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_unary_op_f32_t)>>('ggml_map_unary_inplace_f32');
+  late final _ggml_map_unary_inplace_f32 =
+      _ggml_map_unary_inplace_f32Ptr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ggml_unary_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_binary_f32(
@@ -5296,8 +7324,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_binary_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_binary_op_f32_t)>>('ggml_map_binary_f32');
-  late final _ggml_map_binary_f32 = _ggml_map_binary_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_binary_op_f32_t)>();
+  late final _ggml_map_binary_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_binary_op_f32_t)>>('ggml_map_binary_f32');
+  late final _ggml_map_binary_f32 = _ggml_map_binary_f32Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ggml_binary_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_binary_inplace_f32(
@@ -5314,8 +7353,20 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_binary_inplace_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_binary_op_f32_t)>>('ggml_map_binary_inplace_f32');
-  late final _ggml_map_binary_inplace_f32 = _ggml_map_binary_inplace_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_binary_op_f32_t)>();
+  late final _ggml_map_binary_inplace_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_binary_op_f32_t)>>('ggml_map_binary_inplace_f32');
+  late final _ggml_map_binary_inplace_f32 =
+      _ggml_map_binary_inplace_f32Ptr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_binary_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom1_f32(
@@ -5330,8 +7381,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom1_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_custom1_op_f32_t)>>('ggml_map_custom1_f32');
-  late final _ggml_map_custom1_f32 = _ggml_map_custom1_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_custom1_op_f32_t)>();
+  late final _ggml_map_custom1_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom1_op_f32_t)>>('ggml_map_custom1_f32');
+  late final _ggml_map_custom1_f32 = _ggml_map_custom1_f32Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ggml_custom1_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom1_inplace_f32(
@@ -5346,8 +7404,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom1_inplace_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_custom1_op_f32_t)>>('ggml_map_custom1_inplace_f32');
-  late final _ggml_map_custom1_inplace_f32 = _ggml_map_custom1_inplace_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_custom1_op_f32_t)>();
+  late final _ggml_map_custom1_inplace_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom1_op_f32_t)>>('ggml_map_custom1_inplace_f32');
+  late final _ggml_map_custom1_inplace_f32 =
+      _ggml_map_custom1_inplace_f32Ptr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>, ggml_custom1_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom2_f32(
@@ -5364,8 +7430,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom2_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom2_op_f32_t)>>('ggml_map_custom2_f32');
-  late final _ggml_map_custom2_f32 = _ggml_map_custom2_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom2_op_f32_t)>();
+  late final _ggml_map_custom2_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom2_op_f32_t)>>('ggml_map_custom2_f32');
+  late final _ggml_map_custom2_f32 = _ggml_map_custom2_f32Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ggml_custom2_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom2_inplace_f32(
@@ -5382,8 +7459,20 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom2_inplace_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom2_op_f32_t)>>('ggml_map_custom2_inplace_f32');
-  late final _ggml_map_custom2_inplace_f32 = _ggml_map_custom2_inplace_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom2_op_f32_t)>();
+  late final _ggml_map_custom2_inplace_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom2_op_f32_t)>>('ggml_map_custom2_inplace_f32');
+  late final _ggml_map_custom2_inplace_f32 =
+      _ggml_map_custom2_inplace_f32Ptr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom2_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom3_f32(
@@ -5402,8 +7491,21 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom3_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom3_op_f32_t)>>('ggml_map_custom3_f32');
-  late final _ggml_map_custom3_f32 = _ggml_map_custom3_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom3_op_f32_t)>();
+  late final _ggml_map_custom3_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom3_op_f32_t)>>('ggml_map_custom3_f32');
+  late final _ggml_map_custom3_f32 = _ggml_map_custom3_f32Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ggml_custom3_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom3_inplace_f32(
@@ -5422,8 +7524,22 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom3_inplace_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom3_op_f32_t)>>('ggml_map_custom3_inplace_f32');
-  late final _ggml_map_custom3_inplace_f32 = _ggml_map_custom3_inplace_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom3_op_f32_t)>();
+  late final _ggml_map_custom3_inplace_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom3_op_f32_t)>>('ggml_map_custom3_inplace_f32');
+  late final _ggml_map_custom3_inplace_f32 =
+      _ggml_map_custom3_inplace_f32Ptr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom3_op_f32_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom1(
@@ -5442,8 +7558,21 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom1Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_custom1_op_t, ffi.Int, ffi.Pointer<ffi.Void>)>>('ggml_map_custom1');
-  late final _ggml_map_custom1 = _ggml_map_custom1Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_custom1_op_t, int, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_map_custom1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom1_op_t,
+              ffi.Int,
+              ffi.Pointer<ffi.Void>)>>('ggml_map_custom1');
+  late final _ggml_map_custom1 = _ggml_map_custom1Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ggml_custom1_op_t,
+          int,
+          ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom1_inplace(
@@ -5462,8 +7591,22 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom1_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_custom1_op_t, ffi.Int, ffi.Pointer<ffi.Void>)>>('ggml_map_custom1_inplace');
-  late final _ggml_map_custom1_inplace = _ggml_map_custom1_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ggml_custom1_op_t, int, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_map_custom1_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom1_op_t,
+              ffi.Int,
+              ffi.Pointer<ffi.Void>)>>('ggml_map_custom1_inplace');
+  late final _ggml_map_custom1_inplace =
+      _ggml_map_custom1_inplacePtr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom1_op_t,
+              int,
+              ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom2(
@@ -5484,8 +7627,23 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom2Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom2_op_t, ffi.Int, ffi.Pointer<ffi.Void>)>>('ggml_map_custom2');
-  late final _ggml_map_custom2 = _ggml_map_custom2Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom2_op_t, int, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_map_custom2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom2_op_t,
+              ffi.Int,
+              ffi.Pointer<ffi.Void>)>>('ggml_map_custom2');
+  late final _ggml_map_custom2 = _ggml_map_custom2Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ggml_custom2_op_t,
+          int,
+          ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom2_inplace(
@@ -5506,8 +7664,24 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom2_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom2_op_t, ffi.Int, ffi.Pointer<ffi.Void>)>>('ggml_map_custom2_inplace');
-  late final _ggml_map_custom2_inplace = _ggml_map_custom2_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom2_op_t, int, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_map_custom2_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom2_op_t,
+              ffi.Int,
+              ffi.Pointer<ffi.Void>)>>('ggml_map_custom2_inplace');
+  late final _ggml_map_custom2_inplace =
+      _ggml_map_custom2_inplacePtr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom2_op_t,
+              int,
+              ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom3(
@@ -5530,8 +7704,25 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom3Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom3_op_t, ffi.Int, ffi.Pointer<ffi.Void>)>>('ggml_map_custom3');
-  late final _ggml_map_custom3 = _ggml_map_custom3Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom3_op_t, int, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_map_custom3Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom3_op_t,
+              ffi.Int,
+              ffi.Pointer<ffi.Void>)>>('ggml_map_custom3');
+  late final _ggml_map_custom3 = _ggml_map_custom3Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ggml_custom3_op_t,
+          int,
+          ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom3_inplace(
@@ -5554,8 +7745,26 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_map_custom3_inplacePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom3_op_t, ffi.Int, ffi.Pointer<ffi.Void>)>>('ggml_map_custom3_inplace');
-  late final _ggml_map_custom3_inplace = _ggml_map_custom3_inplacePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ggml_custom3_op_t, int, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_map_custom3_inplacePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom3_op_t,
+              ffi.Int,
+              ffi.Pointer<ffi.Void>)>>('ggml_map_custom3_inplace');
+  late final _ggml_map_custom3_inplace =
+      _ggml_map_custom3_inplacePtr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ggml_custom3_op_t,
+              int,
+              ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cross_entropy_loss(
@@ -5570,8 +7779,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_cross_entropy_lossPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_cross_entropy_loss');
-  late final _ggml_cross_entropy_loss = _ggml_cross_entropy_lossPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_cross_entropy_lossPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_cross_entropy_loss');
+  late final _ggml_cross_entropy_loss = _ggml_cross_entropy_lossPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cross_entropy_loss_back(
@@ -5588,8 +7804,20 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_cross_entropy_loss_backPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_cross_entropy_loss_back');
-  late final _ggml_cross_entropy_loss_back = _ggml_cross_entropy_loss_backPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_cross_entropy_loss_backPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_cross_entropy_loss_back');
+  late final _ggml_cross_entropy_loss_back =
+      _ggml_cross_entropy_loss_backPtr.asFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_opt_step_adamw(
@@ -5610,8 +7838,23 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_opt_step_adamwPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_opt_step_adamw');
-  late final _ggml_opt_step_adamw = _ggml_opt_step_adamwPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_opt_step_adamwPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_opt_step_adamw');
+  late final _ggml_opt_step_adamw = _ggml_opt_step_adamwPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_context>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>,
+          ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_build_forward_expand(
@@ -5624,8 +7867,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_build_forward_expandPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>>('ggml_build_forward_expand');
-  late final _ggml_build_forward_expand = _ggml_build_forward_expandPtr.asFunction<void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_build_forward_expandPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_build_forward_expand');
+  late final _ggml_build_forward_expand =
+      _ggml_build_forward_expandPtr.asFunction<
+          void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_build_backward_expand(
@@ -5642,8 +7890,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_build_backward_expandPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_context>, ffi.Pointer<ggml_cgraph>, ffi.Bool)>>('ggml_build_backward_expand');
-  late final _ggml_build_backward_expand = _ggml_build_backward_expandPtr.asFunction<void Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_context>, ffi.Pointer<ggml_cgraph>, bool)>();
+  late final _ggml_build_backward_expandPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_cgraph>,
+              ffi.Bool)>>('ggml_build_backward_expand');
+  late final _ggml_build_backward_expand =
+      _ggml_build_backward_expandPtr.asFunction<
+          void Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_cgraph>, bool)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_cgraph> ggml_new_graph(
@@ -5654,8 +7911,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_graphPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>)>>('ggml_new_graph');
-  late final _ggml_new_graph = _ggml_new_graphPtr.asFunction<ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>)>();
+  late final _ggml_new_graphPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_cgraph> Function(
+              ffi.Pointer<ggml_context>)>>('ggml_new_graph');
+  late final _ggml_new_graph = _ggml_new_graphPtr.asFunction<
+      ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_cgraph> ggml_new_graph_custom(
@@ -5670,8 +7931,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_graph_customPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>, ffi.Size, ffi.Bool)>>('ggml_new_graph_custom');
-  late final _ggml_new_graph_custom = _ggml_new_graph_customPtr.asFunction<ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>, int, bool)>();
+  late final _ggml_new_graph_customPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>, ffi.Size,
+              ffi.Bool)>>('ggml_new_graph_custom');
+  late final _ggml_new_graph_custom = _ggml_new_graph_customPtr.asFunction<
+      ffi.Pointer<ggml_cgraph> Function(
+          ffi.Pointer<ggml_context>, int, bool)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_cgraph> ggml_graph_dup(
@@ -5684,8 +7950,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_dupPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_cgraph>)>>('ggml_graph_dup');
-  late final _ggml_graph_dup = _ggml_graph_dupPtr.asFunction<ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_graph_dupPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_graph_dup');
+  late final _ggml_graph_dup = _ggml_graph_dupPtr.asFunction<
+      ffi.Pointer<ggml_cgraph> Function(
+          ffi.Pointer<ggml_context>, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_cpy(
@@ -5698,8 +7969,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_cpyPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cgraph>)>>('ggml_graph_cpy');
-  late final _ggml_graph_cpy = _ggml_graph_cpyPtr.asFunction<void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_graph_cpyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_graph_cpy');
+  late final _ggml_graph_cpy = _ggml_graph_cpyPtr.asFunction<
+      void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_reset(
@@ -5710,8 +7985,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_resetPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>)>>('ggml_graph_reset');
-  late final _ggml_graph_reset = _ggml_graph_resetPtr.asFunction<void Function(ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_graph_resetPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>)>>(
+          'ggml_graph_reset');
+  late final _ggml_graph_reset = _ggml_graph_resetPtr
+      .asFunction<void Function(ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_clear(
@@ -5722,8 +8000,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_clearPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>)>>('ggml_graph_clear');
-  late final _ggml_graph_clear = _ggml_graph_clearPtr.asFunction<void Function(ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_graph_clearPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>)>>(
+          'ggml_graph_clear');
+  late final _ggml_graph_clear = _ggml_graph_clearPtr
+      .asFunction<void Function(ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_graph_size(
@@ -5734,8 +8015,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_sizePtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ggml_cgraph>)>>('ggml_graph_size');
-  late final _ggml_graph_size = _ggml_graph_sizePtr.asFunction<int Function(ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_graph_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ggml_cgraph>)>>(
+          'ggml_graph_size');
+  late final _ggml_graph_size =
+      _ggml_graph_sizePtr.asFunction<int Function(ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_graph_node(
@@ -5748,8 +8032,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_nodePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, ffi.Int)>>('ggml_graph_node');
-  late final _ggml_graph_node = _ggml_graph_nodePtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, int)>();
+  late final _ggml_graph_nodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_cgraph>, ffi.Int)>>('ggml_graph_node');
+  late final _ggml_graph_node = _ggml_graph_nodePtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Pointer<ggml_tensor>> ggml_graph_nodes(
@@ -5760,8 +8048,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_nodesPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Pointer<ggml_tensor>> Function(ffi.Pointer<ggml_cgraph>)>>('ggml_graph_nodes');
-  late final _ggml_graph_nodes = _ggml_graph_nodesPtr.asFunction<ffi.Pointer<ffi.Pointer<ggml_tensor>> Function(ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_graph_nodesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Pointer<ggml_tensor>> Function(
+              ffi.Pointer<ggml_cgraph>)>>('ggml_graph_nodes');
+  late final _ggml_graph_nodes = _ggml_graph_nodesPtr.asFunction<
+      ffi.Pointer<ffi.Pointer<ggml_tensor>> Function(
+          ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_graph_n_nodes(
@@ -5772,8 +8065,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_n_nodesPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ggml_cgraph>)>>('ggml_graph_n_nodes');
-  late final _ggml_graph_n_nodes = _ggml_graph_n_nodesPtr.asFunction<int Function(ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_graph_n_nodesPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ggml_cgraph>)>>(
+          'ggml_graph_n_nodes');
+  late final _ggml_graph_n_nodes = _ggml_graph_n_nodesPtr
+      .asFunction<int Function(ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_add_node(
@@ -5786,16 +8082,22 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_add_nodePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>>('ggml_graph_add_node');
-  late final _ggml_graph_add_node = _ggml_graph_add_nodePtr.asFunction<void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_graph_add_nodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_graph_add_node');
+  late final _ggml_graph_add_node = _ggml_graph_add_nodePtr.asFunction<
+      void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_graph_overhead() {
     return _ggml_graph_overhead();
   }
 
-  late final _ggml_graph_overheadPtr = _lookup<ffi.NativeFunction<ffi.Size Function()>>('ggml_graph_overhead');
-  late final _ggml_graph_overhead = _ggml_graph_overheadPtr.asFunction<int Function()>();
+  late final _ggml_graph_overheadPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function()>>('ggml_graph_overhead');
+  late final _ggml_graph_overhead =
+      _ggml_graph_overheadPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_graph_overhead_custom(
@@ -5808,8 +8110,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_overhead_customPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Size, ffi.Bool)>>('ggml_graph_overhead_custom');
-  late final _ggml_graph_overhead_custom = _ggml_graph_overhead_customPtr.asFunction<int Function(int, bool)>();
+  late final _ggml_graph_overhead_customPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Size, ffi.Bool)>>(
+          'ggml_graph_overhead_custom');
+  late final _ggml_graph_overhead_custom =
+      _ggml_graph_overhead_customPtr.asFunction<int Function(int, bool)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_graph_get_tensor(
@@ -5822,8 +8127,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_get_tensorPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>>('ggml_graph_get_tensor');
-  late final _ggml_graph_get_tensor = _ggml_graph_get_tensorPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_graph_get_tensorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ffi.Char>)>>('ggml_graph_get_tensor');
+  late final _ggml_graph_get_tensor = _ggml_graph_get_tensorPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_graph_get_grad(
@@ -5836,8 +8146,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_get_gradPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>>('ggml_graph_get_grad');
-  late final _ggml_graph_get_grad = _ggml_graph_get_gradPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_graph_get_gradPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_graph_get_grad');
+  late final _ggml_graph_get_grad = _ggml_graph_get_gradPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_graph_get_grad_acc(
@@ -5850,8 +8165,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_get_grad_accPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>>('ggml_graph_get_grad_acc');
-  late final _ggml_graph_get_grad_acc = _ggml_graph_get_grad_accPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_graph_get_grad_accPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_graph_get_grad_acc');
+  late final _ggml_graph_get_grad_acc = _ggml_graph_get_grad_accPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(
+          ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_export(
@@ -5864,8 +8184,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_exportPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>>('ggml_graph_export');
-  late final _ggml_graph_export = _ggml_graph_exportPtr.asFunction<void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_graph_exportPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ffi.Char>)>>('ggml_graph_export');
+  late final _ggml_graph_export = _ggml_graph_exportPtr.asFunction<
+      void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_cgraph> ggml_graph_import(
@@ -5880,8 +8204,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_importPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ggml_context>>, ffi.Pointer<ffi.Pointer<ggml_context>>)>>('ggml_graph_import');
-  late final _ggml_graph_import = _ggml_graph_importPtr.asFunction<ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ggml_context>>, ffi.Pointer<ffi.Pointer<ggml_context>>)>();
+  late final _ggml_graph_importPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_cgraph> Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Pointer<ggml_context>>,
+              ffi.Pointer<ffi.Pointer<ggml_context>>)>>('ggml_graph_import');
+  late final _ggml_graph_import = _ggml_graph_importPtr.asFunction<
+      ffi.Pointer<ggml_cgraph> Function(
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Pointer<ggml_context>>,
+          ffi.Pointer<ffi.Pointer<ggml_context>>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_print(
@@ -5892,8 +8225,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_printPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>)>>('ggml_graph_print');
-  late final _ggml_graph_print = _ggml_graph_printPtr.asFunction<void Function(ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_graph_printPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>)>>(
+          'ggml_graph_print');
+  late final _ggml_graph_print = _ggml_graph_printPtr
+      .asFunction<void Function(ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_dump_dot(
@@ -5908,8 +8244,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_dump_dotPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>>('ggml_graph_dump_dot');
-  late final _ggml_graph_dump_dot = _ggml_graph_dump_dotPtr.asFunction<void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_graph_dump_dotPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ffi.Char>)>>('ggml_graph_dump_dot');
+  late final _ggml_graph_dump_dot = _ggml_graph_dump_dotPtr.asFunction<
+      void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cgraph>,
+          ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_log_set(
@@ -5922,8 +8263,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_log_setPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_log_callback, ffi.Pointer<ffi.Void>)>>('ggml_log_set');
-  late final _ggml_log_set = _ggml_log_setPtr.asFunction<void Function(ggml_log_callback, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_log_setPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ggml_log_callback, ffi.Pointer<ffi.Void>)>>('ggml_log_set');
+  late final _ggml_log_set = _ggml_log_setPtr
+      .asFunction<void Function(ggml_log_callback, ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_zero(
@@ -5934,8 +8279,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_zeroPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>)>>('ggml_set_zero');
-  late final _ggml_set_zero = _ggml_set_zeroPtr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_set_zeroPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_tensor>)>>('ggml_set_zero');
+  late final _ggml_set_zero = _ggml_set_zeroPtr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_quantize_init(
@@ -5946,16 +8295,21 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_quantize_initPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int32)>>('ggml_quantize_init');
-  late final _ggml_quantize_init = _ggml_quantize_initPtr.asFunction<void Function(int)>();
+  late final _ggml_quantize_initPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int32)>>(
+          'ggml_quantize_init');
+  late final _ggml_quantize_init =
+      _ggml_quantize_initPtr.asFunction<void Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_quantize_free() {
     return _ggml_quantize_free();
   }
 
-  late final _ggml_quantize_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function()>>('ggml_quantize_free');
-  late final _ggml_quantize_free = _ggml_quantize_freePtr.asFunction<void Function()>();
+  late final _ggml_quantize_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('ggml_quantize_free');
+  late final _ggml_quantize_free =
+      _ggml_quantize_freePtr.asFunction<void Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_quantize_requires_imatrix(
@@ -5966,8 +8320,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_quantize_requires_imatrixPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32)>>('ggml_quantize_requires_imatrix');
-  late final _ggml_quantize_requires_imatrix = _ggml_quantize_requires_imatrixPtr.asFunction<bool Function(int)>();
+  late final _ggml_quantize_requires_imatrixPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32)>>(
+          'ggml_quantize_requires_imatrix');
+  late final _ggml_quantize_requires_imatrix =
+      _ggml_quantize_requires_imatrixPtr.asFunction<bool Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_quantize_chunk(
@@ -5990,8 +8347,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_quantize_chunkPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Int32, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Void>, ffi.Int64, ffi.Int64, ffi.Int64, ffi.Pointer<ffi.Float>)>>('ggml_quantize_chunk');
-  late final _ggml_quantize_chunk = _ggml_quantize_chunkPtr.asFunction<int Function(int, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Void>, int, int, int, ffi.Pointer<ffi.Float>)>();
+  late final _ggml_quantize_chunkPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(
+              ffi.Int32,
+              ffi.Pointer<ffi.Float>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Int64,
+              ffi.Pointer<ffi.Float>)>>('ggml_quantize_chunk');
+  late final _ggml_quantize_chunk = _ggml_quantize_chunkPtr.asFunction<
+      int Function(int, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Void>, int, int,
+          int, ffi.Pointer<ffi.Float>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_type_traits> ggml_get_type_traits(
@@ -6002,8 +8370,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_type_traitsPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_type_traits> Function(ffi.Int32)>>('ggml_get_type_traits');
-  late final _ggml_get_type_traits = _ggml_get_type_traitsPtr.asFunction<ffi.Pointer<ggml_type_traits> Function(int)>();
+  late final _ggml_get_type_traitsPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Pointer<ggml_type_traits> Function(ffi.Int32)>>(
+      'ggml_get_type_traits');
+  late final _ggml_get_type_traits = _ggml_get_type_traitsPtr
+      .asFunction<ffi.Pointer<ggml_type_traits> Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_threadpool_params ggml_threadpool_params_default(
@@ -6014,8 +8386,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_threadpool_params_defaultPtr = _lookup<ffi.NativeFunction<ggml_threadpool_params Function(ffi.Int)>>('ggml_threadpool_params_default');
-  late final _ggml_threadpool_params_default = _ggml_threadpool_params_defaultPtr.asFunction<ggml_threadpool_params Function(int)>();
+  late final _ggml_threadpool_params_defaultPtr =
+      _lookup<ffi.NativeFunction<ggml_threadpool_params Function(ffi.Int)>>(
+          'ggml_threadpool_params_default');
+  late final _ggml_threadpool_params_default =
+      _ggml_threadpool_params_defaultPtr
+          .asFunction<ggml_threadpool_params Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_threadpool_params_init(
@@ -6028,8 +8404,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_threadpool_params_initPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_threadpool_params>, ffi.Int)>>('ggml_threadpool_params_init');
-  late final _ggml_threadpool_params_init = _ggml_threadpool_params_initPtr.asFunction<void Function(ffi.Pointer<ggml_threadpool_params>, int)>();
+  late final _ggml_threadpool_params_initPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_threadpool_params>,
+              ffi.Int)>>('ggml_threadpool_params_init');
+  late final _ggml_threadpool_params_init = _ggml_threadpool_params_initPtr
+      .asFunction<void Function(ffi.Pointer<ggml_threadpool_params>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_threadpool_params_match(
@@ -6042,8 +8422,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_threadpool_params_matchPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ggml_threadpool_params>, ffi.Pointer<ggml_threadpool_params>)>>('ggml_threadpool_params_match');
-  late final _ggml_threadpool_params_match = _ggml_threadpool_params_matchPtr.asFunction<bool Function(ffi.Pointer<ggml_threadpool_params>, ffi.Pointer<ggml_threadpool_params>)>();
+  late final _ggml_threadpool_params_matchPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Bool Function(ffi.Pointer<ggml_threadpool_params>,
+                  ffi.Pointer<ggml_threadpool_params>)>>(
+      'ggml_threadpool_params_match');
+  late final _ggml_threadpool_params_match =
+      _ggml_threadpool_params_matchPtr.asFunction<
+          bool Function(ffi.Pointer<ggml_threadpool_params>,
+              ffi.Pointer<ggml_threadpool_params>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_tallocr ggml_tallocr_new(
@@ -6054,8 +8441,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_tallocr_newPtr = _lookup<ffi.NativeFunction<ggml_tallocr Function(ggml_backend_buffer_t)>>('ggml_tallocr_new');
-  late final _ggml_tallocr_new = _ggml_tallocr_newPtr.asFunction<ggml_tallocr Function(ggml_backend_buffer_t)>();
+  late final _ggml_tallocr_newPtr =
+      _lookup<ffi.NativeFunction<ggml_tallocr Function(ggml_backend_buffer_t)>>(
+          'ggml_tallocr_new');
+  late final _ggml_tallocr_new = _ggml_tallocr_newPtr
+      .asFunction<ggml_tallocr Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_tallocr_alloc(
@@ -6068,8 +8458,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_tallocr_allocPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tallocr>, ffi.Pointer<ggml_tensor>)>>('ggml_tallocr_alloc');
-  late final _ggml_tallocr_alloc = _ggml_tallocr_allocPtr.asFunction<void Function(ffi.Pointer<ggml_tallocr>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_tallocr_allocPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tallocr>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_tallocr_alloc');
+  late final _ggml_tallocr_alloc = _ggml_tallocr_allocPtr.asFunction<
+      void Function(ffi.Pointer<ggml_tallocr>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_gallocr_t ggml_gallocr_new(
@@ -6080,8 +8474,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gallocr_newPtr = _lookup<ffi.NativeFunction<ggml_gallocr_t Function(ggml_backend_buffer_type_t)>>('ggml_gallocr_new');
-  late final _ggml_gallocr_new = _ggml_gallocr_newPtr.asFunction<ggml_gallocr_t Function(ggml_backend_buffer_type_t)>();
+  late final _ggml_gallocr_newPtr = _lookup<
+          ffi
+          .NativeFunction<ggml_gallocr_t Function(ggml_backend_buffer_type_t)>>(
+      'ggml_gallocr_new');
+  late final _ggml_gallocr_new = _ggml_gallocr_newPtr
+      .asFunction<ggml_gallocr_t Function(ggml_backend_buffer_type_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_gallocr_t ggml_gallocr_new_n(
@@ -6094,8 +8492,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gallocr_new_nPtr = _lookup<ffi.NativeFunction<ggml_gallocr_t Function(ffi.Pointer<ggml_backend_buffer_type_t>, ffi.Int)>>('ggml_gallocr_new_n');
-  late final _ggml_gallocr_new_n = _ggml_gallocr_new_nPtr.asFunction<ggml_gallocr_t Function(ffi.Pointer<ggml_backend_buffer_type_t>, int)>();
+  late final _ggml_gallocr_new_nPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_gallocr_t Function(ffi.Pointer<ggml_backend_buffer_type_t>,
+              ffi.Int)>>('ggml_gallocr_new_n');
+  late final _ggml_gallocr_new_n = _ggml_gallocr_new_nPtr.asFunction<
+      ggml_gallocr_t Function(ffi.Pointer<ggml_backend_buffer_type_t>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_gallocr_free(
@@ -6106,8 +8508,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gallocr_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_gallocr_t)>>('ggml_gallocr_free');
-  late final _ggml_gallocr_free = _ggml_gallocr_freePtr.asFunction<void Function(ggml_gallocr_t)>();
+  late final _ggml_gallocr_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_gallocr_t)>>(
+          'ggml_gallocr_free');
+  late final _ggml_gallocr_free =
+      _ggml_gallocr_freePtr.asFunction<void Function(ggml_gallocr_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_gallocr_reserve(
@@ -6120,8 +8525,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gallocr_reservePtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>)>>('ggml_gallocr_reserve');
-  late final _ggml_gallocr_reserve = _ggml_gallocr_reservePtr.asFunction<bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_gallocr_reservePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_gallocr_t,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_gallocr_reserve');
+  late final _ggml_gallocr_reserve = _ggml_gallocr_reservePtr
+      .asFunction<bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_gallocr_reserve_n(
@@ -6138,8 +8547,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gallocr_reserve_nPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>)>>('ggml_gallocr_reserve_n');
-  late final _ggml_gallocr_reserve_n = _ggml_gallocr_reserve_nPtr.asFunction<bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>)>();
+  late final _ggml_gallocr_reserve_nPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(
+              ggml_gallocr_t,
+              ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>)>>('ggml_gallocr_reserve_n');
+  late final _ggml_gallocr_reserve_n = _ggml_gallocr_reserve_nPtr.asFunction<
+      bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>,
+          ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_gallocr_alloc_graph(
@@ -6152,8 +8569,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gallocr_alloc_graphPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>)>>('ggml_gallocr_alloc_graph');
-  late final _ggml_gallocr_alloc_graph = _ggml_gallocr_alloc_graphPtr.asFunction<bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_gallocr_alloc_graphPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_gallocr_t,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_gallocr_alloc_graph');
+  late final _ggml_gallocr_alloc_graph = _ggml_gallocr_alloc_graphPtr
+      .asFunction<bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_gallocr_get_buffer_size(
@@ -6166,8 +8587,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_gallocr_get_buffer_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_gallocr_t, ffi.Int)>>('ggml_gallocr_get_buffer_size');
-  late final _ggml_gallocr_get_buffer_size = _ggml_gallocr_get_buffer_sizePtr.asFunction<int Function(ggml_gallocr_t, int)>();
+  late final _ggml_gallocr_get_buffer_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ggml_gallocr_t, ffi.Int)>>(
+          'ggml_gallocr_get_buffer_size');
+  late final _ggml_gallocr_get_buffer_size = _ggml_gallocr_get_buffer_sizePtr
+      .asFunction<int Function(ggml_gallocr_t, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_backend_buffer> ggml_backend_alloc_ctx_tensors_from_buft(
@@ -6180,8 +8604,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_alloc_ctx_tensors_from_buftPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_backend_buffer> Function(ffi.Pointer<ggml_context>, ggml_backend_buffer_type_t)>>('ggml_backend_alloc_ctx_tensors_from_buft');
-  late final _ggml_backend_alloc_ctx_tensors_from_buft = _ggml_backend_alloc_ctx_tensors_from_buftPtr.asFunction<ffi.Pointer<ggml_backend_buffer> Function(ffi.Pointer<ggml_context>, ggml_backend_buffer_type_t)>();
+  late final _ggml_backend_alloc_ctx_tensors_from_buftPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<ggml_backend_buffer> Function(
+                  ffi.Pointer<ggml_context>, ggml_backend_buffer_type_t)>>(
+      'ggml_backend_alloc_ctx_tensors_from_buft');
+  late final _ggml_backend_alloc_ctx_tensors_from_buft =
+      _ggml_backend_alloc_ctx_tensors_from_buftPtr.asFunction<
+          ffi.Pointer<ggml_backend_buffer> Function(
+              ffi.Pointer<ggml_context>, ggml_backend_buffer_type_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_backend_buffer> ggml_backend_alloc_ctx_tensors(
@@ -6194,8 +8625,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_alloc_ctx_tensorsPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_backend_buffer> Function(ffi.Pointer<ggml_context>, ggml_backend_t)>>('ggml_backend_alloc_ctx_tensors');
-  late final _ggml_backend_alloc_ctx_tensors = _ggml_backend_alloc_ctx_tensorsPtr.asFunction<ffi.Pointer<ggml_backend_buffer> Function(ffi.Pointer<ggml_context>, ggml_backend_t)>();
+  late final _ggml_backend_alloc_ctx_tensorsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_backend_buffer> Function(ffi.Pointer<ggml_context>,
+              ggml_backend_t)>>('ggml_backend_alloc_ctx_tensors');
+  late final _ggml_backend_alloc_ctx_tensors =
+      _ggml_backend_alloc_ctx_tensorsPtr.asFunction<
+          ffi.Pointer<ggml_backend_buffer> Function(
+              ffi.Pointer<ggml_context>, ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_buft_name(
@@ -6206,8 +8643,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buft_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_buffer_type_t)>>('ggml_backend_buft_name');
-  late final _ggml_backend_buft_name = _ggml_backend_buft_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_buffer_type_t)>();
+  late final _ggml_backend_buft_namePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ggml_backend_buffer_type_t)>>('ggml_backend_buft_name');
+  late final _ggml_backend_buft_name = _ggml_backend_buft_namePtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_buffer_type_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_t ggml_backend_buft_alloc_buffer(
@@ -6220,8 +8661,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buft_alloc_bufferPtr = _lookup<ffi.NativeFunction<ggml_backend_buffer_t Function(ggml_backend_buffer_type_t, ffi.Size)>>('ggml_backend_buft_alloc_buffer');
-  late final _ggml_backend_buft_alloc_buffer = _ggml_backend_buft_alloc_bufferPtr.asFunction<ggml_backend_buffer_t Function(ggml_backend_buffer_type_t, int)>();
+  late final _ggml_backend_buft_alloc_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_buffer_t Function(ggml_backend_buffer_type_t,
+              ffi.Size)>>('ggml_backend_buft_alloc_buffer');
+  late final _ggml_backend_buft_alloc_buffer =
+      _ggml_backend_buft_alloc_bufferPtr.asFunction<
+          ggml_backend_buffer_t Function(ggml_backend_buffer_type_t, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buft_get_alignment(
@@ -6232,8 +8678,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buft_get_alignmentPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_type_t)>>('ggml_backend_buft_get_alignment');
-  late final _ggml_backend_buft_get_alignment = _ggml_backend_buft_get_alignmentPtr.asFunction<int Function(ggml_backend_buffer_type_t)>();
+  late final _ggml_backend_buft_get_alignmentPtr = _lookup<
+          ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_type_t)>>(
+      'ggml_backend_buft_get_alignment');
+  late final _ggml_backend_buft_get_alignment =
+      _ggml_backend_buft_get_alignmentPtr
+          .asFunction<int Function(ggml_backend_buffer_type_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buft_get_max_size(
@@ -6244,8 +8694,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buft_get_max_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_type_t)>>('ggml_backend_buft_get_max_size');
-  late final _ggml_backend_buft_get_max_size = _ggml_backend_buft_get_max_sizePtr.asFunction<int Function(ggml_backend_buffer_type_t)>();
+  late final _ggml_backend_buft_get_max_sizePtr = _lookup<
+          ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_type_t)>>(
+      'ggml_backend_buft_get_max_size');
+  late final _ggml_backend_buft_get_max_size =
+      _ggml_backend_buft_get_max_sizePtr
+          .asFunction<int Function(ggml_backend_buffer_type_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buft_get_alloc_size(
@@ -6258,8 +8712,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buft_get_alloc_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_type_t, ffi.Pointer<ggml_tensor>)>>('ggml_backend_buft_get_alloc_size');
-  late final _ggml_backend_buft_get_alloc_size = _ggml_backend_buft_get_alloc_sizePtr.asFunction<int Function(ggml_backend_buffer_type_t, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_buft_get_alloc_sizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ggml_backend_buffer_type_t,
+              ffi.Pointer<ggml_tensor>)>>('ggml_backend_buft_get_alloc_size');
+  late final _ggml_backend_buft_get_alloc_size =
+      _ggml_backend_buft_get_alloc_sizePtr.asFunction<
+          int Function(ggml_backend_buffer_type_t, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_buft_is_host(
@@ -6270,8 +8729,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buft_is_hostPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_buffer_type_t)>>('ggml_backend_buft_is_host');
-  late final _ggml_backend_buft_is_host = _ggml_backend_buft_is_hostPtr.asFunction<bool Function(ggml_backend_buffer_type_t)>();
+  late final _ggml_backend_buft_is_hostPtr = _lookup<
+          ffi.NativeFunction<ffi.Bool Function(ggml_backend_buffer_type_t)>>(
+      'ggml_backend_buft_is_host');
+  late final _ggml_backend_buft_is_host = _ggml_backend_buft_is_hostPtr
+      .asFunction<bool Function(ggml_backend_buffer_type_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_buft_get_device(
@@ -6282,8 +8744,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buft_get_devicePtr = _lookup<ffi.NativeFunction<ggml_backend_dev_t Function(ggml_backend_buffer_type_t)>>('ggml_backend_buft_get_device');
-  late final _ggml_backend_buft_get_device = _ggml_backend_buft_get_devicePtr.asFunction<ggml_backend_dev_t Function(ggml_backend_buffer_type_t)>();
+  late final _ggml_backend_buft_get_devicePtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_dev_t Function(
+              ggml_backend_buffer_type_t)>>('ggml_backend_buft_get_device');
+  late final _ggml_backend_buft_get_device = _ggml_backend_buft_get_devicePtr
+      .asFunction<ggml_backend_dev_t Function(ggml_backend_buffer_type_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_buffer_name(
@@ -6294,8 +8760,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_name');
-  late final _ggml_backend_buffer_name = _ggml_backend_buffer_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_namePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ggml_backend_buffer_t)>>('ggml_backend_buffer_name');
+  late final _ggml_backend_buffer_name = _ggml_backend_buffer_namePtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_free(
@@ -6306,8 +8776,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_free');
-  late final _ggml_backend_buffer_free = _ggml_backend_buffer_freePtr.asFunction<void Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_buffer_t)>>(
+          'ggml_backend_buffer_free');
+  late final _ggml_backend_buffer_free = _ggml_backend_buffer_freePtr
+      .asFunction<void Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_backend_buffer_get_base(
@@ -6318,8 +8791,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_get_basePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_get_base');
-  late final _ggml_backend_buffer_get_base = _ggml_backend_buffer_get_basePtr.asFunction<ffi.Pointer<ffi.Void> Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_get_basePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ggml_backend_buffer_t)>>('ggml_backend_buffer_get_base');
+  late final _ggml_backend_buffer_get_base = _ggml_backend_buffer_get_basePtr
+      .asFunction<ffi.Pointer<ffi.Void> Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_size(
@@ -6330,8 +8807,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_get_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_get_size');
-  late final _ggml_backend_buffer_get_size = _ggml_backend_buffer_get_sizePtr.asFunction<int Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_get_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_t)>>(
+          'ggml_backend_buffer_get_size');
+  late final _ggml_backend_buffer_get_size = _ggml_backend_buffer_get_sizePtr
+      .asFunction<int Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_init_tensor(
@@ -6344,8 +8824,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_init_tensorPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>)>>('ggml_backend_buffer_init_tensor');
-  late final _ggml_backend_buffer_init_tensor = _ggml_backend_buffer_init_tensorPtr.asFunction<void Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_buffer_init_tensorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ggml_backend_buffer_t,
+              ffi.Pointer<ggml_tensor>)>>('ggml_backend_buffer_init_tensor');
+  late final _ggml_backend_buffer_init_tensor =
+      _ggml_backend_buffer_init_tensorPtr.asFunction<
+          void Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_alignment(
@@ -6356,8 +8841,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_get_alignmentPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_get_alignment');
-  late final _ggml_backend_buffer_get_alignment = _ggml_backend_buffer_get_alignmentPtr.asFunction<int Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_get_alignmentPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_t)>>(
+          'ggml_backend_buffer_get_alignment');
+  late final _ggml_backend_buffer_get_alignment =
+      _ggml_backend_buffer_get_alignmentPtr
+          .asFunction<int Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_max_size(
@@ -6368,8 +8857,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_get_max_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_get_max_size');
-  late final _ggml_backend_buffer_get_max_size = _ggml_backend_buffer_get_max_sizePtr.asFunction<int Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_get_max_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_t)>>(
+          'ggml_backend_buffer_get_max_size');
+  late final _ggml_backend_buffer_get_max_size =
+      _ggml_backend_buffer_get_max_sizePtr
+          .asFunction<int Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_alloc_size(
@@ -6382,8 +8875,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_get_alloc_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>)>>('ggml_backend_buffer_get_alloc_size');
-  late final _ggml_backend_buffer_get_alloc_size = _ggml_backend_buffer_get_alloc_sizePtr.asFunction<int Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_buffer_get_alloc_sizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ggml_backend_buffer_t,
+              ffi.Pointer<ggml_tensor>)>>('ggml_backend_buffer_get_alloc_size');
+  late final _ggml_backend_buffer_get_alloc_size =
+      _ggml_backend_buffer_get_alloc_sizePtr.asFunction<
+          int Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_clear(
@@ -6396,8 +8894,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_clearPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_buffer_t, ffi.Uint8)>>('ggml_backend_buffer_clear');
-  late final _ggml_backend_buffer_clear = _ggml_backend_buffer_clearPtr.asFunction<void Function(ggml_backend_buffer_t, int)>();
+  late final _ggml_backend_buffer_clearPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ggml_backend_buffer_t, ffi.Uint8)>>(
+      'ggml_backend_buffer_clear');
+  late final _ggml_backend_buffer_clear = _ggml_backend_buffer_clearPtr
+      .asFunction<void Function(ggml_backend_buffer_t, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_buffer_is_host(
@@ -6408,8 +8910,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_is_hostPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_is_host');
-  late final _ggml_backend_buffer_is_host = _ggml_backend_buffer_is_hostPtr.asFunction<bool Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_is_hostPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_buffer_t)>>(
+          'ggml_backend_buffer_is_host');
+  late final _ggml_backend_buffer_is_host = _ggml_backend_buffer_is_hostPtr
+      .asFunction<bool Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_set_usage(
@@ -6422,8 +8927,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_set_usagePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_buffer_t, ffi.Int32)>>('ggml_backend_buffer_set_usage');
-  late final _ggml_backend_buffer_set_usage = _ggml_backend_buffer_set_usagePtr.asFunction<void Function(ggml_backend_buffer_t, int)>();
+  late final _ggml_backend_buffer_set_usagePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ggml_backend_buffer_t, ffi.Int32)>>(
+      'ggml_backend_buffer_set_usage');
+  late final _ggml_backend_buffer_set_usage = _ggml_backend_buffer_set_usagePtr
+      .asFunction<void Function(ggml_backend_buffer_t, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_usage(
@@ -6434,8 +8943,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_get_usagePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_get_usage');
-  late final _ggml_backend_buffer_get_usage = _ggml_backend_buffer_get_usagePtr.asFunction<int Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_get_usagePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ggml_backend_buffer_t)>>(
+          'ggml_backend_buffer_get_usage');
+  late final _ggml_backend_buffer_get_usage = _ggml_backend_buffer_get_usagePtr
+      .asFunction<int Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_buffer_get_type(
@@ -6446,8 +8958,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_get_typePtr = _lookup<ffi.NativeFunction<ggml_backend_buffer_type_t Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_get_type');
-  late final _ggml_backend_buffer_get_type = _ggml_backend_buffer_get_typePtr.asFunction<ggml_backend_buffer_type_t Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_get_typePtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_buffer_type_t Function(
+              ggml_backend_buffer_t)>>('ggml_backend_buffer_get_type');
+  late final _ggml_backend_buffer_get_type = _ggml_backend_buffer_get_typePtr
+      .asFunction<ggml_backend_buffer_type_t Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_reset(
@@ -6458,8 +8974,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_buffer_resetPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_buffer_t)>>('ggml_backend_buffer_reset');
-  late final _ggml_backend_buffer_reset = _ggml_backend_buffer_resetPtr.asFunction<void Function(ggml_backend_buffer_t)>();
+  late final _ggml_backend_buffer_resetPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_buffer_t)>>(
+          'ggml_backend_buffer_reset');
+  late final _ggml_backend_buffer_reset = _ggml_backend_buffer_resetPtr
+      .asFunction<void Function(ggml_backend_buffer_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_copy(
@@ -6472,8 +8991,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_tensor_copyPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_backend_tensor_copy');
-  late final _ggml_backend_tensor_copy = _ggml_backend_tensor_copyPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_tensor_copyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_backend_tensor_copy');
+  late final _ggml_backend_tensor_copy =
+      _ggml_backend_tensor_copyPtr.asFunction<
+          void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_guid_t ggml_backend_guid(
@@ -6484,8 +9008,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_guidPtr = _lookup<ffi.NativeFunction<ggml_guid_t Function(ggml_backend_t)>>('ggml_backend_guid');
-  late final _ggml_backend_guid = _ggml_backend_guidPtr.asFunction<ggml_guid_t Function(ggml_backend_t)>();
+  late final _ggml_backend_guidPtr =
+      _lookup<ffi.NativeFunction<ggml_guid_t Function(ggml_backend_t)>>(
+          'ggml_backend_guid');
+  late final _ggml_backend_guid =
+      _ggml_backend_guidPtr.asFunction<ggml_guid_t Function(ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_name(
@@ -6496,8 +9023,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_t)>>('ggml_backend_name');
-  late final _ggml_backend_name = _ggml_backend_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_t)>();
+  late final _ggml_backend_namePtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_t)>>(
+      'ggml_backend_name');
+  late final _ggml_backend_name = _ggml_backend_namePtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_free(
@@ -6508,8 +9038,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t)>>('ggml_backend_free');
-  late final _ggml_backend_free = _ggml_backend_freePtr.asFunction<void Function(ggml_backend_t)>();
+  late final _ggml_backend_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t)>>(
+          'ggml_backend_free');
+  late final _ggml_backend_free =
+      _ggml_backend_freePtr.asFunction<void Function(ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_get_default_buffer_type(
@@ -6520,8 +9053,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_get_default_buffer_typePtr = _lookup<ffi.NativeFunction<ggml_backend_buffer_type_t Function(ggml_backend_t)>>('ggml_backend_get_default_buffer_type');
-  late final _ggml_backend_get_default_buffer_type = _ggml_backend_get_default_buffer_typePtr.asFunction<ggml_backend_buffer_type_t Function(ggml_backend_t)>();
+  late final _ggml_backend_get_default_buffer_typePtr = _lookup<
+          ffi
+          .NativeFunction<ggml_backend_buffer_type_t Function(ggml_backend_t)>>(
+      'ggml_backend_get_default_buffer_type');
+  late final _ggml_backend_get_default_buffer_type =
+      _ggml_backend_get_default_buffer_typePtr
+          .asFunction<ggml_backend_buffer_type_t Function(ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_t ggml_backend_alloc_buffer(
@@ -6534,8 +9072,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_alloc_bufferPtr = _lookup<ffi.NativeFunction<ggml_backend_buffer_t Function(ggml_backend_t, ffi.Size)>>('ggml_backend_alloc_buffer');
-  late final _ggml_backend_alloc_buffer = _ggml_backend_alloc_bufferPtr.asFunction<ggml_backend_buffer_t Function(ggml_backend_t, int)>();
+  late final _ggml_backend_alloc_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_buffer_t Function(
+              ggml_backend_t, ffi.Size)>>('ggml_backend_alloc_buffer');
+  late final _ggml_backend_alloc_buffer = _ggml_backend_alloc_bufferPtr
+      .asFunction<ggml_backend_buffer_t Function(ggml_backend_t, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_get_alignment(
@@ -6546,8 +9088,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_get_alignmentPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_t)>>('ggml_backend_get_alignment');
-  late final _ggml_backend_get_alignment = _ggml_backend_get_alignmentPtr.asFunction<int Function(ggml_backend_t)>();
+  late final _ggml_backend_get_alignmentPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_t)>>(
+          'ggml_backend_get_alignment');
+  late final _ggml_backend_get_alignment =
+      _ggml_backend_get_alignmentPtr.asFunction<int Function(ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_get_max_size(
@@ -6558,8 +9103,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_get_max_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_t)>>('ggml_backend_get_max_size');
-  late final _ggml_backend_get_max_size = _ggml_backend_get_max_sizePtr.asFunction<int Function(ggml_backend_t)>();
+  late final _ggml_backend_get_max_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_t)>>(
+          'ggml_backend_get_max_size');
+  late final _ggml_backend_get_max_size =
+      _ggml_backend_get_max_sizePtr.asFunction<int Function(ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_set_async(
@@ -6578,8 +9126,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_tensor_set_asyncPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t, ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size)>>('ggml_backend_tensor_set_async');
-  late final _ggml_backend_tensor_set_async = _ggml_backend_tensor_set_asyncPtr.asFunction<void Function(ggml_backend_t, ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, int, int)>();
+  late final _ggml_backend_tensor_set_asyncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ggml_backend_t,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Size,
+              ffi.Size)>>('ggml_backend_tensor_set_async');
+  late final _ggml_backend_tensor_set_async =
+      _ggml_backend_tensor_set_asyncPtr.asFunction<
+          void Function(ggml_backend_t, ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ffi.Void>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_get_async(
@@ -6598,8 +9156,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_tensor_get_asyncPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t, ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size)>>('ggml_backend_tensor_get_async');
-  late final _ggml_backend_tensor_get_async = _ggml_backend_tensor_get_asyncPtr.asFunction<void Function(ggml_backend_t, ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, int, int)>();
+  late final _ggml_backend_tensor_get_asyncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ggml_backend_t,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Size,
+              ffi.Size)>>('ggml_backend_tensor_get_async');
+  late final _ggml_backend_tensor_get_async =
+      _ggml_backend_tensor_get_asyncPtr.asFunction<
+          void Function(ggml_backend_t, ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ffi.Void>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_set(
@@ -6616,8 +9184,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_tensor_setPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size)>>('ggml_backend_tensor_set');
-  late final _ggml_backend_tensor_set = _ggml_backend_tensor_setPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, int, int)>();
+  late final _ggml_backend_tensor_setPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>,
+              ffi.Size, ffi.Size)>>('ggml_backend_tensor_set');
+  late final _ggml_backend_tensor_set = _ggml_backend_tensor_setPtr.asFunction<
+      void Function(
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_get(
@@ -6634,8 +9207,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_tensor_getPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size)>>('ggml_backend_tensor_get');
-  late final _ggml_backend_tensor_get = _ggml_backend_tensor_getPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, int, int)>();
+  late final _ggml_backend_tensor_getPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>,
+              ffi.Size, ffi.Size)>>('ggml_backend_tensor_get');
+  late final _ggml_backend_tensor_get = _ggml_backend_tensor_getPtr.asFunction<
+      void Function(
+          ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_memset(
@@ -6652,8 +9230,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_tensor_memsetPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Uint8, ffi.Size, ffi.Size)>>('ggml_backend_tensor_memset');
-  late final _ggml_backend_tensor_memset = _ggml_backend_tensor_memsetPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, int, int, int)>();
+  late final _ggml_backend_tensor_memsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Uint8, ffi.Size,
+              ffi.Size)>>('ggml_backend_tensor_memset');
+  late final _ggml_backend_tensor_memset = _ggml_backend_tensor_memsetPtr
+      .asFunction<void Function(ffi.Pointer<ggml_tensor>, int, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_synchronize(
@@ -6664,8 +9246,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_synchronizePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t)>>('ggml_backend_synchronize');
-  late final _ggml_backend_synchronize = _ggml_backend_synchronizePtr.asFunction<void Function(ggml_backend_t)>();
+  late final _ggml_backend_synchronizePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t)>>(
+          'ggml_backend_synchronize');
+  late final _ggml_backend_synchronize =
+      _ggml_backend_synchronizePtr.asFunction<void Function(ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_graph_plan_t ggml_backend_graph_plan_create(
@@ -6678,8 +9263,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_graph_plan_createPtr = _lookup<ffi.NativeFunction<ggml_backend_graph_plan_t Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>>('ggml_backend_graph_plan_create');
-  late final _ggml_backend_graph_plan_create = _ggml_backend_graph_plan_createPtr.asFunction<ggml_backend_graph_plan_t Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_backend_graph_plan_createPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_graph_plan_t Function(ggml_backend_t,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_backend_graph_plan_create');
+  late final _ggml_backend_graph_plan_create =
+      _ggml_backend_graph_plan_createPtr.asFunction<
+          ggml_backend_graph_plan_t Function(
+              ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_graph_plan_free(
@@ -6692,8 +9283,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_graph_plan_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t, ggml_backend_graph_plan_t)>>('ggml_backend_graph_plan_free');
-  late final _ggml_backend_graph_plan_free = _ggml_backend_graph_plan_freePtr.asFunction<void Function(ggml_backend_t, ggml_backend_graph_plan_t)>();
+  late final _ggml_backend_graph_plan_freePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ggml_backend_t,
+              ggml_backend_graph_plan_t)>>('ggml_backend_graph_plan_free');
+  late final _ggml_backend_graph_plan_free = _ggml_backend_graph_plan_freePtr
+      .asFunction<void Function(ggml_backend_t, ggml_backend_graph_plan_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_graph_plan_compute(
@@ -6706,8 +9301,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_graph_plan_computePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ggml_backend_t, ggml_backend_graph_plan_t)>>('ggml_backend_graph_plan_compute');
-  late final _ggml_backend_graph_plan_compute = _ggml_backend_graph_plan_computePtr.asFunction<int Function(ggml_backend_t, ggml_backend_graph_plan_t)>();
+  late final _ggml_backend_graph_plan_computePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ggml_backend_t,
+              ggml_backend_graph_plan_t)>>('ggml_backend_graph_plan_compute');
+  late final _ggml_backend_graph_plan_compute =
+      _ggml_backend_graph_plan_computePtr.asFunction<
+          int Function(ggml_backend_t, ggml_backend_graph_plan_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_graph_compute(
@@ -6720,8 +9320,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_graph_computePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>>('ggml_backend_graph_compute');
-  late final _ggml_backend_graph_compute = _ggml_backend_graph_computePtr.asFunction<int Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_backend_graph_computePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ggml_backend_t,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_backend_graph_compute');
+  late final _ggml_backend_graph_compute = _ggml_backend_graph_computePtr
+      .asFunction<int Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_graph_compute_async(
@@ -6734,8 +9338,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_graph_compute_asyncPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>>('ggml_backend_graph_compute_async');
-  late final _ggml_backend_graph_compute_async = _ggml_backend_graph_compute_asyncPtr.asFunction<int Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_backend_graph_compute_asyncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ggml_backend_t,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_backend_graph_compute_async');
+  late final _ggml_backend_graph_compute_async =
+      _ggml_backend_graph_compute_asyncPtr
+          .asFunction<int Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_supports_op(
@@ -6748,8 +9357,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_supports_opPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_t, ffi.Pointer<ggml_tensor>)>>('ggml_backend_supports_op');
-  late final _ggml_backend_supports_op = _ggml_backend_supports_opPtr.asFunction<bool Function(ggml_backend_t, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_supports_opPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_backend_t,
+              ffi.Pointer<ggml_tensor>)>>('ggml_backend_supports_op');
+  late final _ggml_backend_supports_op = _ggml_backend_supports_opPtr
+      .asFunction<bool Function(ggml_backend_t, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_supports_buft(
@@ -6762,8 +9375,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_supports_buftPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_t, ggml_backend_buffer_type_t)>>('ggml_backend_supports_buft');
-  late final _ggml_backend_supports_buft = _ggml_backend_supports_buftPtr.asFunction<bool Function(ggml_backend_t, ggml_backend_buffer_type_t)>();
+  late final _ggml_backend_supports_buftPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_backend_t,
+              ggml_backend_buffer_type_t)>>('ggml_backend_supports_buft');
+  late final _ggml_backend_supports_buft = _ggml_backend_supports_buftPtr
+      .asFunction<bool Function(ggml_backend_t, ggml_backend_buffer_type_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_offload_op(
@@ -6776,8 +9393,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_offload_opPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_t, ffi.Pointer<ggml_tensor>)>>('ggml_backend_offload_op');
-  late final _ggml_backend_offload_op = _ggml_backend_offload_opPtr.asFunction<bool Function(ggml_backend_t, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_offload_opPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_backend_t,
+              ffi.Pointer<ggml_tensor>)>>('ggml_backend_offload_op');
+  late final _ggml_backend_offload_op = _ggml_backend_offload_opPtr
+      .asFunction<bool Function(ggml_backend_t, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_copy_async(
@@ -6794,8 +9415,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_tensor_copy_asyncPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t, ggml_backend_t, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>>('ggml_backend_tensor_copy_async');
-  late final _ggml_backend_tensor_copy_async = _ggml_backend_tensor_copy_asyncPtr.asFunction<void Function(ggml_backend_t, ggml_backend_t, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_tensor_copy_asyncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ggml_backend_t,
+              ggml_backend_t,
+              ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ggml_tensor>)>>('ggml_backend_tensor_copy_async');
+  late final _ggml_backend_tensor_copy_async =
+      _ggml_backend_tensor_copy_asyncPtr.asFunction<
+          void Function(ggml_backend_t, ggml_backend_t,
+              ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_get_device(
@@ -6806,8 +9436,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_get_devicePtr = _lookup<ffi.NativeFunction<ggml_backend_dev_t Function(ggml_backend_t)>>('ggml_backend_get_device');
-  late final _ggml_backend_get_device = _ggml_backend_get_devicePtr.asFunction<ggml_backend_dev_t Function(ggml_backend_t)>();
+  late final _ggml_backend_get_devicePtr =
+      _lookup<ffi.NativeFunction<ggml_backend_dev_t Function(ggml_backend_t)>>(
+          'ggml_backend_get_device');
+  late final _ggml_backend_get_device = _ggml_backend_get_devicePtr
+      .asFunction<ggml_backend_dev_t Function(ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_event_t ggml_backend_event_new(
@@ -6818,8 +9451,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_event_newPtr = _lookup<ffi.NativeFunction<ggml_backend_event_t Function(ggml_backend_dev_t)>>('ggml_backend_event_new');
-  late final _ggml_backend_event_new = _ggml_backend_event_newPtr.asFunction<ggml_backend_event_t Function(ggml_backend_dev_t)>();
+  late final _ggml_backend_event_newPtr = _lookup<
+          ffi
+          .NativeFunction<ggml_backend_event_t Function(ggml_backend_dev_t)>>(
+      'ggml_backend_event_new');
+  late final _ggml_backend_event_new = _ggml_backend_event_newPtr
+      .asFunction<ggml_backend_event_t Function(ggml_backend_dev_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_event_free(
@@ -6830,8 +9467,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_event_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_event_t)>>('ggml_backend_event_free');
-  late final _ggml_backend_event_free = _ggml_backend_event_freePtr.asFunction<void Function(ggml_backend_event_t)>();
+  late final _ggml_backend_event_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_event_t)>>(
+          'ggml_backend_event_free');
+  late final _ggml_backend_event_free = _ggml_backend_event_freePtr
+      .asFunction<void Function(ggml_backend_event_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_event_record(
@@ -6844,8 +9484,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_event_recordPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_event_t, ggml_backend_t)>>('ggml_backend_event_record');
-  late final _ggml_backend_event_record = _ggml_backend_event_recordPtr.asFunction<void Function(ggml_backend_event_t, ggml_backend_t)>();
+  late final _ggml_backend_event_recordPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ggml_backend_event_t,
+              ggml_backend_t)>>('ggml_backend_event_record');
+  late final _ggml_backend_event_record = _ggml_backend_event_recordPtr
+      .asFunction<void Function(ggml_backend_event_t, ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_event_synchronize(
@@ -6856,8 +9500,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_event_synchronizePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_event_t)>>('ggml_backend_event_synchronize');
-  late final _ggml_backend_event_synchronize = _ggml_backend_event_synchronizePtr.asFunction<void Function(ggml_backend_event_t)>();
+  late final _ggml_backend_event_synchronizePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_event_t)>>(
+          'ggml_backend_event_synchronize');
+  late final _ggml_backend_event_synchronize =
+      _ggml_backend_event_synchronizePtr
+          .asFunction<void Function(ggml_backend_event_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_event_wait(
@@ -6870,8 +9518,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_event_waitPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t, ggml_backend_event_t)>>('ggml_backend_event_wait');
-  late final _ggml_backend_event_wait = _ggml_backend_event_waitPtr.asFunction<void Function(ggml_backend_t, ggml_backend_event_t)>();
+  late final _ggml_backend_event_waitPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ggml_backend_t,
+              ggml_backend_event_t)>>('ggml_backend_event_wait');
+  late final _ggml_backend_event_wait = _ggml_backend_event_waitPtr
+      .asFunction<void Function(ggml_backend_t, ggml_backend_event_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_dev_name(
@@ -6882,8 +9534,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>>('ggml_backend_dev_name');
-  late final _ggml_backend_dev_name = _ggml_backend_dev_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>();
+  late final _ggml_backend_dev_namePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>>(
+      'ggml_backend_dev_name');
+  late final _ggml_backend_dev_name = _ggml_backend_dev_namePtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_dev_description(
@@ -6894,8 +9550,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_descriptionPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>>('ggml_backend_dev_description');
-  late final _ggml_backend_dev_description = _ggml_backend_dev_descriptionPtr.asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>();
+  late final _ggml_backend_dev_descriptionPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>>(
+      'ggml_backend_dev_description');
+  late final _ggml_backend_dev_description = _ggml_backend_dev_descriptionPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_dev_memory(
@@ -6910,8 +9570,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_memoryPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_dev_t, ffi.Pointer<ffi.Size>, ffi.Pointer<ffi.Size>)>>('ggml_backend_dev_memory');
-  late final _ggml_backend_dev_memory = _ggml_backend_dev_memoryPtr.asFunction<void Function(ggml_backend_dev_t, ffi.Pointer<ffi.Size>, ffi.Pointer<ffi.Size>)>();
+  late final _ggml_backend_dev_memoryPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ggml_backend_dev_t, ffi.Pointer<ffi.Size>,
+              ffi.Pointer<ffi.Size>)>>('ggml_backend_dev_memory');
+  late final _ggml_backend_dev_memory = _ggml_backend_dev_memoryPtr.asFunction<
+      void Function(
+          ggml_backend_dev_t, ffi.Pointer<ffi.Size>, ffi.Pointer<ffi.Size>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_dev_type1(
@@ -6922,8 +9587,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_type1Ptr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ggml_backend_dev_t)>>('ggml_backend_dev_type');
-  late final _ggml_backend_dev_type1 = _ggml_backend_dev_type1Ptr.asFunction<int Function(ggml_backend_dev_t)>();
+  late final _ggml_backend_dev_type1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ggml_backend_dev_t)>>(
+          'ggml_backend_dev_type');
+  late final _ggml_backend_dev_type1 =
+      _ggml_backend_dev_type1Ptr.asFunction<int Function(ggml_backend_dev_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_dev_get_props(
@@ -6936,8 +9604,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_get_propsPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_dev_t, ffi.Pointer<ggml_backend_dev_props>)>>('ggml_backend_dev_get_props');
-  late final _ggml_backend_dev_get_props = _ggml_backend_dev_get_propsPtr.asFunction<void Function(ggml_backend_dev_t, ffi.Pointer<ggml_backend_dev_props>)>();
+  late final _ggml_backend_dev_get_propsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ggml_backend_dev_t, ffi.Pointer<ggml_backend_dev_props>)>>(
+      'ggml_backend_dev_get_props');
+  late final _ggml_backend_dev_get_props =
+      _ggml_backend_dev_get_propsPtr.asFunction<
+          void Function(
+              ggml_backend_dev_t, ffi.Pointer<ggml_backend_dev_props>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_reg_t ggml_backend_dev_backend_reg(
@@ -6948,8 +9623,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_backend_regPtr = _lookup<ffi.NativeFunction<ggml_backend_reg_t Function(ggml_backend_dev_t)>>('ggml_backend_dev_backend_reg');
-  late final _ggml_backend_dev_backend_reg = _ggml_backend_dev_backend_regPtr.asFunction<ggml_backend_reg_t Function(ggml_backend_dev_t)>();
+  late final _ggml_backend_dev_backend_regPtr = _lookup<
+          ffi.NativeFunction<ggml_backend_reg_t Function(ggml_backend_dev_t)>>(
+      'ggml_backend_dev_backend_reg');
+  late final _ggml_backend_dev_backend_reg = _ggml_backend_dev_backend_regPtr
+      .asFunction<ggml_backend_reg_t Function(ggml_backend_dev_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_dev_init(
@@ -6962,8 +9640,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_initPtr = _lookup<ffi.NativeFunction<ggml_backend_t Function(ggml_backend_dev_t, ffi.Pointer<ffi.Char>)>>('ggml_backend_dev_init');
-  late final _ggml_backend_dev_init = _ggml_backend_dev_initPtr.asFunction<ggml_backend_t Function(ggml_backend_dev_t, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_backend_dev_initPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_t Function(ggml_backend_dev_t,
+              ffi.Pointer<ffi.Char>)>>('ggml_backend_dev_init');
+  late final _ggml_backend_dev_init = _ggml_backend_dev_initPtr.asFunction<
+      ggml_backend_t Function(ggml_backend_dev_t, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_dev_buffer_type(
@@ -6974,8 +9656,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_buffer_typePtr = _lookup<ffi.NativeFunction<ggml_backend_buffer_type_t Function(ggml_backend_dev_t)>>('ggml_backend_dev_buffer_type');
-  late final _ggml_backend_dev_buffer_type = _ggml_backend_dev_buffer_typePtr.asFunction<ggml_backend_buffer_type_t Function(ggml_backend_dev_t)>();
+  late final _ggml_backend_dev_buffer_typePtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_buffer_type_t Function(
+              ggml_backend_dev_t)>>('ggml_backend_dev_buffer_type');
+  late final _ggml_backend_dev_buffer_type = _ggml_backend_dev_buffer_typePtr
+      .asFunction<ggml_backend_buffer_type_t Function(ggml_backend_dev_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_dev_host_buffer_type(
@@ -6986,8 +9672,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_host_buffer_typePtr = _lookup<ffi.NativeFunction<ggml_backend_buffer_type_t Function(ggml_backend_dev_t)>>('ggml_backend_dev_host_buffer_type');
-  late final _ggml_backend_dev_host_buffer_type = _ggml_backend_dev_host_buffer_typePtr.asFunction<ggml_backend_buffer_type_t Function(ggml_backend_dev_t)>();
+  late final _ggml_backend_dev_host_buffer_typePtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_buffer_type_t Function(
+              ggml_backend_dev_t)>>('ggml_backend_dev_host_buffer_type');
+  late final _ggml_backend_dev_host_buffer_type =
+      _ggml_backend_dev_host_buffer_typePtr.asFunction<
+          ggml_backend_buffer_type_t Function(ggml_backend_dev_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_t ggml_backend_dev_buffer_from_host_ptr(
@@ -7004,8 +9695,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_buffer_from_host_ptrPtr = _lookup<ffi.NativeFunction<ggml_backend_buffer_t Function(ggml_backend_dev_t, ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size)>>('ggml_backend_dev_buffer_from_host_ptr');
-  late final _ggml_backend_dev_buffer_from_host_ptr = _ggml_backend_dev_buffer_from_host_ptrPtr.asFunction<ggml_backend_buffer_t Function(ggml_backend_dev_t, ffi.Pointer<ffi.Void>, int, int)>();
+  late final _ggml_backend_dev_buffer_from_host_ptrPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_buffer_t Function(
+              ggml_backend_dev_t,
+              ffi.Pointer<ffi.Void>,
+              ffi.Size,
+              ffi.Size)>>('ggml_backend_dev_buffer_from_host_ptr');
+  late final _ggml_backend_dev_buffer_from_host_ptr =
+      _ggml_backend_dev_buffer_from_host_ptrPtr.asFunction<
+          ggml_backend_buffer_t Function(
+              ggml_backend_dev_t, ffi.Pointer<ffi.Void>, int, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_dev_supports_op(
@@ -7018,8 +9718,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_supports_opPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_dev_t, ffi.Pointer<ggml_tensor>)>>('ggml_backend_dev_supports_op');
-  late final _ggml_backend_dev_supports_op = _ggml_backend_dev_supports_opPtr.asFunction<bool Function(ggml_backend_dev_t, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_dev_supports_opPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_backend_dev_t,
+              ffi.Pointer<ggml_tensor>)>>('ggml_backend_dev_supports_op');
+  late final _ggml_backend_dev_supports_op =
+      _ggml_backend_dev_supports_opPtr.asFunction<
+          bool Function(ggml_backend_dev_t, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_dev_supports_buft(
@@ -7032,8 +9737,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_supports_buftPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_dev_t, ggml_backend_buffer_type_t)>>('ggml_backend_dev_supports_buft');
-  late final _ggml_backend_dev_supports_buft = _ggml_backend_dev_supports_buftPtr.asFunction<bool Function(ggml_backend_dev_t, ggml_backend_buffer_type_t)>();
+  late final _ggml_backend_dev_supports_buftPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_backend_dev_t,
+              ggml_backend_buffer_type_t)>>('ggml_backend_dev_supports_buft');
+  late final _ggml_backend_dev_supports_buft =
+      _ggml_backend_dev_supports_buftPtr.asFunction<
+          bool Function(ggml_backend_dev_t, ggml_backend_buffer_type_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_dev_offload_op(
@@ -7046,8 +9756,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_offload_opPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_dev_t, ffi.Pointer<ggml_tensor>)>>('ggml_backend_dev_offload_op');
-  late final _ggml_backend_dev_offload_op = _ggml_backend_dev_offload_opPtr.asFunction<bool Function(ggml_backend_dev_t, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_dev_offload_opPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_backend_dev_t,
+              ffi.Pointer<ggml_tensor>)>>('ggml_backend_dev_offload_op');
+  late final _ggml_backend_dev_offload_op =
+      _ggml_backend_dev_offload_opPtr.asFunction<
+          bool Function(ggml_backend_dev_t, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_reg_name(
@@ -7058,8 +9773,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_reg_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_reg_t)>>('ggml_backend_reg_name');
-  late final _ggml_backend_reg_name = _ggml_backend_reg_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_reg_t)>();
+  late final _ggml_backend_reg_namePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_reg_t)>>(
+      'ggml_backend_reg_name');
+  late final _ggml_backend_reg_name = _ggml_backend_reg_namePtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_reg_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_reg_dev_count(
@@ -7070,8 +9789,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_reg_dev_countPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_reg_t)>>('ggml_backend_reg_dev_count');
-  late final _ggml_backend_reg_dev_count = _ggml_backend_reg_dev_countPtr.asFunction<int Function(ggml_backend_reg_t)>();
+  late final _ggml_backend_reg_dev_countPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_reg_t)>>(
+          'ggml_backend_reg_dev_count');
+  late final _ggml_backend_reg_dev_count = _ggml_backend_reg_dev_countPtr
+      .asFunction<int Function(ggml_backend_reg_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_reg_dev_get(
@@ -7084,8 +9806,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_reg_dev_getPtr = _lookup<ffi.NativeFunction<ggml_backend_dev_t Function(ggml_backend_reg_t, ffi.Size)>>('ggml_backend_reg_dev_get');
-  late final _ggml_backend_reg_dev_get = _ggml_backend_reg_dev_getPtr.asFunction<ggml_backend_dev_t Function(ggml_backend_reg_t, int)>();
+  late final _ggml_backend_reg_dev_getPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_dev_t Function(
+              ggml_backend_reg_t, ffi.Size)>>('ggml_backend_reg_dev_get');
+  late final _ggml_backend_reg_dev_get = _ggml_backend_reg_dev_getPtr
+      .asFunction<ggml_backend_dev_t Function(ggml_backend_reg_t, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_backend_reg_get_proc_address(
@@ -7098,8 +9824,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_reg_get_proc_addressPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ggml_backend_reg_t, ffi.Pointer<ffi.Char>)>>('ggml_backend_reg_get_proc_address');
-  late final _ggml_backend_reg_get_proc_address = _ggml_backend_reg_get_proc_addressPtr.asFunction<ffi.Pointer<ffi.Void> Function(ggml_backend_reg_t, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_backend_reg_get_proc_addressPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ggml_backend_reg_t,
+              ffi.Pointer<ffi.Char>)>>('ggml_backend_reg_get_proc_address');
+  late final _ggml_backend_reg_get_proc_address =
+      _ggml_backend_reg_get_proc_addressPtr.asFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ggml_backend_reg_t, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_device_register(
@@ -7110,16 +9842,22 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_device_registerPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_dev_t)>>('ggml_backend_device_register');
-  late final _ggml_backend_device_register = _ggml_backend_device_registerPtr.asFunction<void Function(ggml_backend_dev_t)>();
+  late final _ggml_backend_device_registerPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_dev_t)>>(
+          'ggml_backend_device_register');
+  late final _ggml_backend_device_register = _ggml_backend_device_registerPtr
+      .asFunction<void Function(ggml_backend_dev_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_reg_count() {
     return _ggml_backend_reg_count();
   }
 
-  late final _ggml_backend_reg_countPtr = _lookup<ffi.NativeFunction<ffi.Size Function()>>('ggml_backend_reg_count');
-  late final _ggml_backend_reg_count = _ggml_backend_reg_countPtr.asFunction<int Function()>();
+  late final _ggml_backend_reg_countPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function()>>(
+          'ggml_backend_reg_count');
+  late final _ggml_backend_reg_count =
+      _ggml_backend_reg_countPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_reg_t ggml_backend_reg_get(
@@ -7130,8 +9868,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_reg_getPtr = _lookup<ffi.NativeFunction<ggml_backend_reg_t Function(ffi.Size)>>('ggml_backend_reg_get');
-  late final _ggml_backend_reg_get = _ggml_backend_reg_getPtr.asFunction<ggml_backend_reg_t Function(int)>();
+  late final _ggml_backend_reg_getPtr =
+      _lookup<ffi.NativeFunction<ggml_backend_reg_t Function(ffi.Size)>>(
+          'ggml_backend_reg_get');
+  late final _ggml_backend_reg_get =
+      _ggml_backend_reg_getPtr.asFunction<ggml_backend_reg_t Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_reg_t ggml_backend_reg_by_name(
@@ -7142,16 +9883,23 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_reg_by_namePtr = _lookup<ffi.NativeFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>>('ggml_backend_reg_by_name');
-  late final _ggml_backend_reg_by_name = _ggml_backend_reg_by_namePtr.asFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>();
+  late final _ggml_backend_reg_by_namePtr = _lookup<
+          ffi
+          .NativeFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>>(
+      'ggml_backend_reg_by_name');
+  late final _ggml_backend_reg_by_name = _ggml_backend_reg_by_namePtr
+      .asFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_dev_count() {
     return _ggml_backend_dev_count();
   }
 
-  late final _ggml_backend_dev_countPtr = _lookup<ffi.NativeFunction<ffi.Size Function()>>('ggml_backend_dev_count');
-  late final _ggml_backend_dev_count = _ggml_backend_dev_countPtr.asFunction<int Function()>();
+  late final _ggml_backend_dev_countPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function()>>(
+          'ggml_backend_dev_count');
+  late final _ggml_backend_dev_count =
+      _ggml_backend_dev_countPtr.asFunction<int Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_dev_get(
@@ -7162,8 +9910,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_getPtr = _lookup<ffi.NativeFunction<ggml_backend_dev_t Function(ffi.Size)>>('ggml_backend_dev_get');
-  late final _ggml_backend_dev_get = _ggml_backend_dev_getPtr.asFunction<ggml_backend_dev_t Function(int)>();
+  late final _ggml_backend_dev_getPtr =
+      _lookup<ffi.NativeFunction<ggml_backend_dev_t Function(ffi.Size)>>(
+          'ggml_backend_dev_get');
+  late final _ggml_backend_dev_get =
+      _ggml_backend_dev_getPtr.asFunction<ggml_backend_dev_t Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_dev_by_name(
@@ -7174,8 +9925,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_by_namePtr = _lookup<ffi.NativeFunction<ggml_backend_dev_t Function(ffi.Pointer<ffi.Char>)>>('ggml_backend_dev_by_name');
-  late final _ggml_backend_dev_by_name = _ggml_backend_dev_by_namePtr.asFunction<ggml_backend_dev_t Function(ffi.Pointer<ffi.Char>)>();
+  late final _ggml_backend_dev_by_namePtr = _lookup<
+          ffi
+          .NativeFunction<ggml_backend_dev_t Function(ffi.Pointer<ffi.Char>)>>(
+      'ggml_backend_dev_by_name');
+  late final _ggml_backend_dev_by_name = _ggml_backend_dev_by_namePtr
+      .asFunction<ggml_backend_dev_t Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_dev_by_type(
@@ -7186,8 +9941,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_dev_by_typePtr = _lookup<ffi.NativeFunction<ggml_backend_dev_t Function(ffi.Int32)>>('ggml_backend_dev_by_type');
-  late final _ggml_backend_dev_by_type = _ggml_backend_dev_by_typePtr.asFunction<ggml_backend_dev_t Function(int)>();
+  late final _ggml_backend_dev_by_typePtr =
+      _lookup<ffi.NativeFunction<ggml_backend_dev_t Function(ffi.Int32)>>(
+          'ggml_backend_dev_by_type');
+  late final _ggml_backend_dev_by_type = _ggml_backend_dev_by_typePtr
+      .asFunction<ggml_backend_dev_t Function(int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_init_by_name(
@@ -7200,8 +9958,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_init_by_namePtr = _lookup<ffi.NativeFunction<ggml_backend_t Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('ggml_backend_init_by_name');
-  late final _ggml_backend_init_by_name = _ggml_backend_init_by_namePtr.asFunction<ggml_backend_t Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_backend_init_by_namePtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_t Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>)>>('ggml_backend_init_by_name');
+  late final _ggml_backend_init_by_name =
+      _ggml_backend_init_by_namePtr.asFunction<
+          ggml_backend_t Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_init_by_type(
@@ -7214,16 +9978,23 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_init_by_typePtr = _lookup<ffi.NativeFunction<ggml_backend_t Function(ffi.Int32, ffi.Pointer<ffi.Char>)>>('ggml_backend_init_by_type');
-  late final _ggml_backend_init_by_type = _ggml_backend_init_by_typePtr.asFunction<ggml_backend_t Function(int, ffi.Pointer<ffi.Char>)>();
+  late final _ggml_backend_init_by_typePtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_t Function(
+              ffi.Int32, ffi.Pointer<ffi.Char>)>>('ggml_backend_init_by_type');
+  late final _ggml_backend_init_by_type = _ggml_backend_init_by_typePtr
+      .asFunction<ggml_backend_t Function(int, ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_init_best() {
     return _ggml_backend_init_best();
   }
 
-  late final _ggml_backend_init_bestPtr = _lookup<ffi.NativeFunction<ggml_backend_t Function()>>('ggml_backend_init_best');
-  late final _ggml_backend_init_best = _ggml_backend_init_bestPtr.asFunction<ggml_backend_t Function()>();
+  late final _ggml_backend_init_bestPtr =
+      _lookup<ffi.NativeFunction<ggml_backend_t Function()>>(
+          'ggml_backend_init_best');
+  late final _ggml_backend_init_best =
+      _ggml_backend_init_bestPtr.asFunction<ggml_backend_t Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_reg_t ggml_backend_load(
@@ -7234,8 +10005,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_loadPtr = _lookup<ffi.NativeFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>>('ggml_backend_load');
-  late final _ggml_backend_load = _ggml_backend_loadPtr.asFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>();
+  late final _ggml_backend_loadPtr = _lookup<
+          ffi
+          .NativeFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>>(
+      'ggml_backend_load');
+  late final _ggml_backend_load = _ggml_backend_loadPtr
+      .asFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_unload(
@@ -7246,16 +10021,21 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_unloadPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_reg_t)>>('ggml_backend_unload');
-  late final _ggml_backend_unload = _ggml_backend_unloadPtr.asFunction<void Function(ggml_backend_reg_t)>();
+  late final _ggml_backend_unloadPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_reg_t)>>(
+          'ggml_backend_unload');
+  late final _ggml_backend_unload =
+      _ggml_backend_unloadPtr.asFunction<void Function(ggml_backend_reg_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_load_all() {
     return _ggml_backend_load_all();
   }
 
-  late final _ggml_backend_load_allPtr = _lookup<ffi.NativeFunction<ffi.Void Function()>>('ggml_backend_load_all');
-  late final _ggml_backend_load_all = _ggml_backend_load_allPtr.asFunction<void Function()>();
+  late final _ggml_backend_load_allPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('ggml_backend_load_all');
+  late final _ggml_backend_load_all =
+      _ggml_backend_load_allPtr.asFunction<void Function()>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_load_all_from_path(
@@ -7266,8 +10046,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_load_all_from_pathPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Char>)>>('ggml_backend_load_all_from_path');
-  late final _ggml_backend_load_all_from_path = _ggml_backend_load_all_from_pathPtr.asFunction<void Function(ffi.Pointer<ffi.Char>)>();
+  late final _ggml_backend_load_all_from_pathPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Char>)>>(
+          'ggml_backend_load_all_from_path');
+  late final _ggml_backend_load_all_from_path =
+      _ggml_backend_load_all_from_pathPtr
+          .asFunction<void Function(ffi.Pointer<ffi.Char>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_sched_t ggml_backend_sched_new(
@@ -7286,8 +10070,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_newPtr = _lookup<ffi.NativeFunction<ggml_backend_sched_t Function(ffi.Pointer<ggml_backend_t>, ffi.Pointer<ggml_backend_buffer_type_t>, ffi.Int, ffi.Size, ffi.Bool)>>('ggml_backend_sched_new');
-  late final _ggml_backend_sched_new = _ggml_backend_sched_newPtr.asFunction<ggml_backend_sched_t Function(ffi.Pointer<ggml_backend_t>, ffi.Pointer<ggml_backend_buffer_type_t>, int, int, bool)>();
+  late final _ggml_backend_sched_newPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_sched_t Function(
+              ffi.Pointer<ggml_backend_t>,
+              ffi.Pointer<ggml_backend_buffer_type_t>,
+              ffi.Int,
+              ffi.Size,
+              ffi.Bool)>>('ggml_backend_sched_new');
+  late final _ggml_backend_sched_new = _ggml_backend_sched_newPtr.asFunction<
+      ggml_backend_sched_t Function(ffi.Pointer<ggml_backend_t>,
+          ffi.Pointer<ggml_backend_buffer_type_t>, int, int, bool)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_free(
@@ -7298,8 +10091,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_sched_t)>>('ggml_backend_sched_free');
-  late final _ggml_backend_sched_free = _ggml_backend_sched_freePtr.asFunction<void Function(ggml_backend_sched_t)>();
+  late final _ggml_backend_sched_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_sched_t)>>(
+          'ggml_backend_sched_free');
+  late final _ggml_backend_sched_free = _ggml_backend_sched_freePtr
+      .asFunction<void Function(ggml_backend_sched_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_sched_reserve(
@@ -7312,8 +10108,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_reservePtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>>('ggml_backend_sched_reserve');
-  late final _ggml_backend_sched_reserve = _ggml_backend_sched_reservePtr.asFunction<bool Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_backend_sched_reservePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_backend_sched_t,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_backend_sched_reserve');
+  late final _ggml_backend_sched_reserve =
+      _ggml_backend_sched_reservePtr.asFunction<
+          bool Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_get_n_backends(
@@ -7324,8 +10125,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_get_n_backendsPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ggml_backend_sched_t)>>('ggml_backend_sched_get_n_backends');
-  late final _ggml_backend_sched_get_n_backends = _ggml_backend_sched_get_n_backendsPtr.asFunction<int Function(ggml_backend_sched_t)>();
+  late final _ggml_backend_sched_get_n_backendsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ggml_backend_sched_t)>>(
+          'ggml_backend_sched_get_n_backends');
+  late final _ggml_backend_sched_get_n_backends =
+      _ggml_backend_sched_get_n_backendsPtr
+          .asFunction<int Function(ggml_backend_sched_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_sched_get_backend(
@@ -7338,8 +10143,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_get_backendPtr = _lookup<ffi.NativeFunction<ggml_backend_t Function(ggml_backend_sched_t, ffi.Int)>>('ggml_backend_sched_get_backend');
-  late final _ggml_backend_sched_get_backend = _ggml_backend_sched_get_backendPtr.asFunction<ggml_backend_t Function(ggml_backend_sched_t, int)>();
+  late final _ggml_backend_sched_get_backendPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_t Function(ggml_backend_sched_t,
+              ffi.Int)>>('ggml_backend_sched_get_backend');
+  late final _ggml_backend_sched_get_backend =
+      _ggml_backend_sched_get_backendPtr
+          .asFunction<ggml_backend_t Function(ggml_backend_sched_t, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_get_n_splits(
@@ -7350,8 +10160,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_get_n_splitsPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ggml_backend_sched_t)>>('ggml_backend_sched_get_n_splits');
-  late final _ggml_backend_sched_get_n_splits = _ggml_backend_sched_get_n_splitsPtr.asFunction<int Function(ggml_backend_sched_t)>();
+  late final _ggml_backend_sched_get_n_splitsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ggml_backend_sched_t)>>(
+          'ggml_backend_sched_get_n_splits');
+  late final _ggml_backend_sched_get_n_splits =
+      _ggml_backend_sched_get_n_splitsPtr
+          .asFunction<int Function(ggml_backend_sched_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_get_n_copies(
@@ -7362,8 +10176,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_get_n_copiesPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ggml_backend_sched_t)>>('ggml_backend_sched_get_n_copies');
-  late final _ggml_backend_sched_get_n_copies = _ggml_backend_sched_get_n_copiesPtr.asFunction<int Function(ggml_backend_sched_t)>();
+  late final _ggml_backend_sched_get_n_copiesPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ggml_backend_sched_t)>>(
+          'ggml_backend_sched_get_n_copies');
+  late final _ggml_backend_sched_get_n_copies =
+      _ggml_backend_sched_get_n_copiesPtr
+          .asFunction<int Function(ggml_backend_sched_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_get_buffer_size(
@@ -7376,8 +10194,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_get_buffer_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ggml_backend_sched_t, ggml_backend_t)>>('ggml_backend_sched_get_buffer_size');
-  late final _ggml_backend_sched_get_buffer_size = _ggml_backend_sched_get_buffer_sizePtr.asFunction<int Function(ggml_backend_sched_t, ggml_backend_t)>();
+  late final _ggml_backend_sched_get_buffer_sizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ggml_backend_sched_t,
+              ggml_backend_t)>>('ggml_backend_sched_get_buffer_size');
+  late final _ggml_backend_sched_get_buffer_size =
+      _ggml_backend_sched_get_buffer_sizePtr
+          .asFunction<int Function(ggml_backend_sched_t, ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_set_tensor_backend(
@@ -7392,8 +10215,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_set_tensor_backendPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_sched_t, ffi.Pointer<ggml_tensor>, ggml_backend_t)>>('ggml_backend_sched_set_tensor_backend');
-  late final _ggml_backend_sched_set_tensor_backend = _ggml_backend_sched_set_tensor_backendPtr.asFunction<void Function(ggml_backend_sched_t, ffi.Pointer<ggml_tensor>, ggml_backend_t)>();
+  late final _ggml_backend_sched_set_tensor_backendPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ggml_backend_sched_t, ffi.Pointer<ggml_tensor>,
+              ggml_backend_t)>>('ggml_backend_sched_set_tensor_backend');
+  late final _ggml_backend_sched_set_tensor_backend =
+      _ggml_backend_sched_set_tensor_backendPtr.asFunction<
+          void Function(ggml_backend_sched_t, ffi.Pointer<ggml_tensor>,
+              ggml_backend_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_sched_get_tensor_backend(
@@ -7406,8 +10235,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_get_tensor_backendPtr = _lookup<ffi.NativeFunction<ggml_backend_t Function(ggml_backend_sched_t, ffi.Pointer<ggml_tensor>)>>('ggml_backend_sched_get_tensor_backend');
-  late final _ggml_backend_sched_get_tensor_backend = _ggml_backend_sched_get_tensor_backendPtr.asFunction<ggml_backend_t Function(ggml_backend_sched_t, ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_sched_get_tensor_backendPtr = _lookup<
+          ffi.NativeFunction<
+              ggml_backend_t Function(
+                  ggml_backend_sched_t, ffi.Pointer<ggml_tensor>)>>(
+      'ggml_backend_sched_get_tensor_backend');
+  late final _ggml_backend_sched_get_tensor_backend =
+      _ggml_backend_sched_get_tensor_backendPtr.asFunction<
+          ggml_backend_t Function(
+              ggml_backend_sched_t, ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_sched_alloc_graph(
@@ -7420,8 +10256,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_alloc_graphPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>>('ggml_backend_sched_alloc_graph');
-  late final _ggml_backend_sched_alloc_graph = _ggml_backend_sched_alloc_graphPtr.asFunction<bool Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_backend_sched_alloc_graphPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ggml_backend_sched_t,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_backend_sched_alloc_graph');
+  late final _ggml_backend_sched_alloc_graph =
+      _ggml_backend_sched_alloc_graphPtr.asFunction<
+          bool Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_graph_compute(
@@ -7434,8 +10275,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_graph_computePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>>('ggml_backend_sched_graph_compute');
-  late final _ggml_backend_sched_graph_compute = _ggml_backend_sched_graph_computePtr.asFunction<int Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_backend_sched_graph_computePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ggml_backend_sched_t,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_backend_sched_graph_compute');
+  late final _ggml_backend_sched_graph_compute =
+      _ggml_backend_sched_graph_computePtr.asFunction<
+          int Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_graph_compute_async(
@@ -7448,8 +10294,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_graph_compute_asyncPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>>('ggml_backend_sched_graph_compute_async');
-  late final _ggml_backend_sched_graph_compute_async = _ggml_backend_sched_graph_compute_asyncPtr.asFunction<int Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_backend_sched_graph_compute_asyncPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>>(
+      'ggml_backend_sched_graph_compute_async');
+  late final _ggml_backend_sched_graph_compute_async =
+      _ggml_backend_sched_graph_compute_asyncPtr.asFunction<
+          int Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_synchronize(
@@ -7460,8 +10312,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_synchronizePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_sched_t)>>('ggml_backend_sched_synchronize');
-  late final _ggml_backend_sched_synchronize = _ggml_backend_sched_synchronizePtr.asFunction<void Function(ggml_backend_sched_t)>();
+  late final _ggml_backend_sched_synchronizePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_sched_t)>>(
+          'ggml_backend_sched_synchronize');
+  late final _ggml_backend_sched_synchronize =
+      _ggml_backend_sched_synchronizePtr
+          .asFunction<void Function(ggml_backend_sched_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_reset(
@@ -7472,8 +10328,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_resetPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_sched_t)>>('ggml_backend_sched_reset');
-  late final _ggml_backend_sched_reset = _ggml_backend_sched_resetPtr.asFunction<void Function(ggml_backend_sched_t)>();
+  late final _ggml_backend_sched_resetPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_sched_t)>>(
+          'ggml_backend_sched_reset');
+  late final _ggml_backend_sched_reset = _ggml_backend_sched_resetPtr
+      .asFunction<void Function(ggml_backend_sched_t)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_set_eval_callback(
@@ -7488,8 +10347,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_sched_set_eval_callbackPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_sched_t, ggml_backend_sched_eval_callback, ffi.Pointer<ffi.Void>)>>('ggml_backend_sched_set_eval_callback');
-  late final _ggml_backend_sched_set_eval_callback = _ggml_backend_sched_set_eval_callbackPtr.asFunction<void Function(ggml_backend_sched_t, ggml_backend_sched_eval_callback, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_backend_sched_set_eval_callbackPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ggml_backend_sched_t,
+              ggml_backend_sched_eval_callback,
+              ffi.Pointer<ffi.Void>)>>('ggml_backend_sched_set_eval_callback');
+  late final _ggml_backend_sched_set_eval_callback =
+      _ggml_backend_sched_set_eval_callbackPtr.asFunction<
+          void Function(ggml_backend_sched_t, ggml_backend_sched_eval_callback,
+              ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_graph_copy ggml_backend_graph_copy1(
@@ -7502,8 +10369,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_graph_copy1Ptr = _lookup<ffi.NativeFunction<ggml_backend_graph_copy Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>>('ggml_backend_graph_copy');
-  late final _ggml_backend_graph_copy1 = _ggml_backend_graph_copy1Ptr.asFunction<ggml_backend_graph_copy Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
+  late final _ggml_backend_graph_copy1Ptr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_graph_copy Function(ggml_backend_t,
+              ffi.Pointer<ggml_cgraph>)>>('ggml_backend_graph_copy');
+  late final _ggml_backend_graph_copy1 =
+      _ggml_backend_graph_copy1Ptr.asFunction<
+          ggml_backend_graph_copy Function(
+              ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_graph_copy_free(
@@ -7514,8 +10387,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_graph_copy_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_graph_copy)>>('ggml_backend_graph_copy_free');
-  late final _ggml_backend_graph_copy_free = _ggml_backend_graph_copy_freePtr.asFunction<void Function(ggml_backend_graph_copy)>();
+  late final _ggml_backend_graph_copy_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_graph_copy)>>(
+          'ggml_backend_graph_copy_free');
+  late final _ggml_backend_graph_copy_free = _ggml_backend_graph_copy_freePtr
+      .asFunction<void Function(ggml_backend_graph_copy)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_compare_graph_backend(
@@ -7534,8 +10410,22 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_compare_graph_backendPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_t, ggml_backend_t, ffi.Pointer<ggml_cgraph>, ggml_backend_eval_callback, ffi.Pointer<ffi.Void>)>>('ggml_backend_compare_graph_backend');
-  late final _ggml_backend_compare_graph_backend = _ggml_backend_compare_graph_backendPtr.asFunction<bool Function(ggml_backend_t, ggml_backend_t, ffi.Pointer<ggml_cgraph>, ggml_backend_eval_callback, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_backend_compare_graph_backendPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(
+              ggml_backend_t,
+              ggml_backend_t,
+              ffi.Pointer<ggml_cgraph>,
+              ggml_backend_eval_callback,
+              ffi.Pointer<ffi.Void>)>>('ggml_backend_compare_graph_backend');
+  late final _ggml_backend_compare_graph_backend =
+      _ggml_backend_compare_graph_backendPtr.asFunction<
+          bool Function(
+              ggml_backend_t,
+              ggml_backend_t,
+              ffi.Pointer<ggml_cgraph>,
+              ggml_backend_eval_callback,
+              ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_alloc(
@@ -7550,8 +10440,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_tensor_allocPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>)>>('ggml_backend_tensor_alloc');
-  late final _ggml_backend_tensor_alloc = _ggml_backend_tensor_allocPtr.asFunction<void Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_backend_tensor_allocPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ffi.Void>)>>('ggml_backend_tensor_alloc');
+  late final _ggml_backend_tensor_alloc =
+      _ggml_backend_tensor_allocPtr.asFunction<
+          void Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>,
+              ffi.Pointer<ffi.Void>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_view_init(
@@ -7562,8 +10458,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_view_initPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>)>>('ggml_backend_view_init');
-  late final _ggml_backend_view_init = _ggml_backend_view_initPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
+  late final _ggml_backend_view_initPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>)>>(
+          'ggml_backend_view_init');
+  late final _ggml_backend_view_init = _ggml_backend_view_initPtr
+      .asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_t ggml_backend_cpu_buffer_from_ptr(
@@ -7576,16 +10475,24 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_cpu_buffer_from_ptrPtr = _lookup<ffi.NativeFunction<ggml_backend_buffer_t Function(ffi.Pointer<ffi.Void>, ffi.Size)>>('ggml_backend_cpu_buffer_from_ptr');
-  late final _ggml_backend_cpu_buffer_from_ptr = _ggml_backend_cpu_buffer_from_ptrPtr.asFunction<ggml_backend_buffer_t Function(ffi.Pointer<ffi.Void>, int)>();
+  late final _ggml_backend_cpu_buffer_from_ptrPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_backend_buffer_t Function(ffi.Pointer<ffi.Void>,
+              ffi.Size)>>('ggml_backend_cpu_buffer_from_ptr');
+  late final _ggml_backend_cpu_buffer_from_ptr =
+      _ggml_backend_cpu_buffer_from_ptrPtr.asFunction<
+          ggml_backend_buffer_t Function(ffi.Pointer<ffi.Void>, int)>();
 
   /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_cpu_buffer_type() {
     return _ggml_backend_cpu_buffer_type();
   }
 
-  late final _ggml_backend_cpu_buffer_typePtr = _lookup<ffi.NativeFunction<ggml_backend_buffer_type_t Function()>>('ggml_backend_cpu_buffer_type');
-  late final _ggml_backend_cpu_buffer_type = _ggml_backend_cpu_buffer_typePtr.asFunction<ggml_backend_buffer_type_t Function()>();
+  late final _ggml_backend_cpu_buffer_typePtr =
+      _lookup<ffi.NativeFunction<ggml_backend_buffer_type_t Function()>>(
+          'ggml_backend_cpu_buffer_type');
+  late final _ggml_backend_cpu_buffer_type = _ggml_backend_cpu_buffer_typePtr
+      .asFunction<ggml_backend_buffer_type_t Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_numa_init(
@@ -7596,15 +10503,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_numa_initPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int32)>>('ggml_numa_init');
-  late final _ggml_numa_init = _ggml_numa_initPtr.asFunction<void Function(int)>();
+  late final _ggml_numa_initPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int32)>>(
+          'ggml_numa_init');
+  late final _ggml_numa_init =
+      _ggml_numa_initPtr.asFunction<void Function(int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool ggml_is_numa() {
     return _ggml_is_numa();
   }
 
-  late final _ggml_is_numaPtr = _lookup<ffi.NativeFunction<ffi.Bool Function()>>('ggml_is_numa');
+  late final _ggml_is_numaPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>('ggml_is_numa');
   late final _ggml_is_numa = _ggml_is_numaPtr.asFunction<bool Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
@@ -7618,8 +10529,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_i32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Int32)>>('ggml_new_i32');
-  late final _ggml_new_i32 = _ggml_new_i32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, int)>();
+  late final _ggml_new_i32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>, ffi.Int32)>>('ggml_new_i32');
+  late final _ggml_new_i32 = _ggml_new_i32Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_f32(
@@ -7632,8 +10547,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_new_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, ffi.Float)>>('ggml_new_f32');
-  late final _ggml_new_f32 = _ggml_new_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, double)>();
+  late final _ggml_new_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_context>, ffi.Float)>>('ggml_new_f32');
+  late final _ggml_new_f32 = _ggml_new_f32Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, double)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_i32(
@@ -7646,8 +10565,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_i32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_set_i32');
-  late final _ggml_set_i32 = _ggml_set_i32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_set_i32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_tensor>, ffi.Int32)>>('ggml_set_i32');
+  late final _ggml_set_i32 = _ggml_set_i32Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_f32(
@@ -7660,8 +10583,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_f32Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_set_f32');
-  late final _ggml_set_f32 = _ggml_set_f32Ptr.asFunction<ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, double)>();
+  late final _ggml_set_f32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_tensor> Function(
+              ffi.Pointer<ggml_tensor>, ffi.Float)>>('ggml_set_f32');
+  late final _ggml_set_f32 = _ggml_set_f32Ptr.asFunction<
+      ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>, double)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_get_i32_1d(
@@ -7674,8 +10601,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_i32_1dPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_get_i32_1d');
-  late final _ggml_get_i32_1d = _ggml_get_i32_1dPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_get_i32_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_get_i32_1d');
+  late final _ggml_get_i32_1d = _ggml_get_i32_1dPtr
+      .asFunction<int Function(ffi.Pointer<ggml_tensor>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_set_i32_1d(
@@ -7690,8 +10621,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_i32_1dPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int32)>>('ggml_set_i32_1d');
-  late final _ggml_set_i32_1d = _ggml_set_i32_1dPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, int, int)>();
+  late final _ggml_set_i32_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int,
+              ffi.Int32)>>('ggml_set_i32_1d');
+  late final _ggml_set_i32_1d = _ggml_set_i32_1dPtr
+      .asFunction<void Function(ffi.Pointer<ggml_tensor>, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_get_i32_nd(
@@ -7710,8 +10645,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_i32_ndPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('ggml_get_i32_nd');
-  late final _ggml_get_i32_nd = _ggml_get_i32_ndPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_get_i32_ndPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int,
+              ffi.Int, ffi.Int)>>('ggml_get_i32_nd');
+  late final _ggml_get_i32_nd = _ggml_get_i32_ndPtr
+      .asFunction<int Function(ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_set_i32_nd(
@@ -7732,8 +10671,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_i32_ndPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Int32)>>('ggml_set_i32_nd');
-  late final _ggml_set_i32_nd = _ggml_set_i32_ndPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, int, int, int, int, int)>();
+  late final _ggml_set_i32_ndPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int,
+              ffi.Int, ffi.Int32)>>('ggml_set_i32_nd');
+  late final _ggml_set_i32_nd = _ggml_set_i32_ndPtr.asFunction<
+      void Function(ffi.Pointer<ggml_tensor>, int, int, int, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   double ggml_get_f32_1d(
@@ -7746,8 +10689,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_f32_1dPtr = _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_get_f32_1d');
-  late final _ggml_get_f32_1d = _ggml_get_f32_1dPtr.asFunction<double Function(ffi.Pointer<ggml_tensor>, int)>();
+  late final _ggml_get_f32_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Float Function(
+              ffi.Pointer<ggml_tensor>, ffi.Int)>>('ggml_get_f32_1d');
+  late final _ggml_get_f32_1d = _ggml_get_f32_1dPtr
+      .asFunction<double Function(ffi.Pointer<ggml_tensor>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_set_f32_1d(
@@ -7762,8 +10709,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_f32_1dPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Float)>>('ggml_set_f32_1d');
-  late final _ggml_set_f32_1d = _ggml_set_f32_1dPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, int, double)>();
+  late final _ggml_set_f32_1dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int,
+              ffi.Float)>>('ggml_set_f32_1d');
+  late final _ggml_set_f32_1d = _ggml_set_f32_1dPtr
+      .asFunction<void Function(ffi.Pointer<ggml_tensor>, int, double)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   double ggml_get_f32_nd(
@@ -7782,8 +10733,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_f32_ndPtr = _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('ggml_get_f32_nd');
-  late final _ggml_get_f32_nd = _ggml_get_f32_ndPtr.asFunction<double Function(ffi.Pointer<ggml_tensor>, int, int, int, int)>();
+  late final _ggml_get_f32_ndPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Float Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int,
+              ffi.Int, ffi.Int)>>('ggml_get_f32_nd');
+  late final _ggml_get_f32_nd = _ggml_get_f32_ndPtr.asFunction<
+      double Function(ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_set_f32_nd(
@@ -7804,8 +10759,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_set_f32_ndPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int, ffi.Int, ffi.Float)>>('ggml_set_f32_nd');
-  late final _ggml_set_f32_nd = _ggml_set_f32_ndPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>, int, int, int, int, double)>();
+  late final _ggml_set_f32_ndPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Int, ffi.Int, ffi.Int,
+              ffi.Int, ffi.Float)>>('ggml_set_f32_nd');
+  late final _ggml_set_f32_nd = _ggml_set_f32_ndPtr.asFunction<
+      void Function(ffi.Pointer<ggml_tensor>, int, int, int, int, double)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_threadpool> ggml_threadpool_new(
@@ -7816,8 +10775,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_threadpool_newPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_threadpool> Function(ffi.Pointer<ggml_threadpool_params>)>>('ggml_threadpool_new');
-  late final _ggml_threadpool_new = _ggml_threadpool_newPtr.asFunction<ffi.Pointer<ggml_threadpool> Function(ffi.Pointer<ggml_threadpool_params>)>();
+  late final _ggml_threadpool_newPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_threadpool> Function(
+              ffi.Pointer<ggml_threadpool_params>)>>('ggml_threadpool_new');
+  late final _ggml_threadpool_new = _ggml_threadpool_newPtr.asFunction<
+      ffi.Pointer<ggml_threadpool> Function(
+          ffi.Pointer<ggml_threadpool_params>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_threadpool_free(
@@ -7828,8 +10792,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_threadpool_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_threadpool>)>>('ggml_threadpool_free');
-  late final _ggml_threadpool_free = _ggml_threadpool_freePtr.asFunction<void Function(ffi.Pointer<ggml_threadpool>)>();
+  late final _ggml_threadpool_freePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_threadpool>)>>(
+      'ggml_threadpool_free');
+  late final _ggml_threadpool_free = _ggml_threadpool_freePtr
+      .asFunction<void Function(ffi.Pointer<ggml_threadpool>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_threadpool_get_n_threads(
@@ -7840,8 +10807,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_threadpool_get_n_threadsPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ggml_threadpool>)>>('ggml_threadpool_get_n_threads');
-  late final _ggml_threadpool_get_n_threads = _ggml_threadpool_get_n_threadsPtr.asFunction<int Function(ffi.Pointer<ggml_threadpool>)>();
+  late final _ggml_threadpool_get_n_threadsPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ggml_threadpool>)>>(
+      'ggml_threadpool_get_n_threads');
+  late final _ggml_threadpool_get_n_threads = _ggml_threadpool_get_n_threadsPtr
+      .asFunction<int Function(ffi.Pointer<ggml_threadpool>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_threadpool_pause(
@@ -7852,8 +10822,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_threadpool_pausePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_threadpool>)>>('ggml_threadpool_pause');
-  late final _ggml_threadpool_pause = _ggml_threadpool_pausePtr.asFunction<void Function(ffi.Pointer<ggml_threadpool>)>();
+  late final _ggml_threadpool_pausePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_threadpool>)>>(
+      'ggml_threadpool_pause');
+  late final _ggml_threadpool_pause = _ggml_threadpool_pausePtr
+      .asFunction<void Function(ffi.Pointer<ggml_threadpool>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_threadpool_resume(
@@ -7864,8 +10837,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_threadpool_resumePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_threadpool>)>>('ggml_threadpool_resume');
-  late final _ggml_threadpool_resume = _ggml_threadpool_resumePtr.asFunction<void Function(ffi.Pointer<ggml_threadpool>)>();
+  late final _ggml_threadpool_resumePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ggml_threadpool>)>>(
+      'ggml_threadpool_resume');
+  late final _ggml_threadpool_resume = _ggml_threadpool_resumePtr
+      .asFunction<void Function(ffi.Pointer<ggml_threadpool>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ggml_cplan ggml_graph_plan(
@@ -7880,8 +10856,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_planPtr = _lookup<ffi.NativeFunction<ggml_cplan Function(ffi.Pointer<ggml_cgraph>, ffi.Int, ffi.Pointer<ggml_threadpool>)>>('ggml_graph_plan');
-  late final _ggml_graph_plan = _ggml_graph_planPtr.asFunction<ggml_cplan Function(ffi.Pointer<ggml_cgraph>, int, ffi.Pointer<ggml_threadpool>)>();
+  late final _ggml_graph_planPtr = _lookup<
+      ffi.NativeFunction<
+          ggml_cplan Function(ffi.Pointer<ggml_cgraph>, ffi.Int,
+              ffi.Pointer<ggml_threadpool>)>>('ggml_graph_plan');
+  late final _ggml_graph_plan = _ggml_graph_planPtr.asFunction<
+      ggml_cplan Function(
+          ffi.Pointer<ggml_cgraph>, int, ffi.Pointer<ggml_threadpool>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_graph_compute(
@@ -7894,8 +10875,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_computePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cplan>)>>('ggml_graph_compute');
-  late final _ggml_graph_compute = _ggml_graph_computePtr.asFunction<int Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cplan>)>();
+  late final _ggml_graph_computePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<ggml_cgraph>,
+              ffi.Pointer<ggml_cplan>)>>('ggml_graph_compute');
+  late final _ggml_graph_compute = _ggml_graph_computePtr.asFunction<
+      int Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cplan>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_graph_compute_with_ctx(
@@ -7910,192 +10895,250 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_graph_compute_with_ctxPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_cgraph>, ffi.Int)>>('ggml_graph_compute_with_ctx');
-  late final _ggml_graph_compute_with_ctx = _ggml_graph_compute_with_ctxPtr.asFunction<int Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_cgraph>, int)>();
+  late final _ggml_graph_compute_with_ctxPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<ggml_context>,
+              ffi.Pointer<ggml_cgraph>,
+              ffi.Int)>>('ggml_graph_compute_with_ctx');
+  late final _ggml_graph_compute_with_ctx =
+      _ggml_graph_compute_with_ctxPtr.asFunction<
+          int Function(
+              ffi.Pointer<ggml_context>, ffi.Pointer<ggml_cgraph>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_sse3() {
     return _ggml_cpu_has_sse3();
   }
 
-  late final _ggml_cpu_has_sse3Ptr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_sse3');
-  late final _ggml_cpu_has_sse3 = _ggml_cpu_has_sse3Ptr.asFunction<int Function()>();
+  late final _ggml_cpu_has_sse3Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_sse3');
+  late final _ggml_cpu_has_sse3 =
+      _ggml_cpu_has_sse3Ptr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_ssse3() {
     return _ggml_cpu_has_ssse3();
   }
 
-  late final _ggml_cpu_has_ssse3Ptr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_ssse3');
-  late final _ggml_cpu_has_ssse3 = _ggml_cpu_has_ssse3Ptr.asFunction<int Function()>();
+  late final _ggml_cpu_has_ssse3Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_ssse3');
+  late final _ggml_cpu_has_ssse3 =
+      _ggml_cpu_has_ssse3Ptr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_avx() {
     return _ggml_cpu_has_avx();
   }
 
-  late final _ggml_cpu_has_avxPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx');
-  late final _ggml_cpu_has_avx = _ggml_cpu_has_avxPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_avxPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx');
+  late final _ggml_cpu_has_avx =
+      _ggml_cpu_has_avxPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_avx_vnni() {
     return _ggml_cpu_has_avx_vnni();
   }
 
-  late final _ggml_cpu_has_avx_vnniPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx_vnni');
-  late final _ggml_cpu_has_avx_vnni = _ggml_cpu_has_avx_vnniPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_avx_vnniPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx_vnni');
+  late final _ggml_cpu_has_avx_vnni =
+      _ggml_cpu_has_avx_vnniPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_avx2() {
     return _ggml_cpu_has_avx2();
   }
 
-  late final _ggml_cpu_has_avx2Ptr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx2');
-  late final _ggml_cpu_has_avx2 = _ggml_cpu_has_avx2Ptr.asFunction<int Function()>();
+  late final _ggml_cpu_has_avx2Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx2');
+  late final _ggml_cpu_has_avx2 =
+      _ggml_cpu_has_avx2Ptr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_f16c() {
     return _ggml_cpu_has_f16c();
   }
 
-  late final _ggml_cpu_has_f16cPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_f16c');
-  late final _ggml_cpu_has_f16c = _ggml_cpu_has_f16cPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_f16cPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_f16c');
+  late final _ggml_cpu_has_f16c =
+      _ggml_cpu_has_f16cPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_fma() {
     return _ggml_cpu_has_fma();
   }
 
-  late final _ggml_cpu_has_fmaPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_fma');
-  late final _ggml_cpu_has_fma = _ggml_cpu_has_fmaPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_fmaPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_fma');
+  late final _ggml_cpu_has_fma =
+      _ggml_cpu_has_fmaPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_avx512() {
     return _ggml_cpu_has_avx512();
   }
 
-  late final _ggml_cpu_has_avx512Ptr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx512');
-  late final _ggml_cpu_has_avx512 = _ggml_cpu_has_avx512Ptr.asFunction<int Function()>();
+  late final _ggml_cpu_has_avx512Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx512');
+  late final _ggml_cpu_has_avx512 =
+      _ggml_cpu_has_avx512Ptr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_avx512_vbmi() {
     return _ggml_cpu_has_avx512_vbmi();
   }
 
-  late final _ggml_cpu_has_avx512_vbmiPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx512_vbmi');
-  late final _ggml_cpu_has_avx512_vbmi = _ggml_cpu_has_avx512_vbmiPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_avx512_vbmiPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
+          'ggml_cpu_has_avx512_vbmi');
+  late final _ggml_cpu_has_avx512_vbmi =
+      _ggml_cpu_has_avx512_vbmiPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_avx512_vnni() {
     return _ggml_cpu_has_avx512_vnni();
   }
 
-  late final _ggml_cpu_has_avx512_vnniPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx512_vnni');
-  late final _ggml_cpu_has_avx512_vnni = _ggml_cpu_has_avx512_vnniPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_avx512_vnniPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
+          'ggml_cpu_has_avx512_vnni');
+  late final _ggml_cpu_has_avx512_vnni =
+      _ggml_cpu_has_avx512_vnniPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_avx512_bf16() {
     return _ggml_cpu_has_avx512_bf16();
   }
 
-  late final _ggml_cpu_has_avx512_bf16Ptr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_avx512_bf16');
-  late final _ggml_cpu_has_avx512_bf16 = _ggml_cpu_has_avx512_bf16Ptr.asFunction<int Function()>();
+  late final _ggml_cpu_has_avx512_bf16Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
+          'ggml_cpu_has_avx512_bf16');
+  late final _ggml_cpu_has_avx512_bf16 =
+      _ggml_cpu_has_avx512_bf16Ptr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_amx_int8() {
     return _ggml_cpu_has_amx_int8();
   }
 
-  late final _ggml_cpu_has_amx_int8Ptr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_amx_int8');
-  late final _ggml_cpu_has_amx_int8 = _ggml_cpu_has_amx_int8Ptr.asFunction<int Function()>();
+  late final _ggml_cpu_has_amx_int8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_amx_int8');
+  late final _ggml_cpu_has_amx_int8 =
+      _ggml_cpu_has_amx_int8Ptr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_neon() {
     return _ggml_cpu_has_neon();
   }
 
-  late final _ggml_cpu_has_neonPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_neon');
-  late final _ggml_cpu_has_neon = _ggml_cpu_has_neonPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_neonPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_neon');
+  late final _ggml_cpu_has_neon =
+      _ggml_cpu_has_neonPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_arm_fma() {
     return _ggml_cpu_has_arm_fma();
   }
 
-  late final _ggml_cpu_has_arm_fmaPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_arm_fma');
-  late final _ggml_cpu_has_arm_fma = _ggml_cpu_has_arm_fmaPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_arm_fmaPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_arm_fma');
+  late final _ggml_cpu_has_arm_fma =
+      _ggml_cpu_has_arm_fmaPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_fp16_va() {
     return _ggml_cpu_has_fp16_va();
   }
 
-  late final _ggml_cpu_has_fp16_vaPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_fp16_va');
-  late final _ggml_cpu_has_fp16_va = _ggml_cpu_has_fp16_vaPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_fp16_vaPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_fp16_va');
+  late final _ggml_cpu_has_fp16_va =
+      _ggml_cpu_has_fp16_vaPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_dotprod() {
     return _ggml_cpu_has_dotprod();
   }
 
-  late final _ggml_cpu_has_dotprodPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_dotprod');
-  late final _ggml_cpu_has_dotprod = _ggml_cpu_has_dotprodPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_dotprodPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_dotprod');
+  late final _ggml_cpu_has_dotprod =
+      _ggml_cpu_has_dotprodPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_matmul_int8() {
     return _ggml_cpu_has_matmul_int8();
   }
 
-  late final _ggml_cpu_has_matmul_int8Ptr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_matmul_int8');
-  late final _ggml_cpu_has_matmul_int8 = _ggml_cpu_has_matmul_int8Ptr.asFunction<int Function()>();
+  late final _ggml_cpu_has_matmul_int8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>(
+          'ggml_cpu_has_matmul_int8');
+  late final _ggml_cpu_has_matmul_int8 =
+      _ggml_cpu_has_matmul_int8Ptr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_sve() {
     return _ggml_cpu_has_sve();
   }
 
-  late final _ggml_cpu_has_svePtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_sve');
-  late final _ggml_cpu_has_sve = _ggml_cpu_has_svePtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_svePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_sve');
+  late final _ggml_cpu_has_sve =
+      _ggml_cpu_has_svePtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_get_sve_cnt() {
     return _ggml_cpu_get_sve_cnt();
   }
 
-  late final _ggml_cpu_get_sve_cntPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_get_sve_cnt');
-  late final _ggml_cpu_get_sve_cnt = _ggml_cpu_get_sve_cntPtr.asFunction<int Function()>();
+  late final _ggml_cpu_get_sve_cntPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_get_sve_cnt');
+  late final _ggml_cpu_get_sve_cnt =
+      _ggml_cpu_get_sve_cntPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_riscv_v() {
     return _ggml_cpu_has_riscv_v();
   }
 
-  late final _ggml_cpu_has_riscv_vPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_riscv_v');
-  late final _ggml_cpu_has_riscv_v = _ggml_cpu_has_riscv_vPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_riscv_vPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_riscv_v');
+  late final _ggml_cpu_has_riscv_v =
+      _ggml_cpu_has_riscv_vPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_vsx() {
     return _ggml_cpu_has_vsx();
   }
 
-  late final _ggml_cpu_has_vsxPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_vsx');
-  late final _ggml_cpu_has_vsx = _ggml_cpu_has_vsxPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_vsxPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_vsx');
+  late final _ggml_cpu_has_vsx =
+      _ggml_cpu_has_vsxPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_wasm_simd() {
     return _ggml_cpu_has_wasm_simd();
   }
 
-  late final _ggml_cpu_has_wasm_simdPtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_wasm_simd');
-  late final _ggml_cpu_has_wasm_simd = _ggml_cpu_has_wasm_simdPtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_wasm_simdPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_wasm_simd');
+  late final _ggml_cpu_has_wasm_simd =
+      _ggml_cpu_has_wasm_simdPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int ggml_cpu_has_llamafile() {
     return _ggml_cpu_has_llamafile();
   }
 
-  late final _ggml_cpu_has_llamafilePtr = _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_llamafile');
-  late final _ggml_cpu_has_llamafile = _ggml_cpu_has_llamafilePtr.asFunction<int Function()>();
+  late final _ggml_cpu_has_llamafilePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('ggml_cpu_has_llamafile');
+  late final _ggml_cpu_has_llamafile =
+      _ggml_cpu_has_llamafilePtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_type_traits_cpu> ggml_get_type_traits_cpu(
@@ -8106,15 +11149,20 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_get_type_traits_cpuPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ggml_type_traits_cpu> Function(ffi.Int32)>>('ggml_get_type_traits_cpu');
-  late final _ggml_get_type_traits_cpu = _ggml_get_type_traits_cpuPtr.asFunction<ffi.Pointer<ggml_type_traits_cpu> Function(int)>();
+  late final _ggml_get_type_traits_cpuPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ggml_type_traits_cpu> Function(
+              ffi.Int32)>>('ggml_get_type_traits_cpu');
+  late final _ggml_get_type_traits_cpu = _ggml_get_type_traits_cpuPtr
+      .asFunction<ffi.Pointer<ggml_type_traits_cpu> Function(int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_cpu_init() {
     return _ggml_cpu_init();
   }
 
-  late final _ggml_cpu_initPtr = _lookup<ffi.NativeFunction<ffi.Void Function()>>('ggml_cpu_init');
+  late final _ggml_cpu_initPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('ggml_cpu_init');
   late final _ggml_cpu_init = _ggml_cpu_initPtr.asFunction<void Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
@@ -8122,8 +11170,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     return _ggml_backend_cpu_init();
   }
 
-  late final _ggml_backend_cpu_initPtr = _lookup<ffi.NativeFunction<ggml_backend_t Function()>>('ggml_backend_cpu_init');
-  late final _ggml_backend_cpu_init = _ggml_backend_cpu_initPtr.asFunction<ggml_backend_t Function()>();
+  late final _ggml_backend_cpu_initPtr =
+      _lookup<ffi.NativeFunction<ggml_backend_t Function()>>(
+          'ggml_backend_cpu_init');
+  late final _ggml_backend_cpu_init =
+      _ggml_backend_cpu_initPtr.asFunction<ggml_backend_t Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool ggml_backend_is_cpu(
@@ -8134,8 +11185,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_is_cpuPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_t)>>('ggml_backend_is_cpu');
-  late final _ggml_backend_is_cpu = _ggml_backend_is_cpuPtr.asFunction<bool Function(ggml_backend_t)>();
+  late final _ggml_backend_is_cpuPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ggml_backend_t)>>(
+          'ggml_backend_is_cpu');
+  late final _ggml_backend_is_cpu =
+      _ggml_backend_is_cpuPtr.asFunction<bool Function(ggml_backend_t)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_backend_cpu_set_n_threads(
@@ -8148,8 +11202,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_cpu_set_n_threadsPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t, ffi.Int)>>('ggml_backend_cpu_set_n_threads');
-  late final _ggml_backend_cpu_set_n_threads = _ggml_backend_cpu_set_n_threadsPtr.asFunction<void Function(ggml_backend_t, int)>();
+  late final _ggml_backend_cpu_set_n_threadsPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t, ffi.Int)>>(
+          'ggml_backend_cpu_set_n_threads');
+  late final _ggml_backend_cpu_set_n_threads =
+      _ggml_backend_cpu_set_n_threadsPtr
+          .asFunction<void Function(ggml_backend_t, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_backend_cpu_set_threadpool(
@@ -8162,8 +11220,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_cpu_set_threadpoolPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t, ggml_threadpool_t)>>('ggml_backend_cpu_set_threadpool');
-  late final _ggml_backend_cpu_set_threadpool = _ggml_backend_cpu_set_threadpoolPtr.asFunction<void Function(ggml_backend_t, ggml_threadpool_t)>();
+  late final _ggml_backend_cpu_set_threadpoolPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ggml_backend_t,
+              ggml_threadpool_t)>>('ggml_backend_cpu_set_threadpool');
+  late final _ggml_backend_cpu_set_threadpool =
+      _ggml_backend_cpu_set_threadpoolPtr
+          .asFunction<void Function(ggml_backend_t, ggml_threadpool_t)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void ggml_backend_cpu_set_abort_callback(
@@ -8178,64 +11241,91 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _ggml_backend_cpu_set_abort_callbackPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_backend_t, ggml_abort_callback, ffi.Pointer<ffi.Void>)>>('ggml_backend_cpu_set_abort_callback');
-  late final _ggml_backend_cpu_set_abort_callback = _ggml_backend_cpu_set_abort_callbackPtr.asFunction<void Function(ggml_backend_t, ggml_abort_callback, ffi.Pointer<ffi.Void>)>();
+  late final _ggml_backend_cpu_set_abort_callbackPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ggml_backend_t, ggml_abort_callback,
+              ffi.Pointer<ffi.Void>)>>('ggml_backend_cpu_set_abort_callback');
+  late final _ggml_backend_cpu_set_abort_callback =
+      _ggml_backend_cpu_set_abort_callbackPtr.asFunction<
+          void Function(
+              ggml_backend_t, ggml_abort_callback, ffi.Pointer<ffi.Void>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ggml_backend_reg_t ggml_backend_cpu_reg() {
     return _ggml_backend_cpu_reg();
   }
 
-  late final _ggml_backend_cpu_regPtr = _lookup<ffi.NativeFunction<ggml_backend_reg_t Function()>>('ggml_backend_cpu_reg');
-  late final _ggml_backend_cpu_reg = _ggml_backend_cpu_regPtr.asFunction<ggml_backend_reg_t Function()>();
+  late final _ggml_backend_cpu_regPtr =
+      _lookup<ffi.NativeFunction<ggml_backend_reg_t Function()>>(
+          'ggml_backend_cpu_reg');
+  late final _ggml_backend_cpu_reg =
+      _ggml_backend_cpu_regPtr.asFunction<ggml_backend_reg_t Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   llama_model_params llama_model_default_params() {
     return _llama_model_default_params();
   }
 
-  late final _llama_model_default_paramsPtr = _lookup<ffi.NativeFunction<llama_model_params Function()>>('llama_model_default_params');
-  late final _llama_model_default_params = _llama_model_default_paramsPtr.asFunction<llama_model_params Function()>();
+  late final _llama_model_default_paramsPtr =
+      _lookup<ffi.NativeFunction<llama_model_params Function()>>(
+          'llama_model_default_params');
+  late final _llama_model_default_params = _llama_model_default_paramsPtr
+      .asFunction<llama_model_params Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   llama_context_params llama_context_default_params() {
     return _llama_context_default_params();
   }
 
-  late final _llama_context_default_paramsPtr = _lookup<ffi.NativeFunction<llama_context_params Function()>>('llama_context_default_params');
-  late final _llama_context_default_params = _llama_context_default_paramsPtr.asFunction<llama_context_params Function()>();
+  late final _llama_context_default_paramsPtr =
+      _lookup<ffi.NativeFunction<llama_context_params Function()>>(
+          'llama_context_default_params');
+  late final _llama_context_default_params = _llama_context_default_paramsPtr
+      .asFunction<llama_context_params Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   llama_sampler_chain_params llama_sampler_chain_default_params() {
     return _llama_sampler_chain_default_params();
   }
 
-  late final _llama_sampler_chain_default_paramsPtr = _lookup<ffi.NativeFunction<llama_sampler_chain_params Function()>>('llama_sampler_chain_default_params');
-  late final _llama_sampler_chain_default_params = _llama_sampler_chain_default_paramsPtr.asFunction<llama_sampler_chain_params Function()>();
+  late final _llama_sampler_chain_default_paramsPtr =
+      _lookup<ffi.NativeFunction<llama_sampler_chain_params Function()>>(
+          'llama_sampler_chain_default_params');
+  late final _llama_sampler_chain_default_params =
+      _llama_sampler_chain_default_paramsPtr
+          .asFunction<llama_sampler_chain_params Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   llama_model_quantize_params llama_model_quantize_default_params() {
     return _llama_model_quantize_default_params();
   }
 
-  late final _llama_model_quantize_default_paramsPtr = _lookup<ffi.NativeFunction<llama_model_quantize_params Function()>>('llama_model_quantize_default_params');
-  late final _llama_model_quantize_default_params = _llama_model_quantize_default_paramsPtr.asFunction<llama_model_quantize_params Function()>();
+  late final _llama_model_quantize_default_paramsPtr =
+      _lookup<ffi.NativeFunction<llama_model_quantize_params Function()>>(
+          'llama_model_quantize_default_params');
+  late final _llama_model_quantize_default_params =
+      _llama_model_quantize_default_paramsPtr
+          .asFunction<llama_model_quantize_params Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_backend_init() {
     return _llama_backend_init();
   }
 
-  late final _llama_backend_initPtr = _lookup<ffi.NativeFunction<ffi.Void Function()>>('llama_backend_init');
-  late final _llama_backend_init = _llama_backend_initPtr.asFunction<void Function()>();
+  late final _llama_backend_initPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('llama_backend_init');
+  late final _llama_backend_init =
+      _llama_backend_initPtr.asFunction<void Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_backend_free() {
     return _llama_backend_free();
   }
 
-  late final _llama_backend_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function()>>('llama_backend_free');
-  late final _llama_backend_free = _llama_backend_freePtr.asFunction<void Function()>();
+  late final _llama_backend_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('llama_backend_free');
+  late final _llama_backend_free =
+      _llama_backend_freePtr.asFunction<void Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_numa_init(
@@ -8246,8 +11336,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_numa_initPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int32)>>('llama_numa_init');
-  late final _llama_numa_init = _llama_numa_initPtr.asFunction<void Function(int)>();
+  late final _llama_numa_initPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int32)>>(
+          'llama_numa_init');
+  late final _llama_numa_init =
+      _llama_numa_initPtr.asFunction<void Function(int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_attach_threadpool(
@@ -8262,8 +11355,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_attach_threadpoolPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, ggml_threadpool_t, ggml_threadpool_t)>>('llama_attach_threadpool');
-  late final _llama_attach_threadpool = _llama_attach_threadpoolPtr.asFunction<void Function(ffi.Pointer<llama_context>, ggml_threadpool_t, ggml_threadpool_t)>();
+  late final _llama_attach_threadpoolPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_context>, ggml_threadpool_t,
+              ggml_threadpool_t)>>('llama_attach_threadpool');
+  late final _llama_attach_threadpool = _llama_attach_threadpoolPtr.asFunction<
+      void Function(
+          ffi.Pointer<llama_context>, ggml_threadpool_t, ggml_threadpool_t)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_detach_threadpool(
@@ -8274,8 +11372,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_detach_threadpoolPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>('llama_detach_threadpool');
-  late final _llama_detach_threadpool = _llama_detach_threadpoolPtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
+  late final _llama_detach_threadpoolPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>(
+      'llama_detach_threadpool');
+  late final _llama_detach_threadpool = _llama_detach_threadpoolPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_model> llama_load_model_from_file(
@@ -8288,8 +11389,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_load_model_from_filePtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_model> Function(ffi.Pointer<ffi.Char>, llama_model_params)>>('llama_load_model_from_file');
-  late final _llama_load_model_from_file = _llama_load_model_from_filePtr.asFunction<ffi.Pointer<llama_model> Function(ffi.Pointer<ffi.Char>, llama_model_params)>();
+  late final _llama_load_model_from_filePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_model> Function(ffi.Pointer<ffi.Char>,
+              llama_model_params)>>('llama_load_model_from_file');
+  late final _llama_load_model_from_file =
+      _llama_load_model_from_filePtr.asFunction<
+          ffi.Pointer<llama_model> Function(
+              ffi.Pointer<ffi.Char>, llama_model_params)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_model> llama_model_load_from_file(
@@ -8302,8 +11409,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_load_from_filePtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_model> Function(ffi.Pointer<ffi.Char>, llama_model_params)>>('llama_model_load_from_file');
-  late final _llama_model_load_from_file = _llama_model_load_from_filePtr.asFunction<ffi.Pointer<llama_model> Function(ffi.Pointer<ffi.Char>, llama_model_params)>();
+  late final _llama_model_load_from_filePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_model> Function(ffi.Pointer<ffi.Char>,
+              llama_model_params)>>('llama_model_load_from_file');
+  late final _llama_model_load_from_file =
+      _llama_model_load_from_filePtr.asFunction<
+          ffi.Pointer<llama_model> Function(
+              ffi.Pointer<ffi.Char>, llama_model_params)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_model> llama_model_load_from_splits(
@@ -8318,8 +11431,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_load_from_splitsPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_model> Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Size, llama_model_params)>>('llama_model_load_from_splits');
-  late final _llama_model_load_from_splits = _llama_model_load_from_splitsPtr.asFunction<ffi.Pointer<llama_model> Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, int, llama_model_params)>();
+  late final _llama_model_load_from_splitsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_model> Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Size, llama_model_params)>>('llama_model_load_from_splits');
+  late final _llama_model_load_from_splits =
+      _llama_model_load_from_splitsPtr.asFunction<
+          ffi.Pointer<llama_model> Function(
+              ffi.Pointer<ffi.Pointer<ffi.Char>>, int, llama_model_params)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_free_model(
@@ -8330,8 +11449,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_free_modelPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_model>)>>('llama_free_model');
-  late final _llama_free_model = _llama_free_modelPtr.asFunction<void Function(ffi.Pointer<llama_model>)>();
+  late final _llama_free_modelPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_model>)>>(
+          'llama_free_model');
+  late final _llama_free_model = _llama_free_modelPtr
+      .asFunction<void Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_model_free(
@@ -8342,8 +11464,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_model>)>>('llama_model_free');
-  late final _llama_model_free = _llama_model_freePtr.asFunction<void Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_free');
+  late final _llama_model_free = _llama_model_freePtr
+      .asFunction<void Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_context> llama_init_from_model(
@@ -8356,8 +11481,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_init_from_modelPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_context> Function(ffi.Pointer<llama_model>, llama_context_params)>>('llama_init_from_model');
-  late final _llama_init_from_model = _llama_init_from_modelPtr.asFunction<ffi.Pointer<llama_context> Function(ffi.Pointer<llama_model>, llama_context_params)>();
+  late final _llama_init_from_modelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_context> Function(ffi.Pointer<llama_model>,
+              llama_context_params)>>('llama_init_from_model');
+  late final _llama_init_from_model = _llama_init_from_modelPtr.asFunction<
+      ffi.Pointer<llama_context> Function(
+          ffi.Pointer<llama_model>, llama_context_params)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_context> llama_new_context_with_model(
@@ -8370,8 +11500,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_new_context_with_modelPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_context> Function(ffi.Pointer<llama_model>, llama_context_params)>>('llama_new_context_with_model');
-  late final _llama_new_context_with_model = _llama_new_context_with_modelPtr.asFunction<ffi.Pointer<llama_context> Function(ffi.Pointer<llama_model>, llama_context_params)>();
+  late final _llama_new_context_with_modelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_context> Function(ffi.Pointer<llama_model>,
+              llama_context_params)>>('llama_new_context_with_model');
+  late final _llama_new_context_with_model =
+      _llama_new_context_with_modelPtr.asFunction<
+          ffi.Pointer<llama_context> Function(
+              ffi.Pointer<llama_model>, llama_context_params)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_free(
@@ -8382,15 +11518,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>('llama_free');
-  late final _llama_free = _llama_freePtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
+  late final _llama_freePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>(
+      'llama_free');
+  late final _llama_free =
+      _llama_freePtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_time_us() {
     return _llama_time_us();
   }
 
-  late final _llama_time_usPtr = _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('llama_time_us');
+  late final _llama_time_usPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('llama_time_us');
   late final _llama_time_us = _llama_time_usPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
@@ -8398,40 +11538,51 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     return _llama_max_devices();
   }
 
-  late final _llama_max_devicesPtr = _lookup<ffi.NativeFunction<ffi.Size Function()>>('llama_max_devices');
-  late final _llama_max_devices = _llama_max_devicesPtr.asFunction<int Function()>();
+  late final _llama_max_devicesPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function()>>('llama_max_devices');
+  late final _llama_max_devices =
+      _llama_max_devicesPtr.asFunction<int Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_supports_mmap() {
     return _llama_supports_mmap();
   }
 
-  late final _llama_supports_mmapPtr = _lookup<ffi.NativeFunction<ffi.Bool Function()>>('llama_supports_mmap');
-  late final _llama_supports_mmap = _llama_supports_mmapPtr.asFunction<bool Function()>();
+  late final _llama_supports_mmapPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>('llama_supports_mmap');
+  late final _llama_supports_mmap =
+      _llama_supports_mmapPtr.asFunction<bool Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_supports_mlock() {
     return _llama_supports_mlock();
   }
 
-  late final _llama_supports_mlockPtr = _lookup<ffi.NativeFunction<ffi.Bool Function()>>('llama_supports_mlock');
-  late final _llama_supports_mlock = _llama_supports_mlockPtr.asFunction<bool Function()>();
+  late final _llama_supports_mlockPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>('llama_supports_mlock');
+  late final _llama_supports_mlock =
+      _llama_supports_mlockPtr.asFunction<bool Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_supports_gpu_offload() {
     return _llama_supports_gpu_offload();
   }
 
-  late final _llama_supports_gpu_offloadPtr = _lookup<ffi.NativeFunction<ffi.Bool Function()>>('llama_supports_gpu_offload');
-  late final _llama_supports_gpu_offload = _llama_supports_gpu_offloadPtr.asFunction<bool Function()>();
+  late final _llama_supports_gpu_offloadPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>(
+          'llama_supports_gpu_offload');
+  late final _llama_supports_gpu_offload =
+      _llama_supports_gpu_offloadPtr.asFunction<bool Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_supports_rpc() {
     return _llama_supports_rpc();
   }
 
-  late final _llama_supports_rpcPtr = _lookup<ffi.NativeFunction<ffi.Bool Function()>>('llama_supports_rpc');
-  late final _llama_supports_rpc = _llama_supports_rpcPtr.asFunction<bool Function()>();
+  late final _llama_supports_rpcPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function()>>('llama_supports_rpc');
+  late final _llama_supports_rpc =
+      _llama_supports_rpcPtr.asFunction<bool Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_ctx(
@@ -8442,8 +11593,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_ctxPtr = _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_context>)>>('llama_n_ctx');
-  late final _llama_n_ctx = _llama_n_ctxPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_n_ctxPtr = _lookup<
+          ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_context>)>>(
+      'llama_n_ctx');
+  late final _llama_n_ctx =
+      _llama_n_ctxPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_batch(
@@ -8454,8 +11608,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_batchPtr = _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_context>)>>('llama_n_batch');
-  late final _llama_n_batch = _llama_n_batchPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_n_batchPtr = _lookup<
+          ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_context>)>>(
+      'llama_n_batch');
+  late final _llama_n_batch =
+      _llama_n_batchPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_ubatch(
@@ -8466,8 +11623,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_ubatchPtr = _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_context>)>>('llama_n_ubatch');
-  late final _llama_n_ubatch = _llama_n_ubatchPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_n_ubatchPtr = _lookup<
+          ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_context>)>>(
+      'llama_n_ubatch');
+  late final _llama_n_ubatch =
+      _llama_n_ubatchPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_seq_max(
@@ -8478,8 +11638,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_seq_maxPtr = _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_context>)>>('llama_n_seq_max');
-  late final _llama_n_seq_max = _llama_n_seq_maxPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_n_seq_maxPtr = _lookup<
+          ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_context>)>>(
+      'llama_n_seq_max');
+  late final _llama_n_seq_max = _llama_n_seq_maxPtr
+      .asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_ctx_train(
@@ -8490,8 +11653,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_ctx_trainPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_n_ctx_train');
-  late final _llama_n_ctx_train = _llama_n_ctx_trainPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_n_ctx_trainPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_n_ctx_train');
+  late final _llama_n_ctx_train = _llama_n_ctx_trainPtr
+      .asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_embd(
@@ -8502,8 +11668,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_embdPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_n_embd');
-  late final _llama_n_embd = _llama_n_embdPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_n_embdPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_n_embd');
+  late final _llama_n_embd =
+      _llama_n_embdPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_layer(
@@ -8514,8 +11683,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_layerPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_n_layer');
-  late final _llama_n_layer = _llama_n_layerPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_n_layerPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_n_layer');
+  late final _llama_n_layer =
+      _llama_n_layerPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_head(
@@ -8526,8 +11698,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_headPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_n_head');
-  late final _llama_n_head = _llama_n_headPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_n_headPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_n_head');
+  late final _llama_n_head =
+      _llama_n_headPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_vocab(
@@ -8538,8 +11713,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_vocabPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>)>>('llama_n_vocab');
-  late final _llama_n_vocab = _llama_n_vocabPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_n_vocabPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>)>>(
+          'llama_n_vocab');
+  late final _llama_n_vocab =
+      _llama_n_vocabPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_model> llama_get_model(
@@ -8550,8 +11728,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_get_modelPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_model> Function(ffi.Pointer<llama_context>)>>('llama_get_model');
-  late final _llama_get_model = _llama_get_modelPtr.asFunction<ffi.Pointer<llama_model> Function(ffi.Pointer<llama_context>)>();
+  late final _llama_get_modelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_model> Function(
+              ffi.Pointer<llama_context>)>>('llama_get_model');
+  late final _llama_get_model = _llama_get_modelPtr.asFunction<
+      ffi.Pointer<llama_model> Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_pooling_type1(
@@ -8562,8 +11744,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_pooling_type1Ptr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>('llama_pooling_type');
-  late final _llama_pooling_type1 = _llama_pooling_type1Ptr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_pooling_type1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>(
+      'llama_pooling_type');
+  late final _llama_pooling_type1 = _llama_pooling_type1Ptr
+      .asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_vocab> llama_model_get_vocab(
@@ -8574,8 +11759,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_get_vocabPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_vocab> Function(ffi.Pointer<llama_model>)>>('llama_model_get_vocab');
-  late final _llama_model_get_vocab = _llama_model_get_vocabPtr.asFunction<ffi.Pointer<llama_vocab> Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_get_vocabPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_vocab> Function(
+              ffi.Pointer<llama_model>)>>('llama_model_get_vocab');
+  late final _llama_model_get_vocab = _llama_model_get_vocabPtr.asFunction<
+      ffi.Pointer<llama_vocab> Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_rope_type(
@@ -8586,8 +11775,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_rope_typePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_model_rope_type');
-  late final _llama_model_rope_type = _llama_model_rope_typePtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_rope_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_rope_type');
+  late final _llama_model_rope_type = _llama_model_rope_typePtr
+      .asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_n_ctx_train(
@@ -8598,8 +11790,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_n_ctx_trainPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_model_n_ctx_train');
-  late final _llama_model_n_ctx_train = _llama_model_n_ctx_trainPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_n_ctx_trainPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_n_ctx_train');
+  late final _llama_model_n_ctx_train = _llama_model_n_ctx_trainPtr
+      .asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_n_embd(
@@ -8610,8 +11805,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_n_embdPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_model_n_embd');
-  late final _llama_model_n_embd = _llama_model_n_embdPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_n_embdPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_n_embd');
+  late final _llama_model_n_embd = _llama_model_n_embdPtr
+      .asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_n_layer(
@@ -8622,8 +11820,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_n_layerPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_model_n_layer');
-  late final _llama_model_n_layer = _llama_model_n_layerPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_n_layerPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_n_layer');
+  late final _llama_model_n_layer = _llama_model_n_layerPtr
+      .asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_n_head(
@@ -8634,8 +11835,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_n_headPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_model_n_head');
-  late final _llama_model_n_head = _llama_model_n_headPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_n_headPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_n_head');
+  late final _llama_model_n_head = _llama_model_n_headPtr
+      .asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   double llama_model_rope_freq_scale_train(
@@ -8646,8 +11850,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_rope_freq_scale_trainPtr = _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Pointer<llama_model>)>>('llama_model_rope_freq_scale_train');
-  late final _llama_model_rope_freq_scale_train = _llama_model_rope_freq_scale_trainPtr.asFunction<double Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_rope_freq_scale_trainPtr =
+      _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_rope_freq_scale_train');
+  late final _llama_model_rope_freq_scale_train =
+      _llama_model_rope_freq_scale_trainPtr
+          .asFunction<double Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_type1(
@@ -8658,8 +11866,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_type1Ptr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_type');
-  late final _llama_vocab_type1 = _llama_vocab_type1Ptr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_type1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>)>>(
+          'llama_vocab_type');
+  late final _llama_vocab_type1 = _llama_vocab_type1Ptr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_n_tokens(
@@ -8670,8 +11881,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_n_tokensPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_n_tokens');
-  late final _llama_vocab_n_tokens = _llama_vocab_n_tokensPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_n_tokensPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>)>>(
+          'llama_vocab_n_tokens');
+  late final _llama_vocab_n_tokens = _llama_vocab_n_tokensPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_meta_val_str(
@@ -8688,8 +11902,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_meta_val_strPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Size)>>('llama_model_meta_val_str');
-  late final _llama_model_meta_val_str = _llama_model_meta_val_strPtr.asFunction<int Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
+  late final _llama_model_meta_val_strPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>, ffi.Size)>>('llama_model_meta_val_str');
+  late final _llama_model_meta_val_str =
+      _llama_model_meta_val_strPtr.asFunction<
+          int Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_meta_count(
@@ -8700,8 +11920,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_meta_countPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>('llama_model_meta_count');
-  late final _llama_model_meta_count = _llama_model_meta_countPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_meta_countPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_meta_count');
+  late final _llama_model_meta_count = _llama_model_meta_countPtr
+      .asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_meta_key_by_index(
@@ -8718,8 +11941,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_meta_key_by_indexPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>, ffi.Int32, ffi.Pointer<ffi.Char>, ffi.Size)>>('llama_model_meta_key_by_index');
-  late final _llama_model_meta_key_by_index = _llama_model_meta_key_by_indexPtr.asFunction<int Function(ffi.Pointer<llama_model>, int, ffi.Pointer<ffi.Char>, int)>();
+  late final _llama_model_meta_key_by_indexPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_model>,
+              ffi.Int32,
+              ffi.Pointer<ffi.Char>,
+              ffi.Size)>>('llama_model_meta_key_by_index');
+  late final _llama_model_meta_key_by_index =
+      _llama_model_meta_key_by_indexPtr.asFunction<
+          int Function(
+              ffi.Pointer<llama_model>, int, ffi.Pointer<ffi.Char>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_meta_val_str_by_index(
@@ -8736,8 +11968,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_meta_val_str_by_indexPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>, ffi.Int32, ffi.Pointer<ffi.Char>, ffi.Size)>>('llama_model_meta_val_str_by_index');
-  late final _llama_model_meta_val_str_by_index = _llama_model_meta_val_str_by_indexPtr.asFunction<int Function(ffi.Pointer<llama_model>, int, ffi.Pointer<ffi.Char>, int)>();
+  late final _llama_model_meta_val_str_by_indexPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_model>,
+              ffi.Int32,
+              ffi.Pointer<ffi.Char>,
+              ffi.Size)>>('llama_model_meta_val_str_by_index');
+  late final _llama_model_meta_val_str_by_index =
+      _llama_model_meta_val_str_by_indexPtr.asFunction<
+          int Function(
+              ffi.Pointer<llama_model>, int, ffi.Pointer<ffi.Char>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_desc(
@@ -8752,8 +11993,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_descPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>, ffi.Size)>>('llama_model_desc');
-  late final _llama_model_desc = _llama_model_descPtr.asFunction<int Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>, int)>();
+  late final _llama_model_descPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>,
+              ffi.Size)>>('llama_model_desc');
+  late final _llama_model_desc = _llama_model_descPtr.asFunction<
+      int Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_size(
@@ -8764,8 +12009,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_sizePtr = _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<llama_model>)>>('llama_model_size');
-  late final _llama_model_size = _llama_model_sizePtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_sizePtr = _lookup<
+          ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<llama_model>)>>(
+      'llama_model_size');
+  late final _llama_model_size =
+      _llama_model_sizePtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> llama_model_chat_template(
@@ -8778,8 +12026,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_chat_templatePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>)>>('llama_model_chat_template');
-  late final _llama_model_chat_template = _llama_model_chat_templatePtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>)>();
+  late final _llama_model_chat_templatePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_model>,
+              ffi.Pointer<ffi.Char>)>>('llama_model_chat_template');
+  late final _llama_model_chat_template =
+      _llama_model_chat_templatePtr.asFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_n_params(
@@ -8790,8 +12044,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_n_paramsPtr = _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<llama_model>)>>('llama_model_n_params');
-  late final _llama_model_n_params = _llama_model_n_paramsPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_n_paramsPtr = _lookup<
+          ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<llama_model>)>>(
+      'llama_model_n_params');
+  late final _llama_model_n_params = _llama_model_n_paramsPtr
+      .asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_model_has_encoder(
@@ -8802,8 +12059,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_has_encoderPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_model>)>>('llama_model_has_encoder');
-  late final _llama_model_has_encoder = _llama_model_has_encoderPtr.asFunction<bool Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_has_encoderPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_has_encoder');
+  late final _llama_model_has_encoder = _llama_model_has_encoderPtr
+      .asFunction<bool Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_model_has_decoder(
@@ -8814,8 +12074,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_has_decoderPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_model>)>>('llama_model_has_decoder');
-  late final _llama_model_has_decoder = _llama_model_has_decoderPtr.asFunction<bool Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_has_decoderPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_has_decoder');
+  late final _llama_model_has_decoder = _llama_model_has_decoderPtr
+      .asFunction<bool Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_decoder_start_token(
@@ -8826,8 +12089,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_decoder_start_tokenPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_model>)>>('llama_model_decoder_start_token');
-  late final _llama_model_decoder_start_token = _llama_model_decoder_start_tokenPtr.asFunction<int Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_decoder_start_tokenPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_model>)>>(
+      'llama_model_decoder_start_token');
+  late final _llama_model_decoder_start_token =
+      _llama_model_decoder_start_tokenPtr
+          .asFunction<int Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_model_is_recurrent(
@@ -8838,8 +12105,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_is_recurrentPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_model>)>>('llama_model_is_recurrent');
-  late final _llama_model_is_recurrent = _llama_model_is_recurrentPtr.asFunction<bool Function(ffi.Pointer<llama_model>)>();
+  late final _llama_model_is_recurrentPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_model>)>>(
+          'llama_model_is_recurrent');
+  late final _llama_model_is_recurrent = _llama_model_is_recurrentPtr
+      .asFunction<bool Function(ffi.Pointer<llama_model>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_model_quantize(
@@ -8854,8 +12124,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_model_quantizePtr = _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_model_quantize_params>)>>('llama_model_quantize');
-  late final _llama_model_quantize = _llama_model_quantizePtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_model_quantize_params>)>();
+  late final _llama_model_quantizePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Uint32 Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+                  ffi.Pointer<llama_model_quantize_params>)>>(
+      'llama_model_quantize');
+  late final _llama_model_quantize = _llama_model_quantizePtr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<llama_model_quantize_params>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_adapter_lora> llama_adapter_lora_init(
@@ -8868,8 +12144,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_adapter_lora_initPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_adapter_lora> Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>)>>('llama_adapter_lora_init');
-  late final _llama_adapter_lora_init = _llama_adapter_lora_initPtr.asFunction<ffi.Pointer<llama_adapter_lora> Function(ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>)>();
+  late final _llama_adapter_lora_initPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_adapter_lora> Function(ffi.Pointer<llama_model>,
+              ffi.Pointer<ffi.Char>)>>('llama_adapter_lora_init');
+  late final _llama_adapter_lora_init = _llama_adapter_lora_initPtr.asFunction<
+      ffi.Pointer<llama_adapter_lora> Function(
+          ffi.Pointer<llama_model>, ffi.Pointer<ffi.Char>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_adapter_lora_free(
@@ -8880,8 +12161,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_adapter_lora_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_adapter_lora>)>>('llama_adapter_lora_free');
-  late final _llama_adapter_lora_free = _llama_adapter_lora_freePtr.asFunction<void Function(ffi.Pointer<llama_adapter_lora>)>();
+  late final _llama_adapter_lora_freePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<llama_adapter_lora>)>>(
+      'llama_adapter_lora_free');
+  late final _llama_adapter_lora_free = _llama_adapter_lora_freePtr
+      .asFunction<void Function(ffi.Pointer<llama_adapter_lora>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_set_adapter_lora(
@@ -8896,8 +12181,15 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_set_adapter_loraPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>, ffi.Pointer<llama_adapter_lora>, ffi.Float)>>('llama_set_adapter_lora');
-  late final _llama_set_adapter_lora = _llama_set_adapter_loraPtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<llama_adapter_lora>, double)>();
+  late final _llama_set_adapter_loraPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_context>,
+              ffi.Pointer<llama_adapter_lora>,
+              ffi.Float)>>('llama_set_adapter_lora');
+  late final _llama_set_adapter_lora = _llama_set_adapter_loraPtr.asFunction<
+      int Function(ffi.Pointer<llama_context>, ffi.Pointer<llama_adapter_lora>,
+          double)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_rm_adapter_lora(
@@ -8910,8 +12202,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_rm_adapter_loraPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>, ffi.Pointer<llama_adapter_lora>)>>('llama_rm_adapter_lora');
-  late final _llama_rm_adapter_lora = _llama_rm_adapter_loraPtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<llama_adapter_lora>)>();
+  late final _llama_rm_adapter_loraPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<llama_context>,
+              ffi.Pointer<llama_adapter_lora>)>>('llama_rm_adapter_lora');
+  late final _llama_rm_adapter_lora = _llama_rm_adapter_loraPtr.asFunction<
+      int Function(
+          ffi.Pointer<llama_context>, ffi.Pointer<llama_adapter_lora>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_clear_adapter_lora(
@@ -8922,8 +12219,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_clear_adapter_loraPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>('llama_clear_adapter_lora');
-  late final _llama_clear_adapter_lora = _llama_clear_adapter_loraPtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
+  late final _llama_clear_adapter_loraPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>(
+      'llama_clear_adapter_lora');
+  late final _llama_clear_adapter_lora = _llama_clear_adapter_loraPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_apply_adapter_cvec(
@@ -8944,8 +12244,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_apply_adapter_cvecPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Float>, ffi.Size, ffi.Int32, ffi.Int32, ffi.Int32)>>('llama_apply_adapter_cvec');
-  late final _llama_apply_adapter_cvec = _llama_apply_adapter_cvecPtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Float>, int, int, int, int)>();
+  late final _llama_apply_adapter_cvecPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_context>,
+              ffi.Pointer<ffi.Float>,
+              ffi.Size,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.Int32)>>('llama_apply_adapter_cvec');
+  late final _llama_apply_adapter_cvec =
+      _llama_apply_adapter_cvecPtr.asFunction<
+          int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Float>, int,
+              int, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   llama_kv_cache_view llama_kv_cache_view_init(
@@ -8958,8 +12269,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_view_initPtr = _lookup<ffi.NativeFunction<llama_kv_cache_view Function(ffi.Pointer<llama_context>, ffi.Int32)>>('llama_kv_cache_view_init');
-  late final _llama_kv_cache_view_init = _llama_kv_cache_view_initPtr.asFunction<llama_kv_cache_view Function(ffi.Pointer<llama_context>, int)>();
+  late final _llama_kv_cache_view_initPtr = _lookup<
+      ffi.NativeFunction<
+          llama_kv_cache_view Function(ffi.Pointer<llama_context>,
+              ffi.Int32)>>('llama_kv_cache_view_init');
+  late final _llama_kv_cache_view_init =
+      _llama_kv_cache_view_initPtr.asFunction<
+          llama_kv_cache_view Function(ffi.Pointer<llama_context>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_kv_cache_view_free(
@@ -8970,8 +12286,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_view_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_kv_cache_view>)>>('llama_kv_cache_view_free');
-  late final _llama_kv_cache_view_free = _llama_kv_cache_view_freePtr.asFunction<void Function(ffi.Pointer<llama_kv_cache_view>)>();
+  late final _llama_kv_cache_view_freePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<llama_kv_cache_view>)>>(
+      'llama_kv_cache_view_free');
+  late final _llama_kv_cache_view_free = _llama_kv_cache_view_freePtr
+      .asFunction<void Function(ffi.Pointer<llama_kv_cache_view>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_kv_cache_view_update(
@@ -8984,8 +12304,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_view_updatePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, ffi.Pointer<llama_kv_cache_view>)>>('llama_kv_cache_view_update');
-  late final _llama_kv_cache_view_update = _llama_kv_cache_view_updatePtr.asFunction<void Function(ffi.Pointer<llama_context>, ffi.Pointer<llama_kv_cache_view>)>();
+  late final _llama_kv_cache_view_updatePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_context>,
+              ffi.Pointer<llama_kv_cache_view>)>>('llama_kv_cache_view_update');
+  late final _llama_kv_cache_view_update =
+      _llama_kv_cache_view_updatePtr.asFunction<
+          void Function(
+              ffi.Pointer<llama_context>, ffi.Pointer<llama_kv_cache_view>)>();
 
   ///
   int llama_get_kv_cache_token_count(
@@ -8996,8 +12322,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_get_kv_cache_token_countPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>('llama_get_kv_cache_token_count');
-  late final _llama_get_kv_cache_token_count = _llama_get_kv_cache_token_countPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_get_kv_cache_token_countPtr = _lookup<
+          ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>(
+      'llama_get_kv_cache_token_count');
+  late final _llama_get_kv_cache_token_count =
+      _llama_get_kv_cache_token_countPtr
+          .asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_get_kv_cache_used_cells(
@@ -9008,8 +12338,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_get_kv_cache_used_cellsPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>('llama_get_kv_cache_used_cells');
-  late final _llama_get_kv_cache_used_cells = _llama_get_kv_cache_used_cellsPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_get_kv_cache_used_cellsPtr = _lookup<
+          ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>(
+      'llama_get_kv_cache_used_cells');
+  late final _llama_get_kv_cache_used_cells = _llama_get_kv_cache_used_cellsPtr
+      .asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_kv_cache_clear(
@@ -9020,8 +12353,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_clearPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>('llama_kv_cache_clear');
-  late final _llama_kv_cache_clear = _llama_kv_cache_clearPtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
+  late final _llama_kv_cache_clearPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>(
+      'llama_kv_cache_clear');
+  late final _llama_kv_cache_clear = _llama_kv_cache_clearPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_kv_cache_seq_rm(
@@ -9038,8 +12374,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_seq_rmPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_context>, llama_seq_id, llama_pos, llama_pos)>>('llama_kv_cache_seq_rm');
-  late final _llama_kv_cache_seq_rm = _llama_kv_cache_seq_rmPtr.asFunction<bool Function(ffi.Pointer<llama_context>, int, int, int)>();
+  late final _llama_kv_cache_seq_rmPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Pointer<llama_context>, llama_seq_id, llama_pos,
+              llama_pos)>>('llama_kv_cache_seq_rm');
+  late final _llama_kv_cache_seq_rm = _llama_kv_cache_seq_rmPtr
+      .asFunction<bool Function(ffi.Pointer<llama_context>, int, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_kv_cache_seq_cp(
@@ -9058,8 +12398,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_seq_cpPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, llama_seq_id, llama_seq_id, llama_pos, llama_pos)>>('llama_kv_cache_seq_cp');
-  late final _llama_kv_cache_seq_cp = _llama_kv_cache_seq_cpPtr.asFunction<void Function(ffi.Pointer<llama_context>, int, int, int, int)>();
+  late final _llama_kv_cache_seq_cpPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_context>, llama_seq_id,
+              llama_seq_id, llama_pos, llama_pos)>>('llama_kv_cache_seq_cp');
+  late final _llama_kv_cache_seq_cp = _llama_kv_cache_seq_cpPtr.asFunction<
+      void Function(ffi.Pointer<llama_context>, int, int, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_kv_cache_seq_keep(
@@ -9072,8 +12416,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_seq_keepPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, llama_seq_id)>>('llama_kv_cache_seq_keep');
-  late final _llama_kv_cache_seq_keep = _llama_kv_cache_seq_keepPtr.asFunction<void Function(ffi.Pointer<llama_context>, int)>();
+  late final _llama_kv_cache_seq_keepPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_context>,
+              llama_seq_id)>>('llama_kv_cache_seq_keep');
+  late final _llama_kv_cache_seq_keep = _llama_kv_cache_seq_keepPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_kv_cache_seq_add(
@@ -9092,8 +12440,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_seq_addPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, llama_seq_id, llama_pos, llama_pos, llama_pos)>>('llama_kv_cache_seq_add');
-  late final _llama_kv_cache_seq_add = _llama_kv_cache_seq_addPtr.asFunction<void Function(ffi.Pointer<llama_context>, int, int, int, int)>();
+  late final _llama_kv_cache_seq_addPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_context>, llama_seq_id, llama_pos,
+              llama_pos, llama_pos)>>('llama_kv_cache_seq_add');
+  late final _llama_kv_cache_seq_add = _llama_kv_cache_seq_addPtr.asFunction<
+      void Function(ffi.Pointer<llama_context>, int, int, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_kv_cache_seq_div(
@@ -9112,8 +12464,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_seq_divPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, llama_seq_id, llama_pos, llama_pos, ffi.Int)>>('llama_kv_cache_seq_div');
-  late final _llama_kv_cache_seq_div = _llama_kv_cache_seq_divPtr.asFunction<void Function(ffi.Pointer<llama_context>, int, int, int, int)>();
+  late final _llama_kv_cache_seq_divPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_context>, llama_seq_id, llama_pos,
+              llama_pos, ffi.Int)>>('llama_kv_cache_seq_div');
+  late final _llama_kv_cache_seq_div = _llama_kv_cache_seq_divPtr.asFunction<
+      void Function(ffi.Pointer<llama_context>, int, int, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_kv_cache_seq_pos_max(
@@ -9126,8 +12482,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_seq_pos_maxPtr = _lookup<ffi.NativeFunction<llama_pos Function(ffi.Pointer<llama_context>, llama_seq_id)>>('llama_kv_cache_seq_pos_max');
-  late final _llama_kv_cache_seq_pos_max = _llama_kv_cache_seq_pos_maxPtr.asFunction<int Function(ffi.Pointer<llama_context>, int)>();
+  late final _llama_kv_cache_seq_pos_maxPtr = _lookup<
+      ffi.NativeFunction<
+          llama_pos Function(ffi.Pointer<llama_context>,
+              llama_seq_id)>>('llama_kv_cache_seq_pos_max');
+  late final _llama_kv_cache_seq_pos_max = _llama_kv_cache_seq_pos_maxPtr
+      .asFunction<int Function(ffi.Pointer<llama_context>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_kv_cache_defrag(
@@ -9138,8 +12498,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_defragPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>('llama_kv_cache_defrag');
-  late final _llama_kv_cache_defrag = _llama_kv_cache_defragPtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
+  late final _llama_kv_cache_defragPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>(
+      'llama_kv_cache_defrag');
+  late final _llama_kv_cache_defrag = _llama_kv_cache_defragPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_kv_cache_update(
@@ -9150,8 +12513,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_updatePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>('llama_kv_cache_update');
-  late final _llama_kv_cache_update = _llama_kv_cache_updatePtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
+  late final _llama_kv_cache_updatePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>(
+      'llama_kv_cache_update');
+  late final _llama_kv_cache_update = _llama_kv_cache_updatePtr
+      .asFunction<void Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_kv_cache_can_shift(
@@ -9162,8 +12528,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_kv_cache_can_shiftPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_context>)>>('llama_kv_cache_can_shift');
-  late final _llama_kv_cache_can_shift = _llama_kv_cache_can_shiftPtr.asFunction<bool Function(ffi.Pointer<llama_context>)>();
+  late final _llama_kv_cache_can_shiftPtr = _lookup<
+          ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_context>)>>(
+      'llama_kv_cache_can_shift');
+  late final _llama_kv_cache_can_shift = _llama_kv_cache_can_shiftPtr
+      .asFunction<bool Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_state_get_size(
@@ -9174,8 +12543,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_get_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>)>>('llama_state_get_size');
-  late final _llama_state_get_size = _llama_state_get_sizePtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_state_get_sizePtr = _lookup<
+          ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>)>>(
+      'llama_state_get_size');
+  late final _llama_state_get_size = _llama_state_get_sizePtr
+      .asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_get_state_size(
@@ -9186,8 +12558,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_get_state_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>)>>('llama_get_state_size');
-  late final _llama_get_state_size = _llama_get_state_sizePtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_get_state_sizePtr = _lookup<
+          ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>)>>(
+      'llama_get_state_size');
+  late final _llama_get_state_size = _llama_get_state_sizePtr
+      .asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_state_get_data(
@@ -9202,8 +12577,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_get_dataPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, ffi.Size)>>('llama_state_get_data');
-  late final _llama_state_get_data = _llama_state_get_dataPtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, int)>();
+  late final _llama_state_get_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>,
+              ffi.Size)>>('llama_state_get_data');
+  late final _llama_state_get_data = _llama_state_get_dataPtr.asFunction<
+      int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_copy_state_data(
@@ -9216,8 +12595,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_copy_state_dataPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>)>>('llama_copy_state_data');
-  late final _llama_copy_state_data = _llama_copy_state_dataPtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>)>();
+  late final _llama_copy_state_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<llama_context>,
+              ffi.Pointer<ffi.Uint8>)>>('llama_copy_state_data');
+  late final _llama_copy_state_data = _llama_copy_state_dataPtr.asFunction<
+      int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_state_set_data(
@@ -9232,8 +12615,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_set_dataPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, ffi.Size)>>('llama_state_set_data');
-  late final _llama_state_set_data = _llama_state_set_dataPtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, int)>();
+  late final _llama_state_set_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>,
+              ffi.Size)>>('llama_state_set_data');
+  late final _llama_state_set_data = _llama_state_set_dataPtr.asFunction<
+      int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_set_state_data(
@@ -9246,8 +12633,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_set_state_dataPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>)>>('llama_set_state_data');
-  late final _llama_set_state_data = _llama_set_state_dataPtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>)>();
+  late final _llama_set_state_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<llama_context>,
+              ffi.Pointer<ffi.Uint8>)>>('llama_set_state_data');
+  late final _llama_set_state_data = _llama_set_state_dataPtr.asFunction<
+      int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_state_load_file(
@@ -9266,8 +12657,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_load_filePtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_token>, ffi.Size, ffi.Pointer<ffi.Size>)>>('llama_state_load_file');
-  late final _llama_state_load_file = _llama_state_load_filePtr.asFunction<bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_token>, int, ffi.Pointer<ffi.Size>)>();
+  late final _llama_state_load_filePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(
+              ffi.Pointer<llama_context>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<llama_token>,
+              ffi.Size,
+              ffi.Pointer<ffi.Size>)>>('llama_state_load_file');
+  late final _llama_state_load_file = _llama_state_load_filePtr.asFunction<
+      bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<llama_token>, int, ffi.Pointer<ffi.Size>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_load_session_file(
@@ -9286,8 +12686,17 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_load_session_filePtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_token>, ffi.Size, ffi.Pointer<ffi.Size>)>>('llama_load_session_file');
-  late final _llama_load_session_file = _llama_load_session_filePtr.asFunction<bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_token>, int, ffi.Pointer<ffi.Size>)>();
+  late final _llama_load_session_filePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(
+              ffi.Pointer<llama_context>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<llama_token>,
+              ffi.Size,
+              ffi.Pointer<ffi.Size>)>>('llama_load_session_file');
+  late final _llama_load_session_file = _llama_load_session_filePtr.asFunction<
+      bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<llama_token>, int, ffi.Pointer<ffi.Size>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_state_save_file(
@@ -9304,8 +12713,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_save_filePtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_token>, ffi.Size)>>('llama_state_save_file');
-  late final _llama_state_save_file = _llama_state_save_filePtr.asFunction<bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_token>, int)>();
+  late final _llama_state_save_filePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<llama_token>, ffi.Size)>>('llama_state_save_file');
+  late final _llama_state_save_file = _llama_state_save_filePtr.asFunction<
+      bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<llama_token>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_save_session_file(
@@ -9322,8 +12736,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_save_session_filePtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_token>, ffi.Size)>>('llama_save_session_file');
-  late final _llama_save_session_file = _llama_save_session_filePtr.asFunction<bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, ffi.Pointer<llama_token>, int)>();
+  late final _llama_save_session_filePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<llama_token>, ffi.Size)>>('llama_save_session_file');
+  late final _llama_save_session_file = _llama_save_session_filePtr.asFunction<
+      bool Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer<llama_token>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_state_seq_get_size(
@@ -9336,8 +12755,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_seq_get_sizePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>, llama_seq_id)>>('llama_state_seq_get_size');
-  late final _llama_state_seq_get_size = _llama_state_seq_get_sizePtr.asFunction<int Function(ffi.Pointer<llama_context>, int)>();
+  late final _llama_state_seq_get_sizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<llama_context>,
+              llama_seq_id)>>('llama_state_seq_get_size');
+  late final _llama_state_seq_get_size = _llama_state_seq_get_sizePtr
+      .asFunction<int Function(ffi.Pointer<llama_context>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_state_seq_get_data(
@@ -9354,8 +12777,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_seq_get_dataPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, ffi.Size, llama_seq_id)>>('llama_state_seq_get_data');
-  late final _llama_state_seq_get_data = _llama_state_seq_get_dataPtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, int, int)>();
+  late final _llama_state_seq_get_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>,
+              ffi.Size, llama_seq_id)>>('llama_state_seq_get_data');
+  late final _llama_state_seq_get_data =
+      _llama_state_seq_get_dataPtr.asFunction<
+          int Function(
+              ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_state_seq_set_data(
@@ -9372,8 +12801,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_seq_set_dataPtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, ffi.Size, llama_seq_id)>>('llama_state_seq_set_data');
-  late final _llama_state_seq_set_data = _llama_state_seq_set_dataPtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, int, int)>();
+  late final _llama_state_seq_set_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>,
+              ffi.Size, llama_seq_id)>>('llama_state_seq_set_data');
+  late final _llama_state_seq_set_data =
+      _llama_state_seq_set_dataPtr.asFunction<
+          int Function(
+              ffi.Pointer<llama_context>, ffi.Pointer<ffi.Uint8>, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_state_seq_save_file(
@@ -9392,8 +12827,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_seq_save_filePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, llama_seq_id, ffi.Pointer<llama_token>, ffi.Size)>>('llama_state_seq_save_file');
-  late final _llama_state_seq_save_file = _llama_state_seq_save_filePtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, int, ffi.Pointer<llama_token>, int)>();
+  late final _llama_state_seq_save_filePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(
+              ffi.Pointer<llama_context>,
+              ffi.Pointer<ffi.Char>,
+              llama_seq_id,
+              ffi.Pointer<llama_token>,
+              ffi.Size)>>('llama_state_seq_save_file');
+  late final _llama_state_seq_save_file =
+      _llama_state_seq_save_filePtr.asFunction<
+          int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, int,
+              ffi.Pointer<llama_token>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_state_seq_load_file(
@@ -9414,8 +12859,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_state_seq_load_filePtr = _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, llama_seq_id, ffi.Pointer<llama_token>, ffi.Size, ffi.Pointer<ffi.Size>)>>('llama_state_seq_load_file');
-  late final _llama_state_seq_load_file = _llama_state_seq_load_filePtr.asFunction<int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, int, ffi.Pointer<llama_token>, int, ffi.Pointer<ffi.Size>)>();
+  late final _llama_state_seq_load_filePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Size Function(
+              ffi.Pointer<llama_context>,
+              ffi.Pointer<ffi.Char>,
+              llama_seq_id,
+              ffi.Pointer<llama_token>,
+              ffi.Size,
+              ffi.Pointer<ffi.Size>)>>('llama_state_seq_load_file');
+  late final _llama_state_seq_load_file =
+      _llama_state_seq_load_filePtr.asFunction<
+          int Function(ffi.Pointer<llama_context>, ffi.Pointer<ffi.Char>, int,
+              ffi.Pointer<llama_token>, int, ffi.Pointer<ffi.Size>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   llama_batch llama_batch_get_one(
@@ -9428,8 +12884,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_batch_get_onePtr = _lookup<ffi.NativeFunction<llama_batch Function(ffi.Pointer<llama_token>, ffi.Int32)>>('llama_batch_get_one');
-  late final _llama_batch_get_one = _llama_batch_get_onePtr.asFunction<llama_batch Function(ffi.Pointer<llama_token>, int)>();
+  late final _llama_batch_get_onePtr = _lookup<
+      ffi.NativeFunction<
+          llama_batch Function(
+              ffi.Pointer<llama_token>, ffi.Int32)>>('llama_batch_get_one');
+  late final _llama_batch_get_one = _llama_batch_get_onePtr
+      .asFunction<llama_batch Function(ffi.Pointer<llama_token>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   llama_batch llama_batch_init(
@@ -9444,8 +12904,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_batch_initPtr = _lookup<ffi.NativeFunction<llama_batch Function(ffi.Int32, ffi.Int32, ffi.Int32)>>('llama_batch_init');
-  late final _llama_batch_init = _llama_batch_initPtr.asFunction<llama_batch Function(int, int, int)>();
+  late final _llama_batch_initPtr = _lookup<
+      ffi.NativeFunction<
+          llama_batch Function(
+              ffi.Int32, ffi.Int32, ffi.Int32)>>('llama_batch_init');
+  late final _llama_batch_init =
+      _llama_batch_initPtr.asFunction<llama_batch Function(int, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_batch_free(
@@ -9456,8 +12920,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_batch_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(llama_batch)>>('llama_batch_free');
-  late final _llama_batch_free = _llama_batch_freePtr.asFunction<void Function(llama_batch)>();
+  late final _llama_batch_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(llama_batch)>>(
+          'llama_batch_free');
+  late final _llama_batch_free =
+      _llama_batch_freePtr.asFunction<void Function(llama_batch)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_encode(
@@ -9470,8 +12937,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_encodePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>, llama_batch)>>('llama_encode');
-  late final _llama_encode = _llama_encodePtr.asFunction<int Function(ffi.Pointer<llama_context>, llama_batch)>();
+  late final _llama_encodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_context>, llama_batch)>>('llama_encode');
+  late final _llama_encode = _llama_encodePtr
+      .asFunction<int Function(ffi.Pointer<llama_context>, llama_batch)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_decode(
@@ -9484,8 +12955,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_decodePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>, llama_batch)>>('llama_decode');
-  late final _llama_decode = _llama_decodePtr.asFunction<int Function(ffi.Pointer<llama_context>, llama_batch)>();
+  late final _llama_decodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_context>, llama_batch)>>('llama_decode');
+  late final _llama_decode = _llama_decodePtr
+      .asFunction<int Function(ffi.Pointer<llama_context>, llama_batch)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_set_n_threads(
@@ -9500,8 +12975,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_set_n_threadsPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, ffi.Int32, ffi.Int32)>>('llama_set_n_threads');
-  late final _llama_set_n_threads = _llama_set_n_threadsPtr.asFunction<void Function(ffi.Pointer<llama_context>, int, int)>();
+  late final _llama_set_n_threadsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_context>, ffi.Int32,
+              ffi.Int32)>>('llama_set_n_threads');
+  late final _llama_set_n_threads = _llama_set_n_threadsPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_threads(
@@ -9512,8 +12991,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_threadsPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>('llama_n_threads');
-  late final _llama_n_threads = _llama_n_threadsPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_n_threadsPtr = _lookup<
+          ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>(
+      'llama_n_threads');
+  late final _llama_n_threads = _llama_n_threadsPtr
+      .asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_n_threads_batch(
@@ -9524,8 +13006,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_n_threads_batchPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>('llama_n_threads_batch');
-  late final _llama_n_threads_batch = _llama_n_threads_batchPtr.asFunction<int Function(ffi.Pointer<llama_context>)>();
+  late final _llama_n_threads_batchPtr = _lookup<
+          ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_context>)>>(
+      'llama_n_threads_batch');
+  late final _llama_n_threads_batch = _llama_n_threads_batchPtr
+      .asFunction<int Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_set_embeddings(
@@ -9538,8 +13023,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_set_embeddingsPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, ffi.Bool)>>('llama_set_embeddings');
-  late final _llama_set_embeddings = _llama_set_embeddingsPtr.asFunction<void Function(ffi.Pointer<llama_context>, bool)>();
+  late final _llama_set_embeddingsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<llama_context>, ffi.Bool)>>('llama_set_embeddings');
+  late final _llama_set_embeddings = _llama_set_embeddingsPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>, bool)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_set_causal_attn(
@@ -9552,8 +13041,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_set_causal_attnPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, ffi.Bool)>>('llama_set_causal_attn');
-  late final _llama_set_causal_attn = _llama_set_causal_attnPtr.asFunction<void Function(ffi.Pointer<llama_context>, bool)>();
+  late final _llama_set_causal_attnPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<llama_context>, ffi.Bool)>>('llama_set_causal_attn');
+  late final _llama_set_causal_attn = _llama_set_causal_attnPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>, bool)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_set_abort_callback(
@@ -9568,8 +13061,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_set_abort_callbackPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>, ggml_abort_callback, ffi.Pointer<ffi.Void>)>>('llama_set_abort_callback');
-  late final _llama_set_abort_callback = _llama_set_abort_callbackPtr.asFunction<void Function(ffi.Pointer<llama_context>, ggml_abort_callback, ffi.Pointer<ffi.Void>)>();
+  late final _llama_set_abort_callbackPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_context>, ggml_abort_callback,
+              ffi.Pointer<ffi.Void>)>>('llama_set_abort_callback');
+  late final _llama_set_abort_callback =
+      _llama_set_abort_callbackPtr.asFunction<
+          void Function(ffi.Pointer<llama_context>, ggml_abort_callback,
+              ffi.Pointer<ffi.Void>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_synchronize(
@@ -9580,8 +13079,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_synchronizePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>('llama_synchronize');
-  late final _llama_synchronize = _llama_synchronizePtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
+  late final _llama_synchronizePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>(
+      'llama_synchronize');
+  late final _llama_synchronize = _llama_synchronizePtr
+      .asFunction<void Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Float> llama_get_logits(
@@ -9592,8 +13094,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_get_logitsPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>)>>('llama_get_logits');
-  late final _llama_get_logits = _llama_get_logitsPtr.asFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>)>();
+  late final _llama_get_logitsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Float> Function(
+              ffi.Pointer<llama_context>)>>('llama_get_logits');
+  late final _llama_get_logits = _llama_get_logitsPtr.asFunction<
+      ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Float> llama_get_logits_ith(
@@ -9606,8 +13112,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_get_logits_ithPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>, ffi.Int32)>>('llama_get_logits_ith');
-  late final _llama_get_logits_ith = _llama_get_logits_ithPtr.asFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>, int)>();
+  late final _llama_get_logits_ithPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Float> Function(
+              ffi.Pointer<llama_context>, ffi.Int32)>>('llama_get_logits_ith');
+  late final _llama_get_logits_ith = _llama_get_logits_ithPtr.asFunction<
+      ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Float> llama_get_embeddings(
@@ -9618,8 +13128,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_get_embeddingsPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>)>>('llama_get_embeddings');
-  late final _llama_get_embeddings = _llama_get_embeddingsPtr.asFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>)>();
+  late final _llama_get_embeddingsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Float> Function(
+              ffi.Pointer<llama_context>)>>('llama_get_embeddings');
+  late final _llama_get_embeddings = _llama_get_embeddingsPtr.asFunction<
+      ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Float> llama_get_embeddings_ith(
@@ -9632,8 +13146,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_get_embeddings_ithPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>, ffi.Int32)>>('llama_get_embeddings_ith');
-  late final _llama_get_embeddings_ith = _llama_get_embeddings_ithPtr.asFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>, int)>();
+  late final _llama_get_embeddings_ithPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>,
+              ffi.Int32)>>('llama_get_embeddings_ith');
+  late final _llama_get_embeddings_ith =
+      _llama_get_embeddings_ithPtr.asFunction<
+          ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Float> llama_get_embeddings_seq(
@@ -9646,8 +13165,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_get_embeddings_seqPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>, llama_seq_id)>>('llama_get_embeddings_seq');
-  late final _llama_get_embeddings_seq = _llama_get_embeddings_seqPtr.asFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>, int)>();
+  late final _llama_get_embeddings_seqPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>,
+              llama_seq_id)>>('llama_get_embeddings_seq');
+  late final _llama_get_embeddings_seq =
+      _llama_get_embeddings_seqPtr.asFunction<
+          ffi.Pointer<ffi.Float> Function(ffi.Pointer<llama_context>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> llama_vocab_get_text(
@@ -9660,8 +13184,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_get_textPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_vocab_get_text');
-  late final _llama_vocab_get_text = _llama_vocab_get_textPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_vocab_get_textPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<llama_vocab>, llama_token)>>('llama_vocab_get_text');
+  late final _llama_vocab_get_text = _llama_vocab_get_textPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   double llama_vocab_get_score(
@@ -9674,8 +13202,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_get_scorePtr = _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_vocab_get_score');
-  late final _llama_vocab_get_score = _llama_vocab_get_scorePtr.asFunction<double Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_vocab_get_scorePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Float Function(
+              ffi.Pointer<llama_vocab>, llama_token)>>('llama_vocab_get_score');
+  late final _llama_vocab_get_score = _llama_vocab_get_scorePtr
+      .asFunction<double Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_get_attr(
@@ -9688,8 +13220,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_get_attrPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_vocab_get_attr');
-  late final _llama_vocab_get_attr = _llama_vocab_get_attrPtr.asFunction<int Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_vocab_get_attrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_vocab>, llama_token)>>('llama_vocab_get_attr');
+  late final _llama_vocab_get_attr = _llama_vocab_get_attrPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_vocab_is_eog(
@@ -9702,8 +13238,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_is_eogPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_vocab_is_eog');
-  late final _llama_vocab_is_eog = _llama_vocab_is_eogPtr.asFunction<bool Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_vocab_is_eogPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(
+              ffi.Pointer<llama_vocab>, llama_token)>>('llama_vocab_is_eog');
+  late final _llama_vocab_is_eog = _llama_vocab_is_eogPtr
+      .asFunction<bool Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_vocab_is_control(
@@ -9716,8 +13256,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_is_controlPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_vocab_is_control');
-  late final _llama_vocab_is_control = _llama_vocab_is_controlPtr.asFunction<bool Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_vocab_is_controlPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Pointer<llama_vocab>,
+              llama_token)>>('llama_vocab_is_control');
+  late final _llama_vocab_is_control = _llama_vocab_is_controlPtr
+      .asFunction<bool Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_bos(
@@ -9728,8 +13272,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_bosPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_bos');
-  late final _llama_vocab_bos = _llama_vocab_bosPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_bosPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_bos');
+  late final _llama_vocab_bos =
+      _llama_vocab_bosPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_eos(
@@ -9740,8 +13287,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_eosPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_eos');
-  late final _llama_vocab_eos = _llama_vocab_eosPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_eosPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_eos');
+  late final _llama_vocab_eos =
+      _llama_vocab_eosPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_eot(
@@ -9752,8 +13302,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_eotPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_eot');
-  late final _llama_vocab_eot = _llama_vocab_eotPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_eotPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_eot');
+  late final _llama_vocab_eot =
+      _llama_vocab_eotPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_sep(
@@ -9764,8 +13317,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_sepPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_sep');
-  late final _llama_vocab_sep = _llama_vocab_sepPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_sepPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_sep');
+  late final _llama_vocab_sep =
+      _llama_vocab_sepPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_nl(
@@ -9776,8 +13332,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_nlPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_nl');
-  late final _llama_vocab_nl = _llama_vocab_nlPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_nlPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_nl');
+  late final _llama_vocab_nl =
+      _llama_vocab_nlPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_pad(
@@ -9788,8 +13347,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_padPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_pad');
-  late final _llama_vocab_pad = _llama_vocab_padPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_padPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_pad');
+  late final _llama_vocab_pad =
+      _llama_vocab_padPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_vocab_get_add_bos(
@@ -9800,8 +13362,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_get_add_bosPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_get_add_bos');
-  late final _llama_vocab_get_add_bos = _llama_vocab_get_add_bosPtr.asFunction<bool Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_get_add_bosPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>)>>(
+          'llama_vocab_get_add_bos');
+  late final _llama_vocab_get_add_bos = _llama_vocab_get_add_bosPtr
+      .asFunction<bool Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_vocab_get_add_eos(
@@ -9812,8 +13377,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_get_add_eosPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_get_add_eos');
-  late final _llama_vocab_get_add_eos = _llama_vocab_get_add_eosPtr.asFunction<bool Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_get_add_eosPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>)>>(
+          'llama_vocab_get_add_eos');
+  late final _llama_vocab_get_add_eos = _llama_vocab_get_add_eosPtr
+      .asFunction<bool Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_fim_pre(
@@ -9824,8 +13392,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_fim_prePtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_fim_pre');
-  late final _llama_vocab_fim_pre = _llama_vocab_fim_prePtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_fim_prePtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_fim_pre');
+  late final _llama_vocab_fim_pre = _llama_vocab_fim_prePtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_fim_suf(
@@ -9836,8 +13407,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_fim_sufPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_fim_suf');
-  late final _llama_vocab_fim_suf = _llama_vocab_fim_sufPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_fim_sufPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_fim_suf');
+  late final _llama_vocab_fim_suf = _llama_vocab_fim_sufPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_fim_mid(
@@ -9848,8 +13422,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_fim_midPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_fim_mid');
-  late final _llama_vocab_fim_mid = _llama_vocab_fim_midPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_fim_midPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_fim_mid');
+  late final _llama_vocab_fim_mid = _llama_vocab_fim_midPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_fim_pad(
@@ -9860,8 +13437,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_fim_padPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_fim_pad');
-  late final _llama_vocab_fim_pad = _llama_vocab_fim_padPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_fim_padPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_fim_pad');
+  late final _llama_vocab_fim_pad = _llama_vocab_fim_padPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_fim_rep(
@@ -9872,8 +13452,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_fim_repPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_fim_rep');
-  late final _llama_vocab_fim_rep = _llama_vocab_fim_repPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_fim_repPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_fim_rep');
+  late final _llama_vocab_fim_rep = _llama_vocab_fim_repPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_fim_sep(
@@ -9884,8 +13467,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_fim_sepPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_fim_sep');
-  late final _llama_vocab_fim_sep = _llama_vocab_fim_sepPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_fim_sepPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_fim_sep');
+  late final _llama_vocab_fim_sep = _llama_vocab_fim_sepPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> llama_token_get_text(
@@ -9898,8 +13484,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_get_textPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_token_get_text');
-  late final _llama_token_get_text = _llama_token_get_textPtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_token_get_textPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<llama_vocab>, llama_token)>>('llama_token_get_text');
+  late final _llama_token_get_text = _llama_token_get_textPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   double llama_token_get_score(
@@ -9912,8 +13502,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_get_scorePtr = _lookup<ffi.NativeFunction<ffi.Float Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_token_get_score');
-  late final _llama_token_get_score = _llama_token_get_scorePtr.asFunction<double Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_token_get_scorePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Float Function(
+              ffi.Pointer<llama_vocab>, llama_token)>>('llama_token_get_score');
+  late final _llama_token_get_score = _llama_token_get_scorePtr
+      .asFunction<double Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_get_attr(
@@ -9926,8 +13520,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_get_attrPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_token_get_attr');
-  late final _llama_token_get_attr = _llama_token_get_attrPtr.asFunction<int Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_token_get_attrPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_vocab>, llama_token)>>('llama_token_get_attr');
+  late final _llama_token_get_attr = _llama_token_get_attrPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_token_is_eog(
@@ -9940,8 +13538,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_is_eogPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_token_is_eog');
-  late final _llama_token_is_eog = _llama_token_is_eogPtr.asFunction<bool Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_token_is_eogPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(
+              ffi.Pointer<llama_vocab>, llama_token)>>('llama_token_is_eog');
+  late final _llama_token_is_eog = _llama_token_is_eogPtr
+      .asFunction<bool Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_token_is_control(
@@ -9954,8 +13556,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_is_controlPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>, llama_token)>>('llama_token_is_control');
-  late final _llama_token_is_control = _llama_token_is_controlPtr.asFunction<bool Function(ffi.Pointer<llama_vocab>, int)>();
+  late final _llama_token_is_controlPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Pointer<llama_vocab>,
+              llama_token)>>('llama_token_is_control');
+  late final _llama_token_is_control = _llama_token_is_controlPtr
+      .asFunction<bool Function(ffi.Pointer<llama_vocab>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_bos(
@@ -9966,8 +13572,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_bosPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_bos');
-  late final _llama_token_bos = _llama_token_bosPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_bosPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_bos');
+  late final _llama_token_bos =
+      _llama_token_bosPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_eos(
@@ -9978,8 +13587,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_eosPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_eos');
-  late final _llama_token_eos = _llama_token_eosPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_eosPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_eos');
+  late final _llama_token_eos =
+      _llama_token_eosPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_eot(
@@ -9990,8 +13602,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_eotPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_eot');
-  late final _llama_token_eot = _llama_token_eotPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_eotPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_eot');
+  late final _llama_token_eot =
+      _llama_token_eotPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_cls(
@@ -10002,8 +13617,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_clsPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_cls');
-  late final _llama_token_cls = _llama_token_clsPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_clsPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_cls');
+  late final _llama_token_cls =
+      _llama_token_clsPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_sep(
@@ -10014,8 +13632,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_sepPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_sep');
-  late final _llama_token_sep = _llama_token_sepPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_sepPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_sep');
+  late final _llama_token_sep =
+      _llama_token_sepPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_nl(
@@ -10026,8 +13647,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_nlPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_nl');
-  late final _llama_token_nl = _llama_token_nlPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_nlPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_nl');
+  late final _llama_token_nl =
+      _llama_token_nlPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_pad(
@@ -10038,8 +13662,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_padPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_pad');
-  late final _llama_token_pad = _llama_token_padPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_padPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_pad');
+  late final _llama_token_pad =
+      _llama_token_padPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_add_bos_token(
@@ -10050,8 +13677,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_add_bos_tokenPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>)>>('llama_add_bos_token');
-  late final _llama_add_bos_token = _llama_add_bos_tokenPtr.asFunction<bool Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_add_bos_tokenPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>)>>(
+          'llama_add_bos_token');
+  late final _llama_add_bos_token = _llama_add_bos_tokenPtr
+      .asFunction<bool Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool llama_add_eos_token(
@@ -10062,8 +13692,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_add_eos_tokenPtr = _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>)>>('llama_add_eos_token');
-  late final _llama_add_eos_token = _llama_add_eos_tokenPtr.asFunction<bool Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_add_eos_tokenPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<llama_vocab>)>>(
+          'llama_add_eos_token');
+  late final _llama_add_eos_token = _llama_add_eos_tokenPtr
+      .asFunction<bool Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_fim_pre(
@@ -10074,8 +13707,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_fim_prePtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_fim_pre');
-  late final _llama_token_fim_pre = _llama_token_fim_prePtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_fim_prePtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_fim_pre');
+  late final _llama_token_fim_pre = _llama_token_fim_prePtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_fim_suf(
@@ -10086,8 +13722,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_fim_sufPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_fim_suf');
-  late final _llama_token_fim_suf = _llama_token_fim_sufPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_fim_sufPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_fim_suf');
+  late final _llama_token_fim_suf = _llama_token_fim_sufPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_fim_mid(
@@ -10098,8 +13737,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_fim_midPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_fim_mid');
-  late final _llama_token_fim_mid = _llama_token_fim_midPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_fim_midPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_fim_mid');
+  late final _llama_token_fim_mid = _llama_token_fim_midPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_fim_pad(
@@ -10110,8 +13752,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_fim_padPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_fim_pad');
-  late final _llama_token_fim_pad = _llama_token_fim_padPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_fim_padPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_fim_pad');
+  late final _llama_token_fim_pad = _llama_token_fim_padPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_fim_rep(
@@ -10122,8 +13767,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_fim_repPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_fim_rep');
-  late final _llama_token_fim_rep = _llama_token_fim_repPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_fim_repPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_fim_rep');
+  late final _llama_token_fim_rep = _llama_token_fim_repPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_fim_sep(
@@ -10134,8 +13782,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_fim_sepPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_token_fim_sep');
-  late final _llama_token_fim_sep = _llama_token_fim_sepPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_token_fim_sepPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_token_fim_sep');
+  late final _llama_token_fim_sep = _llama_token_fim_sepPtr
+      .asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_vocab_cls(
@@ -10146,8 +13797,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_vocab_clsPtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>('llama_vocab_cls');
-  late final _llama_vocab_cls = _llama_vocab_clsPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_vocab_clsPtr = _lookup<
+          ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_vocab>)>>(
+      'llama_vocab_cls');
+  late final _llama_vocab_cls =
+      _llama_vocab_clsPtr.asFunction<int Function(ffi.Pointer<llama_vocab>)>();
 
   /// @details Convert the provided text into tokens.
   /// @param tokens The tokens pointer must be large enough to hold the resulting tokens.
@@ -10176,8 +13830,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_tokenizePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>, ffi.Pointer<ffi.Char>, ffi.Int32, ffi.Pointer<llama_token>, ffi.Int32, ffi.Bool, ffi.Bool)>>('llama_tokenize');
-  late final _llama_tokenize = _llama_tokenizePtr.asFunction<int Function(ffi.Pointer<llama_vocab>, ffi.Pointer<ffi.Char>, int, ffi.Pointer<llama_token>, int, bool, bool)>();
+  late final _llama_tokenizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_vocab>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int32,
+              ffi.Pointer<llama_token>,
+              ffi.Int32,
+              ffi.Bool,
+              ffi.Bool)>>('llama_tokenize');
+  late final _llama_tokenize = _llama_tokenizePtr.asFunction<
+      int Function(ffi.Pointer<llama_vocab>, ffi.Pointer<ffi.Char>, int,
+          ffi.Pointer<llama_token>, int, bool, bool)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_token_to_piece(
@@ -10198,8 +13863,18 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_token_to_piecePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>, llama_token, ffi.Pointer<ffi.Char>, ffi.Int32, ffi.Int32, ffi.Bool)>>('llama_token_to_piece');
-  late final _llama_token_to_piece = _llama_token_to_piecePtr.asFunction<int Function(ffi.Pointer<llama_vocab>, int, ffi.Pointer<ffi.Char>, int, int, bool)>();
+  late final _llama_token_to_piecePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_vocab>,
+              llama_token,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.Bool)>>('llama_token_to_piece');
+  late final _llama_token_to_piece = _llama_token_to_piecePtr.asFunction<
+      int Function(ffi.Pointer<llama_vocab>, int, ffi.Pointer<ffi.Char>, int,
+          int, bool)>();
 
   /// @details Convert the provided tokens into text (inverse of llama_tokenize()).
   /// @param text The char pointer must be large enough to hold the resulting text.
@@ -10227,8 +13902,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_detokenizePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<llama_vocab>, ffi.Pointer<llama_token>, ffi.Int32, ffi.Pointer<ffi.Char>, ffi.Int32, ffi.Bool, ffi.Bool)>>('llama_detokenize');
-  late final _llama_detokenize = _llama_detokenizePtr.asFunction<int Function(ffi.Pointer<llama_vocab>, ffi.Pointer<llama_token>, int, ffi.Pointer<ffi.Char>, int, bool, bool)>();
+  late final _llama_detokenizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<llama_vocab>,
+              ffi.Pointer<llama_token>,
+              ffi.Int32,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int32,
+              ffi.Bool,
+              ffi.Bool)>>('llama_detokenize');
+  late final _llama_detokenize = _llama_detokenizePtr.asFunction<
+      int Function(ffi.Pointer<llama_vocab>, ffi.Pointer<llama_token>, int,
+          ffi.Pointer<ffi.Char>, int, bool, bool)>();
 
   /// Apply chat template. Inspired by hf apply_chat_template() on python.
   /// Both "model" and "custom_template" are optional, but at least one is required. "custom_template" has higher precedence than "model"
@@ -10258,8 +13944,19 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_chat_apply_templatePtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Char>, ffi.Pointer<llama_chat_message>, ffi.Size, ffi.Bool, ffi.Pointer<ffi.Char>, ffi.Int32)>>('llama_chat_apply_template');
-  late final _llama_chat_apply_template = _llama_chat_apply_templatePtr.asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<llama_chat_message>, int, bool, ffi.Pointer<ffi.Char>, int)>();
+  late final _llama_chat_apply_templatePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<llama_chat_message>,
+              ffi.Size,
+              ffi.Bool,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int32)>>('llama_chat_apply_template');
+  late final _llama_chat_apply_template =
+      _llama_chat_apply_templatePtr.asFunction<
+          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<llama_chat_message>,
+              int, bool, ffi.Pointer<ffi.Char>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_chat_builtin_templates(
@@ -10272,8 +13969,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_chat_builtin_templatesPtr = _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Size)>>('llama_chat_builtin_templates');
-  late final _llama_chat_builtin_templates = _llama_chat_builtin_templatesPtr.asFunction<int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, int)>();
+  late final _llama_chat_builtin_templatesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Size)>>('llama_chat_builtin_templates');
+  late final _llama_chat_builtin_templates = _llama_chat_builtin_templatesPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_init(
@@ -10286,8 +13987,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_initPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler_i>, llama_sampler_context_t)>>('llama_sampler_init');
-  late final _llama_sampler_init = _llama_sampler_initPtr.asFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler_i>, llama_sampler_context_t)>();
+  late final _llama_sampler_initPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler_i>,
+              llama_sampler_context_t)>>('llama_sampler_init');
+  late final _llama_sampler_init = _llama_sampler_initPtr.asFunction<
+      ffi.Pointer<llama_sampler> Function(
+          ffi.Pointer<llama_sampler_i>, llama_sampler_context_t)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> llama_sampler_name(
@@ -10298,8 +14004,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_namePtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_sampler>)>>('llama_sampler_name');
-  late final _llama_sampler_name = _llama_sampler_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_sampler>)>();
+  late final _llama_sampler_namePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<llama_sampler>)>>('llama_sampler_name');
+  late final _llama_sampler_name = _llama_sampler_namePtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_sampler>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_sampler_accept(
@@ -10312,8 +14022,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_acceptPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>, llama_token)>>('llama_sampler_accept');
-  late final _llama_sampler_accept = _llama_sampler_acceptPtr.asFunction<void Function(ffi.Pointer<llama_sampler>, int)>();
+  late final _llama_sampler_acceptPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_sampler>,
+              llama_token)>>('llama_sampler_accept');
+  late final _llama_sampler_accept = _llama_sampler_acceptPtr
+      .asFunction<void Function(ffi.Pointer<llama_sampler>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_sampler_apply(
@@ -10326,8 +14040,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_applyPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>, ffi.Pointer<llama_token_data_array>)>>('llama_sampler_apply');
-  late final _llama_sampler_apply = _llama_sampler_applyPtr.asFunction<void Function(ffi.Pointer<llama_sampler>, ffi.Pointer<llama_token_data_array>)>();
+  late final _llama_sampler_applyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_sampler>,
+              ffi.Pointer<llama_token_data_array>)>>('llama_sampler_apply');
+  late final _llama_sampler_apply = _llama_sampler_applyPtr.asFunction<
+      void Function(
+          ffi.Pointer<llama_sampler>, ffi.Pointer<llama_token_data_array>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_sampler_reset(
@@ -10338,8 +14057,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_resetPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>)>>('llama_sampler_reset');
-  late final _llama_sampler_reset = _llama_sampler_resetPtr.asFunction<void Function(ffi.Pointer<llama_sampler>)>();
+  late final _llama_sampler_resetPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>)>>(
+      'llama_sampler_reset');
+  late final _llama_sampler_reset = _llama_sampler_resetPtr
+      .asFunction<void Function(ffi.Pointer<llama_sampler>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_clone(
@@ -10350,8 +14072,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_clonePtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>)>>('llama_sampler_clone');
-  late final _llama_sampler_clone = _llama_sampler_clonePtr.asFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>)>();
+  late final _llama_sampler_clonePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Pointer<llama_sampler>)>>('llama_sampler_clone');
+  late final _llama_sampler_clone = _llama_sampler_clonePtr.asFunction<
+      ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_sampler_free(
@@ -10362,8 +14088,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_freePtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>)>>('llama_sampler_free');
-  late final _llama_sampler_free = _llama_sampler_freePtr.asFunction<void Function(ffi.Pointer<llama_sampler>)>();
+  late final _llama_sampler_freePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>)>>(
+      'llama_sampler_free');
+  late final _llama_sampler_free = _llama_sampler_freePtr
+      .asFunction<void Function(ffi.Pointer<llama_sampler>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_chain_init(
@@ -10374,8 +14103,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_chain_initPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(llama_sampler_chain_params)>>('llama_sampler_chain_init');
-  late final _llama_sampler_chain_init = _llama_sampler_chain_initPtr.asFunction<ffi.Pointer<llama_sampler> Function(llama_sampler_chain_params)>();
+  late final _llama_sampler_chain_initPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              llama_sampler_chain_params)>>('llama_sampler_chain_init');
+  late final _llama_sampler_chain_init =
+      _llama_sampler_chain_initPtr.asFunction<
+          ffi.Pointer<llama_sampler> Function(llama_sampler_chain_params)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_sampler_chain_add(
@@ -10388,8 +14122,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_chain_addPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>, ffi.Pointer<llama_sampler>)>>('llama_sampler_chain_add');
-  late final _llama_sampler_chain_add = _llama_sampler_chain_addPtr.asFunction<void Function(ffi.Pointer<llama_sampler>, ffi.Pointer<llama_sampler>)>();
+  late final _llama_sampler_chain_addPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_sampler>,
+              ffi.Pointer<llama_sampler>)>>('llama_sampler_chain_add');
+  late final _llama_sampler_chain_add = _llama_sampler_chain_addPtr.asFunction<
+      void Function(ffi.Pointer<llama_sampler>, ffi.Pointer<llama_sampler>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_chain_get(
@@ -10402,8 +14140,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_chain_getPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>, ffi.Int32)>>('llama_sampler_chain_get');
-  late final _llama_sampler_chain_get = _llama_sampler_chain_getPtr.asFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>, int)>();
+  late final _llama_sampler_chain_getPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>,
+              ffi.Int32)>>('llama_sampler_chain_get');
+  late final _llama_sampler_chain_get = _llama_sampler_chain_getPtr.asFunction<
+      ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_sampler_chain_n(
@@ -10414,8 +14156,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_chain_nPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<llama_sampler>)>>('llama_sampler_chain_n');
-  late final _llama_sampler_chain_n = _llama_sampler_chain_nPtr.asFunction<int Function(ffi.Pointer<llama_sampler>)>();
+  late final _llama_sampler_chain_nPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<llama_sampler>)>>(
+          'llama_sampler_chain_n');
+  late final _llama_sampler_chain_n = _llama_sampler_chain_nPtr
+      .asFunction<int Function(ffi.Pointer<llama_sampler>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_chain_remove(
@@ -10428,16 +14173,25 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_chain_removePtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>, ffi.Int32)>>('llama_sampler_chain_remove');
-  late final _llama_sampler_chain_remove = _llama_sampler_chain_removePtr.asFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>, int)>();
+  late final _llama_sampler_chain_removePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler>,
+              ffi.Int32)>>('llama_sampler_chain_remove');
+  late final _llama_sampler_chain_remove =
+      _llama_sampler_chain_removePtr.asFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Pointer<llama_sampler>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_init_greedy() {
     return _llama_sampler_init_greedy();
   }
 
-  late final _llama_sampler_init_greedyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function()>>('llama_sampler_init_greedy');
-  late final _llama_sampler_init_greedy = _llama_sampler_init_greedyPtr.asFunction<ffi.Pointer<llama_sampler> Function()>();
+  late final _llama_sampler_init_greedyPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function()>>(
+          'llama_sampler_init_greedy');
+  late final _llama_sampler_init_greedy = _llama_sampler_init_greedyPtr
+      .asFunction<ffi.Pointer<llama_sampler> Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_init_dist(
@@ -10448,8 +14202,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_distPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Uint32)>>('llama_sampler_init_dist');
-  late final _llama_sampler_init_dist = _llama_sampler_init_distPtr.asFunction<ffi.Pointer<llama_sampler> Function(int)>();
+  late final _llama_sampler_init_distPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Uint32)>>(
+      'llama_sampler_init_dist');
+  late final _llama_sampler_init_dist = _llama_sampler_init_distPtr
+      .asFunction<ffi.Pointer<llama_sampler> Function(int)>();
 
   /// @details Sorts candidate tokens by their logits in descending order and calculate probabilities based on logits.
   /// NOTE: Avoid using on the full vocabulary as the sorting can become slow. For example, apply top-k or top-p sampling first.
@@ -10457,8 +14214,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     return _llama_sampler_init_softmax();
   }
 
-  late final _llama_sampler_init_softmaxPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function()>>('llama_sampler_init_softmax');
-  late final _llama_sampler_init_softmax = _llama_sampler_init_softmaxPtr.asFunction<ffi.Pointer<llama_sampler> Function()>();
+  late final _llama_sampler_init_softmaxPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function()>>(
+          'llama_sampler_init_softmax');
+  late final _llama_sampler_init_softmax = _llama_sampler_init_softmaxPtr
+      .asFunction<ffi.Pointer<llama_sampler> Function()>();
 
   /// @details Top-K sampling described in academic paper "The Curious Case of Neural Text Degeneration" https://arxiv.org/abs/1904.09751
   ffi.Pointer<llama_sampler> llama_sampler_init_top_k(
@@ -10469,8 +14229,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_top_kPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Int32)>>('llama_sampler_init_top_k');
-  late final _llama_sampler_init_top_k = _llama_sampler_init_top_kPtr.asFunction<ffi.Pointer<llama_sampler> Function(int)>();
+  late final _llama_sampler_init_top_kPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Int32)>>(
+      'llama_sampler_init_top_k');
+  late final _llama_sampler_init_top_k = _llama_sampler_init_top_kPtr
+      .asFunction<ffi.Pointer<llama_sampler> Function(int)>();
 
   /// @details Nucleus sampling described in academic paper "The Curious Case of Neural Text Degeneration" https://arxiv.org/abs/1904.09751
   ffi.Pointer<llama_sampler> llama_sampler_init_top_p(
@@ -10483,8 +14246,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_top_pPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Float, ffi.Size)>>('llama_sampler_init_top_p');
-  late final _llama_sampler_init_top_p = _llama_sampler_init_top_pPtr.asFunction<ffi.Pointer<llama_sampler> Function(double, int)>();
+  late final _llama_sampler_init_top_pPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Float, ffi.Size)>>('llama_sampler_init_top_p');
+  late final _llama_sampler_init_top_p = _llama_sampler_init_top_pPtr
+      .asFunction<ffi.Pointer<llama_sampler> Function(double, int)>();
 
   /// @details Minimum P sampling as described in https://github.com/ggerganov/llama.cpp/pull/3841
   ffi.Pointer<llama_sampler> llama_sampler_init_min_p(
@@ -10497,8 +14264,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_min_pPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Float, ffi.Size)>>('llama_sampler_init_min_p');
-  late final _llama_sampler_init_min_p = _llama_sampler_init_min_pPtr.asFunction<ffi.Pointer<llama_sampler> Function(double, int)>();
+  late final _llama_sampler_init_min_pPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Float, ffi.Size)>>('llama_sampler_init_min_p');
+  late final _llama_sampler_init_min_p = _llama_sampler_init_min_pPtr
+      .asFunction<ffi.Pointer<llama_sampler> Function(double, int)>();
 
   /// @details Locally Typical Sampling implementation described in the paper https://arxiv.org/abs/2202.00666.
   ffi.Pointer<llama_sampler> llama_sampler_init_typical(
@@ -10511,8 +14282,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_typicalPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Float, ffi.Size)>>('llama_sampler_init_typical');
-  late final _llama_sampler_init_typical = _llama_sampler_init_typicalPtr.asFunction<ffi.Pointer<llama_sampler> Function(double, int)>();
+  late final _llama_sampler_init_typicalPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Float, ffi.Size)>>('llama_sampler_init_typical');
+  late final _llama_sampler_init_typical = _llama_sampler_init_typicalPtr
+      .asFunction<ffi.Pointer<llama_sampler> Function(double, int)>();
 
   /// #details Updates the logits l_i` = l_i/t. When t <= 0.0f, the maximum logit is kept at it's original value, the rest are set to -inf
   ffi.Pointer<llama_sampler> llama_sampler_init_temp(
@@ -10523,8 +14298,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_tempPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Float)>>('llama_sampler_init_temp');
-  late final _llama_sampler_init_temp = _llama_sampler_init_tempPtr.asFunction<ffi.Pointer<llama_sampler> Function(double)>();
+  late final _llama_sampler_init_tempPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Float)>>(
+      'llama_sampler_init_temp');
+  late final _llama_sampler_init_temp = _llama_sampler_init_tempPtr
+      .asFunction<ffi.Pointer<llama_sampler> Function(double)>();
 
   /// @details Dynamic temperature implementation (a.k.a. entropy) described in the paper https://arxiv.org/abs/2309.02772.
   ffi.Pointer<llama_sampler> llama_sampler_init_temp_ext(
@@ -10539,8 +14317,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_temp_extPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Float, ffi.Float, ffi.Float)>>('llama_sampler_init_temp_ext');
-  late final _llama_sampler_init_temp_ext = _llama_sampler_init_temp_extPtr.asFunction<ffi.Pointer<llama_sampler> Function(double, double, double)>();
+  late final _llama_sampler_init_temp_extPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Float, ffi.Float, ffi.Float)>>('llama_sampler_init_temp_ext');
+  late final _llama_sampler_init_temp_ext =
+      _llama_sampler_init_temp_extPtr.asFunction<
+          ffi.Pointer<llama_sampler> Function(double, double, double)>();
 
   /// @details XTC sampler as described in https://github.com/oobabooga/text-generation-webui/pull/6335
   ffi.Pointer<llama_sampler> llama_sampler_init_xtc(
@@ -10557,8 +14340,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_xtcPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Float, ffi.Float, ffi.Size, ffi.Uint32)>>('llama_sampler_init_xtc');
-  late final _llama_sampler_init_xtc = _llama_sampler_init_xtcPtr.asFunction<ffi.Pointer<llama_sampler> Function(double, double, int, int)>();
+  late final _llama_sampler_init_xtcPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Float, ffi.Float, ffi.Size,
+              ffi.Uint32)>>('llama_sampler_init_xtc');
+  late final _llama_sampler_init_xtc = _llama_sampler_init_xtcPtr.asFunction<
+      ffi.Pointer<llama_sampler> Function(double, double, int, int)>();
 
   /// @details Mirostat 1.0 algorithm described in the paper https://arxiv.org/abs/2007.14966. Uses tokens instead of words.
   /// @param candidates A vector of `llama_token_data` containing the candidate tokens, their probabilities (p), and log-odds (logit) for the current position in the generated text.
@@ -10582,8 +14369,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_mirostatPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Int32, ffi.Uint32, ffi.Float, ffi.Float, ffi.Int32)>>('llama_sampler_init_mirostat');
-  late final _llama_sampler_init_mirostat = _llama_sampler_init_mirostatPtr.asFunction<ffi.Pointer<llama_sampler> Function(int, int, double, double, int)>();
+  late final _llama_sampler_init_mirostatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Int32, ffi.Uint32, ffi.Float,
+              ffi.Float, ffi.Int32)>>('llama_sampler_init_mirostat');
+  late final _llama_sampler_init_mirostat =
+      _llama_sampler_init_mirostatPtr.asFunction<
+          ffi.Pointer<llama_sampler> Function(int, int, double, double, int)>();
 
   /// @details Mirostat 2.0 algorithm described in the paper https://arxiv.org/abs/2007.14966. Uses tokens instead of words.
   /// @param candidates A vector of `llama_token_data` containing the candidate tokens, their probabilities (p), and log-odds (logit) for the current position in the generated text.
@@ -10602,8 +14394,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_mirostat_v2Ptr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Uint32, ffi.Float, ffi.Float)>>('llama_sampler_init_mirostat_v2');
-  late final _llama_sampler_init_mirostat_v2 = _llama_sampler_init_mirostat_v2Ptr.asFunction<ffi.Pointer<llama_sampler> Function(int, double, double)>();
+  late final _llama_sampler_init_mirostat_v2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Uint32, ffi.Float,
+              ffi.Float)>>('llama_sampler_init_mirostat_v2');
+  late final _llama_sampler_init_mirostat_v2 =
+      _llama_sampler_init_mirostat_v2Ptr.asFunction<
+          ffi.Pointer<llama_sampler> Function(int, double, double)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_init_grammar(
@@ -10618,8 +14415,16 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_grammarPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('llama_sampler_init_grammar');
-  late final _llama_sampler_init_grammar = _llama_sampler_init_grammarPtr.asFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+  late final _llama_sampler_init_grammarPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Pointer<llama_vocab>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>)>>('llama_sampler_init_grammar');
+  late final _llama_sampler_init_grammar =
+      _llama_sampler_init_grammarPtr.asFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>,
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   /// @details Lazy grammar sampler, introduced in https://github.com/ggerganov/llama.cpp/pull/9639
   /// @param trigger_words A list of words that will trigger the grammar sampler. This may be updated to a loose regex syntax (w/ ^) in a near future.
@@ -10644,8 +14449,26 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_grammar_lazyPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Size, ffi.Pointer<llama_token>, ffi.Size)>>('llama_sampler_init_grammar_lazy');
-  late final _llama_sampler_init_grammar_lazy = _llama_sampler_init_grammar_lazyPtr.asFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>, int, ffi.Pointer<llama_token>, int)>();
+  late final _llama_sampler_init_grammar_lazyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Pointer<llama_vocab>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Size,
+              ffi.Pointer<llama_token>,
+              ffi.Size)>>('llama_sampler_init_grammar_lazy');
+  late final _llama_sampler_init_grammar_lazy =
+      _llama_sampler_init_grammar_lazyPtr.asFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Pointer<llama_vocab>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              int,
+              ffi.Pointer<llama_token>,
+              int)>();
 
   /// NOTE: Avoid using on the full vocabulary as searching for repeated tokens can become slow. For example, apply top-k or top-p sampling first.
   ffi.Pointer<llama_sampler> llama_sampler_init_penalties(
@@ -10662,8 +14485,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_penaltiesPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Int32, ffi.Float, ffi.Float, ffi.Float)>>('llama_sampler_init_penalties');
-  late final _llama_sampler_init_penalties = _llama_sampler_init_penaltiesPtr.asFunction<ffi.Pointer<llama_sampler> Function(int, double, double, double)>();
+  late final _llama_sampler_init_penaltiesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Int32, ffi.Float, ffi.Float,
+              ffi.Float)>>('llama_sampler_init_penalties');
+  late final _llama_sampler_init_penalties =
+      _llama_sampler_init_penaltiesPtr.asFunction<
+          ffi.Pointer<llama_sampler> Function(int, double, double, double)>();
 
   /// @details DRY sampler, designed by p-e-w, as described in: https://github.com/oobabooga/text-generation-webui/pull/5677, porting Koboldcpp implementation authored by pi6am: https://github.com/LostRuins/koboldcpp/pull/982
   ffi.Pointer<llama_sampler> llama_sampler_init_dry(
@@ -10688,8 +14516,20 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_dryPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>, ffi.Int32, ffi.Float, ffi.Float, ffi.Int32, ffi.Int32, ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Size)>>('llama_sampler_init_dry');
-  late final _llama_sampler_init_dry = _llama_sampler_init_dryPtr.asFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>, int, double, double, int, int, ffi.Pointer<ffi.Pointer<ffi.Char>>, int)>();
+  late final _llama_sampler_init_dryPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Pointer<llama_vocab>,
+              ffi.Int32,
+              ffi.Float,
+              ffi.Float,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>,
+              ffi.Size)>>('llama_sampler_init_dry');
+  late final _llama_sampler_init_dry = _llama_sampler_init_dryPtr.asFunction<
+      ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>, int, double,
+          double, int, int, ffi.Pointer<ffi.Pointer<ffi.Char>>, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_init_logit_bias(
@@ -10704,8 +14544,14 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_logit_biasPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Int32, ffi.Int32, ffi.Pointer<llama_logit_bias>)>>('llama_sampler_init_logit_bias');
-  late final _llama_sampler_init_logit_bias = _llama_sampler_init_logit_biasPtr.asFunction<ffi.Pointer<llama_sampler> Function(int, int, ffi.Pointer<llama_logit_bias>)>();
+  late final _llama_sampler_init_logit_biasPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Int32, ffi.Int32,
+              ffi.Pointer<llama_logit_bias>)>>('llama_sampler_init_logit_bias');
+  late final _llama_sampler_init_logit_bias =
+      _llama_sampler_init_logit_biasPtr.asFunction<
+          ffi.Pointer<llama_sampler> Function(
+              int, int, ffi.Pointer<llama_logit_bias>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<llama_sampler> llama_sampler_init_infill(
@@ -10716,8 +14562,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_init_infillPtr = _lookup<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>)>>('llama_sampler_init_infill');
-  late final _llama_sampler_init_infill = _llama_sampler_init_infillPtr.asFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>)>();
+  late final _llama_sampler_init_infillPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Pointer<llama_vocab>)>>('llama_sampler_init_infill');
+  late final _llama_sampler_init_infill =
+      _llama_sampler_init_infillPtr.asFunction<
+          ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_vocab>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_sampler_get_seed(
@@ -10728,8 +14579,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_get_seedPtr = _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_sampler>)>>('llama_sampler_get_seed');
-  late final _llama_sampler_get_seed = _llama_sampler_get_seedPtr.asFunction<int Function(ffi.Pointer<llama_sampler>)>();
+  late final _llama_sampler_get_seedPtr = _lookup<
+          ffi.NativeFunction<ffi.Uint32 Function(ffi.Pointer<llama_sampler>)>>(
+      'llama_sampler_get_seed');
+  late final _llama_sampler_get_seed = _llama_sampler_get_seedPtr
+      .asFunction<int Function(ffi.Pointer<llama_sampler>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int llama_sampler_sample(
@@ -10744,8 +14598,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_sampler_samplePtr = _lookup<ffi.NativeFunction<llama_token Function(ffi.Pointer<llama_sampler>, ffi.Pointer<llama_context>, ffi.Int32)>>('llama_sampler_sample');
-  late final _llama_sampler_sample = _llama_sampler_samplePtr.asFunction<int Function(ffi.Pointer<llama_sampler>, ffi.Pointer<llama_context>, int)>();
+  late final _llama_sampler_samplePtr = _lookup<
+      ffi.NativeFunction<
+          llama_token Function(ffi.Pointer<llama_sampler>,
+              ffi.Pointer<llama_context>, ffi.Int32)>>('llama_sampler_sample');
+  late final _llama_sampler_sample = _llama_sampler_samplePtr.asFunction<
+      int Function(
+          ffi.Pointer<llama_sampler>, ffi.Pointer<llama_context>, int)>();
 
   /// @details Build a split GGUF final path for this chunk.
   /// llama_split_path(split_path, sizeof(split_path), "/models/ggml-model-q4_0", 2, 4) => split_path = "/models/ggml-model-q4_0-00002-of-00004.gguf"
@@ -10765,8 +14624,13 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_split_pathPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Size, ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int)>>('llama_split_path');
-  late final _llama_split_path = _llama_split_pathPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, int, int)>();
+  late final _llama_split_pathPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Size,
+              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int)>>('llama_split_path');
+  late final _llama_split_path = _llama_split_pathPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, int, int)>();
 
   /// @details Extract the path prefix from the split_path if and only if the split_no and split_count match.
   /// llama_split_prefix(split_prefix, 64, "/models/ggml-model-q4_0-00002-of-00004.gguf", 2, 4) => split_prefix = "/models/ggml-model-q4_0"
@@ -10786,16 +14650,24 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_split_prefixPtr = _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Size, ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int)>>('llama_split_prefix');
-  late final _llama_split_prefix = _llama_split_prefixPtr.asFunction<int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, int, int)>();
+  late final _llama_split_prefixPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Size,
+              ffi.Pointer<ffi.Char>, ffi.Int, ffi.Int)>>('llama_split_prefix');
+  late final _llama_split_prefix = _llama_split_prefixPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, int, int)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> llama_print_system_info() {
     return _llama_print_system_info();
   }
 
-  late final _llama_print_system_infoPtr = _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>('llama_print_system_info');
-  late final _llama_print_system_info = _llama_print_system_infoPtr.asFunction<ffi.Pointer<ffi.Char> Function()>();
+  late final _llama_print_system_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
+          'llama_print_system_info');
+  late final _llama_print_system_info = _llama_print_system_infoPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function()>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_log_set(
@@ -10808,8 +14680,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_log_setPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ggml_log_callback, ffi.Pointer<ffi.Void>)>>('llama_log_set');
-  late final _llama_log_set = _llama_log_setPtr.asFunction<void Function(ggml_log_callback, ffi.Pointer<ffi.Void>)>();
+  late final _llama_log_setPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ggml_log_callback, ffi.Pointer<ffi.Void>)>>('llama_log_set');
+  late final _llama_log_set = _llama_log_setPtr
+      .asFunction<void Function(ggml_log_callback, ffi.Pointer<ffi.Void>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   llama_perf_context_data llama_perf_context(
@@ -10820,8 +14696,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_perf_contextPtr = _lookup<ffi.NativeFunction<llama_perf_context_data Function(ffi.Pointer<llama_context>)>>('llama_perf_context');
-  late final _llama_perf_context = _llama_perf_contextPtr.asFunction<llama_perf_context_data Function(ffi.Pointer<llama_context>)>();
+  late final _llama_perf_contextPtr = _lookup<
+      ffi.NativeFunction<
+          llama_perf_context_data Function(
+              ffi.Pointer<llama_context>)>>('llama_perf_context');
+  late final _llama_perf_context = _llama_perf_contextPtr.asFunction<
+      llama_perf_context_data Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_perf_context_print(
@@ -10832,8 +14712,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_perf_context_printPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>('llama_perf_context_print');
-  late final _llama_perf_context_print = _llama_perf_context_printPtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
+  late final _llama_perf_context_printPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>(
+      'llama_perf_context_print');
+  late final _llama_perf_context_print = _llama_perf_context_printPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_perf_context_reset(
@@ -10844,8 +14727,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_perf_context_resetPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>('llama_perf_context_reset');
-  late final _llama_perf_context_reset = _llama_perf_context_resetPtr.asFunction<void Function(ffi.Pointer<llama_context>)>();
+  late final _llama_perf_context_resetPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_context>)>>(
+      'llama_perf_context_reset');
+  late final _llama_perf_context_reset = _llama_perf_context_resetPtr
+      .asFunction<void Function(ffi.Pointer<llama_context>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   llama_perf_sampler_data llama_perf_sampler(
@@ -10856,8 +14742,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_perf_samplerPtr = _lookup<ffi.NativeFunction<llama_perf_sampler_data Function(ffi.Pointer<llama_sampler>)>>('llama_perf_sampler');
-  late final _llama_perf_sampler = _llama_perf_samplerPtr.asFunction<llama_perf_sampler_data Function(ffi.Pointer<llama_sampler>)>();
+  late final _llama_perf_samplerPtr = _lookup<
+      ffi.NativeFunction<
+          llama_perf_sampler_data Function(
+              ffi.Pointer<llama_sampler>)>>('llama_perf_sampler');
+  late final _llama_perf_sampler = _llama_perf_samplerPtr.asFunction<
+      llama_perf_sampler_data Function(ffi.Pointer<llama_sampler>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_perf_sampler_print(
@@ -10868,8 +14758,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_perf_sampler_printPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>)>>('llama_perf_sampler_print');
-  late final _llama_perf_sampler_print = _llama_perf_sampler_printPtr.asFunction<void Function(ffi.Pointer<llama_sampler>)>();
+  late final _llama_perf_sampler_printPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>)>>(
+      'llama_perf_sampler_print');
+  late final _llama_perf_sampler_print = _llama_perf_sampler_printPtr
+      .asFunction<void Function(ffi.Pointer<llama_sampler>)>();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void llama_perf_sampler_reset(
@@ -10880,8 +14773,11 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
     );
   }
 
-  late final _llama_perf_sampler_resetPtr = _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>)>>('llama_perf_sampler_reset');
-  late final _llama_perf_sampler_reset = _llama_perf_sampler_resetPtr.asFunction<void Function(ffi.Pointer<llama_sampler>)>();
+  late final _llama_perf_sampler_resetPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler>)>>(
+      'llama_perf_sampler_reset');
+  late final _llama_perf_sampler_reset = _llama_perf_sampler_resetPtr
+      .asFunction<void Function(ffi.Pointer<llama_sampler>)>();
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
@@ -11024,20 +14920,27 @@ final class _IO_cookie_io_functions_t extends ffi.Struct {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef cookie_read_function_t = ffi.NativeFunction<__ssize_t Function(ffi.Pointer<ffi.Void> __cookie, ffi.Pointer<ffi.Char> __buf, ffi.Size __nbytes)>;
+typedef cookie_read_function_t = ffi.NativeFunction<
+    __ssize_t Function(ffi.Pointer<ffi.Void> __cookie,
+        ffi.Pointer<ffi.Char> __buf, ffi.Size __nbytes)>;
 typedef __ssize_t = ffi.Long;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart__ssize_t = int;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef cookie_write_function_t = ffi.NativeFunction<__ssize_t Function(ffi.Pointer<ffi.Void> __cookie, ffi.Pointer<ffi.Char> __buf, ffi.Size __nbytes)>;
+typedef cookie_write_function_t = ffi.NativeFunction<
+    __ssize_t Function(ffi.Pointer<ffi.Void> __cookie,
+        ffi.Pointer<ffi.Char> __buf, ffi.Size __nbytes)>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef cookie_seek_function_t = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void> __cookie, ffi.Pointer<__off64_t> __pos, ffi.Int __w)>;
+typedef cookie_seek_function_t = ffi.NativeFunction<
+    ffi.Int Function(ffi.Pointer<ffi.Void> __cookie,
+        ffi.Pointer<__off64_t> __pos, ffi.Int __w)>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef cookie_close_function_t = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void> __cookie)>;
+typedef cookie_close_function_t
+    = ffi.NativeFunction<ffi.Int Function(ffi.Pointer<ffi.Void> __cookie)>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef FILE = _IO_FILE;
@@ -11742,85 +15645,152 @@ abstract class ggml_sort_order {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_unary_op_f32_t = ffi.Pointer<ffi.NativeFunction<ggml_unary_op_f32_tFunction>>;
+typedef ggml_unary_op_f32_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_unary_op_f32_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_unary_op_f32_tFunction = ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>);
+typedef ggml_unary_op_f32_tFunction = ffi.Void Function(
+    ffi.Int, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_unary_op_f32_tFunction = void Function(int, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>);
+typedef Dartggml_unary_op_f32_tFunction = void Function(
+    int, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_binary_op_f32_t = ffi.Pointer<ffi.NativeFunction<ggml_binary_op_f32_tFunction>>;
+typedef ggml_binary_op_f32_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_binary_op_f32_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_binary_op_f32_tFunction = ffi.Void Function(ffi.Int, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>);
+typedef ggml_binary_op_f32_tFunction = ffi.Void Function(ffi.Int,
+    ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_binary_op_f32_tFunction = void Function(int, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>);
+typedef Dartggml_binary_op_f32_tFunction = void Function(int,
+    ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Float>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom1_op_f32_t = ffi.Pointer<ffi.NativeFunction<ggml_custom1_op_f32_tFunction>>;
+typedef ggml_custom1_op_f32_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_custom1_op_f32_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom1_op_f32_tFunction = ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>);
+typedef ggml_custom1_op_f32_tFunction = ffi.Void Function(
+    ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_custom1_op_f32_tFunction = void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>);
+typedef Dartggml_custom1_op_f32_tFunction = void Function(
+    ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom2_op_f32_t = ffi.Pointer<ffi.NativeFunction<ggml_custom2_op_f32_tFunction>>;
+typedef ggml_custom2_op_f32_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_custom2_op_f32_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom2_op_f32_tFunction = ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>);
+typedef ggml_custom2_op_f32_tFunction = ffi.Void Function(
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_custom2_op_f32_tFunction = void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>);
+typedef Dartggml_custom2_op_f32_tFunction = void Function(
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom3_op_f32_t = ffi.Pointer<ffi.NativeFunction<ggml_custom3_op_f32_tFunction>>;
+typedef ggml_custom3_op_f32_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_custom3_op_f32_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom3_op_f32_tFunction = ffi.Void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>);
+typedef ggml_custom3_op_f32_tFunction = ffi.Void Function(
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_custom3_op_f32_tFunction = void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>);
+typedef Dartggml_custom3_op_f32_tFunction = void Function(
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>,
+    ffi.Pointer<ggml_tensor>);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom1_op_t = ffi.Pointer<ffi.NativeFunction<ggml_custom1_op_tFunction>>;
+typedef ggml_custom1_op_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_custom1_op_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom1_op_tFunction = ffi.Void Function(ffi.Pointer<ggml_tensor> dst, ffi.Pointer<ggml_tensor> a, ffi.Int ith, ffi.Int nth, ffi.Pointer<ffi.Void> userdata);
+typedef ggml_custom1_op_tFunction = ffi.Void Function(
+    ffi.Pointer<ggml_tensor> dst,
+    ffi.Pointer<ggml_tensor> a,
+    ffi.Int ith,
+    ffi.Int nth,
+    ffi.Pointer<ffi.Void> userdata);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_custom1_op_tFunction = void Function(ffi.Pointer<ggml_tensor> dst, ffi.Pointer<ggml_tensor> a, int ith, int nth, ffi.Pointer<ffi.Void> userdata);
+typedef Dartggml_custom1_op_tFunction = void Function(
+    ffi.Pointer<ggml_tensor> dst,
+    ffi.Pointer<ggml_tensor> a,
+    int ith,
+    int nth,
+    ffi.Pointer<ffi.Void> userdata);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom2_op_t = ffi.Pointer<ffi.NativeFunction<ggml_custom2_op_tFunction>>;
+typedef ggml_custom2_op_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_custom2_op_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom2_op_tFunction = ffi.Void Function(ffi.Pointer<ggml_tensor> dst, ffi.Pointer<ggml_tensor> a, ffi.Pointer<ggml_tensor> b, ffi.Int ith, ffi.Int nth, ffi.Pointer<ffi.Void> userdata);
+typedef ggml_custom2_op_tFunction = ffi.Void Function(
+    ffi.Pointer<ggml_tensor> dst,
+    ffi.Pointer<ggml_tensor> a,
+    ffi.Pointer<ggml_tensor> b,
+    ffi.Int ith,
+    ffi.Int nth,
+    ffi.Pointer<ffi.Void> userdata);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_custom2_op_tFunction = void Function(ffi.Pointer<ggml_tensor> dst, ffi.Pointer<ggml_tensor> a, ffi.Pointer<ggml_tensor> b, int ith, int nth, ffi.Pointer<ffi.Void> userdata);
+typedef Dartggml_custom2_op_tFunction = void Function(
+    ffi.Pointer<ggml_tensor> dst,
+    ffi.Pointer<ggml_tensor> a,
+    ffi.Pointer<ggml_tensor> b,
+    int ith,
+    int nth,
+    ffi.Pointer<ffi.Void> userdata);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom3_op_t = ffi.Pointer<ffi.NativeFunction<ggml_custom3_op_tFunction>>;
+typedef ggml_custom3_op_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_custom3_op_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_custom3_op_tFunction = ffi.Void Function(ffi.Pointer<ggml_tensor> dst, ffi.Pointer<ggml_tensor> a, ffi.Pointer<ggml_tensor> b, ffi.Pointer<ggml_tensor> c, ffi.Int ith, ffi.Int nth, ffi.Pointer<ffi.Void> userdata);
+typedef ggml_custom3_op_tFunction = ffi.Void Function(
+    ffi.Pointer<ggml_tensor> dst,
+    ffi.Pointer<ggml_tensor> a,
+    ffi.Pointer<ggml_tensor> b,
+    ffi.Pointer<ggml_tensor> c,
+    ffi.Int ith,
+    ffi.Int nth,
+    ffi.Pointer<ffi.Void> userdata);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_custom3_op_tFunction = void Function(ffi.Pointer<ggml_tensor> dst, ffi.Pointer<ggml_tensor> a, ffi.Pointer<ggml_tensor> b, ffi.Pointer<ggml_tensor> c, int ith, int nth, ffi.Pointer<ffi.Void> userdata);
+typedef Dartggml_custom3_op_tFunction = void Function(
+    ffi.Pointer<ggml_tensor> dst,
+    ffi.Pointer<ggml_tensor> a,
+    ffi.Pointer<ggml_tensor> b,
+    ffi.Pointer<ggml_tensor> c,
+    int ith,
+    int nth,
+    ffi.Pointer<ffi.Void> userdata);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_log_callback = ffi.Pointer<ffi.NativeFunction<ggml_log_callbackFunction>>;
+typedef ggml_log_callback
+    = ffi.Pointer<ffi.NativeFunction<ggml_log_callbackFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_log_callbackFunction = ffi.Void Function(ffi.Int32 level, ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> user_data);
+typedef ggml_log_callbackFunction = ffi.Void Function(ffi.Int32 level,
+    ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> user_data);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_log_callbackFunction = void Function(int level, ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> user_data);
+typedef Dartggml_log_callbackFunction = void Function(
+    int level, ffi.Pointer<ffi.Char> text, ffi.Pointer<ffi.Void> user_data);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ggml_type_traits extends ffi.Struct {
@@ -11855,22 +15825,28 @@ final class ggml_type_traits extends ffi.Struct {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_to_float_t = ffi.Pointer<ffi.NativeFunction<ggml_to_float_tFunction>>;
+typedef ggml_to_float_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_to_float_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_to_float_tFunction = ffi.Void Function(ffi.Pointer<ffi.Void> x, ffi.Pointer<ffi.Float> y, ffi.Int64 k);
+typedef ggml_to_float_tFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Void> x, ffi.Pointer<ffi.Float> y, ffi.Int64 k);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_to_float_tFunction = void Function(ffi.Pointer<ffi.Void> x, ffi.Pointer<ffi.Float> y, int k);
+typedef Dartggml_to_float_tFunction = void Function(
+    ffi.Pointer<ffi.Void> x, ffi.Pointer<ffi.Float> y, int k);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_from_float_t = ffi.Pointer<ffi.NativeFunction<ggml_from_float_tFunction>>;
+typedef ggml_from_float_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_from_float_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_from_float_tFunction = ffi.Void Function(ffi.Pointer<ffi.Float> x, ffi.Pointer<ffi.Void> y, ffi.Int64 k);
+typedef ggml_from_float_tFunction = ffi.Void Function(
+    ffi.Pointer<ffi.Float> x, ffi.Pointer<ffi.Void> y, ffi.Int64 k);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_from_float_tFunction = void Function(ffi.Pointer<ffi.Float> x, ffi.Pointer<ffi.Void> y, int k);
+typedef Dartggml_from_float_tFunction = void Function(
+    ffi.Pointer<ffi.Float> x, ffi.Pointer<ffi.Void> y, int k);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class ggml_sched_priority {
@@ -12074,13 +16050,16 @@ final class ggml_backend_sched extends ffi.Opaque {}
 typedef ggml_backend_sched_t = ffi.Pointer<ggml_backend_sched>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_backend_sched_eval_callback = ffi.Pointer<ffi.NativeFunction<ggml_backend_sched_eval_callbackFunction>>;
+typedef ggml_backend_sched_eval_callback
+    = ffi.Pointer<ffi.NativeFunction<ggml_backend_sched_eval_callbackFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_backend_sched_eval_callbackFunction = ffi.Bool Function(ffi.Pointer<ggml_tensor> t, ffi.Bool ask, ffi.Pointer<ffi.Void> user_data);
+typedef ggml_backend_sched_eval_callbackFunction = ffi.Bool Function(
+    ffi.Pointer<ggml_tensor> t, ffi.Bool ask, ffi.Pointer<ffi.Void> user_data);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_backend_sched_eval_callbackFunction = bool Function(ffi.Pointer<ggml_tensor> t, bool ask, ffi.Pointer<ffi.Void> user_data);
+typedef Dartggml_backend_sched_eval_callbackFunction = bool Function(
+    ffi.Pointer<ggml_tensor> t, bool ask, ffi.Pointer<ffi.Void> user_data);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ggml_backend_graph_copy extends ffi.Struct {
@@ -12098,13 +16077,22 @@ final class ggml_backend_graph_copy extends ffi.Struct {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_backend_eval_callback = ffi.Pointer<ffi.NativeFunction<ggml_backend_eval_callbackFunction>>;
+typedef ggml_backend_eval_callback
+    = ffi.Pointer<ffi.NativeFunction<ggml_backend_eval_callbackFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_backend_eval_callbackFunction = ffi.Bool Function(ffi.Int node_index, ffi.Pointer<ggml_tensor> t1, ffi.Pointer<ggml_tensor> t2, ffi.Pointer<ffi.Void> user_data);
+typedef ggml_backend_eval_callbackFunction = ffi.Bool Function(
+    ffi.Int node_index,
+    ffi.Pointer<ggml_tensor> t1,
+    ffi.Pointer<ggml_tensor> t2,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_backend_eval_callbackFunction = bool Function(int node_index, ffi.Pointer<ggml_tensor> t1, ffi.Pointer<ggml_tensor> t2, ffi.Pointer<ffi.Void> user_data);
+typedef Dartggml_backend_eval_callbackFunction = bool Function(
+    int node_index,
+    ffi.Pointer<ggml_tensor> t1,
+    ffi.Pointer<ggml_tensor> t2,
+    ffi.Pointer<ffi.Void> user_data);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ggml_cplan extends ffi.Struct {
@@ -12132,13 +16120,16 @@ final class ggml_cplan extends ffi.Struct {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_abort_callback = ffi.Pointer<ffi.NativeFunction<ggml_abort_callbackFunction>>;
+typedef ggml_abort_callback
+    = ffi.Pointer<ffi.NativeFunction<ggml_abort_callbackFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_abort_callbackFunction = ffi.Bool Function(ffi.Pointer<ffi.Void> data);
+typedef ggml_abort_callbackFunction = ffi.Bool Function(
+    ffi.Pointer<ffi.Void> data);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_abort_callbackFunction = bool Function(ffi.Pointer<ffi.Void> data);
+typedef Dartggml_abort_callbackFunction = bool Function(
+    ffi.Pointer<ffi.Void> data);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class ggml_numa_strategy {
@@ -12181,13 +16172,30 @@ final class ggml_type_traits_cpu extends ffi.Struct {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_vec_dot_t = ffi.Pointer<ffi.NativeFunction<ggml_vec_dot_tFunction>>;
+typedef ggml_vec_dot_t
+    = ffi.Pointer<ffi.NativeFunction<ggml_vec_dot_tFunction>>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef ggml_vec_dot_tFunction = ffi.Void Function(ffi.Int n, ffi.Pointer<ffi.Float> s, ffi.Size bs, ffi.Pointer<ffi.Void> x, ffi.Size bx, ffi.Pointer<ffi.Void> y, ffi.Size by, ffi.Int nrc);
+typedef ggml_vec_dot_tFunction = ffi.Void Function(
+    ffi.Int n,
+    ffi.Pointer<ffi.Float> s,
+    ffi.Size bs,
+    ffi.Pointer<ffi.Void> x,
+    ffi.Size bx,
+    ffi.Pointer<ffi.Void> y,
+    ffi.Size by,
+    ffi.Int nrc);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartggml_vec_dot_tFunction = void Function(int n, ffi.Pointer<ffi.Float> s, int bs, ffi.Pointer<ffi.Void> x, int bx, ffi.Pointer<ffi.Void> y, int by, int nrc);
+typedef Dartggml_vec_dot_tFunction = void Function(
+    int n,
+    ffi.Pointer<ffi.Float> s,
+    int bs,
+    ffi.Pointer<ffi.Void> x,
+    int bx,
+    ffi.Pointer<ffi.Void> y,
+    int by,
+    int nrc);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef ggml_threadpool_t = ffi.Pointer<ggml_threadpool>;
@@ -12212,60 +16220,84 @@ final class llama_sampler extends ffi.Struct {
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_sampler_i extends ffi.Struct {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  external ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_sampler> smpl)>> name;
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<ffi.Char> Function(ffi.Pointer<llama_sampler> smpl)>>
+      name;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler> smpl, llama_token token)>> accept;
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<llama_sampler> smpl, llama_token token)>> accept;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler> smpl, ffi.Pointer<llama_token_data_array> cur_p)>> apply;
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<llama_sampler> smpl,
+              ffi.Pointer<llama_token_data_array> cur_p)>> apply;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler> smpl)>> reset;
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  external ffi.Pointer<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler> smpl)>>
+      reset;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  external ffi.Pointer<ffi.NativeFunction<ffi.Pointer<llama_sampler> Function(ffi.Pointer<llama_sampler> smpl)>> clone;
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<llama_sampler> Function(
+              ffi.Pointer<llama_sampler> smpl)>> clone;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler> smpl)>> free;
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  external ffi.Pointer<
+      ffi
+      .NativeFunction<ffi.Void Function(ffi.Pointer<llama_sampler> smpl)>> free;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef llama_token = ffi.Int32;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartllama_token = int;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_token_data_array extends ffi.Struct {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<llama_token_data> data;
 
   @ffi.Size()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int size;
 
   @ffi.Int64()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int selected;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool sorted;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_token_data extends ffi.Struct {
   @llama_token()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int id;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double logit;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double p;
 }
 
@@ -12274,574 +16306,734 @@ typedef llama_sampler_context_t = ffi.Pointer<ffi.Void>;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_vocab_type {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_TYPE_NONE = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_TYPE_SPM = 1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_TYPE_BPE = 2;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_TYPE_WPM = 3;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_TYPE_UGM = 4;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_TYPE_RWKV = 5;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_vocab_pre_type {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_DEFAULT = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_LLAMA3 = 1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_DEEPSEEK_LLM = 2;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_DEEPSEEK_CODER = 3;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_FALCON = 4;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_MPT = 5;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_STARCODER = 6;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_GPT2 = 7;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_REFACT = 8;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_COMMAND_R = 9;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_STABLELM2 = 10;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_QWEN2 = 11;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_OLMO = 12;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_DBRX = 13;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_SMAUG = 14;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_PORO = 15;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_CHATGLM3 = 16;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_CHATGLM4 = 17;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_VIKING = 18;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_JAIS = 19;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_TEKKEN = 20;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_SMOLLM = 21;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_CODESHELL = 22;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_BLOOM = 23;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_GPT3_FINNISH = 24;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_EXAONE = 25;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_CHAMELEON = 26;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_MINERVA = 27;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_VOCAB_PRE_TYPE_DEEPSEEK3_LLM = 28;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_rope_type {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_TYPE_NONE = -1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_TYPE_NORM = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_TYPE_NEOX = 2;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_TYPE_MROPE = 8;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_TYPE_VISION = 24;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_token_type {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_TYPE_UNDEFINED = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_TYPE_NORMAL = 1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_TYPE_UNKNOWN = 2;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_TYPE_CONTROL = 3;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_TYPE_USER_DEFINED = 4;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_TYPE_UNUSED = 5;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_TYPE_BYTE = 6;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_token_attr {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_UNDEFINED = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_UNKNOWN = 1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_UNUSED = 2;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_NORMAL = 4;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_CONTROL = 8;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_USER_DEFINED = 16;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_BYTE = 32;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_NORMALIZED = 64;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_LSTRIP = 128;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_RSTRIP = 256;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_TOKEN_ATTR_SINGLE_WORD = 512;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_ftype {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_ALL_F32 = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_F16 = 1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q4_0 = 2;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q4_1 = 3;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q8_0 = 7;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q5_0 = 8;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q5_1 = 9;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q2_K = 10;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q3_K_S = 11;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q3_K_M = 12;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q3_K_L = 13;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q4_K_S = 14;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q4_K_M = 15;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q5_K_S = 16;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q5_K_M = 17;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q6_K = 18;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ2_XXS = 19;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ2_XS = 20;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_Q2_K_S = 21;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ3_XS = 22;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ3_XXS = 23;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ1_S = 24;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ4_NL = 25;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ3_S = 26;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ3_M = 27;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ2_S = 28;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ2_M = 29;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ4_XS = 30;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_IQ1_M = 31;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_BF16 = 32;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_TQ1_0 = 36;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_MOSTLY_TQ2_0 = 37;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_FTYPE_GUESSED = 1024;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_rope_scaling_type {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_SCALING_TYPE_UNSPECIFIED = -1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_SCALING_TYPE_NONE = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_SCALING_TYPE_LINEAR = 1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_SCALING_TYPE_YARN = 2;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_SCALING_TYPE_LONGROPE = 3;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ROPE_SCALING_TYPE_MAX_VALUE = 3;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_pooling_type {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_POOLING_TYPE_UNSPECIFIED = -1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_POOLING_TYPE_NONE = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_POOLING_TYPE_MEAN = 1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_POOLING_TYPE_CLS = 2;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_POOLING_TYPE_LAST = 3;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_POOLING_TYPE_RANK = 4;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_attention_type {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ATTENTION_TYPE_UNSPECIFIED = -1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ATTENTION_TYPE_CAUSAL = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_ATTENTION_TYPE_NON_CAUSAL = 1;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_split_mode {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_SPLIT_MODE_NONE = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_SPLIT_MODE_LAYER = 1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_SPLIT_MODE_ROW = 2;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_batch extends ffi.Struct {
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_tokens;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<llama_token> token;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Float> embd;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<llama_pos> pos;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Int32> n_seq_id;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Pointer<llama_seq_id>> seq_id;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Int8> logits;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef llama_pos = ffi.Int32;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartllama_pos = int;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef llama_seq_id = ffi.Int32;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartllama_seq_id = int;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class llama_model_kv_override_type {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_KV_OVERRIDE_TYPE_INT = 0;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_KV_OVERRIDE_TYPE_FLOAT = 1;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_KV_OVERRIDE_TYPE_BOOL = 2;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int LLAMA_KV_OVERRIDE_TYPE_STR = 3;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_model_kv_override extends ffi.Struct {
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int tag;
 
   @ffi.Array.multi([128])
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ffi.Char> key;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedUnion2 unnamed;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedUnion2 extends ffi.Union {
   @ffi.Int64()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int val_i64;
 
   @ffi.Double()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double val_f64;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool val_bool;
 
   @ffi.Array.multi([128])
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ffi.Char> val_str;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_model_params extends ffi.Struct {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ggml_backend_dev_t> devices;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_gpu_layers;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int split_mode;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int main_gpu;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Float> tensor_split;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external llama_progress_callback progress_callback;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> progress_callback_user_data;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<llama_model_kv_override> kv_overrides;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool vocab_only;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool use_mmap;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool use_mlock;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool check_tensors;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef llama_progress_callback = ffi.Pointer<ffi.NativeFunction<llama_progress_callbackFunction>>;
+typedef llama_progress_callback
+    = ffi.Pointer<ffi.NativeFunction<llama_progress_callbackFunction>>;
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef llama_progress_callbackFunction = ffi.Bool Function(ffi.Float progress, ffi.Pointer<ffi.Void> user_data);
+typedef llama_progress_callbackFunction = ffi.Bool Function(
+    ffi.Float progress, ffi.Pointer<ffi.Void> user_data);
+
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-typedef Dartllama_progress_callbackFunction = bool Function(double progress, ffi.Pointer<ffi.Void> user_data);
+typedef Dartllama_progress_callbackFunction = bool Function(
+    double progress, ffi.Pointer<ffi.Void> user_data);
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_context_params extends ffi.Struct {
   @ffi.Uint32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_ctx;
 
   @ffi.Uint32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_batch;
 
   @ffi.Uint32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_ubatch;
 
   @ffi.Uint32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_seq_max;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_threads;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_threads_batch;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int rope_scaling_type;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int pooling_type;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int attention_type;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double rope_freq_base;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double rope_freq_scale;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double yarn_ext_factor;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double yarn_attn_factor;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double yarn_beta_fast;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double yarn_beta_slow;
 
   @ffi.Uint32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int yarn_orig_ctx;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double defrag_thold;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ggml_backend_sched_eval_callback cb_eval;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> cb_eval_user_data;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int type_k;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int type_v;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool logits_all;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool embeddings;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool offload_kqv;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool flash_attn;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool no_perf;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ggml_abort_callback abort_callback;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> abort_callback_data;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_model_quantize_params extends ffi.Struct {
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int nthread;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int ftype;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int output_tensor_type;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int token_embedding_type;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool allow_requantize;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool quantize_output_tensor;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool only_copy;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool pure;
 
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool keep_split;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> imatrix;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> kv_overrides;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_logit_bias extends ffi.Struct {
   @llama_token()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int token;
 
   @ffi.Float()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double bias;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_sampler_chain_params extends ffi.Struct {
   @ffi.Bool()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external bool no_perf;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_chat_message extends ffi.Struct {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Char> role;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Char> content;
 }
 
@@ -12851,78 +17043,93 @@ final class llama_adapter_lora extends ffi.Opaque {}
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_kv_cache_view_cell extends ffi.Struct {
   @llama_pos()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int pos;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_kv_cache_view extends ffi.Struct {
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_cells;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_seq_max;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int token_count;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int used_cells;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int max_contiguous;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int max_contiguous_idx;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<llama_kv_cache_view_cell> cells;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<llama_seq_id> cells_sequences;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_perf_context_data extends ffi.Struct {
   @ffi.Double()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double t_start_ms;
 
   @ffi.Double()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double t_load_ms;
 
   @ffi.Double()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double t_p_eval_ms;
 
   @ffi.Double()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double t_eval_ms;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_p_eval;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_eval;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class llama_perf_sampler_data extends ffi.Struct {
   @ffi.Double()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double t_sample_ms;
 
   @ffi.Int32()
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int n_sample;
 }
 

@@ -39,20 +39,16 @@ import 'package:general_lib/general_lib.dart' show EventEmitterListener;
 import 'package:llama_library/raw/lcpp.dart' show ChatMessage;
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
-abstract class LlamaLibraryBaseCore extends GeneralLibraryDynamicLibraryBase { 
-
+abstract class LlamaLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 
   Future<void> initialized();
-
-
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 
   bool loadModel({
     required String modelPath,
   });
-  
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 

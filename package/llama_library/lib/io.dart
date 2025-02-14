@@ -51,7 +51,8 @@ class LlamaLibrary extends LlamaLibraryBase {
   LlamaLibrary({
     String? sharedLibraryPath,
   }) : super(
-          sharedLibraryPath: sharedLibraryPath ?? LlamaLibraryBase.getLibraryWhisperPathDefault(),
+          sharedLibraryPath: sharedLibraryPath ??
+              LlamaLibraryBase.getLibraryWhisperPathDefault(),
         );
 
   ///
@@ -106,9 +107,7 @@ class LlamaLibrary extends LlamaLibraryBase {
   bool loadModel({
     required String modelPath,
   }) {
-    if(_isInIsolate){
-      
-    }
+    if (_isInIsolate) {}
     {
       LlamaLibrary._modelPath = modelPath;
     }
@@ -135,7 +134,8 @@ class LlamaLibrary extends LlamaLibraryBase {
     );
     final nativeModelPath = modelParams.path.toNativeUtf8().cast<Char>();
 
-    final modelContext = _llamaLibrary.llama_load_model_from_file(nativeModelPath, nativeModelParams);
+    final modelContext = _llamaLibrary.llama_load_model_from_file(
+        nativeModelPath, nativeModelParams);
     LlamaLibrary._modelContext = modelContext;
 
     if (modelContext.address == 0) {
@@ -164,7 +164,8 @@ class LlamaLibrary extends LlamaLibraryBase {
           _llamaLibrary.llama_free(llamaContext);
         }
       }
-      final llamaContext = _llamaLibrary.llama_init_from_model(modelContext, nativeContextParams);
+      final llamaContext = _llamaLibrary.llama_init_from_model(
+          modelContext, nativeContextParams);
       LlamaLibrary._llamaContext = llamaContext;
     }
 
@@ -215,16 +216,16 @@ class LlamaLibrary extends LlamaLibraryBase {
   }
 
   @override
-  void stop() {
-   }
+  void stop() {}
 
   @override
-  void emit({required String eventType, required data}) {
-   }
+  void emit({required String eventType, required data}) {}
 
   @override
-  EventEmitterListener on({required String eventType, required FutureOr Function(dynamic data) onUpdate}) {
-     throw UnimplementedError();
+  EventEmitterListener on(
+      {required String eventType,
+      required FutureOr Function(dynamic data) onUpdate}) {
+    throw UnimplementedError();
   }
 
   Completer _completer = Completer();
@@ -240,16 +241,19 @@ class LlamaLibrary extends LlamaLibraryBase {
 
     Pointer<Char> formatted = calloc<Char>(nCtx);
 
-    final template = _llamaLibrary.llama_model_chat_template(LlamaLibrary._modelContext, nullptr);
+    final template = _llamaLibrary.llama_model_chat_template(
+        LlamaLibrary._modelContext, nullptr);
 
     Pointer<llama_chat_message> messagesPtr = messagesCopy.toNative();
 
-    int newContextLength = _llamaLibrary.llama_chat_apply_template(template, messagesPtr, messagesCopy.length, true, formatted, nCtx);
+    int newContextLength = _llamaLibrary.llama_chat_apply_template(
+        template, messagesPtr, messagesCopy.length, true, formatted, nCtx);
 
     if (newContextLength > nCtx) {
       // calloc.free(formatted);
       formatted = calloc<Char>(newContextLength);
-      newContextLength = _llamaLibrary.llama_chat_apply_template(template, messagesPtr, messagesCopy.length, true, formatted, newContextLength);
+      newContextLength = _llamaLibrary.llama_chat_apply_template(template,
+          messagesPtr, messagesCopy.length, true, formatted, newContextLength);
     }
 
     // messagesPtr.free(messagesCopy.length);
@@ -258,31 +262,40 @@ class LlamaLibrary extends LlamaLibraryBase {
       throw Exception('Failed to apply template');
     }
 
-    final prompt = formatted.cast<Utf8>().toDartString().substring(_contextLength);
+    final prompt =
+        formatted.cast<Utf8>().toDartString().substring(_contextLength);
     // calloc.free(formatted);
 
-    final vocab = _llamaLibrary.llama_model_get_vocab(LlamaLibrary._modelContext);
-    final isFirst = _llamaLibrary.llama_get_kv_cache_used_cells(LlamaLibrary._llamaContext) == 0;
+    final vocab =
+        _llamaLibrary.llama_model_get_vocab(LlamaLibrary._modelContext);
+    final isFirst = _llamaLibrary
+            .llama_get_kv_cache_used_cells(LlamaLibrary._llamaContext) ==
+        0;
 
     final promptPtr = prompt.toNativeUtf8().cast<Char>();
 
-    final nPromptTokens = -_llamaLibrary.llama_tokenize(vocab, promptPtr, prompt.length, nullptr, 0, isFirst, true);
+    final nPromptTokens = -_llamaLibrary.llama_tokenize(
+        vocab, promptPtr, prompt.length, nullptr, 0, isFirst, true);
     Pointer<llama_token> promptTokens = calloc<llama_token>(nPromptTokens);
 
-    if (_llamaLibrary.llama_tokenize(vocab, promptPtr, prompt.length, promptTokens, nPromptTokens, isFirst, true) < 0) {
+    if (_llamaLibrary.llama_tokenize(vocab, promptPtr, prompt.length,
+            promptTokens, nPromptTokens, isFirst, true) <
+        0) {
       throw Exception('Failed to tokenize');
     }
 
     // calloc.free(promptPtr);
 
-    llama_batch batch = _llamaLibrary.llama_batch_get_one(promptTokens, nPromptTokens);
+    llama_batch batch =
+        _llamaLibrary.llama_batch_get_one(promptTokens, nPromptTokens);
     Pointer<llama_token> newTokenId = calloc<llama_token>(1);
 
     String response = '';
 
     while (!_completer.isCompleted) {
       final nCtx = _llamaLibrary.llama_n_ctx(LlamaLibrary._llamaContext);
-      final nCtxUsed = _llamaLibrary.llama_get_kv_cache_used_cells(LlamaLibrary._llamaContext);
+      final nCtxUsed = _llamaLibrary
+          .llama_get_kv_cache_used_cells(LlamaLibrary._llamaContext);
 
       if (nCtxUsed + batch.n_tokens > nCtx) {
         throw Exception('Context size exceeded');
@@ -292,7 +305,8 @@ class LlamaLibrary extends LlamaLibraryBase {
         throw Exception('Failed to decode');
       }
 
-      newTokenId.value = _llamaLibrary.llama_sampler_sample(LlamaLibrary._llamaSampler, LlamaLibrary._llamaContext, -1);
+      newTokenId.value = _llamaLibrary.llama_sampler_sample(
+          LlamaLibrary._llamaSampler, LlamaLibrary._llamaContext, -1);
 
       // is it an end of generation?
       if (_llamaLibrary.llama_vocab_is_eog(vocab, newTokenId.value)) {
@@ -300,7 +314,8 @@ class LlamaLibrary extends LlamaLibraryBase {
       }
 
       final buffer = calloc<Char>(256);
-      final n = _llamaLibrary.llama_token_to_piece(vocab, newTokenId.value, buffer, 256, 0, true);
+      final n = _llamaLibrary.llama_token_to_piece(
+          vocab, newTokenId.value, buffer, 256, 0, true);
       if (n < 0) {
         throw Exception('Failed to convert token to piece');
       }
@@ -317,7 +332,8 @@ class LlamaLibrary extends LlamaLibraryBase {
 
     messagesPtr = messagesCopy.toNative();
 
-    _contextLength = _llamaLibrary.llama_chat_apply_template(template, messagesPtr, messagesCopy.length, false, nullptr, 0);
+    _contextLength = _llamaLibrary.llama_chat_apply_template(
+        template, messagesPtr, messagesCopy.length, false, nullptr, 0);
 
     // messagesPtr.free(messagesCopy.length);
 

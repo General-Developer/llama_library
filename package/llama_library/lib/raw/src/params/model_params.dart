@@ -81,7 +81,12 @@ class ModelParams {
   /// - `checkTensors`: A boolean indicating if tensors should be checked.
   ///
   /// Returns an instance of [ModelParams] with values from the provided map.
-  factory ModelParams.fromMap(Map<String, dynamic> map) => ModelParams(path: map['path'], vocabOnly: map['vocabOnly'], useMmap: map['useMmap'], useMlock: map['useMlock'], checkTensors: map['checkTensors']);
+  factory ModelParams.fromMap(Map<String, dynamic> map) => ModelParams(
+      path: map['path'],
+      vocabOnly: map['vocabOnly'],
+      useMmap: map['useMmap'],
+      useMlock: map['useMlock'],
+      checkTensors: map['checkTensors']);
 
   /// Creates a new `ModelParams` instance from a JSON string.
   ///
@@ -89,7 +94,8 @@ class ModelParams {
   /// `ModelParams` object.
   ///
   /// Returns a `ModelParams` instance created from the decoded JSON map.
-  factory ModelParams.fromJson(String source) => ModelParams.fromMap(jsonDecode(source));
+  factory ModelParams.fromJson(String source) =>
+      ModelParams.fromMap(jsonDecode(source));
 
   /// Converts the current instance of `model_params` to its native representation.
   ///
@@ -101,7 +107,8 @@ class ModelParams {
   llama_model_params toNative({
     required LlamaLibrarySharedBindingsByGeneralDeveloper generalAiLLamaLibrary,
   }) {
-    final llama_model_params modelParams = generalAiLLamaLibrary.llama_model_default_params();
+    final llama_model_params modelParams =
+        generalAiLLamaLibrary.llama_model_default_params();
     log("Model params initialized");
 
     if (vocabOnly != null) {
