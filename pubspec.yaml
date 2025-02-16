@@ -22,7 +22,7 @@ environment:
 dependencies:
   general_lib: '^0.0.65'
   packagex: '^0.0.85'
-  path: '^1.9.1'
+  path: '^1.9.0'
   yaml: '^3.1.3'
 dev_dependencies:
   lints: '^5.0.0'

@@ -100,10 +100,12 @@ class LlamaLibrary extends LlamaLibraryBase {
   }
 
   @override
-  Stream<String> prompt({required List<dynamic> messages}) {
-    throw UnimplementedError();
-  }
+  void stop() {}
 
   @override
-  void stop() {}
+  StreamController<LLamaResponse> sendPromptAndStream(
+      {required String prompt}) {
+    // TODO: implement sendPromptAndStream
+    throw UnimplementedError();
+  }
 }

@@ -37,10 +37,13 @@ import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
 import 'package:general_lib/event_emitter/event_emitter.dart';
-import 'package:llama_library/raw/lcpp.dart';
-
+import 'package:general_lib/stream/core.dart';
+import 'package:general_lib/stream/extension.dart';
 import 'base.dart';
 import 'ffi/bindings.dart';
+import 'io/context_params.dart';
+import 'io/model_params.dart';
+import 'io/sampler_params.dart';
 
 ///
 class LlamaLibrary extends LlamaLibraryBase {
@@ -63,6 +66,9 @@ class LlamaLibrary extends LlamaLibraryBase {
   static Pointer<llama_context> _llamaContext = nullptr;
   // ignore: prefer_final_fields
   static Pointer<llama_sampler> _llamaSampler = nullptr;
+  // ignore: prefer_final_fields
+
+  static Pointer<llama_vocab> _vocab = nullptr;
 
   static bool _isEnsureInitialized = false;
 
@@ -75,7 +81,7 @@ class LlamaLibrary extends LlamaLibraryBase {
     }
 
     try {
-      _llamaLibrary = LlamaLibrarySharedBindingsByGeneralDeveloper(
+      LlamaLibrary._llamaLibrary = LlamaLibrarySharedBindingsByGeneralDeveloper(
         DynamicLibrary.open(
           sharedLibraryPath,
         ),
@@ -118,76 +124,177 @@ class LlamaLibrary extends LlamaLibraryBase {
     if (isDeviceSupport() == false || isCrash()) {
       return false;
     }
-    _llamaLibrary.ggml_backend_load_all();
-    _llamaLibrary.llama_backend_init();
+    LlamaLibrary._llamaLibrary.ggml_backend_load_all();
+    LlamaLibrary._llamaLibrary.llama_backend_init();
 
-    {
-      final modelContext = LlamaLibrary._modelContext;
-      if (modelContext != nullptr) {
-        /// release memory
-        _llamaLibrary.llama_free_model(modelContext);
-      }
-    }
-    final modelParams = ModelParams(path: LlamaLibrary._modelPath);
-    final nativeModelParams = modelParams.toNative(
-      generalAiLLamaLibrary: LlamaLibrary._llamaLibrary,
+    final ModelParams modelParamsDart = ModelParams();
+    var modelParams = modelParamsDart.get(
+      llama: LlamaLibrary._llamaLibrary,
     );
-    final nativeModelPath = modelParams.path.toNativeUtf8().cast<Char>();
 
-    final modelContext = _llamaLibrary.llama_load_model_from_file(
-        nativeModelPath, nativeModelParams);
-    LlamaLibrary._modelContext = modelContext;
-
-    if (modelContext.address == 0) {
-      _llamaLibrary.llama_free_model(modelContext);
-      return false;
-    }
-
-    /// init context
-    {
-      final contextParams = const ContextParams(
-        nCtx: 2048,
-        nBatch: 2048,
-        // nCtx: 64,
-        // nBatch: 64,
-
-        nThreads: 4,
-      );
-
-      final nativeContextParams = contextParams.toNative(
-        generalAiLLamaLibrary: LlamaLibrary._llamaLibrary,
-      );
-      {
-        final llamaContext = LlamaLibrary._llamaContext;
-        if (llamaContext != nullptr) {
-          /// release memory
-          _llamaLibrary.llama_free(llamaContext);
-        }
+    final modelPathPtr = LlamaLibrary._modelPath.toNativeUtf8().cast<Char>();
+    try {
+      LlamaLibrary._modelContext = LlamaLibrary._llamaLibrary
+          .llama_load_model_from_file(modelPathPtr, modelParams);
+      if (LlamaLibrary._modelContext.address == 0) {
+        // throw LlamaException("Could not load model at $modelPath");
       }
-      final llamaContext = _llamaLibrary.llama_init_from_model(
-          modelContext, nativeContextParams);
-      LlamaLibrary._llamaContext = llamaContext;
+    } finally {
+      malloc.free(modelPathPtr);
+    }
+    LlamaLibrary._vocab = LlamaLibrary._llamaLibrary
+        .llama_model_get_vocab(LlamaLibrary._modelContext);
+
+    const size = 512 * 4;
+    ContextParams contextParamsDart = ContextParams();
+    contextParamsDart.nThreadsBatch = 4;
+    contextParamsDart.nThreads = 4;
+    contextParamsDart.nCtx = size;
+    contextParamsDart.nBatch = size;
+    contextParamsDart.nUbatch = size;
+    contextParamsDart.nPredit = 512;
+
+    _nPredict = contextParamsDart.nPredit;
+
+    var contextParams = contextParamsDart.get(
+      llama: LlamaLibrary._llamaLibrary,
+    );
+
+    LlamaLibrary._llamaContext = LlamaLibrary._llamaLibrary
+        .llama_new_context_with_model(
+            LlamaLibrary._modelContext, contextParams);
+    if (LlamaLibrary._llamaContext.address == 0) {}
+
+    final samplerParams = SamplerParams();
+
+    // Initialize sampler chain
+    llama_sampler_chain_params sparams =
+        LlamaLibrary._llamaLibrary.llama_sampler_chain_default_params();
+    sparams.no_perf = false;
+    LlamaLibrary._llamaSampler =
+        LlamaLibrary._llamaLibrary.llama_sampler_chain_init(sparams);
+
+    // Add samplers based on params
+    if (samplerParams.greedy) {
+      LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+          LlamaLibrary._llamaSampler,
+          LlamaLibrary._llamaLibrary.llama_sampler_init_greedy());
     }
 
-    {
-      final samplingParams = const SamplingParams(
-        greedy: true,
-      );
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_dist(samplerParams.seed));
 
-      {
-        final llamaSampler = LlamaLibrary._llamaSampler;
-        if (llamaSampler != nullptr) {
-          _llamaLibrary.llama_sampler_free(llamaSampler);
-        }
+    if (samplerParams.softmax) {
+      LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+          LlamaLibrary._llamaSampler,
+          LlamaLibrary._llamaLibrary.llama_sampler_init_softmax());
+    }
+
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary
+            .llama_sampler_init_top_k(samplerParams.topK));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_top_p(
+            samplerParams.topP, samplerParams.topPKeep));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_min_p(
+            samplerParams.minP, samplerParams.minPKeep));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_typical(
+            samplerParams.typical, samplerParams.typicalKeep));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_temp(samplerParams.temp));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_xtc(
+            samplerParams.xtcTemperature,
+            samplerParams.xtcStartValue,
+            samplerParams.xtcKeep,
+            samplerParams.xtcLength));
+
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_mirostat(
+            LlamaLibrary._llamaLibrary.llama_n_vocab(LlamaLibrary._vocab),
+            samplerParams.seed,
+            samplerParams.mirostatTau,
+            samplerParams.mirostatEta,
+            samplerParams.mirostatM));
+
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_mirostat_v2(
+            samplerParams.seed,
+            samplerParams.mirostat2Tau,
+            samplerParams.mirostat2Eta));
+
+    final grammarStrPtr = samplerParams.grammarStr.toNativeUtf8().cast<Char>();
+    final grammarRootPtr =
+        samplerParams.grammarRoot.toNativeUtf8().cast<Char>();
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_grammar(
+            LlamaLibrary._vocab, grammarStrPtr, grammarRootPtr));
+    calloc.free(grammarStrPtr);
+    calloc.free(grammarRootPtr);
+
+    /*LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_penalties(
+            LlamaLibrary._llamaLibrary.llama_n_vocab(vocab),
+            LlamaLibrary._llamaLibrary.llama_token_eos(vocab).toDouble(),
+            LlamaLibrary._llamaLibrary.llama_token_nl(vocab).toDouble(),
+            samplerParams.penaltyLastTokens.toDouble(),
+            samplerParams.penaltyRepeat,
+            samplerParams.penaltyFreq,
+            samplerParams.penaltyPresent,
+            samplerParams.penaltyNewline,
+            samplerParams.ignoreEOS));*/
+
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+        LlamaLibrary._llamaSampler,
+        LlamaLibrary._llamaLibrary.llama_sampler_init_penalties(
+          samplerParams.penaltyLastTokens,
+          samplerParams.penaltyRepeat,
+          samplerParams.penaltyFreq,
+          samplerParams.penaltyPresent,
+        ));
+
+    // Add DRY sampler
+    final seqBreakers = samplerParams.dryBreakers;
+    final numBreakers = seqBreakers.length;
+    final seqBreakersPointer = calloc<Pointer<Char>>(numBreakers);
+
+    try {
+      for (var i = 0; i < numBreakers; i++) {
+        seqBreakersPointer[i] = seqBreakers[i].toNativeUtf8().cast<Char>();
       }
 
-      final vocab = _llamaLibrary.llama_model_get_vocab(modelContext);
-      final llamaSampler = samplingParams.toNative(
-        vocab: vocab,
-        generalAiLLamaLibrary: LlamaLibrary._llamaLibrary,
-      );
-      LlamaLibrary._llamaSampler = llamaSampler;
+      LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
+          LlamaLibrary._llamaSampler,
+          LlamaLibrary._llamaLibrary.llama_sampler_init_penalties(
+            samplerParams.penaltyLastTokens,
+            samplerParams.penaltyRepeat,
+            samplerParams.penaltyFreq,
+            samplerParams.penaltyPresent,
+          ));
+    } finally {
+      // Clean up DRY sampler allocations
+      for (var i = 0; i < numBreakers; i++) {
+        calloc.free(seqBreakersPointer[i]);
+      }
+      calloc.free(seqBreakersPointer);
     }
+
+    // LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_infill(model));
+
+    _tokenPtr = malloc<llama_token>();
 
     return true;
   }
@@ -204,13 +311,13 @@ class LlamaLibrary extends LlamaLibraryBase {
     }
 
     if (_modelContext != nullptr) {
-      _llamaLibrary.llama_free_model(_modelContext);
+      LlamaLibrary._llamaLibrary.llama_free_model(_modelContext);
     }
     if (_llamaSampler != nullptr) {
-      _llamaLibrary.llama_sampler_free(_llamaSampler);
+      LlamaLibrary._llamaLibrary.llama_sampler_free(_llamaSampler);
     }
     if (_llamaContext != nullptr) {
-      _llamaLibrary.llama_free(_llamaContext);
+      LlamaLibrary._llamaLibrary.llama_free(_llamaContext);
     }
     return;
   }
@@ -228,117 +335,125 @@ class LlamaLibrary extends LlamaLibraryBase {
     throw UnimplementedError();
   }
 
-  Completer _completer = Completer();
+  int _nPrompt = 0;
+  int _nPredict = 32;
+  int _nPos = 0;
 
-  int _contextLength = 0;
+  Pointer<llama_token> _tokens = nullptr;
+  Pointer<llama_token> _tokenPtr = nullptr;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  late llama_batch batch;
+
+  /// Generates the next token in the sequence.
+  ///
+  /// Returns a tuple containing the generated text and a boolean indicating if generation is complete.
+  /// Throws [LlamaException] if generation fails.
   @override
-  Stream<String> prompt({required List<ChatMessage> messages}) async* {
-    final messagesCopy = messages.copy();
+  StreamController<LLamaResponse> sendPromptAndStream({
+    required String prompt,
+  }) {
+    return GeneralLibraryStream.generalLibraryCreateStreamController<
+        LLamaResponse>(
+      onStreamController: (streamController, delayDuration) async {
+        await streamController.generalLibraryUtilsIsCanSendNow();
+        print("oke");
 
-    _completer = Completer();
+        /// send Prompt
+        {
+          // Free previous tokens if they exist
+          if (_tokens != nullptr) {}
 
-    final nCtx = _llamaLibrary.llama_n_ctx(LlamaLibrary._llamaContext);
+          final promptPtr = prompt.toNativeUtf8().cast<Char>();
+          _nPrompt = -LlamaLibrary._llamaLibrary.llama_tokenize(
+              _vocab, promptPtr, prompt.length, nullptr, 0, true, true);
 
-    Pointer<Char> formatted = calloc<Char>(nCtx);
+          _tokens = malloc<llama_token>(_nPrompt);
+          if (LlamaLibrary._llamaLibrary.llama_tokenize(_vocab, promptPtr,
+                  prompt.length, _tokens, _nPrompt, true, true) <
+              0) {
+            streamController.addError(
+                "Failed to tokenize prompt", StackTrace.current);
+            streamController.close();
+            return;
+          }
 
-    final template = _llamaLibrary.llama_model_chat_template(
-        LlamaLibrary._modelContext, nullptr);
+          batch =
+              LlamaLibrary._llamaLibrary.llama_batch_get_one(_tokens, _nPrompt);
+          _nPos = 0;
+        }
 
-    Pointer<llama_chat_message> messagesPtr = messagesCopy.toNative();
+        while (true) {
+          await Future.delayed(Duration(microseconds: 1));
+          await streamController.generalLibraryUtilsIsCanSendNow();
 
-    int newContextLength = _llamaLibrary.llama_chat_apply_template(
-        template, messagesPtr, messagesCopy.length, true, formatted, nCtx);
+          {
+            if (_nPos + batch.n_tokens >= _nPrompt + _nPredict) {
+              streamController.add(LLamaResponse(
+                result: "",
+                isDone: true,
+              ));
+              streamController.close();
+              return;
+            }
 
-    if (newContextLength > nCtx) {
-      // calloc.free(formatted);
-      formatted = calloc<Char>(newContextLength);
-      newContextLength = _llamaLibrary.llama_chat_apply_template(template,
-          messagesPtr, messagesCopy.length, true, formatted, newContextLength);
-    }
+            if (LlamaLibrary._llamaLibrary
+                    .llama_decode(LlamaLibrary._llamaContext, batch) !=
+                0) {
+              streamController.add(LLamaResponse(
+                result: "",
+                isDone: true,
+              ));
+              streamController.close();
+              return;
+            }
 
-    // messagesPtr.free(messagesCopy.length);
+            _nPos += batch.n_tokens;
+            int newTokenId = LlamaLibrary._llamaLibrary.llama_sampler_sample(
+                LlamaLibrary._llamaSampler, LlamaLibrary._llamaContext, -1);
 
-    if (newContextLength < 0) {
-      throw Exception('Failed to apply template');
-    }
+            if (LlamaLibrary._llamaLibrary
+                .llama_token_is_eog(LlamaLibrary._vocab, newTokenId)) {
+              streamController.add(LLamaResponse(
+                result: "",
+                isDone: true,
+              ));
+              streamController.close();
+              return;
+            }
+            final buf = malloc<Char>(128);
+            int n = LlamaLibrary._llamaLibrary.llama_token_to_piece(
+                LlamaLibrary._vocab, newTokenId, buf, 128, 0, true);
 
-    final prompt =
-        formatted.cast<Utf8>().toDartString().substring(_contextLength);
-    // calloc.free(formatted);
+            if (n < 0) {
+              streamController.add(LLamaResponse(
+                result: "",
+                isDone: true,
+              ));
+              streamController.close();
+              return;
+            }
 
-    final vocab =
-        _llamaLibrary.llama_model_get_vocab(LlamaLibrary._modelContext);
-    final isFirst = _llamaLibrary
-            .llama_get_kv_cache_used_cells(LlamaLibrary._llamaContext) ==
-        0;
+            String piece =
+                String.fromCharCodes(buf.cast<Uint8>().asTypedList(n));
 
-    final promptPtr = prompt.toNativeUtf8().cast<Char>();
+            _tokenPtr.value = newTokenId;
+            batch =
+                LlamaLibrary._llamaLibrary.llama_batch_get_one(_tokenPtr, 1);
 
-    final nPromptTokens = -_llamaLibrary.llama_tokenize(
-        vocab, promptPtr, prompt.length, nullptr, 0, isFirst, true);
-    Pointer<llama_token> promptTokens = calloc<llama_token>(nPromptTokens);
+            bool isEos = newTokenId ==
+                LlamaLibrary._llamaLibrary.llama_token_eos(LlamaLibrary._vocab);
 
-    if (_llamaLibrary.llama_tokenize(vocab, promptPtr, prompt.length,
-            promptTokens, nPromptTokens, isFirst, true) <
-        0) {
-      throw Exception('Failed to tokenize');
-    }
-
-    // calloc.free(promptPtr);
-
-    llama_batch batch =
-        _llamaLibrary.llama_batch_get_one(promptTokens, nPromptTokens);
-    Pointer<llama_token> newTokenId = calloc<llama_token>(1);
-
-    String response = '';
-
-    while (!_completer.isCompleted) {
-      final nCtx = _llamaLibrary.llama_n_ctx(LlamaLibrary._llamaContext);
-      final nCtxUsed = _llamaLibrary
-          .llama_get_kv_cache_used_cells(LlamaLibrary._llamaContext);
-
-      if (nCtxUsed + batch.n_tokens > nCtx) {
-        throw Exception('Context size exceeded');
-      }
-
-      if (_llamaLibrary.llama_decode(LlamaLibrary._llamaContext, batch) != 0) {
-        throw Exception('Failed to decode');
-      }
-
-      newTokenId.value = _llamaLibrary.llama_sampler_sample(
-          LlamaLibrary._llamaSampler, LlamaLibrary._llamaContext, -1);
-
-      // is it an end of generation?
-      if (_llamaLibrary.llama_vocab_is_eog(vocab, newTokenId.value)) {
-        break;
-      }
-
-      final buffer = calloc<Char>(256);
-      final n = _llamaLibrary.llama_token_to_piece(
-          vocab, newTokenId.value, buffer, 256, 0, true);
-      if (n < 0) {
-        throw Exception('Failed to convert token to piece');
-      }
-
-      final piece = buffer.cast<Utf8>().toDartString();
-      // calloc.free(buffer);
-      response += piece;
-      yield piece;
-
-      batch = _llamaLibrary.llama_batch_get_one(newTokenId, 1);
-    }
-
-    messagesCopy.add(ChatMessage(role: 'assistant', content: response));
-
-    messagesPtr = messagesCopy.toNative();
-
-    _contextLength = _llamaLibrary.llama_chat_apply_template(
-        template, messagesPtr, messagesCopy.length, false, nullptr, 0);
-
-    // messagesPtr.free(messagesCopy.length);
-
-    // calloc.free(promptTokens);
-    // _llamaLibrary.llama_batch_free(batch);
+            streamController.add(LLamaResponse(
+              result: piece,
+              isDone: isEos,
+            ));
+            // streamController.close();
+            // return;
+          }
+        }
+      },
+    );
   }
 
   @override

@@ -36,7 +36,6 @@ import 'dart:async';
 
 import 'package:general_lib/dynamic_library/core.dart';
 import 'package:general_lib/general_lib.dart' show EventEmitterListener;
-import 'package:llama_library/raw/lcpp.dart' show ChatMessage;
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 abstract class LlamaLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
@@ -56,12 +55,6 @@ abstract class LlamaLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 
-  Stream<String> prompt({
-    required List<ChatMessage> messages,
-  });
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-
   void emit({
     required String eventType,
     required dynamic data,
@@ -72,6 +65,11 @@ abstract class LlamaLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
   EventEmitterListener on({
     required String eventType,
     required FutureOr<dynamic> Function(dynamic data) onUpdate,
+  });
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  StreamController<LLamaResponse> sendPromptAndStream({
+    required String prompt,
   });
 }
 
@@ -89,4 +87,13 @@ abstract class LlamaLibraryBase implements LlamaLibraryBaseCore {
   static String getLibraryWhisperPathDefault() {
     return "libllama.so";
   }
+}
+
+class LLamaResponse {
+  final String result;
+  final bool isDone;
+  LLamaResponse({
+    required this.isDone,
+    required this.result,
+  });
 }

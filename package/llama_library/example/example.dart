@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_brace_in_string_interps
+
 /* <!-- START LICENSE -->
 
 
@@ -35,7 +37,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:io';
 import 'package:llama_library/llama_library.dart';
-import 'package:llama_library/raw/lcpp.dart';
+import 'package:llama_library/io/chat.dart';
 
 void main(List<String> args) async {
   print("start");
@@ -56,15 +58,42 @@ void main(List<String> args) async {
   /// and fast with modern cpu
   await llamaLibrary.initialized();
 
-  await for (final result in llamaLibrary.prompt(messages: [
-    ChatMessage(
-      role: "user",
-      content: "What is Linux?",
-    )
-  ])) {
-    print(result);
+  {
+    final chatHistory = ChatHistory();
+
+    print('Initializing chat...\n');
+
+    // Initialize system prompt
+    chatHistory.addMessage(
+      role: Role.assistant,
+      content: """""".trim(),
+    );
+
+    chatHistory.addMessage(role: Role.user, content: "Apa itu AI?");
+    final strm = llamaLibrary.sendPromptAndStream(
+      prompt: chatHistory.exportFormat(
+        ChatFormat.chatml,
+      ),
+    );
+    StringBuffer stringBuffer = StringBuffer();
+    strm.stream.listen((LLamaResponse element) {
+      stdout.write(element.result);
+      stringBuffer.write(element.result);
+      if (element.isDone) {
+        return;
+      }
+    }, onError: (e, stack) {
+      print("${e}, ${stack}");
+    });
+    await strm.done;
+    chatHistory.addMessage(
+      role: Role.assistant,
+      content: stringBuffer.toString().trim(),
+    );
   }
 
+  print("\n");
+  print("\n");
   await llamaLibrary.dispose();
   llamaLibrary.stop();
   llamaLibrary.close();
