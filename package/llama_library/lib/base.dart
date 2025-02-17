@@ -39,20 +39,14 @@ import 'package:general_lib/general_lib.dart' show EventEmitterListener;
 
 /// Check Out: https://www.youtube.com/@GENERAL_DEV
 abstract class LlamaLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-
-  Future<void> initialized();
+  
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 
   bool loadModel({
     required String modelPath,
   });
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-
-  void stop();
-
+ 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
 
   void emit({

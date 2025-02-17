@@ -256,7 +256,7 @@ class LlamaLibrary extends LlamaLibraryBase {
   }
 
   @override
-  FutureOr<void> close() async {
+  FutureOr<void> dispose() async {
     if (_isInIsolate == false) {
       return;
     }
@@ -272,9 +272,7 @@ class LlamaLibrary extends LlamaLibraryBase {
     }
     return;
   }
-
-  @override
-  void stop() {}
+ 
 
   @override
   void emit({required String eventType, required data}) {}
@@ -388,8 +386,5 @@ class LlamaLibrary extends LlamaLibraryBase {
       },
     );
   }
-
-
-  @override
-  FutureOr<void> dispose() async {}
+ 
 }

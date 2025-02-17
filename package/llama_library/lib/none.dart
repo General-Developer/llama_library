@@ -42,10 +42,7 @@ import 'base.dart';
 class LlamaLibrary extends LlamaLibraryBase {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   LlamaLibrary({super.sharedLibraryPath});
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  @override
-  void close() {}
+ 
 
   /// Check Out: https://www.youtube.com/@GENERAL_DEV
   final bool _isCrash = false;
