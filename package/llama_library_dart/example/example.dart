@@ -35,7 +35,6 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:io';
 import 'package:llama_library_dart/llama_library_dart.dart';
-import 'package:llama_library/raw/lcpp.dart';
 
 void main(List<String> args) async {
   print("start");
@@ -56,14 +55,6 @@ void main(List<String> args) async {
   /// and fast with modern cpu
   await llamaLibrary.initialized();
 
-  await for (final result in llamaLibrary.prompt(messages: [
-    ChatMessage(
-      role: "user",
-      content: "What is Linux?",
-    )
-  ])) {
-    print(result);
-  }
 
   await llamaLibrary.dispose();
   llamaLibrary.stop();

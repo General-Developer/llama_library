@@ -54,8 +54,7 @@ class LlamaLibrary extends LlamaLibraryBase {
   LlamaLibrary({
     String? sharedLibraryPath,
   }) : super(
-          sharedLibraryPath: sharedLibraryPath ??
-              LlamaLibraryBase.getLibraryWhisperPathDefault(),
+          sharedLibraryPath: sharedLibraryPath ?? LlamaLibraryBase.getLibraryWhisperPathDefault(),
         );
 
   ///
@@ -134,16 +133,14 @@ class LlamaLibrary extends LlamaLibraryBase {
 
     final modelPathPtr = LlamaLibrary._modelPath.toNativeUtf8().cast<Char>();
     try {
-      LlamaLibrary._modelContext = LlamaLibrary._llamaLibrary
-          .llama_load_model_from_file(modelPathPtr, modelParams);
+      LlamaLibrary._modelContext = LlamaLibrary._llamaLibrary.llama_load_model_from_file(modelPathPtr, modelParams);
       if (LlamaLibrary._modelContext.address == 0) {
         // throw LlamaException("Could not load model at $modelPath");
       }
     } finally {
       malloc.free(modelPathPtr);
     }
-    LlamaLibrary._vocab = LlamaLibrary._llamaLibrary
-        .llama_model_get_vocab(LlamaLibrary._modelContext);
+    LlamaLibrary._vocab = LlamaLibrary._llamaLibrary.llama_model_get_vocab(LlamaLibrary._modelContext);
 
     const size = 512 * 4;
     ContextParams contextParamsDart = ContextParams();
@@ -160,87 +157,41 @@ class LlamaLibrary extends LlamaLibraryBase {
       llama: LlamaLibrary._llamaLibrary,
     );
 
-    LlamaLibrary._llamaContext = LlamaLibrary._llamaLibrary
-        .llama_new_context_with_model(
-            LlamaLibrary._modelContext, contextParams);
+    LlamaLibrary._llamaContext = LlamaLibrary._llamaLibrary.llama_new_context_with_model(LlamaLibrary._modelContext, contextParams);
     if (LlamaLibrary._llamaContext.address == 0) {}
 
     final samplerParams = SamplerParams();
 
     // Initialize sampler chain
-    llama_sampler_chain_params sparams =
-        LlamaLibrary._llamaLibrary.llama_sampler_chain_default_params();
+    llama_sampler_chain_params sparams = LlamaLibrary._llamaLibrary.llama_sampler_chain_default_params();
     sparams.no_perf = false;
-    LlamaLibrary._llamaSampler =
-        LlamaLibrary._llamaLibrary.llama_sampler_chain_init(sparams);
+    LlamaLibrary._llamaSampler = LlamaLibrary._llamaLibrary.llama_sampler_chain_init(sparams);
 
     // Add samplers based on params
     if (samplerParams.greedy) {
-      LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-          LlamaLibrary._llamaSampler,
-          LlamaLibrary._llamaLibrary.llama_sampler_init_greedy());
+      LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_greedy());
     }
 
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary.llama_sampler_init_dist(samplerParams.seed));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_dist(samplerParams.seed));
 
     if (samplerParams.softmax) {
-      LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-          LlamaLibrary._llamaSampler,
-          LlamaLibrary._llamaLibrary.llama_sampler_init_softmax());
+      LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_softmax());
     }
 
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary
-            .llama_sampler_init_top_k(samplerParams.topK));
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary.llama_sampler_init_top_p(
-            samplerParams.topP, samplerParams.topPKeep));
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary.llama_sampler_init_min_p(
-            samplerParams.minP, samplerParams.minPKeep));
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary.llama_sampler_init_typical(
-            samplerParams.typical, samplerParams.typicalKeep));
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary.llama_sampler_init_temp(samplerParams.temp));
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary.llama_sampler_init_xtc(
-            samplerParams.xtcTemperature,
-            samplerParams.xtcStartValue,
-            samplerParams.xtcKeep,
-            samplerParams.xtcLength));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_top_k(samplerParams.topK));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_top_p(samplerParams.topP, samplerParams.topPKeep));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_min_p(samplerParams.minP, samplerParams.minPKeep));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_typical(samplerParams.typical, samplerParams.typicalKeep));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_temp(samplerParams.temp));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_xtc(samplerParams.xtcTemperature, samplerParams.xtcStartValue, samplerParams.xtcKeep, samplerParams.xtcLength));
 
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary.llama_sampler_init_mirostat(
-            LlamaLibrary._llamaLibrary.llama_n_vocab(LlamaLibrary._vocab),
-            samplerParams.seed,
-            samplerParams.mirostatTau,
-            samplerParams.mirostatEta,
-            samplerParams.mirostatM));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_mirostat(LlamaLibrary._llamaLibrary.llama_n_vocab(LlamaLibrary._vocab), samplerParams.seed, samplerParams.mirostatTau, samplerParams.mirostatEta, samplerParams.mirostatM));
 
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary.llama_sampler_init_mirostat_v2(
-            samplerParams.seed,
-            samplerParams.mirostat2Tau,
-            samplerParams.mirostat2Eta));
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_mirostat_v2(samplerParams.seed, samplerParams.mirostat2Tau, samplerParams.mirostat2Eta));
 
     final grammarStrPtr = samplerParams.grammarStr.toNativeUtf8().cast<Char>();
-    final grammarRootPtr =
-        samplerParams.grammarRoot.toNativeUtf8().cast<Char>();
-    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(
-        LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrary.llama_sampler_init_grammar(
-            LlamaLibrary._vocab, grammarStrPtr, grammarRootPtr));
+    final grammarRootPtr = samplerParams.grammarRoot.toNativeUtf8().cast<Char>();
+    LlamaLibrary._llamaLibrary.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrary.llama_sampler_init_grammar(LlamaLibrary._vocab, grammarStrPtr, grammarRootPtr));
     calloc.free(grammarStrPtr);
     calloc.free(grammarRootPtr);
 
@@ -329,9 +280,7 @@ class LlamaLibrary extends LlamaLibraryBase {
   void emit({required String eventType, required data}) {}
 
   @override
-  EventEmitterListener on(
-      {required String eventType,
-      required FutureOr Function(dynamic data) onUpdate}) {
+  EventEmitterListener on({required String eventType, required FutureOr Function(dynamic data) onUpdate}) {
     throw UnimplementedError();
   }
 
@@ -353,33 +302,25 @@ class LlamaLibrary extends LlamaLibraryBase {
   StreamController<LLamaResponse> sendPromptAndStream({
     required String prompt,
   }) {
-    return GeneralLibraryStream.generalLibraryCreateStreamController<
-        LLamaResponse>(
+    return GeneralLibraryStream.generalLibraryCreateStreamController<LLamaResponse>(
       onStreamController: (streamController, delayDuration) async {
         await streamController.generalLibraryUtilsIsCanSendNow();
-        print("oke");
-
         /// send Prompt
         {
           // Free previous tokens if they exist
           if (_tokens != nullptr) {}
 
           final promptPtr = prompt.toNativeUtf8().cast<Char>();
-          _nPrompt = -LlamaLibrary._llamaLibrary.llama_tokenize(
-              _vocab, promptPtr, prompt.length, nullptr, 0, true, true);
+          _nPrompt = -LlamaLibrary._llamaLibrary.llama_tokenize(_vocab, promptPtr, prompt.length, nullptr, 0, true, true);
 
           _tokens = malloc<llama_token>(_nPrompt);
-          if (LlamaLibrary._llamaLibrary.llama_tokenize(_vocab, promptPtr,
-                  prompt.length, _tokens, _nPrompt, true, true) <
-              0) {
-            streamController.addError(
-                "Failed to tokenize prompt", StackTrace.current);
+          if (LlamaLibrary._llamaLibrary.llama_tokenize(_vocab, promptPtr, prompt.length, _tokens, _nPrompt, true, true) < 0) {
+            streamController.addError("Failed to tokenize prompt", StackTrace.current);
             streamController.close();
             return;
           }
 
-          batch =
-              LlamaLibrary._llamaLibrary.llama_batch_get_one(_tokens, _nPrompt);
+          batch = LlamaLibrary._llamaLibrary.llama_batch_get_one(_tokens, _nPrompt);
           _nPos = 0;
         }
 
@@ -397,9 +338,7 @@ class LlamaLibrary extends LlamaLibraryBase {
               return;
             }
 
-            if (LlamaLibrary._llamaLibrary
-                    .llama_decode(LlamaLibrary._llamaContext, batch) !=
-                0) {
+            if (LlamaLibrary._llamaLibrary.llama_decode(LlamaLibrary._llamaContext, batch) != 0) {
               streamController.add(LLamaResponse(
                 result: "",
                 isDone: true,
@@ -409,11 +348,9 @@ class LlamaLibrary extends LlamaLibraryBase {
             }
 
             _nPos += batch.n_tokens;
-            int newTokenId = LlamaLibrary._llamaLibrary.llama_sampler_sample(
-                LlamaLibrary._llamaSampler, LlamaLibrary._llamaContext, -1);
+            int newTokenId = LlamaLibrary._llamaLibrary.llama_sampler_sample(LlamaLibrary._llamaSampler, LlamaLibrary._llamaContext, -1);
 
-            if (LlamaLibrary._llamaLibrary
-                .llama_token_is_eog(LlamaLibrary._vocab, newTokenId)) {
+            if (LlamaLibrary._llamaLibrary.llama_token_is_eog(LlamaLibrary._vocab, newTokenId)) {
               streamController.add(LLamaResponse(
                 result: "",
                 isDone: true,
@@ -422,8 +359,7 @@ class LlamaLibrary extends LlamaLibraryBase {
               return;
             }
             final buf = malloc<Char>(128);
-            int n = LlamaLibrary._llamaLibrary.llama_token_to_piece(
-                LlamaLibrary._vocab, newTokenId, buf, 128, 0, true);
+            int n = LlamaLibrary._llamaLibrary.llama_token_to_piece(LlamaLibrary._vocab, newTokenId, buf, 128, 0, true);
 
             if (n < 0) {
               streamController.add(LLamaResponse(
@@ -434,15 +370,12 @@ class LlamaLibrary extends LlamaLibraryBase {
               return;
             }
 
-            String piece =
-                String.fromCharCodes(buf.cast<Uint8>().asTypedList(n));
+            String piece = String.fromCharCodes(buf.cast<Uint8>().asTypedList(n));
 
             _tokenPtr.value = newTokenId;
-            batch =
-                LlamaLibrary._llamaLibrary.llama_batch_get_one(_tokenPtr, 1);
+            batch = LlamaLibrary._llamaLibrary.llama_batch_get_one(_tokenPtr, 1);
 
-            bool isEos = newTokenId ==
-                LlamaLibrary._llamaLibrary.llama_token_eos(LlamaLibrary._vocab);
+            bool isEos = newTokenId == LlamaLibrary._llamaLibrary.llama_token_eos(LlamaLibrary._vocab);
 
             streamController.add(LLamaResponse(
               result: piece,
@@ -455,6 +388,7 @@ class LlamaLibrary extends LlamaLibraryBase {
       },
     );
   }
+
 
   @override
   FutureOr<void> dispose() async {}
