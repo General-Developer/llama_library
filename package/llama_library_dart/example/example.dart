@@ -56,8 +56,6 @@ void main(List<String> args) async {
   await llamaLibrary.initialized();
 
 
-  await llamaLibrary.dispose();
-  llamaLibrary.stop();
-  llamaLibrary.close();
+  await llamaLibrary.dispose(); 
   exit(0);
 }

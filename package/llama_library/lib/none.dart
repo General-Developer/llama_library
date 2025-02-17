@@ -95,9 +95,7 @@ class LlamaLibrary extends LlamaLibraryBase {
       required FutureOr Function(dynamic data) onUpdate}) {
     throw UnimplementedError();
   }
-
-  @override
-  void stop() {}
+ 
 
   @override
   StreamController<LLamaResponse> sendPromptAndStream(

@@ -97,8 +97,6 @@ void main(List<String> args) async {
 
   print("\n");
   print("\n");
-  await llamaLibrary.dispose();
-  llamaLibrary.stop();
-  llamaLibrary.close();
+  await llamaLibrary.dispose(); 
   exit(0);
 }
