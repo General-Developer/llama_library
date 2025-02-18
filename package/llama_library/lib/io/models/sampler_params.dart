@@ -1,5 +1,5 @@
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-class SamplerParams {
+class LLamaSamplerParams {
   // Basic samplers
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool greedy = false;
@@ -109,10 +109,10 @@ class SamplerParams {
   List<String> dryBreakers = ["\n", ":", "\"", "*"];
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  SamplerParams();
+  LLamaSamplerParams();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  SamplerParams.fromJson(Map<String, dynamic> json) {
+  LLamaSamplerParams.fromJson(Map<String, dynamic> json) {
     greedy = json['greedy'] ?? greedy;
     seed = json['seed'] ?? seed;
     softmax = json['softmax'] ?? softmax;

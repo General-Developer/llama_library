@@ -59,43 +59,63 @@ Example Quickstart script minimal for insight you or make you use this library b
 
 ```dart
 
+import 'dart:convert';
 import 'dart:io';
 import 'package:llama_library/llama_library.dart';
-import 'package:llama_library/raw/lcpp.dart';
+import 'package:llama_library/scheme/scheme/api/send_llama_library_message.dart';
+import 'package:llama_library/scheme/scheme/respond/update_llama_library_message.dart'; 
 
 void main(List<String> args) async {
   print("start");
-
-  File modelFile = File("../../../../../big-data/llama/Meta-Llama-3.1-8B-Instruct.Q8_0.gguf");
-
+  File modelFile = File(
+    "../../../../../big-data/deepseek-r1/deepseek-r1-distill-qwen-1.5b-q4_0.gguf",
+  );
   final LlamaLibrary llamaLibrary = LlamaLibrary(
-    sharedLibraryPath: "../llama_library_flutter/linux/libllama.so",
+    sharedLibraryPath: "libllama.so",
+    invokeParametersLlamaLibraryDataOptions: InvokeParametersLlamaLibraryDataOptions(
+      invokeTimeOut: Duration(minutes: 10),
+      isThrowOnError: false,
+    ),
   );
   await llamaLibrary.ensureInitialized();
-  llamaLibrary.loadModel(modelPath: modelFile.path);
-
-  /// call this if you want use llama if in main page / or not in page llama
-  /// dont call if on low end specs device
-  /// if device can't handle
-  /// this program will auto exit because llama need reseources depends model
-  /// and fast with modern cpu
+  llamaLibrary.loadModel(
+    modelPath: modelFile.path,
+  );
+  llamaLibrary.on(
+    eventType: llamaLibrary.eventUpdate,
+    onUpdate: (data) {
+      final update = data.update;
+      if (update is UpdateLlamaLibraryMessage) {
+        /// streaming update
+        if (update.is_done == false) {
+          stdout.write(update.text);
+        } else if (update.is_done == true) {
+          print("\n\n");
+          print("-- done --");
+        }
+      }
+    },
+  );
   await llamaLibrary.initialized();
 
-  await for (final result in llamaLibrary.prompt(messages: [
-    ChatMessage(
-      role: "user",
-      content: "What is Linux?",
-    )
-  ])) {
-    print(result);
-  }
-
-  await llamaLibrary.dispose();
-  llamaLibrary.stop();
-  llamaLibrary.close();
-  exit(0);
+  stdin.listen((e) async {
+    print("\n\n");
+    final String text = utf8.decode(e).trim();
+    if (text == "exit") {
+      llamaLibrary.dispose();
+      exit(0);
+    } else {
+      await llamaLibrary.invoke(
+        invokeParametersLlamaLibraryData: InvokeParametersLlamaLibraryData(
+          parameters: SendLlamaLibraryMessage.create(text: text),
+          isVoid: true,
+          extra: null,
+          invokeParametersLlamaLibraryDataOptions: null,
+        ),
+      );
+    }
+  });
 }
-
 ```
 
 ## Reference

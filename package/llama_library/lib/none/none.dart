@@ -35,72 +35,110 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'dart:async';
 
 import 'package:general_lib/event_emitter/event_emitter.dart';
+import 'package:general_lib/json_scheme/json_scheme.dart' show JsonScheme;
 
-import 'base.dart';
+import '../base.dart';
+// import 'update.dart';
 
-/// Check Out: https://www.youtube.com/@GENERAL_DEV
+///
 class LlamaLibrary extends LlamaLibraryBase {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  LlamaLibrary({super.sharedLibraryPath});
- 
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  final bool _isCrash = false;
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  final bool _isDeviceSupport = false;
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
+  LlamaLibrary({
+    super.eventEmitter,
+    super.sharedLibraryPath,
+    super.eventInvoke,
+    super.eventUpdate,
+    super.invokeParametersLlamaLibraryDataOptions,
+  });
   @override
-  bool isCrash() {
-    return _isCrash;
-  }
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  @override
-  bool isDeviceSupport() {
-    if (_isCrash) {
-      return false;
-    }
-    return _isDeviceSupport;
-  }
-
-  /// Check Out: https://www.youtube.com/@GENERAL_DEV
-  @override
-  FutureOr<void> dispose() async {
-    return;
+  void clear() {
+    //  clear
   }
 
   @override
-  void emit({required String eventType, required data}) {}
-
-  @override
-  Future<void> ensureInitialized() {
+  FutureOr<void> dispose() {
+    //  dispose
     throw UnimplementedError();
   }
 
   @override
-  Future<void> initialized() {
+  void emit({required String eventType, required data}) {
+    //  emit
+  }
+
+  @override
+  FutureOr<void> ensureInitialized() {
+    //  ensureInitialized
+    throw UnimplementedError();
+  }
+
+  @override
+  FutureOr<void> initialized() {
+    //  initialized
+    throw UnimplementedError();
+  }
+
+  @override
+  bool isCrash() {
+    //  isCrash
+    throw UnimplementedError();
+  }
+
+  @override
+  bool isDeviceSupport() {
+    //  isDeviceSupport
     throw UnimplementedError();
   }
 
   @override
   bool loadModel({required String modelPath}) {
+    //  loadModel
     throw UnimplementedError();
   }
 
   @override
-  EventEmitterListener on(
-      {required String eventType,
-      required FutureOr Function(dynamic data) onUpdate}) {
-    throw UnimplementedError();
+  void send(data) {
+    //  send
   }
- 
 
   @override
-  StreamController<LLamaResponse> sendPromptAndStream(
-      {required String prompt}) {
-    // TODO: implement sendPromptAndStream
+  void test() {
+    //  test
+  }
+
+  @override
+  EventEmitterListener on({
+    required String eventType,
+    required FutureOr Function(
+            UpdateLlamaLibraryData<LlamaLibrary, JsonScheme> updateLlamaLibrary)
+        onUpdate,
+  }) {
+    //  on
+    throw UnimplementedError();
+  }
+
+  @override
+  FutureOr<JsonScheme> invoke(
+      {required InvokeParametersLlamaLibraryData<JsonScheme>
+          invokeParametersLlamaLibraryData}) {
+    //  invoke
+    throw UnimplementedError();
+  }
+
+  @override
+  FutureOr<JsonScheme> invokeRaw({
+    required InvokeParametersLlamaLibraryData<JsonScheme>
+        invokeParametersLlamaLibraryData,
+  }) {
+    //  invokeRaw
+    throw UnimplementedError();
+  }
+
+  @override
+  FutureOr<JsonScheme> request(
+      {required InvokeParametersLlamaLibraryData<JsonScheme>
+          invokeParametersLlamaLibraryData}) {
+    //  request
     throw UnimplementedError();
   }
 }

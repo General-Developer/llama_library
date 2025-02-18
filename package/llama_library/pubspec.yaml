@@ -1,6 +1,6 @@
 name: 'llama_library'
 description: "LLaMA Is Library for Inference of Meta's LLaMA model (and others)"
-version: '0.0.2'
+version: '0.0.1'
 environment:
   sdk: '>=3.6.0 <4.0.0'
 dependencies:
@@ -28,12 +28,8 @@ issue_tracker: 'https://t.me/DEVELOPER_GLOBAL_PUBLIC'
 documentation: 'https://www.youtube.com/@general_dev'
 ffigen:
   name: 'LlamaLibrarySharedBindingsByGeneralDeveloper'
-  description: 'GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer'
+  description: 'LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer'
   output: 'lib/ffi/bindings.dart'
-  ignore-source-errors: true
-  headers:
-    entry-points:
-      - '../../native_lib/lib/whisper.cpp/include/whisper.h'
 platforms:
   android: null
   ios: null

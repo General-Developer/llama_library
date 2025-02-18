@@ -2,7 +2,7 @@ import 'sequence_filter.dart';
 
 /// An enumeration representing different types of LLM Prompt Formats.
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-enum PromptFormatType {
+enum LLamaPromptFormatType {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   raw,
 
@@ -14,11 +14,11 @@ enum PromptFormatType {
 }
 
 /// A class representing a LLM Prompt Format.
-abstract class PromptFormat {
-  late List<SequenceFilter> _filters;
+abstract class LLamaPromptFormat {
+  late List<LLamaSequenceFilter> _filters;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  final PromptFormatType type;
+  final LLamaPromptFormatType type;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final String inputSequence;
@@ -33,19 +33,21 @@ abstract class PromptFormat {
   final String? stopSequence;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  PromptFormat(this.type,
-      {required this.inputSequence,
-      required this.outputSequence,
-      required this.systemSequence,
-      this.stopSequence}) {
+  LLamaPromptFormat(
+    this.type, {
+    required this.inputSequence,
+    required this.outputSequence,
+    required this.systemSequence,
+    this.stopSequence,
+  }) {
     var tempFilters = [
-      SequenceFilter(inputSequence),
-      SequenceFilter(outputSequence),
-      SequenceFilter(systemSequence)
+      LLamaSequenceFilter(inputSequence),
+      LLamaSequenceFilter(outputSequence),
+      LLamaSequenceFilter(systemSequence)
     ];
 
     if (stopSequence != null) {
-      tempFilters.add(SequenceFilter(stopSequence!));
+      tempFilters.add(LLamaSequenceFilter(stopSequence!));
     }
 
     _filters = tempFilters;

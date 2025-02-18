@@ -1,7 +1,7 @@
 import 'dart:math';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-class SequenceFilter {
+class LLamaSequenceFilter {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final String sequence;
 
@@ -9,7 +9,7 @@ class SequenceFilter {
   StringBuffer buffer = StringBuffer();
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  SequenceFilter(this.sequence);
+  LLamaSequenceFilter(this.sequence);
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   String? processChunk(String chunk) {

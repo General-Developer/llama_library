@@ -4,7 +4,7 @@
 // ignore_for_file: unused_field, unused_element, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, library_private_types_in_public_api, camel_case_types, constant_identifier_names
 import 'dart:ffi' as ffi;
 
-/// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+/// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
 class LlamaLibrarySharedBindingsByGeneralDeveloper {
   /// Holds the symbol lookup function.
   final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
@@ -24,7 +24,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final ffi.Pointer<ffi.Pointer<FILE>> _stdin =
       _lookup<ffi.Pointer<FILE>>('stdin');
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> get stdin => _stdin.value;
 
   set stdin(ffi.Pointer<FILE> value) => _stdin.value = value;
@@ -32,7 +32,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final ffi.Pointer<ffi.Pointer<FILE>> _stdout =
       _lookup<ffi.Pointer<FILE>>('stdout');
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> get stdout => _stdout.value;
 
   set stdout(ffi.Pointer<FILE> value) => _stdout.value = value;
@@ -40,12 +40,12 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final ffi.Pointer<ffi.Pointer<FILE>> _stderr =
       _lookup<ffi.Pointer<FILE>>('stderr');
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> get stderr => _stderr.value;
 
   set stderr(ffi.Pointer<FILE> value) => _stderr.value = value;
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int remove(
     ffi.Pointer<ffi.Char> __filename,
   ) {
@@ -60,7 +60,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _remove =
       _removePtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int rename(
     ffi.Pointer<ffi.Char> __old,
     ffi.Pointer<ffi.Char> __new,
@@ -78,7 +78,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _rename = _renamePtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int renameat(
     int __oldfd,
     ffi.Pointer<ffi.Char> __old,
@@ -100,7 +100,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _renameat = _renameatPtr.asFunction<
       int Function(int, ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fclose(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -114,7 +114,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           'fclose');
   late final _fclose = _fclosePtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> tmpfile() {
     return _tmpfile();
   }
@@ -123,7 +123,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Pointer<FILE> Function()>>('tmpfile');
   late final _tmpfile = _tmpfilePtr.asFunction<ffi.Pointer<FILE> Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> tmpnam(
     ffi.Pointer<ffi.Char> arg0,
   ) {
@@ -138,7 +138,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _tmpnam = _tmpnamPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> tmpnam_r(
     ffi.Pointer<ffi.Char> __s,
   ) {
@@ -153,7 +153,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _tmpnam_r = _tmpnam_rPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> tempnam(
     ffi.Pointer<ffi.Char> __dir,
     ffi.Pointer<ffi.Char> __pfx,
@@ -172,7 +172,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fflush(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -186,7 +186,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           'fflush');
   late final _fflush = _fflushPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fflush_unlocked(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -201,7 +201,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fflush_unlocked =
       _fflush_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> fopen(
     ffi.Pointer<ffi.Char> __filename,
     ffi.Pointer<ffi.Char> __modes,
@@ -220,7 +220,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<FILE> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> freopen(
     ffi.Pointer<ffi.Char> __filename,
     ffi.Pointer<ffi.Char> __modes,
@@ -241,7 +241,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<FILE> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> fdopen(
     int __fd,
     ffi.Pointer<ffi.Char> __modes,
@@ -259,7 +259,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fdopen = _fdopenPtr
       .asFunction<ffi.Pointer<FILE> Function(int, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> fopencookie(
     ffi.Pointer<ffi.Void> __magic_cookie,
     ffi.Pointer<ffi.Char> __modes,
@@ -280,7 +280,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<FILE> Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>,
           cookie_io_functions_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> fmemopen(
     ffi.Pointer<ffi.Void> __s,
     int __len,
@@ -301,7 +301,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<FILE> Function(
           ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> open_memstream(
     ffi.Pointer<ffi.Pointer<ffi.Char>> __bufloc,
     ffi.Pointer<ffi.Size> __sizeloc,
@@ -320,7 +320,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<FILE> Function(
           ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void setbuf(
     ffi.Pointer<FILE> __stream,
     ffi.Pointer<ffi.Char> __buf,
@@ -338,7 +338,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _setbuf = _setbufPtr
       .asFunction<void Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int setvbuf(
     ffi.Pointer<FILE> __stream,
     ffi.Pointer<ffi.Char> __buf,
@@ -360,7 +360,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _setvbuf = _setvbufPtr.asFunction<
       int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void setbuffer(
     ffi.Pointer<FILE> __stream,
     ffi.Pointer<ffi.Char> __buf,
@@ -380,7 +380,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _setbuffer = _setbufferPtr.asFunction<
       void Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void setlinebuf(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -395,7 +395,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _setlinebuf =
       _setlinebufPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fprintf(
     ffi.Pointer<FILE> __stream,
     ffi.Pointer<ffi.Char> __format,
@@ -413,7 +413,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fprintf = _fprintfPtr
       .asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int printf(
     ffi.Pointer<ffi.Char> __format,
   ) {
@@ -428,7 +428,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _printf =
       _printfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int sprintf(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __format,
@@ -446,7 +446,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _sprintf = _sprintfPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int vfprintf(
     ffi.Pointer<FILE> __s,
     ffi.Pointer<ffi.Char> __format,
@@ -467,7 +467,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<__va_list_tag>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int vprintf(
     ffi.Pointer<ffi.Char> __format,
     ffi.Pointer<__va_list_tag> __arg,
@@ -485,7 +485,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _vprintf = _vprintfPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int vsprintf(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __format,
@@ -506,7 +506,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<__va_list_tag>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int snprintf(
     ffi.Pointer<ffi.Char> __s,
     int __maxlen,
@@ -526,7 +526,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _snprintf = _snprintfPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int vsnprintf(
     ffi.Pointer<ffi.Char> __s,
     int __maxlen,
@@ -549,7 +549,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>,
           ffi.Pointer<__va_list_tag>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int vasprintf(
     ffi.Pointer<ffi.Pointer<ffi.Char>> __ptr,
     ffi.Pointer<ffi.Char> __f,
@@ -588,7 +588,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(
           ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int asprintf(
     ffi.Pointer<ffi.Pointer<ffi.Char>> __ptr,
     ffi.Pointer<ffi.Char> __fmt,
@@ -607,7 +607,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(
           ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int vdprintf(
     int __fd,
     ffi.Pointer<ffi.Char> __fmt,
@@ -627,7 +627,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _vdprintf = _vdprintfPtr.asFunction<
       int Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int dprintf(
     int __fd,
     ffi.Pointer<ffi.Char> __fmt,
@@ -644,7 +644,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _dprintf =
       _dprintfPtr.asFunction<int Function(int, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fscanf(
     ffi.Pointer<FILE> __stream,
     ffi.Pointer<ffi.Char> __format,
@@ -662,7 +662,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fscanf = _fscanfPtr
       .asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int scanf(
     ffi.Pointer<ffi.Char> __format,
   ) {
@@ -677,7 +677,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _scanf =
       _scanfPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int sscanf(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __format,
@@ -695,7 +695,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _sscanf = _sscanfPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int vfscanf(
     ffi.Pointer<FILE> __s,
     ffi.Pointer<ffi.Char> __format,
@@ -716,7 +716,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(ffi.Pointer<FILE>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<__va_list_tag>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int vscanf(
     ffi.Pointer<ffi.Char> __format,
     ffi.Pointer<__va_list_tag> __arg,
@@ -734,7 +734,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _vscanf = _vscanfPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int vsscanf(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __format,
@@ -755,7 +755,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<__va_list_tag>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fgetc(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -768,7 +768,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('fgetc');
   late final _fgetc = _fgetcPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int getc(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -781,7 +781,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('getc');
   late final _getc = _getcPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int getchar() {
     return _getchar();
   }
@@ -790,7 +790,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int Function()>>('getchar');
   late final _getchar = _getcharPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int getc_unlocked(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -805,7 +805,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _getc_unlocked =
       _getc_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int getchar_unlocked() {
     return _getchar_unlocked();
   }
@@ -815,7 +815,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _getchar_unlocked =
       _getchar_unlockedPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fgetc_unlocked(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -830,7 +830,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fgetc_unlocked =
       _fgetc_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fputc(
     int __c,
     ffi.Pointer<FILE> __stream,
@@ -847,7 +847,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fputc =
       _fputcPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int putc(
     int __c,
     ffi.Pointer<FILE> __stream,
@@ -864,7 +864,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _putc =
       _putcPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int putchar(
     int __c,
   ) {
@@ -877,7 +877,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('putchar');
   late final _putchar = _putcharPtr.asFunction<int Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fputc_unlocked(
     int __c,
     ffi.Pointer<FILE> __stream,
@@ -894,7 +894,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fputc_unlocked =
       _fputc_unlockedPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int putc_unlocked(
     int __c,
     ffi.Pointer<FILE> __stream,
@@ -911,7 +911,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _putc_unlocked =
       _putc_unlockedPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int putchar_unlocked(
     int __c,
   ) {
@@ -926,7 +926,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _putchar_unlocked =
       _putchar_unlockedPtr.asFunction<int Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int getw(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -939,7 +939,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('getw');
   late final _getw = _getwPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int putw(
     int __w,
     ffi.Pointer<FILE> __stream,
@@ -956,7 +956,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _putw =
       _putwPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> fgets(
     ffi.Pointer<ffi.Char> __s,
     int __n,
@@ -1002,7 +1002,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>,
           int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int getdelim(
     ffi.Pointer<ffi.Pointer<ffi.Char>> __lineptr,
     ffi.Pointer<ffi.Size> __n,
@@ -1025,7 +1025,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>,
           int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int getline(
     ffi.Pointer<ffi.Pointer<ffi.Char>> __lineptr,
     ffi.Pointer<ffi.Size> __n,
@@ -1046,7 +1046,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Size>,
           ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fputs(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<FILE> __stream,
@@ -1063,7 +1063,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fputs = _fputsPtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int puts(
     ffi.Pointer<ffi.Char> __s,
   ) {
@@ -1077,7 +1077,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           'puts');
   late final _puts = _putsPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ungetc(
     int __c,
     ffi.Pointer<FILE> __stream,
@@ -1094,7 +1094,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ungetc =
       _ungetcPtr.asFunction<int Function(int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fread(
     ffi.Pointer<ffi.Void> __ptr,
     int __size,
@@ -1116,7 +1116,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fread = _freadPtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fwrite(
     ffi.Pointer<ffi.Void> __ptr,
     int __size,
@@ -1138,7 +1138,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fwrite = _fwritePtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fread_unlocked(
     ffi.Pointer<ffi.Void> __ptr,
     int __size,
@@ -1160,7 +1160,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fread_unlocked = _fread_unlockedPtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fwrite_unlocked(
     ffi.Pointer<ffi.Void> __ptr,
     int __size,
@@ -1182,7 +1182,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fwrite_unlocked = _fwrite_unlockedPtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fseek(
     ffi.Pointer<FILE> __stream,
     int __off,
@@ -1201,7 +1201,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fseek =
       _fseekPtr.asFunction<int Function(ffi.Pointer<FILE>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ftell(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1215,7 +1215,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           'ftell');
   late final _ftell = _ftellPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void rewind(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1230,7 +1230,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _rewind =
       _rewindPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fseeko(
     ffi.Pointer<FILE> __stream,
     int __off,
@@ -1249,7 +1249,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fseeko =
       _fseekoPtr.asFunction<int Function(ffi.Pointer<FILE>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ftello(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1263,7 +1263,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           'ftello');
   late final _ftello = _ftelloPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fgetpos(
     ffi.Pointer<FILE> __stream,
     ffi.Pointer<fpos_t> __pos,
@@ -1280,7 +1280,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fgetpos = _fgetposPtr
       .asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fsetpos(
     ffi.Pointer<FILE> __stream,
     ffi.Pointer<fpos_t> __pos,
@@ -1297,7 +1297,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fsetpos = _fsetposPtr
       .asFunction<int Function(ffi.Pointer<FILE>, ffi.Pointer<fpos_t>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void clearerr(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1312,7 +1312,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _clearerr =
       _clearerrPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int feof(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1325,7 +1325,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<FILE>)>>('feof');
   late final _feof = _feofPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ferror(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1339,7 +1339,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           'ferror');
   late final _ferror = _ferrorPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void clearerr_unlocked(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1354,7 +1354,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _clearerr_unlocked =
       _clearerr_unlockedPtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int feof_unlocked(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1369,7 +1369,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _feof_unlocked =
       _feof_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ferror_unlocked(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1384,7 +1384,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ferror_unlocked =
       _ferror_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void perror(
     ffi.Pointer<ffi.Char> __s,
   ) {
@@ -1399,7 +1399,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _perror =
       _perrorPtr.asFunction<void Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fileno(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1413,7 +1413,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           'fileno');
   late final _fileno = _filenoPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int fileno_unlocked(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1428,7 +1428,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _fileno_unlocked =
       _fileno_unlockedPtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int pclose(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1442,7 +1442,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           'pclose');
   late final _pclose = _pclosePtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> popen(
     ffi.Pointer<ffi.Char> __command,
     ffi.Pointer<ffi.Char> __modes,
@@ -1461,7 +1461,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<FILE> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ctermid(
     ffi.Pointer<ffi.Char> __s,
   ) {
@@ -1476,7 +1476,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ctermid = _ctermidPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void flockfile(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1491,7 +1491,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _flockfile =
       _flockfilePtr.asFunction<void Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ftrylockfile(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1506,7 +1506,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ftrylockfile =
       _ftrylockfilePtr.asFunction<int Function(ffi.Pointer<FILE>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void funlockfile(
     ffi.Pointer<FILE> __stream,
   ) {
@@ -1551,7 +1551,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final ___overflow =
       ___overflowPtr.asFunction<int Function(ffi.Pointer<FILE>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_abort(
     ffi.Pointer<ffi.Char> file,
     int line,
@@ -1571,7 +1571,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_abort = _ggml_abortPtr.asFunction<
       void Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_status_to_string(
     int status,
   ) {
@@ -1586,7 +1586,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_status_to_string = _ggml_status_to_stringPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   double ggml_fp16_to_fp32(
     int arg0,
   ) {
@@ -1601,7 +1601,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_fp16_to_fp32 =
       _ggml_fp16_to_fp32Ptr.asFunction<double Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_fp32_to_fp16(
     double arg0,
   ) {
@@ -1616,7 +1616,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_fp32_to_fp16 =
       _ggml_fp32_to_fp16Ptr.asFunction<int Function(double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_fp16_to_fp32_row(
     ffi.Pointer<ggml_fp16_t> arg0,
     ffi.Pointer<ffi.Float> arg1,
@@ -1636,7 +1636,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_fp16_to_fp32_row = _ggml_fp16_to_fp32_rowPtr.asFunction<
       void Function(ffi.Pointer<ggml_fp16_t>, ffi.Pointer<ffi.Float>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_fp32_to_fp16_row(
     ffi.Pointer<ffi.Float> arg0,
     ffi.Pointer<ggml_fp16_t> arg1,
@@ -1656,7 +1656,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_fp32_to_fp16_row = _ggml_fp32_to_fp16_rowPtr.asFunction<
       void Function(ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_fp16_t>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_bf16_t ggml_fp32_to_bf16(
     double arg0,
   ) {
@@ -1671,7 +1671,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_fp32_to_bf16 =
       _ggml_fp32_to_bf16Ptr.asFunction<ggml_bf16_t Function(double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   double ggml_bf16_to_fp32(
     ggml_bf16_t arg0,
   ) {
@@ -1686,7 +1686,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_bf16_to_fp32 =
       _ggml_bf16_to_fp32Ptr.asFunction<double Function(ggml_bf16_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_bf16_to_fp32_row(
     ffi.Pointer<ggml_bf16_t> arg0,
     ffi.Pointer<ffi.Float> arg1,
@@ -1706,7 +1706,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_bf16_to_fp32_row = _ggml_bf16_to_fp32_rowPtr.asFunction<
       void Function(ffi.Pointer<ggml_bf16_t>, ffi.Pointer<ffi.Float>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_fp32_to_bf16_row_ref(
     ffi.Pointer<ffi.Float> arg0,
     ffi.Pointer<ggml_bf16_t> arg1,
@@ -1728,7 +1728,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(
               ffi.Pointer<ffi.Float>, ffi.Pointer<ggml_bf16_t>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_fp32_to_bf16_row(
     ffi.Pointer<ffi.Float> arg0,
     ffi.Pointer<ggml_bf16_t> arg1,
@@ -1751,10 +1751,10 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final ffi.Pointer<ffi.Size> _GGML_TENSOR_SIZE =
       _lookup<ffi.Size>('GGML_TENSOR_SIZE');
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int get GGML_TENSOR_SIZE => _GGML_TENSOR_SIZE.value;
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_guid_matches(
     ggml_guid_t guid_a,
     ggml_guid_t guid_b,
@@ -1771,7 +1771,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_guid_matches = _ggml_guid_matchesPtr
       .asFunction<bool Function(ggml_guid_t, ggml_guid_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_time_init() {
     return _ggml_time_init();
   }
@@ -1780,7 +1780,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Void Function()>>('ggml_time_init');
   late final _ggml_time_init = _ggml_time_initPtr.asFunction<void Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_time_ms() {
     return _ggml_time_ms();
   }
@@ -1789,7 +1789,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_time_ms');
   late final _ggml_time_ms = _ggml_time_msPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_time_us() {
     return _ggml_time_us();
   }
@@ -1798,7 +1798,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_time_us');
   late final _ggml_time_us = _ggml_time_usPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_cycles() {
     return _ggml_cycles();
   }
@@ -1807,7 +1807,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _lookup<ffi.NativeFunction<ffi.Int64 Function()>>('ggml_cycles');
   late final _ggml_cycles = _ggml_cyclesPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_cycles_per_ms() {
     return _ggml_cycles_per_ms();
   }
@@ -1817,7 +1817,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_cycles_per_ms =
       _ggml_cycles_per_msPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<FILE> ggml_fopen(
     ffi.Pointer<ffi.Char> fname,
     ffi.Pointer<ffi.Char> mode,
@@ -1836,7 +1836,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<FILE> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_print_object(
     ffi.Pointer<ggml_object> obj,
   ) {
@@ -1851,7 +1851,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_print_object = _ggml_print_objectPtr
       .asFunction<void Function(ffi.Pointer<ggml_object>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_print_objects(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -1866,7 +1866,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_print_objects = _ggml_print_objectsPtr
       .asFunction<void Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_nelements(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -1881,7 +1881,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_nelements =
       _ggml_nelementsPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_nrows(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -1896,7 +1896,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_nrows =
       _ggml_nrowsPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_nbytes(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -1911,7 +1911,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_nbytes =
       _ggml_nbytesPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_nbytes_pad(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -1926,7 +1926,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_nbytes_pad =
       _ggml_nbytes_padPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_blck_size(
     int type,
   ) {
@@ -1941,7 +1941,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_blck_size =
       _ggml_blck_sizePtr.asFunction<int Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_type_size(
     int type,
   ) {
@@ -1956,7 +1956,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_type_size =
       _ggml_type_sizePtr.asFunction<int Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_row_size(
     int type,
     int ne,
@@ -1973,7 +1973,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_row_size =
       _ggml_row_sizePtr.asFunction<int Function(int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   double ggml_type_sizef(
     int type,
   ) {
@@ -1988,7 +1988,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_type_sizef =
       _ggml_type_sizefPtr.asFunction<double Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_type_name(
     int type,
   ) {
@@ -2003,7 +2003,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_type_name =
       _ggml_type_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_op_name(
     int op,
   ) {
@@ -2018,7 +2018,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_op_name =
       _ggml_op_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_op_symbol(
     int op,
   ) {
@@ -2033,7 +2033,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_op_symbol =
       _ggml_op_symbolPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_unary_op_name(
     int op,
   ) {
@@ -2048,7 +2048,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_unary_op_name =
       _ggml_unary_op_namePtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_op_desc(
     ffi.Pointer<ggml_tensor> t,
   ) {
@@ -2064,7 +2064,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_op_desc = _ggml_op_descPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_element_size(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2079,7 +2079,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_element_size = _ggml_element_sizePtr
       .asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_quantized(
     int type,
   ) {
@@ -2094,7 +2094,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_quantized =
       _ggml_is_quantizedPtr.asFunction<bool Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_ftype_to_ggml_type(
     int ftype,
   ) {
@@ -2109,7 +2109,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_ftype_to_ggml_type =
       _ggml_ftype_to_ggml_typePtr.asFunction<int Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_transposed(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2124,7 +2124,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_transposed = _ggml_is_transposedPtr
       .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_permuted(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2139,7 +2139,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_permuted = _ggml_is_permutedPtr
       .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_empty(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2154,7 +2154,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_empty =
       _ggml_is_emptyPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_scalar(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2169,7 +2169,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_scalar =
       _ggml_is_scalarPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_vector(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2184,7 +2184,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_vector =
       _ggml_is_vectorPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_matrix(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2199,7 +2199,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_matrix =
       _ggml_is_matrixPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_3d(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2214,7 +2214,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_3d =
       _ggml_is_3dPtr.asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_n_dims(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2229,7 +2229,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_n_dims =
       _ggml_n_dimsPtr.asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_contiguous(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2244,7 +2244,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_contiguous = _ggml_is_contiguousPtr
       .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_contiguous_0(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2259,7 +2259,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_contiguous_0 = _ggml_is_contiguous_0Ptr
       .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_contiguous_1(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2274,7 +2274,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_contiguous_1 = _ggml_is_contiguous_1Ptr
       .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_is_contiguous_2(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2289,7 +2289,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_is_contiguous_2 = _ggml_is_contiguous_2Ptr
       .asFunction<bool Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_are_same_shape(
     ffi.Pointer<ggml_tensor> t0,
     ffi.Pointer<ggml_tensor> t1,
@@ -2307,7 +2307,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_are_same_shape = _ggml_are_same_shapePtr.asFunction<
       bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_are_same_stride(
     ffi.Pointer<ggml_tensor> t0,
     ffi.Pointer<ggml_tensor> t1,
@@ -2325,7 +2325,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_are_same_stride = _ggml_are_same_stridePtr.asFunction<
       bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_can_repeat(
     ffi.Pointer<ggml_tensor> t0,
     ffi.Pointer<ggml_tensor> t1,
@@ -2343,7 +2343,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_can_repeat = _ggml_can_repeatPtr.asFunction<
       bool Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_tensor_overhead() {
     return _ggml_tensor_overhead();
   }
@@ -2353,7 +2353,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_tensor_overhead =
       _ggml_tensor_overheadPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_validate_row_data(
     int type,
     ffi.Pointer<ffi.Void> data,
@@ -2373,7 +2373,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_validate_row_data = _ggml_validate_row_dataPtr
       .asFunction<bool Function(int, ffi.Pointer<ffi.Void>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_context> ggml_init(
     ggml_init_params params,
   ) {
@@ -2388,7 +2388,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_init = _ggml_initPtr
       .asFunction<ffi.Pointer<ggml_context> Function(ggml_init_params)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_reset(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -2403,7 +2403,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_reset =
       _ggml_resetPtr.asFunction<void Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_free(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -2418,7 +2418,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_free =
       _ggml_freePtr.asFunction<void Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_used_mem(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -2433,7 +2433,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_used_mem =
       _ggml_used_memPtr.asFunction<int Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_get_no_alloc(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -2448,7 +2448,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_no_alloc = _ggml_get_no_allocPtr
       .asFunction<bool Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_no_alloc(
     ffi.Pointer<ggml_context> ctx,
     bool no_alloc,
@@ -2466,7 +2466,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_set_no_alloc = _ggml_set_no_allocPtr
       .asFunction<void Function(ffi.Pointer<ggml_context>, bool)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_get_mem_buffer(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -2482,7 +2482,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_mem_buffer = _ggml_get_mem_bufferPtr
       .asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_get_mem_size(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -2497,7 +2497,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_mem_size = _ggml_get_mem_sizePtr
       .asFunction<int Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_get_max_tensor_size(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -2512,7 +2512,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_max_tensor_size = _ggml_get_max_tensor_sizePtr
       .asFunction<int Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor(
     ffi.Pointer<ggml_context> ctx,
     int type,
@@ -2535,7 +2535,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, int, int, ffi.Pointer<ffi.Int64>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor_1d(
     ffi.Pointer<ggml_context> ctx,
     int type,
@@ -2555,7 +2555,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_new_tensor_1d = _ggml_new_tensor_1dPtr.asFunction<
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor_2d(
     ffi.Pointer<ggml_context> ctx,
     int type,
@@ -2578,7 +2578,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor_3d(
     ffi.Pointer<ggml_context> ctx,
     int type,
@@ -2607,7 +2607,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_new_tensor_4d(
     ffi.Pointer<ggml_context> ctx,
     int type,
@@ -2639,7 +2639,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, int, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_new_buffer(
     ffi.Pointer<ggml_context> ctx,
     int nbytes,
@@ -2657,7 +2657,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_new_buffer = _ggml_new_bufferPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_context>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_dup_tensor(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> src,
@@ -2676,7 +2676,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_tensor(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> src,
@@ -2695,7 +2695,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_first_tensor(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -2711,7 +2711,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_first_tensor = _ggml_get_first_tensorPtr.asFunction<
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_next_tensor(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> tensor,
@@ -2730,7 +2730,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_tensor(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ffi.Char> name,
@@ -2749,7 +2749,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_unravel_index(
     ffi.Pointer<ggml_tensor> tensor,
     int i,
@@ -2786,7 +2786,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ffi.Int64>,
           ffi.Pointer<ffi.Int64>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_get_unary_op(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2801,7 +2801,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_unary_op = _ggml_get_unary_opPtr
       .asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_get_data(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2817,7 +2817,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_data = _ggml_get_dataPtr
       .asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Float> ggml_get_data_f32(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2833,7 +2833,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_data_f32 = _ggml_get_data_f32Ptr
       .asFunction<ffi.Pointer<ffi.Float> Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_get_name(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2849,7 +2849,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_name = _ggml_get_namePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_name(
     ffi.Pointer<ggml_tensor> tensor,
     ffi.Pointer<ffi.Char> name,
@@ -2868,7 +2868,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_format_name(
     ffi.Pointer<ggml_tensor> tensor,
     ffi.Pointer<ffi.Char> fmt,
@@ -2887,7 +2887,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_input(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2902,7 +2902,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_set_input =
       _ggml_set_inputPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_output(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2917,7 +2917,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_set_output =
       _ggml_set_outputPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_param(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> tensor,
@@ -2935,7 +2935,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_set_param = _ggml_set_paramPtr.asFunction<
       void Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_set_loss(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -2950,7 +2950,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_set_loss =
       _ggml_set_lossPtr.asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_dup(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -2969,7 +2969,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_dup_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -2988,7 +2988,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3009,7 +3009,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3032,7 +3032,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add_cast(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3058,7 +3058,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add1(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3081,7 +3081,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add1_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3104,7 +3104,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_acc(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3145,7 +3145,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_acc_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3186,7 +3186,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sub(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3207,7 +3207,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sub_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3230,7 +3230,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mul(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3251,7 +3251,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mul_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3274,7 +3274,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_div(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3295,7 +3295,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_div_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3318,7 +3318,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sqr(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3337,7 +3337,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sqr_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3356,7 +3356,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sqrt(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3375,7 +3375,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sqrt_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3394,7 +3394,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_log(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3413,7 +3413,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_log_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3432,7 +3432,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sin(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3451,7 +3451,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sin_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3470,7 +3470,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cos(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3489,7 +3489,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cos_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3508,7 +3508,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sum(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3527,7 +3527,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sum_rows(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3546,7 +3546,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mean(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3565,7 +3565,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_argmax(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3584,7 +3584,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_count_equal(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3607,7 +3607,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_repeat(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3630,7 +3630,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_repeat_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3653,7 +3653,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_concat(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3679,7 +3679,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_abs(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3698,7 +3698,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_abs_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3717,7 +3717,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sgn(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3736,7 +3736,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sgn_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3755,7 +3755,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_neg(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3774,7 +3774,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_neg_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3793,7 +3793,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_step(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3812,7 +3812,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_step_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3831,7 +3831,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_tanh(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3850,7 +3850,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_tanh_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3869,7 +3869,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_elu(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3888,7 +3888,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_elu_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3907,7 +3907,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_relu(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3926,7 +3926,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_leaky_relu(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3952,7 +3952,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double, bool)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_relu_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3971,7 +3971,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sigmoid(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -3990,7 +3990,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_sigmoid_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4009,7 +4009,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gelu(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4028,7 +4028,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gelu_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4047,7 +4047,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gelu_quick(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4066,7 +4066,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gelu_quick_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4085,7 +4085,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_silu(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4104,7 +4104,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_silu_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4123,7 +4123,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_silu_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4146,7 +4146,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_hardswish(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4165,7 +4165,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_hardsigmoid(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4184,7 +4184,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_exp(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4203,7 +4203,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_exp_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4222,7 +4222,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_norm(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4243,7 +4243,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_norm_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4264,7 +4264,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rms_norm(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4285,7 +4285,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rms_norm_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4306,7 +4306,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_group_norm(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4332,7 +4332,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_group_norm_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4358,7 +4358,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rms_norm_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4384,7 +4384,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mul_mat(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4407,7 +4407,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_mul_mat_set_prec(
     ffi.Pointer<ggml_tensor> a,
     int prec,
@@ -4425,7 +4425,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_mul_mat_set_prec = _ggml_mul_mat_set_precPtr
       .asFunction<void Function(ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_mul_mat_id(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> as1,
@@ -4454,7 +4454,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_out_prod(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4477,7 +4477,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_scale(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4498,7 +4498,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_scale_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4519,7 +4519,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4560,7 +4560,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4601,7 +4601,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_1d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4627,7 +4627,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_1d_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4653,7 +4653,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_2d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4682,7 +4682,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_2d_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4711,7 +4711,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cpy(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4732,7 +4732,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cast(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4753,7 +4753,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4772,7 +4772,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont_1d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4793,7 +4793,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont_2d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4816,7 +4816,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont_3d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4845,7 +4845,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cont_4d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4877,7 +4877,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4900,7 +4900,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape_1d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4921,7 +4921,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape_2d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4947,7 +4947,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape_3d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -4976,7 +4976,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_reshape_4d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5008,7 +5008,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_1d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5031,7 +5031,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_2d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5063,7 +5063,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_3d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5101,7 +5101,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_view_4d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5145,7 +5145,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_permute(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5177,7 +5177,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_transpose(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5196,7 +5196,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_rows(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5219,7 +5219,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_rows_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5248,7 +5248,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5267,7 +5267,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag_mask_inf(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5288,7 +5288,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag_mask_inf_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5312,7 +5312,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor> Function(
               ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag_mask_zero(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5333,7 +5333,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_diag_mask_zero_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5357,7 +5357,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor> Function(
               ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5376,7 +5376,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5395,7 +5395,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max_ext(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5428,7 +5428,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max_ext_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5461,7 +5461,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_soft_max_ext_back_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5495,7 +5495,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               double,
               double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5524,7 +5524,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5553,7 +5553,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_ext(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5618,7 +5618,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_multi(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5687,7 +5687,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_ext_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5752,7 +5752,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_custom(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5813,7 +5813,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_custom_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5875,7 +5875,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               double,
               double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_rope_yarn_corr_dims(
     int n_dims,
     int n_ctx_orig,
@@ -5903,7 +5903,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(
               int, int, double, double, double, ffi.Pointer<ffi.Float>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_ext_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -5968,7 +5968,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rope_multi_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6037,7 +6037,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_clamp(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6060,7 +6060,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, double, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_im2col(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6117,7 +6117,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           bool,
           int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_im2col_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6174,7 +6174,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           bool)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_1d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6206,7 +6206,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_1d_ph(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6235,7 +6235,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_1d_dw(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6267,7 +6267,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_1d_dw_ph(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6296,7 +6296,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_transpose_1d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6328,7 +6328,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_2d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6377,7 +6377,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_2d_sk_p0(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6400,7 +6400,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_2d_s1_ph(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6423,7 +6423,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_2d_dw(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6472,7 +6472,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_conv_transpose_2d_p0(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6499,7 +6499,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
               ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pool_1d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6531,7 +6531,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pool_2d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6572,7 +6572,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int, int, double, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pool_2d_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6625,7 +6625,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_upscale(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6646,7 +6646,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_upscale_ext(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6678,7 +6678,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pad(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6710,7 +6710,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_pad_reflect_1d(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6736,7 +6736,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_timestep_embedding(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> timesteps,
@@ -6762,7 +6762,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_argsort(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6783,7 +6783,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_arange(
     ffi.Pointer<ggml_context> ctx,
     double start,
@@ -6806,7 +6806,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, double, double, double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_top_k(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -6827,7 +6827,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_flash_attn_ext(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> q,
@@ -6872,7 +6872,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           double,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_flash_attn_ext_set_prec(
     ffi.Pointer<ggml_tensor> a,
     int prec,
@@ -6890,7 +6890,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_flash_attn_ext_set_prec = _ggml_flash_attn_ext_set_precPtr
       .asFunction<void Function(ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_flash_attn_ext_get_prec(
     ffi.Pointer<ggml_tensor> a,
   ) {
@@ -6905,7 +6905,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_flash_attn_ext_get_prec = _ggml_flash_attn_ext_get_precPtr
       .asFunction<int Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_flash_attn_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> q,
@@ -6942,7 +6942,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           bool)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_ssm_conv(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> sx,
@@ -6965,7 +6965,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_ssm_scan(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> s,
@@ -7006,7 +7006,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_win_part(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7027,7 +7027,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_win_unpart(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7056,7 +7056,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_unary(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7077,7 +7077,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_unary_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7098,7 +7098,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_get_rel_pos(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7121,7 +7121,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_tensor>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add_rel_pos(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7150,7 +7150,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_add_rel_pos_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7180,7 +7180,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               ffi.Pointer<ggml_tensor>,
               ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_rwkv_wkv6(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> k,
@@ -7221,7 +7221,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_gated_linear_attn(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> k,
@@ -7262,7 +7262,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           double)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_unary_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7285,7 +7285,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ggml_unary_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_unary_inplace_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7309,7 +7309,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
               ffi.Pointer<ggml_tensor>, ggml_unary_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_binary_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7338,7 +7338,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           ggml_binary_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_binary_inplace_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7368,7 +7368,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               ffi.Pointer<ggml_tensor>,
               ggml_binary_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom1_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7391,7 +7391,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ggml_custom1_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom1_inplace_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7415,7 +7415,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
               ffi.Pointer<ggml_tensor>, ggml_custom1_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom2_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7444,7 +7444,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           ggml_custom2_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom2_inplace_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7474,7 +7474,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               ffi.Pointer<ggml_tensor>,
               ggml_custom2_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom3_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7507,7 +7507,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           ggml_custom3_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom3_inplace_f32(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7541,7 +7541,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               ffi.Pointer<ggml_tensor>,
               ggml_custom3_op_f32_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom1(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7574,7 +7574,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom1_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7608,7 +7608,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom2(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7645,7 +7645,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom2_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7683,7 +7683,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom3(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7724,7 +7724,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           int,
           ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_map_custom3_inplace(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7766,7 +7766,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               int,
               ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cross_entropy_loss(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7789,7 +7789,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_context>,
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_cross_entropy_loss_back(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7819,7 +7819,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               ffi.Pointer<ggml_tensor>,
               ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_opt_step_adamw(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_tensor> a,
@@ -7856,7 +7856,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_tensor>,
           ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_build_forward_expand(
     ffi.Pointer<ggml_cgraph> cgraph,
     ffi.Pointer<ggml_tensor> tensor,
@@ -7875,7 +7875,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_build_forward_expandPtr.asFunction<
           void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_build_backward_expand(
     ffi.Pointer<ggml_context> ctx_static,
     ffi.Pointer<ggml_context> ctx_compute,
@@ -7902,7 +7902,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(ffi.Pointer<ggml_context>, ffi.Pointer<ggml_context>,
               ffi.Pointer<ggml_cgraph>, bool)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_cgraph> ggml_new_graph(
     ffi.Pointer<ggml_context> ctx,
   ) {
@@ -7918,7 +7918,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_new_graph = _ggml_new_graphPtr.asFunction<
       ffi.Pointer<ggml_cgraph> Function(ffi.Pointer<ggml_context>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_cgraph> ggml_new_graph_custom(
     ffi.Pointer<ggml_context> ctx,
     int size,
@@ -7939,7 +7939,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_cgraph> Function(
           ffi.Pointer<ggml_context>, int, bool)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_cgraph> ggml_graph_dup(
     ffi.Pointer<ggml_context> ctx,
     ffi.Pointer<ggml_cgraph> cgraph,
@@ -7958,7 +7958,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_cgraph> Function(
           ffi.Pointer<ggml_context>, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_cpy(
     ffi.Pointer<ggml_cgraph> src,
     ffi.Pointer<ggml_cgraph> dst,
@@ -7976,7 +7976,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_cpy = _ggml_graph_cpyPtr.asFunction<
       void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_reset(
     ffi.Pointer<ggml_cgraph> cgraph,
   ) {
@@ -7991,7 +7991,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_reset = _ggml_graph_resetPtr
       .asFunction<void Function(ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_clear(
     ffi.Pointer<ggml_cgraph> cgraph,
   ) {
@@ -8006,7 +8006,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_clear = _ggml_graph_clearPtr
       .asFunction<void Function(ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_graph_size(
     ffi.Pointer<ggml_cgraph> cgraph,
   ) {
@@ -8021,7 +8021,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_size =
       _ggml_graph_sizePtr.asFunction<int Function(ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_graph_node(
     ffi.Pointer<ggml_cgraph> cgraph,
     int i,
@@ -8039,7 +8039,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_node = _ggml_graph_nodePtr.asFunction<
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_cgraph>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Pointer<ggml_tensor>> ggml_graph_nodes(
     ffi.Pointer<ggml_cgraph> cgraph,
   ) {
@@ -8056,7 +8056,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ffi.Pointer<ggml_tensor>> Function(
           ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_graph_n_nodes(
     ffi.Pointer<ggml_cgraph> cgraph,
   ) {
@@ -8071,7 +8071,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_n_nodes = _ggml_graph_n_nodesPtr
       .asFunction<int Function(ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_add_node(
     ffi.Pointer<ggml_cgraph> cgraph,
     ffi.Pointer<ggml_tensor> tensor,
@@ -8089,7 +8089,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_add_node = _ggml_graph_add_nodePtr.asFunction<
       void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_graph_overhead() {
     return _ggml_graph_overhead();
   }
@@ -8099,7 +8099,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_overhead =
       _ggml_graph_overheadPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_graph_overhead_custom(
     int size,
     bool grads,
@@ -8116,7 +8116,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_overhead_custom =
       _ggml_graph_overhead_customPtr.asFunction<int Function(int, bool)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_graph_get_tensor(
     ffi.Pointer<ggml_cgraph> cgraph,
     ffi.Pointer<ffi.Char> name,
@@ -8135,7 +8135,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_graph_get_grad(
     ffi.Pointer<ggml_cgraph> cgraph,
     ffi.Pointer<ggml_tensor> node,
@@ -8154,7 +8154,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_graph_get_grad_acc(
     ffi.Pointer<ggml_cgraph> cgraph,
     ffi.Pointer<ggml_tensor> node,
@@ -8173,7 +8173,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ffi.Pointer<ggml_tensor> Function(
           ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_export(
     ffi.Pointer<ggml_cgraph> cgraph,
     ffi.Pointer<ffi.Char> fname,
@@ -8191,7 +8191,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_export = _ggml_graph_exportPtr.asFunction<
       void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_cgraph> ggml_graph_import(
     ffi.Pointer<ffi.Char> fname,
     ffi.Pointer<ffi.Pointer<ggml_context>> ctx_data,
@@ -8216,7 +8216,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ffi.Pointer<ggml_context>>,
           ffi.Pointer<ffi.Pointer<ggml_context>>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_print(
     ffi.Pointer<ggml_cgraph> cgraph,
   ) {
@@ -8231,7 +8231,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_graph_print = _ggml_graph_printPtr
       .asFunction<void Function(ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_graph_dump_dot(
     ffi.Pointer<ggml_cgraph> gb,
     ffi.Pointer<ggml_cgraph> gf,
@@ -8252,7 +8252,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       void Function(ffi.Pointer<ggml_cgraph>, ffi.Pointer<ggml_cgraph>,
           ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_log_set(
     ggml_log_callback log_callback,
     ffi.Pointer<ffi.Void> user_data,
@@ -8270,7 +8270,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_log_set = _ggml_log_setPtr
       .asFunction<void Function(ggml_log_callback, ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_tensor> ggml_set_zero(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -8286,7 +8286,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_set_zero = _ggml_set_zeroPtr.asFunction<
       ffi.Pointer<ggml_tensor> Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_quantize_init(
     int type,
   ) {
@@ -8301,7 +8301,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_quantize_init =
       _ggml_quantize_initPtr.asFunction<void Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_quantize_free() {
     return _ggml_quantize_free();
   }
@@ -8311,7 +8311,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_quantize_free =
       _ggml_quantize_freePtr.asFunction<void Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_quantize_requires_imatrix(
     int type,
   ) {
@@ -8326,7 +8326,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_quantize_requires_imatrix =
       _ggml_quantize_requires_imatrixPtr.asFunction<bool Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_quantize_chunk(
     int type,
     ffi.Pointer<ffi.Float> src,
@@ -8361,7 +8361,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       int Function(int, ffi.Pointer<ffi.Float>, ffi.Pointer<ffi.Void>, int, int,
           int, ffi.Pointer<ffi.Float>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_type_traits> ggml_get_type_traits(
     int type,
   ) {
@@ -8377,7 +8377,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_get_type_traits = _ggml_get_type_traitsPtr
       .asFunction<ffi.Pointer<ggml_type_traits> Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_threadpool_params ggml_threadpool_params_default(
     int n_threads,
   ) {
@@ -8393,7 +8393,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_threadpool_params_defaultPtr
           .asFunction<ggml_threadpool_params Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_threadpool_params_init(
     ffi.Pointer<ggml_threadpool_params> p,
     int n_threads,
@@ -8411,7 +8411,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_threadpool_params_init = _ggml_threadpool_params_initPtr
       .asFunction<void Function(ffi.Pointer<ggml_threadpool_params>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_threadpool_params_match(
     ffi.Pointer<ggml_threadpool_params> p0,
     ffi.Pointer<ggml_threadpool_params> p1,
@@ -8432,7 +8432,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           bool Function(ffi.Pointer<ggml_threadpool_params>,
               ffi.Pointer<ggml_threadpool_params>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_tallocr ggml_tallocr_new(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8447,7 +8447,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_tallocr_new = _ggml_tallocr_newPtr
       .asFunction<ggml_tallocr Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_tallocr_alloc(
     ffi.Pointer<ggml_tallocr> talloc,
     ffi.Pointer<ggml_tensor> tensor,
@@ -8465,7 +8465,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_tallocr_alloc = _ggml_tallocr_allocPtr.asFunction<
       void Function(ffi.Pointer<ggml_tallocr>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_gallocr_t ggml_gallocr_new(
     ggml_backend_buffer_type_t buft,
   ) {
@@ -8481,7 +8481,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_gallocr_new = _ggml_gallocr_newPtr
       .asFunction<ggml_gallocr_t Function(ggml_backend_buffer_type_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_gallocr_t ggml_gallocr_new_n(
     ffi.Pointer<ggml_backend_buffer_type_t> bufts,
     int n_bufs,
@@ -8499,7 +8499,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_gallocr_new_n = _ggml_gallocr_new_nPtr.asFunction<
       ggml_gallocr_t Function(ffi.Pointer<ggml_backend_buffer_type_t>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_gallocr_free(
     ggml_gallocr_t galloc,
   ) {
@@ -8514,7 +8514,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_gallocr_free =
       _ggml_gallocr_freePtr.asFunction<void Function(ggml_gallocr_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_gallocr_reserve(
     ggml_gallocr_t galloc,
     ffi.Pointer<ggml_cgraph> graph,
@@ -8532,7 +8532,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_gallocr_reserve = _ggml_gallocr_reservePtr
       .asFunction<bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_gallocr_reserve_n(
     ggml_gallocr_t galloc,
     ffi.Pointer<ggml_cgraph> graph,
@@ -8558,7 +8558,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>,
           ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_gallocr_alloc_graph(
     ggml_gallocr_t galloc,
     ffi.Pointer<ggml_cgraph> graph,
@@ -8576,7 +8576,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_gallocr_alloc_graph = _ggml_gallocr_alloc_graphPtr
       .asFunction<bool Function(ggml_gallocr_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_gallocr_get_buffer_size(
     ggml_gallocr_t galloc,
     int buffer_id,
@@ -8593,7 +8593,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_gallocr_get_buffer_size = _ggml_gallocr_get_buffer_sizePtr
       .asFunction<int Function(ggml_gallocr_t, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_backend_buffer> ggml_backend_alloc_ctx_tensors_from_buft(
     ffi.Pointer<ggml_context> ctx,
     ggml_backend_buffer_type_t buft,
@@ -8614,7 +8614,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_backend_buffer> Function(
               ffi.Pointer<ggml_context>, ggml_backend_buffer_type_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ggml_backend_buffer> ggml_backend_alloc_ctx_tensors(
     ffi.Pointer<ggml_context> ctx,
     ggml_backend_t backend,
@@ -8634,7 +8634,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ggml_backend_buffer> Function(
               ffi.Pointer<ggml_context>, ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_buft_name(
     ggml_backend_buffer_type_t buft,
   ) {
@@ -8650,7 +8650,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buft_name = _ggml_backend_buft_namePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_buffer_type_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_t ggml_backend_buft_alloc_buffer(
     ggml_backend_buffer_type_t buft,
     int size,
@@ -8669,7 +8669,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_buft_alloc_bufferPtr.asFunction<
           ggml_backend_buffer_t Function(ggml_backend_buffer_type_t, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buft_get_alignment(
     ggml_backend_buffer_type_t buft,
   ) {
@@ -8685,7 +8685,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_buft_get_alignmentPtr
           .asFunction<int Function(ggml_backend_buffer_type_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buft_get_max_size(
     ggml_backend_buffer_type_t buft,
   ) {
@@ -8701,7 +8701,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_buft_get_max_sizePtr
           .asFunction<int Function(ggml_backend_buffer_type_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buft_get_alloc_size(
     ggml_backend_buffer_type_t buft,
     ffi.Pointer<ggml_tensor> tensor,
@@ -8720,7 +8720,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_buft_get_alloc_sizePtr.asFunction<
           int Function(ggml_backend_buffer_type_t, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_buft_is_host(
     ggml_backend_buffer_type_t buft,
   ) {
@@ -8735,7 +8735,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buft_is_host = _ggml_backend_buft_is_hostPtr
       .asFunction<bool Function(ggml_backend_buffer_type_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_buft_get_device(
     ggml_backend_buffer_type_t buft,
   ) {
@@ -8751,7 +8751,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buft_get_device = _ggml_backend_buft_get_devicePtr
       .asFunction<ggml_backend_dev_t Function(ggml_backend_buffer_type_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_buffer_name(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8767,7 +8767,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_name = _ggml_backend_buffer_namePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_free(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8782,7 +8782,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_free = _ggml_backend_buffer_freePtr
       .asFunction<void Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_backend_buffer_get_base(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8798,7 +8798,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_get_base = _ggml_backend_buffer_get_basePtr
       .asFunction<ffi.Pointer<ffi.Void> Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_size(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8813,7 +8813,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_get_size = _ggml_backend_buffer_get_sizePtr
       .asFunction<int Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_init_tensor(
     ggml_backend_buffer_t buffer,
     ffi.Pointer<ggml_tensor> tensor,
@@ -8832,7 +8832,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_buffer_init_tensorPtr.asFunction<
           void Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_alignment(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8848,7 +8848,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_buffer_get_alignmentPtr
           .asFunction<int Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_max_size(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8864,7 +8864,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_buffer_get_max_sizePtr
           .asFunction<int Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_alloc_size(
     ggml_backend_buffer_t buffer,
     ffi.Pointer<ggml_tensor> tensor,
@@ -8883,7 +8883,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_buffer_get_alloc_sizePtr.asFunction<
           int Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_clear(
     ggml_backend_buffer_t buffer,
     int value,
@@ -8901,7 +8901,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_clear = _ggml_backend_buffer_clearPtr
       .asFunction<void Function(ggml_backend_buffer_t, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_buffer_is_host(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8916,7 +8916,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_is_host = _ggml_backend_buffer_is_hostPtr
       .asFunction<bool Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_set_usage(
     ggml_backend_buffer_t buffer,
     int usage,
@@ -8934,7 +8934,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_set_usage = _ggml_backend_buffer_set_usagePtr
       .asFunction<void Function(ggml_backend_buffer_t, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_buffer_get_usage(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8949,7 +8949,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_get_usage = _ggml_backend_buffer_get_usagePtr
       .asFunction<int Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_buffer_get_type(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8965,7 +8965,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_get_type = _ggml_backend_buffer_get_typePtr
       .asFunction<ggml_backend_buffer_type_t Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_buffer_reset(
     ggml_backend_buffer_t buffer,
   ) {
@@ -8980,7 +8980,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_buffer_reset = _ggml_backend_buffer_resetPtr
       .asFunction<void Function(ggml_backend_buffer_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_copy(
     ffi.Pointer<ggml_tensor> src,
     ffi.Pointer<ggml_tensor> dst,
@@ -8999,7 +8999,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_tensor_copyPtr.asFunction<
           void Function(ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_guid_t ggml_backend_guid(
     ggml_backend_t backend,
   ) {
@@ -9014,7 +9014,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_guid =
       _ggml_backend_guidPtr.asFunction<ggml_guid_t Function(ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_name(
     ggml_backend_t backend,
   ) {
@@ -9029,7 +9029,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_name = _ggml_backend_namePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_free(
     ggml_backend_t backend,
   ) {
@@ -9044,7 +9044,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_free =
       _ggml_backend_freePtr.asFunction<void Function(ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_get_default_buffer_type(
     ggml_backend_t backend,
   ) {
@@ -9061,7 +9061,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_get_default_buffer_typePtr
           .asFunction<ggml_backend_buffer_type_t Function(ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_t ggml_backend_alloc_buffer(
     ggml_backend_t backend,
     int size,
@@ -9079,7 +9079,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_alloc_buffer = _ggml_backend_alloc_bufferPtr
       .asFunction<ggml_backend_buffer_t Function(ggml_backend_t, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_get_alignment(
     ggml_backend_t backend,
   ) {
@@ -9094,7 +9094,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_get_alignment =
       _ggml_backend_get_alignmentPtr.asFunction<int Function(ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_get_max_size(
     ggml_backend_t backend,
   ) {
@@ -9109,7 +9109,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_get_max_size =
       _ggml_backend_get_max_sizePtr.asFunction<int Function(ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_set_async(
     ggml_backend_t backend,
     ffi.Pointer<ggml_tensor> tensor,
@@ -9139,7 +9139,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(ggml_backend_t, ffi.Pointer<ggml_tensor>,
               ffi.Pointer<ffi.Void>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_get_async(
     ggml_backend_t backend,
     ffi.Pointer<ggml_tensor> tensor,
@@ -9169,7 +9169,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(ggml_backend_t, ffi.Pointer<ggml_tensor>,
               ffi.Pointer<ffi.Void>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_set(
     ffi.Pointer<ggml_tensor> tensor,
     ffi.Pointer<ffi.Void> data,
@@ -9192,7 +9192,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       void Function(
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_get(
     ffi.Pointer<ggml_tensor> tensor,
     ffi.Pointer<ffi.Void> data,
@@ -9215,7 +9215,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       void Function(
           ffi.Pointer<ggml_tensor>, ffi.Pointer<ffi.Void>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_memset(
     ffi.Pointer<ggml_tensor> tensor,
     int value,
@@ -9237,7 +9237,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_tensor_memset = _ggml_backend_tensor_memsetPtr
       .asFunction<void Function(ffi.Pointer<ggml_tensor>, int, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_synchronize(
     ggml_backend_t backend,
   ) {
@@ -9252,7 +9252,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_synchronize =
       _ggml_backend_synchronizePtr.asFunction<void Function(ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_graph_plan_t ggml_backend_graph_plan_create(
     ggml_backend_t backend,
     ffi.Pointer<ggml_cgraph> cgraph,
@@ -9272,7 +9272,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ggml_backend_graph_plan_t Function(
               ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_graph_plan_free(
     ggml_backend_t backend,
     ggml_backend_graph_plan_t plan,
@@ -9290,7 +9290,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_graph_plan_free = _ggml_backend_graph_plan_freePtr
       .asFunction<void Function(ggml_backend_t, ggml_backend_graph_plan_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_graph_plan_compute(
     ggml_backend_t backend,
     ggml_backend_graph_plan_t plan,
@@ -9309,7 +9309,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_graph_plan_computePtr.asFunction<
           int Function(ggml_backend_t, ggml_backend_graph_plan_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_graph_compute(
     ggml_backend_t backend,
     ffi.Pointer<ggml_cgraph> cgraph,
@@ -9327,7 +9327,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_graph_compute = _ggml_backend_graph_computePtr
       .asFunction<int Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_graph_compute_async(
     ggml_backend_t backend,
     ffi.Pointer<ggml_cgraph> cgraph,
@@ -9346,7 +9346,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_graph_compute_asyncPtr
           .asFunction<int Function(ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_supports_op(
     ggml_backend_t backend,
     ffi.Pointer<ggml_tensor> op,
@@ -9364,7 +9364,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_supports_op = _ggml_backend_supports_opPtr
       .asFunction<bool Function(ggml_backend_t, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_supports_buft(
     ggml_backend_t backend,
     ggml_backend_buffer_type_t buft,
@@ -9382,7 +9382,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_supports_buft = _ggml_backend_supports_buftPtr
       .asFunction<bool Function(ggml_backend_t, ggml_backend_buffer_type_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_offload_op(
     ggml_backend_t backend,
     ffi.Pointer<ggml_tensor> op,
@@ -9400,7 +9400,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_offload_op = _ggml_backend_offload_opPtr
       .asFunction<bool Function(ggml_backend_t, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_copy_async(
     ggml_backend_t backend_src,
     ggml_backend_t backend_dst,
@@ -9427,7 +9427,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(ggml_backend_t, ggml_backend_t,
               ffi.Pointer<ggml_tensor>, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_get_device(
     ggml_backend_t backend,
   ) {
@@ -9442,7 +9442,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_get_device = _ggml_backend_get_devicePtr
       .asFunction<ggml_backend_dev_t Function(ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_event_t ggml_backend_event_new(
     ggml_backend_dev_t device,
   ) {
@@ -9458,7 +9458,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_event_new = _ggml_backend_event_newPtr
       .asFunction<ggml_backend_event_t Function(ggml_backend_dev_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_event_free(
     ggml_backend_event_t event,
   ) {
@@ -9473,7 +9473,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_event_free = _ggml_backend_event_freePtr
       .asFunction<void Function(ggml_backend_event_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_event_record(
     ggml_backend_event_t event,
     ggml_backend_t backend,
@@ -9491,7 +9491,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_event_record = _ggml_backend_event_recordPtr
       .asFunction<void Function(ggml_backend_event_t, ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_event_synchronize(
     ggml_backend_event_t event,
   ) {
@@ -9507,7 +9507,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_event_synchronizePtr
           .asFunction<void Function(ggml_backend_event_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_event_wait(
     ggml_backend_t backend,
     ggml_backend_event_t event,
@@ -9525,7 +9525,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_event_wait = _ggml_backend_event_waitPtr
       .asFunction<void Function(ggml_backend_t, ggml_backend_event_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_dev_name(
     ggml_backend_dev_t device,
   ) {
@@ -9541,7 +9541,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_name = _ggml_backend_dev_namePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_dev_description(
     ggml_backend_dev_t device,
   ) {
@@ -9557,7 +9557,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_description = _ggml_backend_dev_descriptionPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_dev_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_dev_memory(
     ggml_backend_dev_t device,
     ffi.Pointer<ffi.Size> free,
@@ -9578,7 +9578,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       void Function(
           ggml_backend_dev_t, ffi.Pointer<ffi.Size>, ffi.Pointer<ffi.Size>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_dev_type1(
     ggml_backend_dev_t device,
   ) {
@@ -9593,7 +9593,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_type1 =
       _ggml_backend_dev_type1Ptr.asFunction<int Function(ggml_backend_dev_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_dev_get_props(
     ggml_backend_dev_t device,
     ffi.Pointer<ggml_backend_dev_props> props,
@@ -9614,7 +9614,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(
               ggml_backend_dev_t, ffi.Pointer<ggml_backend_dev_props>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_reg_t ggml_backend_dev_backend_reg(
     ggml_backend_dev_t device,
   ) {
@@ -9629,7 +9629,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_backend_reg = _ggml_backend_dev_backend_regPtr
       .asFunction<ggml_backend_reg_t Function(ggml_backend_dev_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_dev_init(
     ggml_backend_dev_t device,
     ffi.Pointer<ffi.Char> params,
@@ -9647,7 +9647,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_init = _ggml_backend_dev_initPtr.asFunction<
       ggml_backend_t Function(ggml_backend_dev_t, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_dev_buffer_type(
     ggml_backend_dev_t device,
   ) {
@@ -9663,7 +9663,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_buffer_type = _ggml_backend_dev_buffer_typePtr
       .asFunction<ggml_backend_buffer_type_t Function(ggml_backend_dev_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_dev_host_buffer_type(
     ggml_backend_dev_t device,
   ) {
@@ -9680,7 +9680,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_dev_host_buffer_typePtr.asFunction<
           ggml_backend_buffer_type_t Function(ggml_backend_dev_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_t ggml_backend_dev_buffer_from_host_ptr(
     ggml_backend_dev_t device,
     ffi.Pointer<ffi.Void> ptr,
@@ -9707,7 +9707,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ggml_backend_buffer_t Function(
               ggml_backend_dev_t, ffi.Pointer<ffi.Void>, int, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_dev_supports_op(
     ggml_backend_dev_t device,
     ffi.Pointer<ggml_tensor> op,
@@ -9726,7 +9726,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_dev_supports_opPtr.asFunction<
           bool Function(ggml_backend_dev_t, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_dev_supports_buft(
     ggml_backend_dev_t device,
     ggml_backend_buffer_type_t buft,
@@ -9745,7 +9745,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_dev_supports_buftPtr.asFunction<
           bool Function(ggml_backend_dev_t, ggml_backend_buffer_type_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_dev_offload_op(
     ggml_backend_dev_t device,
     ffi.Pointer<ggml_tensor> op,
@@ -9764,7 +9764,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_dev_offload_opPtr.asFunction<
           bool Function(ggml_backend_dev_t, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Char> ggml_backend_reg_name(
     ggml_backend_reg_t reg,
   ) {
@@ -9780,7 +9780,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_reg_name = _ggml_backend_reg_namePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(ggml_backend_reg_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_reg_dev_count(
     ggml_backend_reg_t reg,
   ) {
@@ -9795,7 +9795,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_reg_dev_count = _ggml_backend_reg_dev_countPtr
       .asFunction<int Function(ggml_backend_reg_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_reg_dev_get(
     ggml_backend_reg_t reg,
     int index,
@@ -9813,7 +9813,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_reg_dev_get = _ggml_backend_reg_dev_getPtr
       .asFunction<ggml_backend_dev_t Function(ggml_backend_reg_t, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ffi.Pointer<ffi.Void> ggml_backend_reg_get_proc_address(
     ggml_backend_reg_t reg,
     ffi.Pointer<ffi.Char> name,
@@ -9833,7 +9833,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ffi.Pointer<ffi.Void> Function(
               ggml_backend_reg_t, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_device_register(
     ggml_backend_dev_t device,
   ) {
@@ -9848,7 +9848,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_device_register = _ggml_backend_device_registerPtr
       .asFunction<void Function(ggml_backend_dev_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_reg_count() {
     return _ggml_backend_reg_count();
   }
@@ -9859,7 +9859,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_reg_count =
       _ggml_backend_reg_countPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_reg_t ggml_backend_reg_get(
     int index,
   ) {
@@ -9874,7 +9874,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_reg_get =
       _ggml_backend_reg_getPtr.asFunction<ggml_backend_reg_t Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_reg_t ggml_backend_reg_by_name(
     ffi.Pointer<ffi.Char> name,
   ) {
@@ -9890,7 +9890,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_reg_by_name = _ggml_backend_reg_by_namePtr
       .asFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_dev_count() {
     return _ggml_backend_dev_count();
   }
@@ -9901,7 +9901,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_count =
       _ggml_backend_dev_countPtr.asFunction<int Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_dev_get(
     int index,
   ) {
@@ -9916,7 +9916,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_get =
       _ggml_backend_dev_getPtr.asFunction<ggml_backend_dev_t Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_dev_by_name(
     ffi.Pointer<ffi.Char> name,
   ) {
@@ -9932,7 +9932,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_by_name = _ggml_backend_dev_by_namePtr
       .asFunction<ggml_backend_dev_t Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_dev_t ggml_backend_dev_by_type(
     int type,
   ) {
@@ -9947,7 +9947,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_dev_by_type = _ggml_backend_dev_by_typePtr
       .asFunction<ggml_backend_dev_t Function(int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_init_by_name(
     ffi.Pointer<ffi.Char> name,
     ffi.Pointer<ffi.Char> params,
@@ -9967,7 +9967,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ggml_backend_t Function(
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_init_by_type(
     int type,
     ffi.Pointer<ffi.Char> params,
@@ -9985,7 +9985,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_init_by_type = _ggml_backend_init_by_typePtr
       .asFunction<ggml_backend_t Function(int, ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_init_best() {
     return _ggml_backend_init_best();
   }
@@ -9996,7 +9996,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_init_best =
       _ggml_backend_init_bestPtr.asFunction<ggml_backend_t Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_reg_t ggml_backend_load(
     ffi.Pointer<ffi.Char> path,
   ) {
@@ -10012,7 +10012,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_load = _ggml_backend_loadPtr
       .asFunction<ggml_backend_reg_t Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_unload(
     ggml_backend_reg_t reg,
   ) {
@@ -10027,7 +10027,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_unload =
       _ggml_backend_unloadPtr.asFunction<void Function(ggml_backend_reg_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_load_all() {
     return _ggml_backend_load_all();
   }
@@ -10037,7 +10037,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_load_all =
       _ggml_backend_load_allPtr.asFunction<void Function()>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_load_all_from_path(
     ffi.Pointer<ffi.Char> dir_path,
   ) {
@@ -10053,7 +10053,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_load_all_from_pathPtr
           .asFunction<void Function(ffi.Pointer<ffi.Char>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_sched_t ggml_backend_sched_new(
     ffi.Pointer<ggml_backend_t> backends,
     ffi.Pointer<ggml_backend_buffer_type_t> bufts,
@@ -10082,7 +10082,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       ggml_backend_sched_t Function(ffi.Pointer<ggml_backend_t>,
           ffi.Pointer<ggml_backend_buffer_type_t>, int, int, bool)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_free(
     ggml_backend_sched_t sched,
   ) {
@@ -10097,7 +10097,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_sched_free = _ggml_backend_sched_freePtr
       .asFunction<void Function(ggml_backend_sched_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_sched_reserve(
     ggml_backend_sched_t sched,
     ffi.Pointer<ggml_cgraph> measure_graph,
@@ -10116,7 +10116,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_reservePtr.asFunction<
           bool Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_get_n_backends(
     ggml_backend_sched_t sched,
   ) {
@@ -10132,7 +10132,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_get_n_backendsPtr
           .asFunction<int Function(ggml_backend_sched_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_sched_get_backend(
     ggml_backend_sched_t sched,
     int i,
@@ -10151,7 +10151,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_get_backendPtr
           .asFunction<ggml_backend_t Function(ggml_backend_sched_t, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_get_n_splits(
     ggml_backend_sched_t sched,
   ) {
@@ -10167,7 +10167,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_get_n_splitsPtr
           .asFunction<int Function(ggml_backend_sched_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_get_n_copies(
     ggml_backend_sched_t sched,
   ) {
@@ -10183,7 +10183,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_get_n_copiesPtr
           .asFunction<int Function(ggml_backend_sched_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_get_buffer_size(
     ggml_backend_sched_t sched,
     ggml_backend_t backend,
@@ -10202,7 +10202,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_get_buffer_sizePtr
           .asFunction<int Function(ggml_backend_sched_t, ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_set_tensor_backend(
     ggml_backend_sched_t sched,
     ffi.Pointer<ggml_tensor> node,
@@ -10224,7 +10224,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(ggml_backend_sched_t, ffi.Pointer<ggml_tensor>,
               ggml_backend_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_t ggml_backend_sched_get_tensor_backend(
     ggml_backend_sched_t sched,
     ffi.Pointer<ggml_tensor> node,
@@ -10245,7 +10245,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ggml_backend_t Function(
               ggml_backend_sched_t, ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_sched_alloc_graph(
     ggml_backend_sched_t sched,
     ffi.Pointer<ggml_cgraph> graph,
@@ -10264,7 +10264,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_alloc_graphPtr.asFunction<
           bool Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_graph_compute(
     ggml_backend_sched_t sched,
     ffi.Pointer<ggml_cgraph> graph,
@@ -10283,7 +10283,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_graph_computePtr.asFunction<
           int Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   int ggml_backend_sched_graph_compute_async(
     ggml_backend_sched_t sched,
     ffi.Pointer<ggml_cgraph> graph,
@@ -10303,7 +10303,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_graph_compute_asyncPtr.asFunction<
           int Function(ggml_backend_sched_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_synchronize(
     ggml_backend_sched_t sched,
   ) {
@@ -10319,7 +10319,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_sched_synchronizePtr
           .asFunction<void Function(ggml_backend_sched_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_reset(
     ggml_backend_sched_t sched,
   ) {
@@ -10334,7 +10334,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_sched_reset = _ggml_backend_sched_resetPtr
       .asFunction<void Function(ggml_backend_sched_t)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_sched_set_eval_callback(
     ggml_backend_sched_t sched,
     ggml_backend_sched_eval_callback callback,
@@ -10358,7 +10358,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(ggml_backend_sched_t, ggml_backend_sched_eval_callback,
               ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_graph_copy ggml_backend_graph_copy1(
     ggml_backend_t backend,
     ffi.Pointer<ggml_cgraph> graph,
@@ -10378,7 +10378,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           ggml_backend_graph_copy Function(
               ggml_backend_t, ffi.Pointer<ggml_cgraph>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_graph_copy_free(
     ggml_backend_graph_copy copy,
   ) {
@@ -10393,7 +10393,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_graph_copy_free = _ggml_backend_graph_copy_freePtr
       .asFunction<void Function(ggml_backend_graph_copy)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   bool ggml_backend_compare_graph_backend(
     ggml_backend_t backend1,
     ggml_backend_t backend2,
@@ -10427,7 +10427,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
               ggml_backend_eval_callback,
               ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_tensor_alloc(
     ggml_backend_buffer_t buffer,
     ffi.Pointer<ggml_tensor> tensor,
@@ -10449,7 +10449,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
           void Function(ggml_backend_buffer_t, ffi.Pointer<ggml_tensor>,
               ffi.Pointer<ffi.Void>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   void ggml_backend_view_init(
     ffi.Pointer<ggml_tensor> tensor,
   ) {
@@ -10464,7 +10464,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
   late final _ggml_backend_view_init = _ggml_backend_view_initPtr
       .asFunction<void Function(ffi.Pointer<ggml_tensor>)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_t ggml_backend_cpu_buffer_from_ptr(
     ffi.Pointer<ffi.Void> ptr,
     int size,
@@ -10483,7 +10483,7 @@ class LlamaLibrarySharedBindingsByGeneralDeveloper {
       _ggml_backend_cpu_buffer_from_ptrPtr.asFunction<
           ggml_backend_buffer_t Function(ffi.Pointer<ffi.Void>, int)>();
 
-  /// GeneralAiSpeechToTextLibraryWhisper Binding By General Corporation & Global Corporation & General Developer
+  /// LlamaLibrarySharedBindingsByGeneralDeveloper Binding By General Corporation & Global Corporation & General Developer
   ggml_backend_buffer_type_t ggml_backend_cpu_buffer_type() {
     return _ggml_backend_cpu_buffer_type();
   }

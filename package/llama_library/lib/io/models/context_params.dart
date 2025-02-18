@@ -1,5 +1,5 @@
 import 'dart:convert';
-import '../ffi/bindings.dart';
+import '../../ffi/bindings.dart';
 
 /// RoPE scaling types
 enum LlamaRopeScalingType {
@@ -65,7 +65,7 @@ enum LlamaAttentionType {
 }
 
 /// ContextParams holds configuration settings for the Llama model context
-class ContextParams {
+class LLamaContextParams {
   /// Maximum number of tokens to predict/generate in response
   int nPredit = 32;
 
@@ -136,7 +136,7 @@ class ContextParams {
   bool noPerfTimings = false;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  ContextParams();
+  LLamaContextParams();
 
   /// Constructs and returns a `llama_context_params` object
   llama_context_params get(
@@ -170,8 +170,8 @@ class ContextParams {
   }
 
   /// Creates a ContextParams instance from JSON
-  factory ContextParams.fromJson(Map<String, dynamic> json) {
-    return ContextParams()
+  factory LLamaContextParams.fromJson(Map<String, dynamic> json) {
+    return LLamaContextParams()
       ..nCtx = json['nCtx'] ?? 512
       ..nBatch = json['nBatch'] ?? 512
       ..nUbatch = json['nUbatch'] ?? 512

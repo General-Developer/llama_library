@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:ffi';
 import 'package:ffi/ffi.dart';
-import '../ffi/bindings.dart';
+import '../../ffi/bindings.dart';
 import 'prompt_format.dart';
 // import '../llama_cpp_dart.dart';
 
@@ -16,9 +16,9 @@ enum LlamaSplitMode {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-class ModelParams {
+class LLamaModelParams {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  PromptFormat? formatter;
+  LLamaPromptFormat? formatter;
 
   /// Number of layers to store in VRAM
   int nGpuLayers = 99;
@@ -55,7 +55,7 @@ class ModelParams {
   Pointer<Char>? _rpcServersPtr;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  ModelParams();
+  LLamaModelParams();
 
   /// Constructs and returns a `llama_model_params` object with current settings
   llama_model_params get(
@@ -101,7 +101,7 @@ class ModelParams {
   }
 
   /// Constructs a ModelParams instance from a JSON map
-  ModelParams.fromJson(Map<String, dynamic> json) {
+  LLamaModelParams.fromJson(Map<String, dynamic> json) {
     nGpuLayers = json['nGpuLayers'] ?? 99;
     splitMode = LlamaSplitMode.values[json['splitMode'] ?? 0];
     mainGpu = json['mainGpu'] ?? 0;
