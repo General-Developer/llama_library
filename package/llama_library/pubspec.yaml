@@ -2,15 +2,15 @@ name: 'llama_library'
 description: "LLaMA Is Library for Inference of Meta's LLaMA model (and others)"
 version: '0.0.2'
 environment:
-  sdk: '>=3.6.0 <4.0.0'
+  sdk: '>=3.7.0 <4.0.0'
 dependencies:
   general_lib: '^0.0.66'
   ffi: '^2.1.0'
   crypto: '^3.0.3'
   path: '^1.9.0'
-  general_ml: '^0.0.1'
+  general_ml: '^0.0.2'
 dev_dependencies:
-  lints: '^5.0.0'
+  lints: '^5.1.1'
   test: 'any'
   ffigen: '^15.0.0'
 dependency_overrides:
