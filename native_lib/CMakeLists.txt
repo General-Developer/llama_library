@@ -39,6 +39,9 @@ project(
   general_developer_llama_shared_library
 )
 
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -s")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
+
 
 
 set(LLAMA_LIBRARY_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/llama.cpp")
