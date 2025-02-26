@@ -2,3 +2,5 @@
 
 dart compile exe example/example.dart
 LD_LIBRARY_PATH="../llama_library_flutter/linux" ./example/example.exe
+
+# LD_LIBRARY_PATH="../llama_library_flutter/linux" dart run example/example.dart
