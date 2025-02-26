@@ -203,15 +203,55 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
                       minWidth: context.width,
                     ),
                     child: Column(
-                      children: [
-                        SizedBox(
-                          height: context.mediaQueryData.padding.bottom,
-                        ),
-                      ],
+                      children: [],
                     ),
                   ),
                 ),
               ),
+            ),
+            Container(
+              width: context.width,
+              margin: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: context.theme.appBarTheme.backgroundColor,
+                borderRadius: BorderRadius.circular(20),
+                border: context.extensionGeneralLibFlutterBorderAll(),
+                boxShadow: context.extensionGeneralLibFlutterBoxShadows(),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Flexible(
+                    child: TextFormField(
+                      
+                      decoration: () {
+                        final OutlineInputBorder inputBorder = OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        );
+                        return InputDecoration(
+                          enabledBorder: inputBorder,
+                          border: inputBorder,
+                          errorBorder: inputBorder,
+                          focusedBorder: inputBorder,
+                          disabledBorder: inputBorder,
+                          focusedErrorBorder: inputBorder,
+                        );
+                      }(),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.send),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: context.mediaQueryData.padding.bottom,
             ),
           ],
         ),
