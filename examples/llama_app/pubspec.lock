@@ -90,7 +90,7 @@ packages:
     source: hosted
     version: "2.4.4"
   build_runner:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: build_runner
       sha256: "058fe9dce1de7d69c4b84fada934df3e0153dd000758c4d65964d0166779aa99"
@@ -281,6 +281,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+  database_universe:
+    dependency: "direct main"
+    description:
+      name: database_universe
+      sha256: "795935215dbe28bc9de98cd0a57c65ec07c60f82c4fe2e92e40bba396a39085b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
+  database_universe_flutter_libs:
+    dependency: transitive
+    description:
+      name: database_universe_flutter_libs
+      sha256: fd5833dbf4627ddb8508e9a23b09d6d94f020284b3875d52cadc68331e05c2fe
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
   dbus:
     dependency: transitive
     description:

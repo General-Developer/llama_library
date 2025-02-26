@@ -38,8 +38,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:general_lib/regexp_replace/regexp_replace.dart';
 import 'package:llama_app/scheme/scheme/application_llama_library_database.dart';
- import 'package:file_picker/file_picker.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:general_framework/flutter/client/general_framework_client_flutter_app_directory.dart';
 import 'package:general_lib/crypto/crypto.dart';
@@ -48,7 +49,7 @@ import 'package:general_lib/database/database.dart';
 import 'package:general_lib/database/database_core.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
 import 'package:general_system_device/general_system_device_flutter.dart';
-import 'package:llama_library/llama_library.dart'; 
+import 'package:llama_library/llama_library.dart';
 import "package:path/path.dart" as path;
 
 class LlamaAppClientFlutter {
@@ -61,7 +62,7 @@ class LlamaAppClientFlutter {
   static late final DatabaseMiniGeneralLibrary coreDatabaseMiniLibrary;
   static Future<void> ensureInitialized() async {
     WidgetsFlutterBinding.ensureInitialized();
-    generalFlutter.media_player.ensureInitialized(); 
+    generalFlutter.media_player.ensureInitialized();
     await llamaLibrary.ensureInitialized();
     await llamaLibrary.initialized();
   }
@@ -127,6 +128,9 @@ class LlamaAppClientFlutter {
       allowedExtensions: allowedExtensions ??
           [
             "bin",
+            "gguf",
+            "ggml",
+            "ckpt",
           ],
     );
 
@@ -167,3 +171,37 @@ extension StatellamaLibraryExtensionFLutter<T extends StatefulWidget> on State<T
     return;
   }
 }
+
+extension LLamaStringClearExtension on String {
+  String cleaner() {
+    String text = this;
+    for (final element in regExpReplaces) {
+      try {
+        text = text.replaceAllMapped(element.from, element.replace);
+      } catch (e) {}
+    }
+
+    return text.trim();
+  }
+}
+
+List<RegExpReplace> get regExpReplaces => [
+  RegExpReplace(
+    from: RegExp(
+      "(([<|])([<|])?([/])?(think|im_start|im_end)([|>])?([|>]))",
+      caseSensitive: false,
+    ),
+    replace: (match) {
+      return "";
+    },
+  ),
+  RegExpReplace(
+    from: RegExp(
+      "([<|]([/])?([ ]+)?[|>])",
+      caseSensitive: false,
+    ),
+    replace: (match) {
+      return "";
+    },
+  ),
+];

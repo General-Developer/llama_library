@@ -27,16 +27,18 @@ dependencies:
   media_kit_libs_video_fork: '^0.0.2'
   media_kit_video_fork: '^0.0.2'
   path: '^1.9.0'
-  general_system_device: '^0.0.51' 
+  general_system_device: '^0.0.51'
   llama_library: '^0.0.2'
   llama_library_flutter: '^0.0.2'
   ggml_library_flutter: '^0.0.8'
   file_picker: '^8.3.5'
+  database_universe: '^1.0.5'
 dev_dependencies:
   flutter_test:
     sdk: 'flutter'
   flutter_lints: '^5.0.0'
   msix: '^3.16.8'
+  build_runner: 'any'
 flutter:
   uses-material-design: true
 project:

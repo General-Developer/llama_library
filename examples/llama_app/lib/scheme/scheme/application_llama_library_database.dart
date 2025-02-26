@@ -2,21 +2,19 @@
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
-
-/// Generated 
+/// Generated
 class ApplicationLlamaLibraryDatabase extends JsonScheme {
-
   /// Generated
   ApplicationLlamaLibraryDatabase(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"applicationLlamaLibraryDatabase","llama_model_path":""};
+    return {"@type": "applicationLlamaLibraryDatabase", "llama_model_path": ""};
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == applicationLlamaLibraryDatabase
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -30,20 +28,16 @@ class ApplicationLlamaLibraryDatabase extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [ApplicationLlamaLibraryDatabase]
-  /// Empty  
+  /// Empty
   static ApplicationLlamaLibraryDatabase empty() {
     return ApplicationLlamaLibraryDatabase({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -57,11 +51,10 @@ class ApplicationLlamaLibraryDatabase extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get llama_model_path {
     try {
-      if (rawData["llama_model_path"] is String == false){
+      if (rawData["llama_model_path"] is String == false) {
         return null;
       }
       return rawData["llama_model_path"] as String;
@@ -75,25 +68,19 @@ class ApplicationLlamaLibraryDatabase extends JsonScheme {
     rawData["llama_model_path"] = value;
   }
 
-
   /// Generated
   static ApplicationLlamaLibraryDatabase create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "applicationLlamaLibraryDatabase",
     String? llama_model_path,
-})  {
+  }) {
     // ApplicationLlamaLibraryDatabase applicationLlamaLibraryDatabase = ApplicationLlamaLibraryDatabase({
-final Map applicationLlamaLibraryDatabase_data_create_json = {
-  
+    final Map applicationLlamaLibraryDatabase_data_create_json = {
       "@type": special_type,
       "llama_model_path": llama_model_path,
+    };
 
-
-};
-
-
-          applicationLlamaLibraryDatabase_data_create_json.removeWhere((key, value) => value == null);
+    applicationLlamaLibraryDatabase_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -102,8 +89,6 @@ final Map applicationLlamaLibraryDatabase_data_create_json = {
         }
       });
     }
-return ApplicationLlamaLibraryDatabase(applicationLlamaLibraryDatabase_data_create_json);
-
-
-      }
+    return ApplicationLlamaLibraryDatabase(applicationLlamaLibraryDatabase_data_create_json);
+  }
 }

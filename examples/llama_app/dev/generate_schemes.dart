@@ -39,16 +39,64 @@ import "package:path/path.dart" as path;
 void main(List<String> args) async {
   final Directory directoryScheme = Directory(path.join(Directory.current.path, "lib", "scheme"));
   directoryScheme.generalLibUtilsDangerRecreate();
-
-  await jsonToScripts(
+  {
+    await jsonToScripts(
+      database_schemes,
+      directory: Directory(path.join(directoryScheme.path, "scheme")),
+    );
+  }
+  {
+    final Directory directoryDatabaseScheme = Directory(path.join(Directory.current.path, "lib", "database_universe_scheme"));
+    directoryDatabaseScheme.generalLibUtilsDangerRecreate();
+    for (final element in database_schemes) {
+      if (element["@type"] is String == false) {
+        continue;
+      }
+      final String className = (element["@type"] as String);
+      if (className.isEmpty) {
+        continue;
+      }
+      final result = jsonToDatabaseUniverse(
+        element,
+        className: className,
+      );
+      await result.saveToFile(directoryDatabaseScheme);
+    }
+  }
+  Process.runSync(
+    "dart",
     [
-      {
-        "@type": "applicationLlamaLibraryDatabase",
-        "llama_model_path": "",
-      },
+      "format",
+      directoryScheme.path,
     ],
-    directory: Directory(path.join(directoryScheme.path, "scheme")),
   );
-
-  exit(0);
+  final result = await Process.start(
+    "dart",
+    [
+      "run",
+      "build_runner",
+      "build",
+      "--delete-conflicting-outputs",
+    ],
+    workingDirectory: Directory.current.path,
+  );
+  result.stdout.listen(stdout.add);
+  result.stderr.listen(stderr.add);
+  int exit_code = await result.exitCode;
+  exit(exit_code);
 }
+
+final List<Map<String, dynamic>> database_schemes = [
+  {
+    "@type": "applicationLlamaLibraryDatabase",
+    "llama_model_path": "",
+  },
+  {
+    "@type": "llamaMessageDatabase",
+    "id": 0,
+    "is_outgoing": false,
+    "is_done": false,
+    "text": "",
+    "date": 0,
+  }
+];

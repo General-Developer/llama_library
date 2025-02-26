@@ -5,8 +5,7 @@ extension LlamaLibraryExtensionSendMessaage on LlamaLibrary {
   Future<UpdateLlamaLibraryMessage> _sendMessage({
     required SendLlamaLibraryMessage parameters,
     required final String extra,
-    required InvokeParametersLlamaLibraryDataOptions
-        invokeParametersLlamaLibraryDataOptions,
+    required InvokeParametersLlamaLibraryDataOptions invokeParametersLlamaLibraryDataOptions,
   }) async {
     if (_isInIsolate == false) {
       return UpdateLlamaLibraryMessage({});
@@ -20,8 +19,7 @@ extension LlamaLibraryExtensionSendMessaage on LlamaLibrary {
       content: """""".trim(),
     );
 
-    chatHistory.addMessage(
-        role: LlamaLibraryRole.user, content: parameters.text ?? "");
+    chatHistory.addMessage(role: LlamaLibraryRole.user, content: parameters.text ?? "");
     final String prompt = chatHistory.exportFormat(
       LlamaLibraryChatFormat.chatml,
     );
@@ -50,13 +48,11 @@ extension LlamaLibraryExtensionSendMessaage on LlamaLibrary {
 
       // Reset the context state
       if (LlamaLibrary._llamaContext.address != 0) {
-        LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-            .llama_kv_cache_clear(LlamaLibrary._llamaContext);
+        LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_kv_cache_clear(LlamaLibrary._llamaContext);
       }
 
       // Reset batch
-      batch = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_batch_init(0, 0, 1);
+      batch = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_batch_init(0, 0, 1);
     }
 
     /// send Prompt
@@ -67,23 +63,17 @@ extension LlamaLibraryExtensionSendMessaage on LlamaLibrary {
       }
 
       final promptPtr = prompt.toNativeUtf8().cast<Char>();
-      nPrompt = -LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_tokenize(LlamaLibrary._vocab, promptPtr, prompt.length,
-              nullptr, 0, true, true);
+      nPrompt = -LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_tokenize(LlamaLibrary._vocab, promptPtr, prompt.length, nullptr, 0, true, true);
 
       tokens = malloc<llama_token>(nPrompt);
-      if (LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-              .llama_tokenize(LlamaLibrary._vocab, promptPtr, prompt.length,
-                  tokens, nPrompt, true, true) <
-          0) {
+      if (LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_tokenize(LlamaLibrary._vocab, promptPtr, prompt.length, tokens, nPrompt, true, true) < 0) {
         return UpdateLlamaLibraryMessage({
           "@type": "error",
           "message": "failed_to_tokenize_prompt",
         });
       }
 
-      batch = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_batch_get_one(tokens, nPrompt);
+      batch = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_batch_get_one(tokens, nPrompt);
       nPos = 0;
     }
     final StringBuffer stringBuffer = StringBuffer();
@@ -99,9 +89,7 @@ extension LlamaLibraryExtensionSendMessaage on LlamaLibrary {
         );
       }
 
-      if (LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-              .llama_decode(LlamaLibrary._llamaContext, batch) !=
-          0) {
+      if (LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_decode(LlamaLibrary._llamaContext, batch) != 0) {
         return UpdateLlamaLibraryMessage.create(
           is_done: true,
           text: "",
@@ -110,13 +98,9 @@ extension LlamaLibraryExtensionSendMessaage on LlamaLibrary {
       }
 
       nPos += batch.n_tokens;
-      int newTokenId = LlamaLibrary
-          ._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_sampler_sample(
-              LlamaLibrary._llamaSampler, LlamaLibrary._llamaContext, -1);
+      int newTokenId = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_sample(LlamaLibrary._llamaSampler, LlamaLibrary._llamaContext, -1);
 
-      if (LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_token_is_eog(LlamaLibrary._vocab, newTokenId)) {
+      if (LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_token_is_eog(LlamaLibrary._vocab, newTokenId)) {
         return UpdateLlamaLibraryMessage.create(
           is_done: true,
           text: "",
@@ -124,9 +108,7 @@ extension LlamaLibraryExtensionSendMessaage on LlamaLibrary {
         );
       }
       final buf = malloc<Char>(128);
-      int n = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_token_to_piece(
-              LlamaLibrary._vocab, newTokenId, buf, 128, 0, true);
+      int n = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_token_to_piece(LlamaLibrary._vocab, newTokenId, buf, 128, 0, true);
 
       if (n < 0) {
         return UpdateLlamaLibraryMessage.create(
@@ -139,12 +121,9 @@ extension LlamaLibraryExtensionSendMessaage on LlamaLibrary {
       String piece = String.fromCharCodes(buf.cast<Uint8>().asTypedList(n));
 
       tokenPtr.value = newTokenId;
-      batch = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_batch_get_one(tokenPtr, 1);
+      batch = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_batch_get_one(tokenPtr, 1);
 
-      final bool isEos = newTokenId ==
-          LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-              .llama_token_eos(LlamaLibrary._vocab);
+      final bool isEos = newTokenId == LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_token_eos(LlamaLibrary._vocab);
 
       send(UpdateLlamaLibraryMessage.create(
         is_done: false,

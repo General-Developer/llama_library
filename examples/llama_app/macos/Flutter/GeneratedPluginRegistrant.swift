@@ -5,6 +5,7 @@
 import FlutterMacOS
 import Foundation
 
+import database_universe_flutter_libs
 import file_picker
 import media_kit_video_fork
 import package_info_plus
@@ -16,6 +17,7 @@ import wakelock_plus
 import window_manager
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
+  DatabaseUniverseFlutterLibsPlugin.register(with: registry.registrar(forPlugin: "DatabaseUniverseFlutterLibsPlugin"))
   FilePickerPlugin.register(with: registry.registrar(forPlugin: "FilePickerPlugin"))
   MediaKitVideoPlugin.register(with: registry.registrar(forPlugin: "MediaKitVideoPlugin"))
   FPPPackageInfoPlusPlugin.register(with: registry.registrar(forPlugin: "FPPPackageInfoPlusPlugin"))

@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  database_universe_flutter_libs
   media_kit_libs_linux_fork
   media_kit_video_fork
   screen_retriever_linux

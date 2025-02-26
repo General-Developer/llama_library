@@ -37,16 +37,17 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:io';
 
+import 'package:general_framework/flutter/flutter.dart';
 import 'package:llama_app/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:general_framework/flutter/ui/alert/core.dart';
 import 'package:general_framework/flutter/widget/widget.dart';
 import 'package:general_lib/general_lib.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
-import 'package:general_system_device/core/core.dart';
 import 'package:llama_app/scheme/scheme/application_llama_library_database.dart';
+import 'package:llama_app/scheme/scheme/llama_message_database.dart';
 import 'package:llama_library/llama_library.dart';
-import 'package:llama_library/scheme/scheme/api/load_model_from_file_llama_library.dart';
+import 'package:llama_library/scheme/scheme/api/api.dart';
 import 'package:llama_library/scheme/scheme/respond/update_llama_library_message.dart';
 import "package:path/path.dart" as path;
 
@@ -58,7 +59,7 @@ class LlamaAiPage extends StatefulWidget {
 }
 
 class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefulWidget {
-  late final GeneralSystemDeviceLibraryPlayerControllerBase playerController;
+  final TextEditingController textEditingController = TextEditingController();
 
   @override
   void initState() {
@@ -73,21 +74,8 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
 
   @override
   void dispose() {
-    try {
-      playerController.stop();
-    } catch (e) {}
-    playerController.dispose();
-    transcribeFromExampleJFKToJson.clear();
-    transcribeFromRecordToJson.clear();
     LlamaAppClientFlutter.llamaLibrary.dispose();
     super.dispose();
-  }
-
-  @override
-  void ensureInitialized() {
-    //  ensureInitialized
-    super.ensureInitialized();
-    playerController = LlamaAppClientFlutter.generalFlutter.media_player.createPlayer(player_id: "player");
   }
 
   Future<void> initialized() async {
@@ -99,18 +87,7 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
 
       LlamaAppClientFlutter.llamaLibrary.on(
         eventType: LlamaAppClientFlutter.llamaLibrary.eventUpdate,
-        onUpdate: (data) {
-          final update = data.update;
-          if (update is UpdateLlamaLibraryMessage) {
-            /// streaming update
-            if (update.is_done == false) {
-              stdout.write(update.text);
-            } else if (update.is_done == true) {
-              print("\n\n");
-              print("-- done --");
-            }
-          }
-        },
+        onUpdate: onUpdate,
       );
 
       await loadLlamaModel(
@@ -121,6 +98,28 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
       isLoading = false;
     });
   }
+
+  void onUpdate(UpdateLlamaLibraryData<LlamaLibrary, JsonScheme> data) async {
+    final update = data.update;
+    if (update is UpdateLlamaLibraryMessage) {
+      /// streaming update
+      if (update.is_done == false) {
+        final String text = llamaMessageDatabases[0].text ?? "";
+        llamaMessageDatabases[0].text = "${text}${update.text}";
+        scrollController.scrollToMinimum(duration: Durations.short1);
+        setState(() {});
+      } else if (update.is_done == true) {
+        print("\n\n");
+        print("-- done --");
+
+        llamaMessageDatabases[0].is_done = true;
+        scrollController.scrollToMinimum(duration: Durations.short1);
+        setState(() {});
+      }
+    }
+  }
+
+  final ScrollController scrollController = ScrollController();
 
   int modelSize = 0;
   String modelName = "";
@@ -166,13 +165,7 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
     });
   }
 
-  final File fileAudioRecord = () {
-    return File(path.join(LlamaAppClientFlutter.generalFrameworkClientFlutterAppDirectory.app_support_directory.path, "record.wav"));
-  }();
-
-  Map transcribeFromExampleJFKToJson = {};
-
-  Map transcribeFromRecordToJson = {};
+  final List<LlamaMessageDatabase> llamaMessageDatabases = [];
 
   @override
   Widget build(BuildContext context) {
@@ -194,19 +187,81 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
               context: context,
             ),
             Expanded(
-              child: RefreshIndicator(
-                onRefresh: refresh,
-                child: SingleChildScrollView(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      minHeight: context.height,
-                      minWidth: context.width,
+              child: LayoutBuilder(
+                builder: (BuildContext context, BoxConstraints constraints) {
+                  final biggest = constraints.biggest;
+                  final contentMaxWidth = biggest.width * 3 / 4;
+                  return SizedBox(
+                    height: biggest.height,
+                    width: biggest.width,
+                    child: SingleChildScrollView(
+                      controller: scrollController,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          for (final element in llamaMessageDatabases.extensionGeneralLibForEach(
+                            isReverse: true,
+                            onData: (data, index, totalLength, isReverse) {
+                              return data;
+                            },
+                          )) ...[
+                            () {
+                              final bool is_outgoing = (element.is_outgoing == true);
+                              final String text = () {
+                                String textProcces = (element.text ?? "");
+                                if (is_outgoing == false) {
+                                  if (element.is_done == true) {
+                                    return textProcces.cleaner();
+                                  }
+                                }
+                                return textProcces;
+                              }();
+                              if (text.isEmpty) {
+                                return SizedBox.shrink();
+                              }
+                              final Alignment alignment = (is_outgoing == true) ? Alignment.centerRight : Alignment.centerLeft;
+
+                              return Row(
+                                mainAxisAlignment: alignment.toMainAxisAlignment(),
+                                children: [
+                                  ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      maxWidth: contentMaxWidth,
+                                    ),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: context.theme.appBarTheme.backgroundColor,
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: context.extensionGeneralLibFlutterBorderAll(),
+                                        boxShadow: context.extensionGeneralLibFlutterBoxShadows(),
+                                      ),
+                                      margin: EdgeInsets.all(10),
+                                      padding: EdgeInsets.all(5),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment: alignment.toCrossAxisAlignment(),
+                                        children: [ 
+                                          Flexible(
+                                            child: Text(
+                                              text,
+                                              style: context.theme.textTheme.bodySmall,
+                                              overflow: TextOverflow.clip,
+                                              // textAlign: TextAlign.start,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }()
+                          ],
+                        ],
+                      ),
                     ),
-                    child: Column(
-                      children: [],
-                    ),
-                  ),
-                ),
+                  );
+                },
               ),
             ),
             Container(
@@ -223,7 +278,7 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
                 children: [
                   Flexible(
                     child: TextFormField(
-                      
+                      controller: textEditingController,
                       decoration: () {
                         final OutlineInputBorder inputBorder = OutlineInputBorder(
                           borderSide: BorderSide(
@@ -244,7 +299,46 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      handleFunction(
+                        onFunction: (context, statefulWidget) async {
+                          final text = textEditingController.text;
+                          textEditingController.clear();
+
+                          llamaMessageDatabases.insert(
+                            0,
+                            LlamaMessageDatabase.create(
+                              id: llamaMessageDatabases.length + 1,
+                              is_outgoing: true,
+                              is_done: true,
+                              text: text,
+                              date: DateTime.now().millisecondsSinceEpoch,
+                            ),
+                          );
+                          llamaMessageDatabases.insert(
+                            0,
+                            LlamaMessageDatabase.create(
+                              id: llamaMessageDatabases.length + 1,
+                              is_outgoing: false,
+                              is_done: false,
+                              text: "",
+                              date: DateTime.now().millisecondsSinceEpoch,
+                            ),
+                          );
+                          await LlamaAppClientFlutter.llamaLibrary.request(
+                            invokeParametersLlamaLibraryData: InvokeParametersLlamaLibraryData(
+                              parameters: SendLlamaLibraryMessage.create(
+                                text: text,
+                                is_stream: false,
+                              ),
+                              isVoid: true,
+                              extra: null,
+                              invokeParametersLlamaLibraryDataOptions: null,
+                            ),
+                          );
+                        },
+                      );
+                    },
                     icon: Icon(Icons.send),
                   ),
                 ],
