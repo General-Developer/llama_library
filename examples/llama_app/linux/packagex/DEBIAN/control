@@ -1,5 +1,5 @@
 Maintainer: "anonymous@noemail.com>"
-Package: whisper-app
+Package: llama-app
 Version: 1.0.0+1
 Section: x11
 Priority: optional

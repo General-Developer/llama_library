@@ -1,4 +1,4 @@
-package general_develope.whisper_library.llama_app
+package general_developer.llama_library.llama_app
  
 import io.flutter.embedding.android.FlutterFragmentActivity
 

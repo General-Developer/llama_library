@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "general_develope.whisper_library.llama_app"
+    namespace = "general_developer.llama_library.llama_app"
     compileSdk = 35
     ndkVersion = "27.0.12077973"
 
@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "general_develope.whisper_library.llama_app"
+        applicationId = "general_developer.llama_library.llama_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = 30
