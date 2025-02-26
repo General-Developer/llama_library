@@ -9,5 +9,13 @@ final List<Map<String, dynamic>> llamaLibraryRespondSchemes = () {
       "text": "",
       "@extra": "",
     },
+    {
+      "@type": "ok",
+      "@extra": "",
+    },
+    {
+      "@type": "error",
+      "@extra": "",
+    },
   ];
 }();

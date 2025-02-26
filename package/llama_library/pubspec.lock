@@ -106,7 +106,7 @@ packages:
     source: hosted
     version: "1.11.1"
   crypto:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: crypto
       sha256: "1e445881f28f22d6140f181e07737b22f1e099a5e1ff94b0af2f9e4a463f4855"
@@ -130,7 +130,7 @@ packages:
     source: hosted
     version: "2.1.3"
   ffi_universe:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: ffi_universe
       sha256: ed16561f8a925ff3fd6de0c0b39a7f41568abfd1027531c82682cb19c4229fb2
@@ -177,14 +177,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.66"
-  general_ml:
-    dependency: "direct main"
-    description:
-      name: general_ml
-      sha256: ed248ca182e908b3d38176f01baac553f7011594a19e832222cedc7728343f8d
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.2"
   glob:
     dependency: transitive
     description:

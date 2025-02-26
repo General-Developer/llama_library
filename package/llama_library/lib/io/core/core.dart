@@ -50,6 +50,7 @@ import 'package:llama_library/ffi/bindings.dart';
 import 'package:llama_library/io/models/context_params.dart';
 import 'package:llama_library/io/models/model_params.dart';
 import 'package:llama_library/io/models/sampler_params.dart';
+import 'package:llama_library/scheme/scheme/api/load_model_from_file_llama_library.dart';
 import 'package:llama_library/scheme/scheme/api/send_llama_library_message.dart';
 import 'package:llama_library/scheme/scheme/respond/update_llama_library_message.dart';
 part "send_message/send_message.dart";
@@ -146,8 +147,6 @@ class LlamaLibrary extends LlamaLibraryBase {
 
   static bool _isEnsureInitialized = false;
 
-  static String _modelPath = "";
-
   @override
   Future<void> ensureInitialized() async {
     if (_isEnsureInitialized) {
@@ -221,13 +220,9 @@ class LlamaLibrary extends LlamaLibraryBase {
     // print(text.cast<Utf8>().toDartString());
   }
 
-  @override
-  bool loadModel({
+  bool _loadModel({
     required String modelPath,
   }) {
-    {
-      LlamaLibrary._modelPath = modelPath;
-    }
     if (_isInIsolate == false) {
       return true;
     }
@@ -254,7 +249,7 @@ class LlamaLibrary extends LlamaLibraryBase {
       llama: LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper,
     );
 
-    final modelPathPtr = LlamaLibrary._modelPath.toNativeUtf8().cast<Char>();
+    final modelPathPtr = modelPath.toNativeUtf8().cast<Char>();
     try {
       LlamaLibrary._modelContext = LlamaLibrary
           ._llamaLibrarySharedBindingsByGeneralDeveloper
@@ -457,11 +452,7 @@ class LlamaLibrary extends LlamaLibraryBase {
           final LlamaLibrary llamaLibrary = LlamaLibrary();
           llamaLibrary._isInIsolate = true;
           await llamaLibrary.ensureInitialized();
-          llamaLibrary.loadModel(
-            modelPath: llamaLibraryIsolateData.modelPath,
-          );
           await llamaLibrary.initialized();
-
           llamaLibrary.receivePort.sendPort
               .send(llamaLibraryIsolateData.sendPort);
           llamaLibraryIsolateData.sendPort
@@ -469,7 +460,7 @@ class LlamaLibrary extends LlamaLibraryBase {
         },
         LlamaLibraryIsolateData(
           sharedLibraryPath: sharedLibraryPath,
-          modelPath: LlamaLibrary._modelPath,
+          // modelPath: LlamaLibrary._modelPath,
           sendPort: receivePort.sendPort,
           invokeParametersLlamaLibraryDataOptions:
               invokeParametersLlamaLibraryDataOptions,
@@ -554,6 +545,7 @@ class LlamaLibrary extends LlamaLibraryBase {
     required InvokeParametersLlamaLibraryData<JsonScheme>
         invokeParametersLlamaLibraryData,
   }) async {
+    await _completerSendPortInitialized.future;
     final invokeParametersLlamaLibraryDataOptions =
         invokeParametersLlamaLibraryData
                 .invokeParametersLlamaLibraryDataOptions ??
@@ -604,6 +596,7 @@ class LlamaLibrary extends LlamaLibraryBase {
               invokeParametersLlamaLibraryDataOptions,
         ),
       );
+
       if (invokeParametersLlamaLibraryData.isVoid == true) {
         return InvokeParametersLlamaLibraryData.send(
           data: JsonScheme({
@@ -622,8 +615,18 @@ class LlamaLibrary extends LlamaLibraryBase {
             return;
           }
           final update = updateLlamaLibrary.update;
-          if (update["@extra"] == extra && update["is_done"] == true) {
-            completerResult.complete(update);
+          if (update["@extra"] == extra) {
+            if (update.rawData.containsKey("is_stream")) {
+              if (update["is_stream"] == true) {
+                completerResult.complete(update);
+              } else {
+                if (update["is_done"] == true) {
+                  completerResult.complete(update);
+                }
+              }
+            } else {
+              completerResult.complete(update);
+            }
           }
         },
       );
@@ -661,17 +664,36 @@ class LlamaLibrary extends LlamaLibraryBase {
                 invokeParametersLlamaLibraryDataOptions,
           );
         }
+        if (parameters is LoadModelFromFileLlamaLibrary) {
+          final bool isLoadModel = _loadModel(
+            modelPath: parameters.model_file_path ?? "",
+          );
+          if (isLoadModel) {
+            return JsonScheme({
+              "@type": "ok",
+            });
+          } else {
+            return JsonScheme({
+              "@type": "error",
+              "message": "cant_load_model_maybe_empty_or_not_exist",
+            });
+          }
+        }
         return JsonScheme({
           "@type": "error",
           "message": "unimplmented",
         });
       });
-      return InvokeParametersLlamaLibraryData.send(
+
+      final resultPatch = InvokeParametersLlamaLibraryData.send(
         data: result,
         patchData: patchData,
         invokeParametersLlamaLibraryDataOptions:
             invokeParametersLlamaLibraryDataOptions,
       );
+
+      send(resultPatch);
+      return resultPatch;
       // if (parameters is SendLlamaLibraryMessage) {
       //   _sendMessage(
       //     parameters: parameters,
@@ -753,7 +775,7 @@ class LlamaLibraryIsolateData {
   final SendPort sendPort;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  final String modelPath;
+  // final String modelPath;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final InvokeParametersLlamaLibraryDataOptions
@@ -763,7 +785,7 @@ class LlamaLibraryIsolateData {
   LlamaLibraryIsolateData({
     required this.sharedLibraryPath,
     required this.sendPort,
-    required this.modelPath,
+    // required this.modelPath,
     required this.invokeParametersLlamaLibraryDataOptions,
   });
 }

@@ -38,7 +38,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'dart:convert';
 import 'dart:io';
 import 'package:llama_library/llama_library.dart';
-import 'package:llama_library/scheme/scheme/api/send_llama_library_message.dart';
+import 'package:llama_library/scheme/scheme/api/api.dart';
 import 'package:llama_library/scheme/scheme/respond/update_llama_library_message.dart';
 
 void main(List<String> args) async {
@@ -55,9 +55,6 @@ void main(List<String> args) async {
     ),
   );
   await llamaLibrary.ensureInitialized();
-  llamaLibrary.loadModel(
-    modelPath: modelFile.path,
-  );
   llamaLibrary.on(
     eventType: llamaLibrary.eventUpdate,
     onUpdate: (data) {
@@ -74,7 +71,22 @@ void main(List<String> args) async {
     },
   );
   await llamaLibrary.initialized();
-
+  final res = await llamaLibrary.invoke(
+    invokeParametersLlamaLibraryData: InvokeParametersLlamaLibraryData(
+      parameters: LoadModelFromFileLlamaLibrary.create(
+        model_file_path: modelFile.path,
+      ),
+      isVoid: false,
+      extra: null,
+      invokeParametersLlamaLibraryDataOptions: null,
+    ),
+  );
+  if (res["@type"] == "ok") {
+    print("succes load Model");
+  } else {
+    print("Failed load Model");
+    exit(0);
+  }
   stdin.listen((e) async {
     print("\n\n");
     final String text = utf8.decode(e).trim();
@@ -84,7 +96,10 @@ void main(List<String> args) async {
     } else {
       await llamaLibrary.invoke(
         invokeParametersLlamaLibraryData: InvokeParametersLlamaLibraryData(
-          parameters: SendLlamaLibraryMessage.create(text: text),
+          parameters: SendLlamaLibraryMessage.create(
+            text: text,
+            is_stream: false,
+          ),
           isVoid: true,
           extra: null,
           invokeParametersLlamaLibraryDataOptions: null,
