@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:ffi_universe/ffi_universe.dart';
-import 'package:ffi/ffi.dart';
 import '../../ffi/bindings.dart';
 import 'prompt_format.dart';
 // import '../llama_cpp_dart.dart';
@@ -58,7 +57,8 @@ class LLamaModelParams {
   LLamaModelParams();
 
   /// Constructs and returns a `llama_model_params` object with current settings
-  llama_model_params get({required LlamaLibrarySharedBindingsByGeneralDeveloper llama}) {
+  llama_model_params get(
+      {required LlamaLibrarySharedBindingsByGeneralDeveloper llama}) {
     final modelParams = llama.llama_model_default_params();
 
     // Basic parameters
@@ -104,7 +104,10 @@ class LLamaModelParams {
     nGpuLayers = json['nGpuLayers'] ?? 99;
     splitMode = LlamaSplitMode.values[json['splitMode'] ?? 0];
     mainGpu = json['mainGpu'] ?? 0;
-    tensorSplit = ((json['tensorSplit'] as List<dynamic>?)?.map((e) => e.toDouble()).toList() as List<double>?) ?? [];
+    tensorSplit = ((json['tensorSplit'] as List<dynamic>?)
+            ?.map((e) => e.toDouble())
+            .toList() as List<double>?) ??
+        [];
     rpcServers = json['rpcServers'] ?? '';
     kvOverrides = Map<String, dynamic>.from(json['kvOverrides'] ?? {});
     vocabOnly = json['vocabOnly'] ?? false;

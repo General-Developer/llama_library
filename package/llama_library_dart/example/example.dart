@@ -53,7 +53,7 @@ void main(List<String> args) async {
       isThrowOnError: false,
     ),
   );
-  await llamaLibrary.ensureInitialized(); 
+  await llamaLibrary.ensureInitialized();
   llamaLibrary.on(
     eventType: llamaLibrary.eventUpdate,
     onUpdate: (data) {
