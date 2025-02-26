@@ -171,11 +171,6 @@ abstract class LlamaLibraryBaseCore extends GeneralLibraryDynamicLibraryBase {
     required InvokeParametersLlamaLibraryData invokeParametersLlamaLibraryData,
   });
 
-  ///
-  bool loadModel({
-    required String modelPath,
-  });
-
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void clear();
 

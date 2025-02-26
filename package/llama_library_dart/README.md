@@ -2,7 +2,7 @@
  
 **Llama Library** Is library for inference any model ai LLAMA / LLM On Edge without api or internet quota, but need resources depends model you want run
 
-[![](https://raw.githubusercontent.com/General-Developer/llama_library/refs/heads/main/assets/demo_background.png)](https://youtu.be/drlqUwJEOg4)
+[![](https://raw.githubusercontent.com/General-Developer/llama_library/refs/heads/main/assets/demo_background.png)](https://youtu.be/x2z5gI_h5Yk)
 
 [![](https://raw.githubusercontent.com/globalcorporation/.github/main/.github/logo/powered.png)](https://www.youtube.com/@Global_Corporation)
 
@@ -30,6 +30,10 @@
 
 - **This library 100%** support all models from [llama.cpp](https://github.com/ggerganov/llama.cpp) (depending on your device specs, if high then it can be up to turbo, but if low, just choose tiny/small)
  
+## ⚠️ Important information
+
+To get good AI results, it's a good idea to have hardware that supports AI, otherwise the results will be inappropriate/bad.
+
 ## 📈️ Proggres
  
 - **10-02-2025**
@@ -44,7 +48,7 @@
 1. **Dart**
 
 ```bash
-dart pub add llama_library_dart
+dart pub add llama_library
 ```
 
 2. **Flutter**
@@ -62,8 +66,8 @@ Example Quickstart script minimal for insight you or make you use this library b
 import 'dart:convert';
 import 'dart:io';
 import 'package:llama_library/llama_library.dart';
-import 'package:llama_library/scheme/scheme/api/send_llama_library_message.dart';
-import 'package:llama_library/scheme/scheme/respond/update_llama_library_message.dart'; 
+import 'package:llama_library/scheme/scheme/api/api.dart';
+import 'package:llama_library/scheme/scheme/respond/update_llama_library_message.dart';
 
 void main(List<String> args) async {
   print("start");
@@ -72,15 +76,13 @@ void main(List<String> args) async {
   );
   final LlamaLibrary llamaLibrary = LlamaLibrary(
     sharedLibraryPath: "libllama.so",
-    invokeParametersLlamaLibraryDataOptions: InvokeParametersLlamaLibraryDataOptions(
+    invokeParametersLlamaLibraryDataOptions:
+        InvokeParametersLlamaLibraryDataOptions(
       invokeTimeOut: Duration(minutes: 10),
       isThrowOnError: false,
     ),
   );
   await llamaLibrary.ensureInitialized();
-  llamaLibrary.loadModel(
-    modelPath: modelFile.path,
-  );
   llamaLibrary.on(
     eventType: llamaLibrary.eventUpdate,
     onUpdate: (data) {
@@ -97,7 +99,22 @@ void main(List<String> args) async {
     },
   );
   await llamaLibrary.initialized();
-
+  final res = await llamaLibrary.invoke(
+    invokeParametersLlamaLibraryData: InvokeParametersLlamaLibraryData(
+      parameters: LoadModelFromFileLlamaLibrary.create(
+        model_file_path: modelFile.path,
+      ),
+      isVoid: false,
+      extra: null,
+      invokeParametersLlamaLibraryDataOptions: null,
+    ),
+  );
+  if (res["@type"] == "ok") {
+    print("succes load Model");
+  } else {
+    print("Failed load Model");
+    exit(0);
+  }
   stdin.listen((e) async {
     print("\n\n");
     final String text = utf8.decode(e).trim();
@@ -107,7 +124,10 @@ void main(List<String> args) async {
     } else {
       await llamaLibrary.invoke(
         invokeParametersLlamaLibraryData: InvokeParametersLlamaLibraryData(
-          parameters: SendLlamaLibraryMessage.create(text: text),
+          parameters: SendLlamaLibraryMessage.create(
+            text: text,
+            is_stream: false,
+          ),
           isVoid: true,
           extra: null,
           invokeParametersLlamaLibraryDataOptions: null,
@@ -116,6 +136,7 @@ void main(List<String> args) async {
     }
   });
 }
+
 ```
 
 ## Reference
@@ -130,10 +151,10 @@ void main(List<String> args) async {
 ## Example Project Use This Library
 
 
-1. [AZKA GRAM](https://github.com/azkadev/azkagram) / [Global GRAM](https://github.com/globalcorporation/global_gram_app)
+- [Llama Application](https://github.com/General-Developer/llama_library/tree/main/examples/llama_app)
     
- **Telegram Application** with **redesign** with new some features userbot and other **features which is not officially provided on Telegram** First this project open source but we closed it to **close source** because our program is easy to read and allows other people to edit the source code and then use it for criminal acts
- 
-|                                                 CHAT PAGE                                                  |                                                SIGN UP PAGE                                                |                                                                                                  HOME PAGE |                                          GUIDE PAGE                                           |
-|:----------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------:|-----------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------:|
-| ![](https://user-images.githubusercontent.com/82513502/205481759-b6815e2f-bd5d-4d72-9570-becd3829dd36.png) | ![](https://user-images.githubusercontent.com/82513502/173319331-9e96fbe7-3e66-44b2-8577-f6685d86a368.png) | ![](https://user-images.githubusercontent.com/82513502/173319541-19a60407-f410-4e95-8ac0-d0da2eaf2457.png) | ![](https://raw.githubusercontent.com/GLXCORP/glx_bot_app/main/screenshots/home_telegram.png) |
+Minimal simple application example of using whisper library [Youtube Video](https://youtu.be/U-5EDMk0UgE) 
+| Mobile                                                                                                                                  | Desktop |
+|-----------------------------------------------------------------------------------------------------------------------------------------|---------|
+| [![](https://raw.githubusercontent.com/General-Developer/llama_library/refs/heads/main/assets/examples/llama_app/mobile.png)](https://youtu.be/U-5EDMk0UgE) | [![](https://raw.githubusercontent.com/General-Developer/llama_library/refs/heads/main/assets/examples/llama_app/desktop.png)](https://youtu.be/U-5EDMk0UgE)        |
+

@@ -6,6 +6,11 @@ final List<Map<String, dynamic>> llamaLibraryApiSchemes = () {
     {
       "@type": "send${LlamaLibrarySchemeDefaultData.namespace}Message",
       "text": "",
+      "is_stream": false,
+    },
+    {
+      "@type": "loadModelFromFile${LlamaLibrarySchemeDefaultData.namespace}",
+      "model_file_path": ""
     },
   ];
 }();

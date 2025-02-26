@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+ln --force -s /opt/llama-app/llama_app /usr/bin/llama-app-app
+chmod +x /usr/bin/llama-app-app
+
+exit 0

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Llama App
+GenericName=Llama App
+Version=1.0.0+1
+Exec=/opt/llama-app/llama_app
+Icon=/opt/llama-app/data/flutter_assets/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Music;Media;
+Keywords=Hello;World;Test;Application;
+StartupNotify=true

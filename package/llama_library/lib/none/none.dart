@@ -91,12 +91,6 @@ class LlamaLibrary extends LlamaLibraryBase {
   }
 
   @override
-  bool loadModel({required String modelPath}) {
-    //  loadModel
-    throw UnimplementedError();
-  }
-
-  @override
   void send(data) {
     //  send
   }

@@ -1,12 +1,10 @@
-*.iml
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-.cxx
+opt/llama-app
+usr/bin/llama_app
+usr/share/llama_app
+usr/local/bin/llama_app
+usr/bin/llama-app
+usr/share/llama-app
+usr/local/bin/llama-app
 *.exe
 *.deb
 *.sqlite-*
@@ -17,7 +15,7 @@ docs/canvaskit
 build/
 ephemeral/
 /build/
-generate_glx_*
+generate_general_private_tools_*
 node_modules/
 flutter/ephemeral
 android/.gradle
@@ -27,6 +25,5 @@ macos/Flutter/ephemeral
 windows/ephemeral
 tmp/
 temp/
-generate_general_private_tools_*
 packagex-build-debug
 packagex-compile-debug

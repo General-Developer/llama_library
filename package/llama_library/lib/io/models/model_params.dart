@@ -1,6 +1,5 @@
 import 'dart:convert';
-import 'dart:ffi';
-import 'package:ffi/ffi.dart';
+import 'package:ffi_universe/ffi_universe.dart';
 import '../../ffi/bindings.dart';
 import 'prompt_format.dart';
 // import '../llama_cpp_dart.dart';

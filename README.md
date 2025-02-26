@@ -30,6 +30,10 @@
 
 - **This library 100%** support all models from [llama.cpp](https://github.com/ggerganov/llama.cpp) (depending on your device specs, if high then it can be up to turbo, but if low, just choose tiny/small)
  
+## ⚠️ Important information
+
+To get good AI results, it's a good idea to have hardware that supports AI, otherwise the results will be inappropriate/bad.
+
 ## 📈️ Proggres
  
 - **10-02-2025**
@@ -44,7 +48,7 @@
 1. **Dart**
 
 ```bash
-dart pub add llama_library_dart
+dart pub add llama_library
 ```
 
 2. **Flutter**
@@ -62,8 +66,8 @@ Example Quickstart script minimal for insight you or make you use this library b
 import 'dart:convert';
 import 'dart:io';
 import 'package:llama_library/llama_library.dart';
-import 'package:llama_library/scheme/scheme/api/send_llama_library_message.dart';
-import 'package:llama_library/scheme/scheme/respond/update_llama_library_message.dart'; 
+import 'package:llama_library/scheme/scheme/api/api.dart';
+import 'package:llama_library/scheme/scheme/respond/update_llama_library_message.dart';
 
 void main(List<String> args) async {
   print("start");
@@ -72,15 +76,13 @@ void main(List<String> args) async {
   );
   final LlamaLibrary llamaLibrary = LlamaLibrary(
     sharedLibraryPath: "libllama.so",
-    invokeParametersLlamaLibraryDataOptions: InvokeParametersLlamaLibraryDataOptions(
+    invokeParametersLlamaLibraryDataOptions:
+        InvokeParametersLlamaLibraryDataOptions(
       invokeTimeOut: Duration(minutes: 10),
       isThrowOnError: false,
     ),
   );
   await llamaLibrary.ensureInitialized();
-  llamaLibrary.loadModel(
-    modelPath: modelFile.path,
-  );
   llamaLibrary.on(
     eventType: llamaLibrary.eventUpdate,
     onUpdate: (data) {
@@ -97,7 +99,22 @@ void main(List<String> args) async {
     },
   );
   await llamaLibrary.initialized();
-
+  final res = await llamaLibrary.invoke(
+    invokeParametersLlamaLibraryData: InvokeParametersLlamaLibraryData(
+      parameters: LoadModelFromFileLlamaLibrary.create(
+        model_file_path: modelFile.path,
+      ),
+      isVoid: false,
+      extra: null,
+      invokeParametersLlamaLibraryDataOptions: null,
+    ),
+  );
+  if (res["@type"] == "ok") {
+    print("succes load Model");
+  } else {
+    print("Failed load Model");
+    exit(0);
+  }
   stdin.listen((e) async {
     print("\n\n");
     final String text = utf8.decode(e).trim();
@@ -107,7 +124,10 @@ void main(List<String> args) async {
     } else {
       await llamaLibrary.invoke(
         invokeParametersLlamaLibraryData: InvokeParametersLlamaLibraryData(
-          parameters: SendLlamaLibraryMessage.create(text: text),
+          parameters: SendLlamaLibraryMessage.create(
+            text: text,
+            is_stream: false,
+          ),
           isVoid: true,
           extra: null,
           invokeParametersLlamaLibraryDataOptions: null,
@@ -116,6 +136,7 @@ void main(List<String> args) async {
     }
   });
 }
+
 ```
 
 ## Reference
