@@ -61,8 +61,7 @@ class LlamaAppClientFlutter {
   static late final DatabaseMiniGeneralLibrary coreDatabaseMiniLibrary;
   static Future<void> ensureInitialized() async {
     WidgetsFlutterBinding.ensureInitialized();
-    generalFlutter.media_player.ensureInitialized();
-    await generalFlutter.system_audio.ensureInitialized();
+    generalFlutter.media_player.ensureInitialized(); 
     await llamaLibrary.ensureInitialized();
     await llamaLibrary.initialized();
   }

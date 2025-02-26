@@ -137,7 +137,7 @@ class _MainAppState extends State<MainApp> with GeneralLibFlutterStatefulWidget 
             loadingText: waitText(duration: dateTimeExpired.difference(DateTime.now())),
           );
         }
-        loadingGeneralFrameworkController.update(loadingText: "Navigate To Whisper Speech To Text Page");
+        loadingGeneralFrameworkController.update(loadingText: "Navigate To Llama Ai Page");
         return true;
       } catch (e) {
         return e;

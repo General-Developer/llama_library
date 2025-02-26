@@ -38,6 +38,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 library;
 
 import 'dart:async';
+import 'dart:io';
 import 'dart:isolate';
 
 import 'package:ffi_universe/ffi_universe.dart';
@@ -214,6 +215,10 @@ class LlamaLibrary extends LlamaLibraryBase {
   bool _loadModel({
     required String modelPath,
   }) {
+    final File modelFile = File(modelPath);
+    if (modelFile.existsSync() == false) {
+      return false;
+    }
     if (_isInIsolate == false) {
       return true;
     }

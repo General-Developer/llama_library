@@ -54,10 +54,10 @@ class LlamaAiPage extends StatefulWidget {
   const LlamaAiPage({super.key});
 
   @override
-  State<LlamaAiPage> createState() => _SpeechToTextPageState();
+  State<LlamaAiPage> createState() => _LlamaAiPageState();
 }
 
-class _SpeechToTextPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefulWidget {
+class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefulWidget {
   late final GeneralSystemDeviceLibraryPlayerControllerBase playerController;
 
   @override
@@ -79,6 +79,7 @@ class _SpeechToTextPageState extends State<LlamaAiPage> with GeneralLibFlutterSt
     playerController.dispose();
     transcribeFromExampleJFKToJson.clear();
     transcribeFromRecordToJson.clear();
+    LlamaAppClientFlutter.llamaLibrary.dispose();
     super.dispose();
   }
 
@@ -183,98 +184,113 @@ class _SpeechToTextPageState extends State<LlamaAiPage> with GeneralLibFlutterSt
           style: context.theme.textTheme.titleLarge,
         ),
       ),
-      body: RefreshIndicator(
-        onRefresh: refresh,
-        child: SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: context.height, minWidth: context.width),
-            child: Column(
-              children: [
-                MenuContainerResponsiveGeneralFrameworkWidget(
-                  isLoading: isLoading,
-                  decorationBuilder: (context, decoration) {
-                    return decoration.copyWith(
-                      borderRadius: BorderRadius.circular(15),
-                    );
-                  },
-                  titleBuilder: (context) {
-                    return MenuContainerGeneralFrameworkWidget.title(
-                      context: context,
-                      title: "Information",
-                    );
-                  },
-                  menuBuilder: (context) {
-                    return [
-                      MenuContainerGeneralFrameworkWidget.lisTile(
-                        context: context,
-                        contentPadding: EdgeInsets.all(5),
-                        title: "Support",
-                        trailing: Icon(
-                          (LlamaAppClientFlutter.llamaLibrary.isDeviceSupport() == true) ? Icons.verified : Icons.close,
-                        ),
-                      ),
-                      MenuContainerGeneralFrameworkWidget.lisTile(
-                        context: context,
-                        contentPadding: EdgeInsets.all(5),
-                        title: "Record Audio",
-                        trailing: Icon(
-                          (LlamaAppClientFlutter.generalFlutter.system_audio.isSupport() == true) ? Icons.verified : Icons.close,
-                        ),
-                      ),
-                      MenuContainerGeneralFrameworkWidget.lisTile(
-                        context: context,
-                        contentPadding: EdgeInsets.all(5),
-                        title: "Model",
-                        subtitle: [
-                          "- Model Name: ${modelName}",
-                          "- Model Size: ${FileSize.filesize(
-                            size: modelSize,
-                          )}",
-                        ].join("\n"),
-                        trailing: IconButton(
-                          onPressed: () {
-                            handleFunction(
-                              onFunction: (context, statefulWidget) async {
-                                final file = await LlamaAppClientFlutter.pickFile(
-                                  dialogTitle: "Whisper Model",
-                                );
-                                if (file == null) {
-                                  context.showAlertGeneralFramework(
-                                    alertGeneralFrameworkOptions: AlertGeneralFrameworkOptions(
-                                      title: "Failed Load Model Whisper",
-                                      builder: (context, alertGeneralFrameworkOptions) {
-                                        return "Coba lagi";
-                                      },
-                                    ),
-                                  );
-                                  return;
-                                }
-
-                                /// save to application settings
-                                {
-                                  final ApplicationLlamaLibraryDatabase applicationLlamaLibraryDatabase = getApplicationLlamaLibraryDatabase();
-                                  applicationLlamaLibraryDatabase.llama_model_path = file.path;
-                                  saveApplicationLlamaLibraryDatabase();
-                                }
-                                final bool isLoadWhisperModel = await loadLlamaModel(llamaModel: file);
-                                context.showSnackBar(isLoadWhisperModel ? "Succes Load Model Whisper" : "Failed Load Model Whisper");
-                              },
-                            );
-                          },
-                          icon: Icon(Icons.create),
-                        ),
-                      ),
-                    ];
-                  },
-                ),
-                SizedBox(
-                  height: context.mediaQueryData.padding.bottom,
-                ),
-              ],
+      body: SizedBox(
+        height: context.height,
+        width: context.width,
+        child: Column(
+          children: [
+            configurationWidget(
+              isLoading: isLoading,
+              context: context,
             ),
-          ),
+            Expanded(
+              child: RefreshIndicator(
+                onRefresh: refresh,
+                child: SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: context.height,
+                      minWidth: context.width,
+                    ),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: context.mediaQueryData.padding.bottom,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
+    );
+  }
+
+  Widget configurationWidget({
+    required bool isLoading,
+    required BuildContext context,
+  }) {
+    return MenuContainerResponsiveGeneralFrameworkWidget(
+      isLoading: isLoading,
+      decorationBuilder: (context, decoration) {
+        return decoration.copyWith(
+          borderRadius: BorderRadius.circular(15),
+        );
+      },
+      titleBuilder: (context) {
+        return MenuContainerGeneralFrameworkWidget.title(
+          context: context,
+          title: "Information",
+        );
+      },
+      menuBuilder: (context) {
+        return [
+          MenuContainerGeneralFrameworkWidget.lisTile(
+            context: context,
+            contentPadding: EdgeInsets.all(5),
+            title: "Support",
+            trailing: Icon(
+              (LlamaAppClientFlutter.llamaLibrary.isDeviceSupport() == true) ? Icons.verified : Icons.close,
+            ),
+          ),
+          MenuContainerGeneralFrameworkWidget.lisTile(
+            context: context,
+            contentPadding: EdgeInsets.all(5),
+            title: "Model",
+            subtitle: [
+              "- Model Name: ${modelName}",
+              "- Model Size: ${FileSize.filesize(
+                size: modelSize,
+              )}",
+            ].join("\n"),
+            trailing: IconButton(
+              onPressed: () {
+                handleFunction(
+                  onFunction: (context, statefulWidget) async {
+                    final file = await LlamaAppClientFlutter.pickFile(
+                      dialogTitle: "Llama Model",
+                    );
+                    if (file == null) {
+                      context.showAlertGeneralFramework(
+                        alertGeneralFrameworkOptions: AlertGeneralFrameworkOptions(
+                          title: "Failed Load Model Llama",
+                          builder: (context, alertGeneralFrameworkOptions) {
+                            return "Coba lagi";
+                          },
+                        ),
+                      );
+                      return;
+                    }
+
+                    /// save to application settings
+                    {
+                      final ApplicationLlamaLibraryDatabase applicationLlamaLibraryDatabase = getApplicationLlamaLibraryDatabase();
+                      applicationLlamaLibraryDatabase.llama_model_path = file.path;
+                      saveApplicationLlamaLibraryDatabase();
+                    }
+                    final bool isLoadLlamaModel = await loadLlamaModel(llamaModel: file);
+                    context.showSnackBar(isLoadLlamaModel ? "Succes Load Model Llama" : "Failed Load Model Llama");
+                  },
+                );
+              },
+              icon: Icon(Icons.create),
+            ),
+          ),
+        ];
+      },
     );
   }
 }
