@@ -38,8 +38,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:llama_app/scheme/scheme/application_whisper_library_database.dart';
-import 'package:file_picker/file_picker.dart';
+import 'package:llama_app/scheme/scheme/application_llama_library_database.dart';
+ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:general_framework/flutter/client/general_framework_client_flutter_app_directory.dart';
 import 'package:general_lib/crypto/crypto.dart';
@@ -48,14 +48,14 @@ import 'package:general_lib/database/database.dart';
 import 'package:general_lib/database/database_core.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
 import 'package:general_system_device/general_system_device_flutter.dart';
-import 'package:whisper_library_dart/whisper_library_dart.dart';
+import 'package:llama_library/llama_library.dart'; 
 import "package:path/path.dart" as path;
 
 class LlamaAppClientFlutter {
   static GeneralLibFlutterApp generalLibFlutterApp = GeneralLibFlutterApp();
   static final GeneralSystemDeviceFlutter generalFlutter = GeneralSystemDeviceFlutter();
   static final GeneralFrameworkClientFlutterAppDirectory generalFrameworkClientFlutterAppDirectory = GeneralFrameworkClientFlutterAppDirectory();
-  static final WhisperLibrary whisperLibrary = WhisperLibrary();
+  static final LlamaLibrary llamaLibrary = LlamaLibrary();
 
   static final DatabaseGeneralLib databaseGeneralLib = DatabaseGeneralLib();
   static late final DatabaseMiniGeneralLibrary coreDatabaseMiniLibrary;
@@ -63,8 +63,8 @@ class LlamaAppClientFlutter {
     WidgetsFlutterBinding.ensureInitialized();
     generalFlutter.media_player.ensureInitialized();
     await generalFlutter.system_audio.ensureInitialized();
-    await whisperLibrary.ensureInitialized();
-    await whisperLibrary.initialized();
+    await llamaLibrary.ensureInitialized();
+    await llamaLibrary.initialized();
   }
 
   static final Crypto _crypto = Crypto(
@@ -100,10 +100,10 @@ class LlamaAppClientFlutter {
   }
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  static ApplicationWhisperLibraryDatabase coreDatabaseValue() {
+  static ApplicationLlamaLibraryDatabase coreDatabaseValue() {
     return coreDatabaseMiniLibrary.valueBuilder(
       builder: (db) {
-        return ApplicationWhisperLibraryDatabase(db.stateData);
+        return ApplicationLlamaLibraryDatabase(db.stateData);
       },
     );
   }
@@ -158,12 +158,12 @@ class LlamaAppClientFlutter {
   }
 }
 
-extension StateWhisperLibraryExtensionFLutter<T extends StatefulWidget> on State<T> {
-  ApplicationWhisperLibraryDatabase getApplicationWhisperLibraryDatabase() {
+extension StatellamaLibraryExtensionFLutter<T extends StatefulWidget> on State<T> {
+  ApplicationLlamaLibraryDatabase getApplicationLlamaLibraryDatabase() {
     return LlamaAppClientFlutter.coreDatabaseValue();
   }
 
-  void saveApplicationWhisperLibraryDatabase() async {
+  void saveApplicationLlamaLibraryDatabase() async {
     await LlamaAppClientFlutter.saveCoreDatabase();
     return;
   }

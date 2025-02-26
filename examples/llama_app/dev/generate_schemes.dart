@@ -43,9 +43,8 @@ void main(List<String> args) async {
   await jsonToScripts(
     [
       {
-        "@type": "applicationWhisperLibraryDatabase",
-        "whisper_model_path": "",
-        "file_audio_path": "",
+        "@type": "applicationLlamaLibraryDatabase",
+        "llama_model_path": "",
       },
     ],
     directory: Directory(path.join(directoryScheme.path, "scheme")),

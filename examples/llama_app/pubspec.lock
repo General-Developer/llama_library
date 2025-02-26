@@ -480,14 +480,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.41"
-  general_ml:
-    dependency: transitive
-    description:
-      name: general_ml
-      sha256: ed248ca182e908b3d38176f01baac553f7011594a19e832222cedc7728343f8d
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.2"
   general_system_device:
     dependency: "direct main"
     description:

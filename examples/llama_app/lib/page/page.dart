@@ -34,4 +34,4 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 
 
-export "whisper/whisper.dart";
+export "llama/llama.dart";

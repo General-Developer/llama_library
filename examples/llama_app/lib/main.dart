@@ -36,7 +36,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 
 import 'package:llama_app/core/core.dart';
-import 'package:llama_app/page/whisper/whisper.dart';
+import 'package:llama_app/page/llama/llama.dart';
 import 'package:flutter/material.dart';
 import 'package:general_framework/flutter/loading/loading.dart';
 import 'package:general_framework/flutter/ui/alert/core.dart';
@@ -147,7 +147,7 @@ class _MainAppState extends State<MainApp> with GeneralLibFlutterStatefulWidget 
       context.navigator().pushReplacement(
         MaterialPageRoute(
           builder: (context) {
-            return WhisperSpeechToTextPage();
+            return LlamaAiPage();
           },
         ),
       );
