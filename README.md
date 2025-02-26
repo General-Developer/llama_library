@@ -30,6 +30,10 @@
 
 - **This library 100%** support all models from [llama.cpp](https://github.com/ggerganov/llama.cpp) (depending on your device specs, if high then it can be up to turbo, but if low, just choose tiny/small)
  
+## ⚠️ Important information
+
+To get good AI results, it's a good idea to have hardware that supports AI, otherwise the results will be inappropriate/bad.
+
 ## 📈️ Proggres
  
 - **10-02-2025**
