@@ -93,10 +93,7 @@ class LlamaLibrary extends LlamaLibraryBase {
               await invokeRaw(
                 invokeParametersLlamaLibraryData: event.copyWith(
                   isVoid: true,
-                  invokeParametersLlamaLibraryDataOptions:
-                      (event.invokeParametersLlamaLibraryDataOptions ??
-                              invokeParametersLlamaLibraryDataOptions)
-                          .copyWith(
+                  invokeParametersLlamaLibraryDataOptions: (event.invokeParametersLlamaLibraryDataOptions ?? invokeParametersLlamaLibraryDataOptions).copyWith(
                     isThrowOnError: false,
                   ),
                 ),
@@ -133,8 +130,7 @@ class LlamaLibrary extends LlamaLibraryBase {
   }
 
   ///
-  static late final LlamaLibrarySharedBindingsByGeneralDeveloper
-      _llamaLibrarySharedBindingsByGeneralDeveloper;
+  static late final LlamaLibrarySharedBindingsByGeneralDeveloper _llamaLibrarySharedBindingsByGeneralDeveloper;
 
   static Pointer<llama_model> _modelContext = nullptr;
   static Pointer<llama_context> _llamaContext = nullptr;
@@ -154,8 +150,7 @@ class LlamaLibrary extends LlamaLibraryBase {
     }
 
     try {
-      _llamaLibrarySharedBindingsByGeneralDeveloper =
-          LlamaLibrarySharedBindingsByGeneralDeveloper(
+      _llamaLibrarySharedBindingsByGeneralDeveloper = LlamaLibrarySharedBindingsByGeneralDeveloper(
         await FFIUniverse.open(
           path: sharedLibraryPath,
         ),
@@ -197,9 +192,7 @@ class LlamaLibrary extends LlamaLibraryBase {
   @override
   EventEmitterListener on({
     required String eventType,
-    required FutureOr Function(
-            UpdateLlamaLibraryData<LlamaLibrary, JsonScheme> updateLlamaLibrary)
-        onUpdate,
+    required FutureOr Function(UpdateLlamaLibraryData<LlamaLibrary, JsonScheme> updateLlamaLibrary) onUpdate,
   }) {
     return eventEmitter.on(
       eventName: eventType,
@@ -215,8 +208,7 @@ class LlamaLibrary extends LlamaLibraryBase {
   }
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  static void ggmlLogCallbackFunction(
-      int level, Pointer<Char> text, Pointer<Void> user_data) {
+  static void ggmlLogCallbackFunction(int level, Pointer<Char> text, Pointer<Void> user_data) {
     // print(text.cast<Utf8>().toDartString());
   }
 
@@ -235,18 +227,12 @@ class LlamaLibrary extends LlamaLibraryBase {
       return false;
     }
     {
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_log_set(
-          Pointer.fromFunction(ggmlLogCallbackFunction),
-          "log".toNativeUtf8().cast<Void>());
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.ggml_log_set(
-          Pointer.fromFunction(ggmlLogCallbackFunction),
-          "log".toNativeUtf8().cast<Void>());
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_log_set(Pointer.fromFunction(ggmlLogCallbackFunction), "log".toNativeUtf8().cast<Void>());
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.ggml_log_set(Pointer.fromFunction(ggmlLogCallbackFunction), "log".toNativeUtf8().cast<Void>());
     }
 
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .ggml_backend_load_all();
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_backend_init();
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.ggml_backend_load_all();
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_backend_init();
 
     final LLamaModelParams modelParamsDart = LLamaModelParams();
     var modelParams = modelParamsDart.get(
@@ -255,18 +241,14 @@ class LlamaLibrary extends LlamaLibraryBase {
 
     final modelPathPtr = modelPath.toNativeUtf8().cast<Char>();
     try {
-      LlamaLibrary._modelContext = LlamaLibrary
-          ._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_load_model_from_file(modelPathPtr, modelParams);
+      LlamaLibrary._modelContext = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_load_model_from_file(modelPathPtr, modelParams);
       if (LlamaLibrary._modelContext.address == 0) {
         // throw LlamaException("Could not load model at $modelPath");
       }
     } finally {
       malloc.free(modelPathPtr);
     }
-    LlamaLibrary._vocab = LlamaLibrary
-        ._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_model_get_vocab(LlamaLibrary._modelContext);
+    LlamaLibrary._vocab = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_model_get_vocab(LlamaLibrary._modelContext);
 
     const size = 512 * 4;
     LLamaContextParams contextParamsDart = LLamaContextParams();
@@ -283,120 +265,47 @@ class LlamaLibrary extends LlamaLibraryBase {
       llama: LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper,
     );
 
-    LlamaLibrary._llamaContext = LlamaLibrary
-        ._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_new_context_with_model(
-            LlamaLibrary._modelContext, contextParams);
+    LlamaLibrary._llamaContext = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_new_context_with_model(LlamaLibrary._modelContext, contextParams);
     if (LlamaLibrary._llamaContext.address == 0) {}
 
     final samplerParams = LLamaSamplerParams();
 
     // Initialize sampler chain
-    llama_sampler_chain_params sparams = LlamaLibrary
-        ._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_default_params();
+    llama_sampler_chain_params sparams = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_default_params();
     sparams.no_perf = false;
-    LlamaLibrary._llamaSampler = LlamaLibrary
-        ._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_init(sparams);
+    LlamaLibrary._llamaSampler = LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_init(sparams);
 
     // Add samplers based on params
     if (samplerParams.greedy) {
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_sampler_chain_add(
-              LlamaLibrary._llamaSampler,
-              LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                  .llama_sampler_init_greedy());
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_greedy());
     }
 
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_dist(samplerParams.seed));
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_dist(samplerParams.seed));
 
     if (samplerParams.softmax) {
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_sampler_chain_add(
-              LlamaLibrary._llamaSampler,
-              LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                  .llama_sampler_init_softmax());
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_softmax());
     }
 
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_top_k(samplerParams.topK));
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_top_p(
-                    samplerParams.topP, samplerParams.topPKeep));
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_min_p(
-                    samplerParams.minP, samplerParams.minPKeep));
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_typical(
-                    samplerParams.typical, samplerParams.typicalKeep));
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_temp(samplerParams.temp));
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_xtc(
-                    samplerParams.xtcTemperature,
-                    samplerParams.xtcStartValue,
-                    samplerParams.xtcKeep,
-                    samplerParams.xtcLength));
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_top_k(samplerParams.topK));
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_top_p(samplerParams.topP, samplerParams.topPKeep));
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_min_p(samplerParams.minP, samplerParams.minPKeep));
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_typical(samplerParams.typical, samplerParams.typicalKeep));
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_temp(samplerParams.temp));
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_xtc(samplerParams.xtcTemperature, samplerParams.xtcStartValue, samplerParams.xtcKeep, samplerParams.xtcLength));
 
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_mirostat(
-                    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                        .llama_n_vocab(LlamaLibrary._vocab),
-                    samplerParams.seed,
-                    samplerParams.mirostatTau,
-                    samplerParams.mirostatEta,
-                    samplerParams.mirostatM));
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_mirostat(LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_n_vocab(LlamaLibrary._vocab), samplerParams.seed, samplerParams.mirostatTau, samplerParams.mirostatEta, samplerParams.mirostatM));
 
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_mirostat_v2(samplerParams.seed,
-                    samplerParams.mirostat2Tau, samplerParams.mirostat2Eta));
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_mirostat_v2(samplerParams.seed, samplerParams.mirostat2Tau, samplerParams.mirostat2Eta));
 
     final grammarStrPtr = samplerParams.grammarStr.toNativeUtf8().cast<Char>();
-    final grammarRootPtr =
-        samplerParams.grammarRoot.toNativeUtf8().cast<Char>();
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
-            LlamaLibrary._llamaSampler,
-            LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-                .llama_sampler_init_grammar(
-                    LlamaLibrary._vocab, grammarStrPtr, grammarRootPtr));
+    final grammarRootPtr = samplerParams.grammarRoot.toNativeUtf8().cast<Char>();
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(LlamaLibrary._llamaSampler, LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_grammar(LlamaLibrary._vocab, grammarStrPtr, grammarRootPtr));
     calloc.free(grammarStrPtr);
     calloc.free(grammarRootPtr);
 
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_sampler_chain_add(
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(
       LlamaLibrary._llamaSampler,
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_sampler_init_penalties(
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_penalties(
         samplerParams.penaltyLastTokens,
         samplerParams.penaltyRepeat,
         samplerParams.penaltyFreq,
@@ -413,11 +322,9 @@ class LlamaLibrary extends LlamaLibraryBase {
         seqBreakersPointer[i] = seqBreakers[i].toNativeUtf8().cast<Char>();
       }
 
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_sampler_chain_add(
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_chain_add(
         LlamaLibrary._llamaSampler,
-        LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-            .llama_sampler_init_penalties(
+        LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_init_penalties(
           samplerParams.penaltyLastTokens,
           samplerParams.penaltyRepeat,
           samplerParams.penaltyFreq,
@@ -457,17 +364,14 @@ class LlamaLibrary extends LlamaLibraryBase {
           llamaLibrary._isInIsolate = true;
           await llamaLibrary.ensureInitialized();
           await llamaLibrary.initialized();
-          llamaLibrary.receivePort.sendPort
-              .send(llamaLibraryIsolateData.sendPort);
-          llamaLibraryIsolateData.sendPort
-              .send(llamaLibrary.receivePort.sendPort);
+          llamaLibrary.receivePort.sendPort.send(llamaLibraryIsolateData.sendPort);
+          llamaLibraryIsolateData.sendPort.send(llamaLibrary.receivePort.sendPort);
         },
         LlamaLibraryIsolateData(
           sharedLibraryPath: sharedLibraryPath,
           // modelPath: LlamaLibrary._modelPath,
           sendPort: receivePort.sendPort,
-          invokeParametersLlamaLibraryDataOptions:
-              invokeParametersLlamaLibraryDataOptions,
+          invokeParametersLlamaLibraryDataOptions: invokeParametersLlamaLibraryDataOptions,
         ),
       );
     }
@@ -496,22 +400,16 @@ class LlamaLibrary extends LlamaLibraryBase {
     // }
 
     if (LlamaLibrary._llamaSampler != nullptr) {
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_sampler_free(LlamaLibrary._llamaSampler);
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_sampler_free(LlamaLibrary._llamaSampler);
     }
-    if (LlamaLibrary._llamaContext != nullptr ||
-        LlamaLibrary._llamaContext.address != 0) {
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_free(LlamaLibrary._llamaContext);
+    if (LlamaLibrary._llamaContext != nullptr || LlamaLibrary._llamaContext.address != 0) {
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_free(LlamaLibrary._llamaContext);
     }
-    if (LlamaLibrary._modelContext != nullptr ||
-        LlamaLibrary._modelContext.address != 0) {
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_free_model(LlamaLibrary._modelContext);
+    if (LlamaLibrary._modelContext != nullptr || LlamaLibrary._modelContext.address != 0) {
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_free_model(LlamaLibrary._modelContext);
     }
 
-    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-        .llama_backend_free();
+    LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_backend_free();
 
     send(LlamaLibraryActionType.close);
   }
@@ -532,8 +430,7 @@ class LlamaLibrary extends LlamaLibraryBase {
 
     // Reset the context state
     if (LlamaLibrary._llamaContext.address != 0) {
-      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper
-          .llama_kv_cache_clear(LlamaLibrary._llamaContext);
+      LlamaLibrary._llamaLibrarySharedBindingsByGeneralDeveloper.llama_kv_cache_clear(LlamaLibrary._llamaContext);
     }
   }
 
@@ -546,14 +443,10 @@ class LlamaLibrary extends LlamaLibraryBase {
 
   @override
   FutureOr<JsonScheme> invokeRaw({
-    required InvokeParametersLlamaLibraryData<JsonScheme>
-        invokeParametersLlamaLibraryData,
+    required InvokeParametersLlamaLibraryData<JsonScheme> invokeParametersLlamaLibraryData,
   }) async {
     await _completerSendPortInitialized.future;
-    final invokeParametersLlamaLibraryDataOptions =
-        invokeParametersLlamaLibraryData
-                .invokeParametersLlamaLibraryDataOptions ??
-            this.invokeParametersLlamaLibraryDataOptions;
+    final invokeParametersLlamaLibraryDataOptions = invokeParametersLlamaLibraryData.invokeParametersLlamaLibraryDataOptions ?? this.invokeParametersLlamaLibraryDataOptions;
     if (_isInIsolate == true) {
       invokeParametersLlamaLibraryDataOptions.isThrowOnError = false;
     }
@@ -585,8 +478,7 @@ class LlamaLibrary extends LlamaLibraryBase {
           "message": "method_empty",
         }),
         patchData: patchData,
-        invokeParametersLlamaLibraryDataOptions:
-            invokeParametersLlamaLibraryDataOptions,
+        invokeParametersLlamaLibraryDataOptions: invokeParametersLlamaLibraryDataOptions,
       );
     }
 
@@ -596,8 +488,7 @@ class LlamaLibrary extends LlamaLibraryBase {
           parameters: parameters,
           extra: extra,
           isVoid: invokeParametersLlamaLibraryData.isVoid,
-          invokeParametersLlamaLibraryDataOptions:
-              invokeParametersLlamaLibraryDataOptions,
+          invokeParametersLlamaLibraryDataOptions: invokeParametersLlamaLibraryDataOptions,
         ),
       );
 
@@ -607,8 +498,7 @@ class LlamaLibrary extends LlamaLibraryBase {
             "@type": "ok",
           }),
           patchData: patchData,
-          invokeParametersLlamaLibraryDataOptions:
-              invokeParametersLlamaLibraryDataOptions,
+          invokeParametersLlamaLibraryDataOptions: invokeParametersLlamaLibraryDataOptions,
         );
       }
       final Completer<JsonScheme> completerResult = Completer();
@@ -653,8 +543,7 @@ class LlamaLibrary extends LlamaLibraryBase {
       return InvokeParametersLlamaLibraryData.send(
         data: result,
         patchData: patchData,
-        invokeParametersLlamaLibraryDataOptions:
-            invokeParametersLlamaLibraryDataOptions,
+        invokeParametersLlamaLibraryDataOptions: invokeParametersLlamaLibraryDataOptions,
       );
 
       ///
@@ -664,8 +553,7 @@ class LlamaLibrary extends LlamaLibraryBase {
           return await _sendMessage(
             parameters: parameters,
             extra: extra,
-            invokeParametersLlamaLibraryDataOptions:
-                invokeParametersLlamaLibraryDataOptions,
+            invokeParametersLlamaLibraryDataOptions: invokeParametersLlamaLibraryDataOptions,
           );
         }
         if (parameters is LoadModelFromFileLlamaLibrary) {
@@ -692,8 +580,7 @@ class LlamaLibrary extends LlamaLibraryBase {
       final resultPatch = InvokeParametersLlamaLibraryData.send(
         data: result,
         patchData: patchData,
-        invokeParametersLlamaLibraryDataOptions:
-            invokeParametersLlamaLibraryDataOptions,
+        invokeParametersLlamaLibraryDataOptions: invokeParametersLlamaLibraryDataOptions,
       );
 
       send(resultPatch);
@@ -751,8 +638,7 @@ class LlamaLibrary extends LlamaLibraryBase {
 
   @override
   FutureOr<JsonScheme> invoke({
-    required InvokeParametersLlamaLibraryData<JsonScheme>
-        invokeParametersLlamaLibraryData,
+    required InvokeParametersLlamaLibraryData<JsonScheme> invokeParametersLlamaLibraryData,
   }) {
     return invokeRaw(
       invokeParametersLlamaLibraryData: invokeParametersLlamaLibraryData,
@@ -761,8 +647,7 @@ class LlamaLibrary extends LlamaLibraryBase {
 
   @override
   FutureOr<JsonScheme> request({
-    required InvokeParametersLlamaLibraryData<JsonScheme>
-        invokeParametersLlamaLibraryData,
+    required InvokeParametersLlamaLibraryData<JsonScheme> invokeParametersLlamaLibraryData,
   }) async {
     return await invoke(
       invokeParametersLlamaLibraryData: invokeParametersLlamaLibraryData,
@@ -782,8 +667,7 @@ class LlamaLibraryIsolateData {
   // final String modelPath;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  final InvokeParametersLlamaLibraryDataOptions
-      invokeParametersLlamaLibraryDataOptions;
+  final InvokeParametersLlamaLibraryDataOptions invokeParametersLlamaLibraryDataOptions;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   LlamaLibraryIsolateData({
