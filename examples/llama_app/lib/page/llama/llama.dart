@@ -58,7 +58,8 @@ class LlamaAiPage extends StatefulWidget {
   State<LlamaAiPage> createState() => _LlamaAiPageState();
 }
 
-class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefulWidget {
+class _LlamaAiPageState extends State<LlamaAiPage>
+    with GeneralLibFlutterStatefulWidget {
   final TextEditingController textEditingController = TextEditingController();
 
   @override
@@ -83,7 +84,8 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
       isLoading = true;
     });
     await Future(() async {
-      final ApplicationLlamaLibraryDatabase applicationLlamaLibraryDatabase = getApplicationLlamaLibraryDatabase();
+      final ApplicationLlamaLibraryDatabase applicationLlamaLibraryDatabase =
+          getApplicationLlamaLibraryDatabase();
 
       LlamaAppClientFlutter.llamaLibrary.on(
         eventType: LlamaAppClientFlutter.llamaLibrary.eventUpdate,
@@ -91,7 +93,8 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
       );
 
       await loadLlamaModel(
-        llamaModel: File(applicationLlamaLibraryDatabase.llama_model_path ?? ""),
+        llamaModel:
+            File(applicationLlamaLibraryDatabase.llama_model_path ?? ""),
       );
     });
     setState(() {
@@ -199,14 +202,16 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          for (final element in llamaMessageDatabases.extensionGeneralLibForEach(
+                          for (final element in llamaMessageDatabases
+                              .extensionGeneralLibForEach(
                             isReverse: true,
                             onData: (data, index, totalLength, isReverse) {
                               return data;
                             },
                           )) ...[
                             () {
-                              final bool is_outgoing = (element.is_outgoing == true);
+                              final bool is_outgoing =
+                                  (element.is_outgoing == true);
                               final String text = () {
                                 String textProcces = (element.text ?? "");
                                 if (is_outgoing == false) {
@@ -219,10 +224,13 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
                               if (text.isEmpty) {
                                 return SizedBox.shrink();
                               }
-                              final Alignment alignment = (is_outgoing == true) ? Alignment.centerRight : Alignment.centerLeft;
+                              final Alignment alignment = (is_outgoing == true)
+                                  ? Alignment.centerRight
+                                  : Alignment.centerLeft;
 
                               return Row(
-                                mainAxisAlignment: alignment.toMainAxisAlignment(),
+                                mainAxisAlignment:
+                                    alignment.toMainAxisAlignment(),
                                 children: [
                                   ConstrainedBox(
                                     constraints: BoxConstraints(
@@ -230,21 +238,26 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
                                     ),
                                     child: Container(
                                       decoration: BoxDecoration(
-                                        color: context.theme.appBarTheme.backgroundColor,
+                                        color: context
+                                            .theme.appBarTheme.backgroundColor,
                                         borderRadius: BorderRadius.circular(10),
-                                        border: context.extensionGeneralLibFlutterBorderAll(),
-                                        boxShadow: context.extensionGeneralLibFlutterBoxShadows(),
+                                        border: context
+                                            .extensionGeneralLibFlutterBorderAll(),
+                                        boxShadow: context
+                                            .extensionGeneralLibFlutterBoxShadows(),
                                       ),
                                       margin: EdgeInsets.all(10),
                                       padding: EdgeInsets.all(5),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: alignment.toCrossAxisAlignment(),
-                                        children: [ 
+                                        crossAxisAlignment:
+                                            alignment.toCrossAxisAlignment(),
+                                        children: [
                                           Flexible(
                                             child: Text(
                                               text,
-                                              style: context.theme.textTheme.bodySmall,
+                                              style: context
+                                                  .theme.textTheme.bodySmall,
                                               overflow: TextOverflow.clip,
                                               // textAlign: TextAlign.start,
                                             ),
@@ -280,7 +293,8 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
                     child: TextFormField(
                       controller: textEditingController,
                       decoration: () {
-                        final OutlineInputBorder inputBorder = OutlineInputBorder(
+                        final OutlineInputBorder inputBorder =
+                            OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 2,
@@ -326,7 +340,8 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
                             ),
                           );
                           await LlamaAppClientFlutter.llamaLibrary.request(
-                            invokeParametersLlamaLibraryData: InvokeParametersLlamaLibraryData(
+                            invokeParametersLlamaLibraryData:
+                                InvokeParametersLlamaLibraryData(
                               parameters: SendLlamaLibraryMessage.create(
                                 text: text,
                                 is_stream: false,
@@ -377,7 +392,9 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
             contentPadding: EdgeInsets.all(5),
             title: "Support",
             trailing: Icon(
-              (LlamaAppClientFlutter.llamaLibrary.isDeviceSupport() == true) ? Icons.verified : Icons.close,
+              (LlamaAppClientFlutter.llamaLibrary.isDeviceSupport() == true)
+                  ? Icons.verified
+                  : Icons.close,
             ),
           ),
           MenuContainerGeneralFrameworkWidget.lisTile(
@@ -399,7 +416,8 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
                     );
                     if (file == null) {
                       context.showAlertGeneralFramework(
-                        alertGeneralFrameworkOptions: AlertGeneralFrameworkOptions(
+                        alertGeneralFrameworkOptions:
+                            AlertGeneralFrameworkOptions(
                           title: "Failed Load Model Llama",
                           builder: (context, alertGeneralFrameworkOptions) {
                             return "Coba lagi";
@@ -411,12 +429,18 @@ class _LlamaAiPageState extends State<LlamaAiPage> with GeneralLibFlutterStatefu
 
                     /// save to application settings
                     {
-                      final ApplicationLlamaLibraryDatabase applicationLlamaLibraryDatabase = getApplicationLlamaLibraryDatabase();
-                      applicationLlamaLibraryDatabase.llama_model_path = file.path;
+                      final ApplicationLlamaLibraryDatabase
+                          applicationLlamaLibraryDatabase =
+                          getApplicationLlamaLibraryDatabase();
+                      applicationLlamaLibraryDatabase.llama_model_path =
+                          file.path;
                       saveApplicationLlamaLibraryDatabase();
                     }
-                    final bool isLoadLlamaModel = await loadLlamaModel(llamaModel: file);
-                    context.showSnackBar(isLoadLlamaModel ? "Succes Load Model Llama" : "Failed Load Model Llama");
+                    final bool isLoadLlamaModel =
+                        await loadLlamaModel(llamaModel: file);
+                    context.showSnackBar(isLoadLlamaModel
+                        ? "Succes Load Model Llama"
+                        : "Failed Load Model Llama");
                   },
                 );
               },

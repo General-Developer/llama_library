@@ -75,8 +75,10 @@ class MainApp extends StatefulWidget {
   State<MainApp> createState() => _MainAppState();
 }
 
-class _MainAppState extends State<MainApp> with GeneralLibFlutterStatefulWidget {
-  final LoadingGeneralFrameworkController loadingGeneralFrameworkController = LoadingGeneralFrameworkController(loadingText: "");
+class _MainAppState extends State<MainApp>
+    with GeneralLibFlutterStatefulWidget {
+  final LoadingGeneralFrameworkController loadingGeneralFrameworkController =
+      LoadingGeneralFrameworkController(loadingText: "");
   @override
   void initState() {
     //  initState
@@ -93,14 +95,16 @@ class _MainAppState extends State<MainApp> with GeneralLibFlutterStatefulWidget 
       isLoading = true;
     });
     await Future(() async {
-      loadingGeneralFrameworkController.update(loadingText: "Starting Initialized App");
+      loadingGeneralFrameworkController.update(
+          loadingText: "Starting Initialized App");
       await LlamaAppClientFlutter.initialized(
         context: context,
         onLoading: (text) {
           loadingGeneralFrameworkController.update(loadingText: text);
         },
       );
-      loadingGeneralFrameworkController.update(loadingText: "Succes Initialized App");
+      loadingGeneralFrameworkController.update(
+          loadingText: "Succes Initialized App");
     });
     setState(() {
       isLoading = false;
@@ -126,7 +130,8 @@ class _MainAppState extends State<MainApp> with GeneralLibFlutterStatefulWidget 
         final Duration waitDuration = Duration(seconds: 10);
         final DateTime dateTimeExpired = DateTime.now().add(waitDuration);
         loadingGeneralFrameworkController.update(
-          loadingText: waitText(duration: dateTimeExpired.difference(DateTime.now())),
+          loadingText:
+              waitText(duration: dateTimeExpired.difference(DateTime.now())),
         );
         while (true) {
           await Future.delayed(Duration(microseconds: 10));
@@ -134,10 +139,12 @@ class _MainAppState extends State<MainApp> with GeneralLibFlutterStatefulWidget 
             break;
           }
           loadingGeneralFrameworkController.update(
-            loadingText: waitText(duration: dateTimeExpired.difference(DateTime.now())),
+            loadingText:
+                waitText(duration: dateTimeExpired.difference(DateTime.now())),
           );
         }
-        loadingGeneralFrameworkController.update(loadingText: "Navigate To Llama Ai Page");
+        loadingGeneralFrameworkController.update(
+            loadingText: "Navigate To Llama Ai Page");
         return true;
       } catch (e) {
         return e;
@@ -176,7 +183,8 @@ ${result}
     return Scaffold(
       body: SingleChildScrollView(
         child: ConstrainedBox(
-          constraints: BoxConstraints(minHeight: context.height, minWidth: context.width),
+          constraints: BoxConstraints(
+              minHeight: context.height, minWidth: context.width),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -184,7 +192,8 @@ ${result}
                 height: context.mediaQueryData.padding.top,
               ),
               LoadingGeneralFrameworkWidget(
-                loadingGeneralFrameworkController: loadingGeneralFrameworkController,
+                loadingGeneralFrameworkController:
+                    loadingGeneralFrameworkController,
                 loadingGeneralFrameworkType: LoadingGeneralFrameworkType.widget,
               ),
               SizedBox(

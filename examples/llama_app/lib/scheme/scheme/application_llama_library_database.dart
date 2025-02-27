@@ -80,15 +80,18 @@ class ApplicationLlamaLibraryDatabase extends JsonScheme {
       "llama_model_path": llama_model_path,
     };
 
-    applicationLlamaLibraryDatabase_data_create_json.removeWhere((key, value) => value == null);
+    applicationLlamaLibraryDatabase_data_create_json
+        .removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
-        if (applicationLlamaLibraryDatabase_data_create_json.containsKey(key) == false) {
+        if (applicationLlamaLibraryDatabase_data_create_json.containsKey(key) ==
+            false) {
           applicationLlamaLibraryDatabase_data_create_json[key] = value;
         }
       });
     }
-    return ApplicationLlamaLibraryDatabase(applicationLlamaLibraryDatabase_data_create_json);
+    return ApplicationLlamaLibraryDatabase(
+        applicationLlamaLibraryDatabase_data_create_json);
   }
 }

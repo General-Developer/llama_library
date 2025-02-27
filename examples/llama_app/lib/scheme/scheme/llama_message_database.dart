@@ -10,7 +10,14 @@ class LlamaMessageDatabase extends JsonScheme {
   /// return default data
   ///
   static Map get defaultData {
-    return {"@type": "llamaMessageDatabase", "id": 0, "is_outgoing": false, "is_done": false, "text": "", "date": 0};
+    return {
+      "@type": "llamaMessageDatabase",
+      "id": 0,
+      "is_outgoing": false,
+      "is_done": false,
+      "text": "",
+      "date": 0
+    };
   }
 
   /// check data
@@ -156,7 +163,8 @@ class LlamaMessageDatabase extends JsonScheme {
       "date": date,
     };
 
-    llamaMessageDatabase_data_create_json.removeWhere((key, value) => value == null);
+    llamaMessageDatabase_data_create_json
+        .removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {

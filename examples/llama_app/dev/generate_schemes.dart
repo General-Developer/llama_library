@@ -37,7 +37,8 @@ import 'package:general_lib/general_lib.dart';
 import "package:path/path.dart" as path;
 
 void main(List<String> args) async {
-  final Directory directoryScheme = Directory(path.join(Directory.current.path, "lib", "scheme"));
+  final Directory directoryScheme =
+      Directory(path.join(Directory.current.path, "lib", "scheme"));
   directoryScheme.generalLibUtilsDangerRecreate();
   {
     await jsonToScripts(
@@ -46,7 +47,8 @@ void main(List<String> args) async {
     );
   }
   {
-    final Directory directoryDatabaseScheme = Directory(path.join(Directory.current.path, "lib", "database_universe_scheme"));
+    final Directory directoryDatabaseScheme = Directory(
+        path.join(Directory.current.path, "lib", "database_universe_scheme"));
     directoryDatabaseScheme.generalLibUtilsDangerRecreate();
     for (final element in database_schemes) {
       if (element["@type"] is String == false) {

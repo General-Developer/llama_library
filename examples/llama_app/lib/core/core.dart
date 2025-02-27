@@ -54,8 +54,11 @@ import "package:path/path.dart" as path;
 
 class LlamaAppClientFlutter {
   static GeneralLibFlutterApp generalLibFlutterApp = GeneralLibFlutterApp();
-  static final GeneralSystemDeviceFlutter generalFlutter = GeneralSystemDeviceFlutter();
-  static final GeneralFrameworkClientFlutterAppDirectory generalFrameworkClientFlutterAppDirectory = GeneralFrameworkClientFlutterAppDirectory();
+  static final GeneralSystemDeviceFlutter generalFlutter =
+      GeneralSystemDeviceFlutter();
+  static final GeneralFrameworkClientFlutterAppDirectory
+      generalFrameworkClientFlutterAppDirectory =
+      GeneralFrameworkClientFlutterAppDirectory();
   static final LlamaLibrary llamaLibrary = LlamaLibrary();
 
   static final DatabaseGeneralLib databaseGeneralLib = DatabaseGeneralLib();
@@ -68,12 +71,14 @@ class LlamaAppClientFlutter {
   }
 
   static final Crypto _crypto = Crypto(
-    key: utf8.decode(base64.decode("MjBIUEg4MzVrWjlBcnN0MjNhVHc0MlQyWU84ZVdPYkU=")),
+    key: utf8
+        .decode(base64.decode("MjBIUEg4MzVrWjlBcnN0MjNhVHc0MlQyWU84ZVdPYkU=")),
     iv: utf8.decode(base64.decode("R29pNklmWGRNeHVHSmFpenYwTlg3UT09")),
   );
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  static DatabaseMiniGeneralLibraryBaseOptions get databaseMiniGeneralLibraryBaseOptions {
+  static DatabaseMiniGeneralLibraryBaseOptions
+      get databaseMiniGeneralLibraryBaseOptions {
     return DatabaseMiniGeneralLibraryBaseOptions(
       crypto: _crypto,
       isUseCrypto: true,
@@ -92,8 +97,12 @@ class LlamaAppClientFlutter {
 
     {
       coreDatabaseMiniLibrary = await databaseGeneralLib.openDatabaseMiniAsync(
-        key: path.join(generalFrameworkClientFlutterAppDirectory.app_support_directory.path, "core_database"),
-        databaseMiniGeneralLibraryBaseOptions: databaseMiniGeneralLibraryBaseOptions,
+        key: path.join(
+            generalFrameworkClientFlutterAppDirectory
+                .app_support_directory.path,
+            "core_database"),
+        databaseMiniGeneralLibraryBaseOptions:
+            databaseMiniGeneralLibraryBaseOptions,
         defaultData: {},
       );
     }
@@ -161,7 +170,8 @@ class LlamaAppClientFlutter {
   }
 }
 
-extension StatellamaLibraryExtensionFLutter<T extends StatefulWidget> on State<T> {
+extension StatellamaLibraryExtensionFLutter<T extends StatefulWidget>
+    on State<T> {
   ApplicationLlamaLibraryDatabase getApplicationLlamaLibraryDatabase() {
     return LlamaAppClientFlutter.coreDatabaseValue();
   }
@@ -186,22 +196,22 @@ extension LLamaStringClearExtension on String {
 }
 
 List<RegExpReplace> get regExpReplaces => [
-  RegExpReplace(
-    from: RegExp(
-      "(([<|])([<|])?([/])?(think|im_start|im_end)([|>])?([|>]))",
-      caseSensitive: false,
-    ),
-    replace: (match) {
-      return "";
-    },
-  ),
-  RegExpReplace(
-    from: RegExp(
-      "([<|]([/])?([ ]+)?[|>])",
-      caseSensitive: false,
-    ),
-    replace: (match) {
-      return "";
-    },
-  ),
-];
+      RegExpReplace(
+        from: RegExp(
+          "(([<|])([<|])?([/])?(think|im_start|im_end)([|>])?([|>]))",
+          caseSensitive: false,
+        ),
+        replace: (match) {
+          return "";
+        },
+      ),
+      RegExpReplace(
+        from: RegExp(
+          "([<|]([/])?([ ]+)?[|>])",
+          caseSensitive: false,
+        ),
+        replace: (match) {
+          return "";
+        },
+      ),
+    ];

@@ -30,7 +30,7 @@ dependencies:
   general_system_device: '^0.0.51'
   llama_library: '^0.0.3'
   llama_library_flutter: '^0.0.3'
-  ggml_library_flutter: '^0.0.9'
+  ggml_library_flutter: '^0.0.10'
   file_picker: '^8.3.5'
   database_universe: '^1.0.5'
 dev_dependencies:
