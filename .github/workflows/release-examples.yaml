@@ -26,7 +26,7 @@ jobs:
           
       - name: Build Examples Desktop
         shell: bash
-        working-directory: examples/whisper_app
+        working-directory: examples/llama_app
         env:
           packagex_github_token: ${{ secrets.PUBLISHER_GITHUB_TOKEN }}
         run: |
@@ -36,7 +36,7 @@ jobs:
         
       - name: Build Examples Mobile
         shell: bash
-        working-directory: examples/whisper_app
+        working-directory: examples/llama_app
         env:
           packagex_github_token: ${{ secrets.PUBLISHER_GITHUB_TOKEN }}
         run: |
